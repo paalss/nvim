@@ -12,7 +12,7 @@ nvim .
 
 [space] pv
 
-Space refereres til i configs som <leader> forresten.
+Space refereres til i configs som `<leader>` forresten.
 
 ### Fuzzy finder
 
