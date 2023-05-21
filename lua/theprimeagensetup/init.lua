@@ -1,2 +1,2 @@
 require("theprimeagensetup.remap")
-print("Hello frmo the frimeageran")
+print("Hello from the Primeagen")
