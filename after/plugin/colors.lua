@@ -10,8 +10,8 @@ function ColorMyPencils(color)
 	-- du kan uansett justere gjennomsiktighet i Ubuntu terminalen
 	-- i 'egenskaper'
 	--
-	--vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	--vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 end
 
