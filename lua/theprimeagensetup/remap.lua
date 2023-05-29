@@ -1,5 +1,5 @@
--- definere leader som space-knappe
-vim.g.mapleader = " "
+-- leader knappen blir definert i lua/theprimagen/set.lua som 'space'-knappen
+
 -- returnere til nvim file explorer
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- space pv
 
