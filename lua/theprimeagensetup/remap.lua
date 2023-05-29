@@ -1,8 +1,13 @@
 -- leader knappen blir definert i lua/theprimagen/set.lua som 'space'-knappen
 
 -- returnere til nvim file explorer
--- p
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- space pv
+
+vim.keymap.set("n", "<A-k>", ":m-2<CR>") -- Alt k --> move line down
+vim.keymap.set("n", "<A-j>", ":m+<CR>") -- Alt j --> mode line up
+vim.keymap.set("i", "<A-j>", "<Esc>:m+<CR>")
+vim.keymap.set("i", "<A-k>", "<Esc>:m-2<CR>")
 
 vim.keymap.set("i", "<A-p>", "{}<Esc>i")
 vim.keymap.set("i", "<A-å>", "}")
@@ -11,7 +16,6 @@ vim.keymap.set("i", "<A-æ>", "]")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
