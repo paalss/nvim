@@ -2,6 +2,21 @@
 
 https://www.youtube.com/watch?v=w7i4amO_zaE
 
+## Install package manager: packer.nvim
+
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+```bash
+nvim lua/theprimeagensetup/packer
+```
+
+`:so`
+
+`:PackerSync`
+
 ## Enter Neovim file explorer
 
 ```bash
@@ -12,22 +27,22 @@ nvim .
 
 ### Return to Neovim explorer
 
-[space] pv
+`[space] pv`
 
 Space refereres til i configs som `<leader>` forresten.
 
 ### Fuzzy finder
 
-[space] pf
+`[space] pf`
 
 
 ### Fuzzy finder (git repo)
 
-[Ctrl-p]
+`[Ctrl-p]`
 
 
 ### Search in files
 
-[space] ps
+`[space] ps`
 
 
