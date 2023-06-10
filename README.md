@@ -4,6 +4,10 @@ https://www.youtube.com/watch?v=w7i4amO_zaE
 
 ## Install package manager: packer.nvim
 
+<leader>p funker for en eller annen grunn ikke.
+
+Skjer bare pasting i stedet for, når man klikker på 'p'
+
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
