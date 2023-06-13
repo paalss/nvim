@@ -4,6 +4,10 @@ https://www.youtube.com/watch?v=w7i4amO_zaE
 
 ## Install package manager: packer.nvim
 
+Dette er en liten test.
+Jeg skal bare committe dette med vim og ikke nano.
+
+
 <leader>p funker for en eller annen grunn ikke.
 
 Skjer bare pasting i stedet for, når man klikker på 'p'
