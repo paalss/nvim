@@ -1,4 +1,4 @@
--- leader knappen blir definert i lua/theprimagen/set.lua som 'space'-knappen
+vim.g.mapleader = " "
 
 -- returnere til nvim file explorer
 
