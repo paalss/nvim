@@ -15,7 +15,7 @@ vim.keymap.set("i", "<A-k>", "<Esc>:m-2<CR>")
 -- vim.keymap.set("i", "<A-ø>", "[]<Esc>i")
 -- vim.keymap.set("i", "<A-æ>", "]")
 
-vim.keymap.set("n", "gg", ":Lazygit<CR>")
+vim.keymap.set("n", "gg", ":LazyGit<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
