@@ -30,3 +30,7 @@ local opts = { noremap = true, silent = true }
  --                 :BufferCloseAllButCurrentOrPinned
  --                 :BufferCloseBuffersLeft
  --                 :BufferCloseBuffersRight
+ --
+ 
+
+
