@@ -38,6 +38,8 @@ Space refereres til i configs som `<leader>` forresten.
 
 ### Fuzzy finder (git repo)
 
+notice: file must be added/tracked in order for it to appear
+
 `[Ctrl-p]`
 
 
@@ -45,4 +47,10 @@ Space refereres til i configs som `<leader>` forresten.
 
 `[space] ps`
 
+### LazyGit
 
+`[space] gg`
+
+### Toggleterm
+
+`[ctrl]+l`
