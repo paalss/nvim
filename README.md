@@ -9,6 +9,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
+## Setup
+
 ```bash
 nvim lua/theprimeagensetup/packer
 ```
@@ -17,7 +19,23 @@ nvim lua/theprimeagensetup/packer
 
 `:PackerSync`
 
-## Enter Neovim file explorer
+### install git delta (better git diff)
+
+visit: https://dandavison.github.io/delta/installation.html
+
++-----------------+------------------------------------------------+
+| Debian / Ubuntu | sudo dpkg -i git-delta-musl_0.16.5_amd64.deb   |
++-----------------+------------------------------------------------+
+
+`git diff | delta`
+
+see more
+
+https://www.youtube.com/watch?v=91p1Fp7Db5c
+
+## Keyboard shortcuts
+
+**Enter Neovim file explorer**
 
 ```bash
 nvim .
@@ -25,32 +43,31 @@ nvim .
 
 ## Neovim
 
-### Return to Neovim explorer
+**Return to Neovim explorer**
 
 `[space] pv`
 
 Space refereres til i configs som `<leader>` forresten.
 
-### Fuzzy finder
+**Fuzzy finder**
 
 `[space] pf`
 
-
-### Fuzzy finder (git repo)
+**Fuzzy finder (git repo)**
 
 notice: file must be added/tracked in order for it to appear
 
-`[Ctrl-p]`
+`[Ctrl+p]`
 
-
-### Search in files
+**Search in files**
 
 `[space] ps`
 
-### LazyGit
+**LazyGit**
 
 `[space] gg`
 
-### Toggleterm
+**Toggleterm**
 
 `[ctrl]+l`
+
