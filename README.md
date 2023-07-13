@@ -19,6 +19,12 @@ nvim lua/theprimeagensetup/packer
 
 `:PackerSync`
 
+### use nvim for committing code from terminal
+
+just `"vim"` won't do. Or any other editor.
+
+`git config --global core.editor "nvim"`
+
 ### install git delta (better git diff)
 
 visit: https://dandavison.github.io/delta/installation.html
