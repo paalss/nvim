@@ -51,3 +51,12 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
  -- replace the word your cursor is on
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below split" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to above split" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
+vim.keymap.set("n", "<C-Up>", "<cmd>resize -2<CR>", { desc = "Resize split up" })
+vim.keymap.set("n", "<C-Down>", "<cmd>resize +2<CR>", { desc = "Resize split down" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Resize split left" })
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Resize split right" })
