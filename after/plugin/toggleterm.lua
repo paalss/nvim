@@ -4,6 +4,6 @@ if not status_ok then
 end
 
 toggleterm.setup({
-    open_mapping = [[<C-ø>]],
+    open_mapping = [[<F7>]],
     direction = "float"
 })
