@@ -94,11 +94,6 @@ _G.packer_plugins = {
     path = "/home/paalss/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  harpoon = {
-    loaded = true,
-    path = "/home/paalss/.local/share/nvim/site/pack/packer/start/harpoon",
-    url = "https://github.com/theprimeagen/harpoon"
-  },
   ["lazygit.nvim"] = {
     loaded = true,
     path = "/home/paalss/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
