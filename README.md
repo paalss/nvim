@@ -19,6 +19,23 @@ nvim lua/theprimeagensetup/packer
 
 `:PackerSync`
 
+## Update git on ubuntu
+
+sindrets/gitdiff requires
+- Neovim ≥ 0.7.0
+- Git ≥ 2.31.0
+
+Check `git --version`
+
+Update if necessary
+
+```bash
+sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-get update
+sudo apt-get install git -y
+git --version
+```
+
 ### use nvim for committing code from terminal
 
 just `"vim"` won't do. Or any other editor.
