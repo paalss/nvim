@@ -14,6 +14,7 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
   - tror det bare funker i vanlig vim?
      - kanskje det hjelper å bruke vim-fugitive....?
         - kan uansett ikke bruke vanlig vim som git default editor, da får man error
+          - det funker i VScode terminal da, selv med nvim
 - etter å ha åpnet :DiffviewFileHistory el. så kan man ikke kjøre leader pv eller noe! whyyyy
 - noen ganger slutter code search i telescope å funke....
 
@@ -73,6 +74,10 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
         - open all folders
     - tabs
        - tastatursnarveier likens som i VSCode og firefox
+    - https://github.com/windwp/nvim-autopairs {}
+    - innrykk justering med tab og shift tab
+    - autokey/autohotkey for å lage curly braces slik som på mac 
+
 
 
 https://markdownbeautifier.com/
