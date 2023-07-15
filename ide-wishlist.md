@@ -9,7 +9,6 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
 -   når man limer inn kode med kommentarer, så blir linjen med kommentaren, samt alle de følgende linjene kommentert ut.
     -   reproduser: f.eks. kopier noe lua kode med system clipboard (ctrl+C). Kodesnutten må inneholde `--`. Lim det inn i en lua fil.
     -   noe i en lua fil fra system clipboard og det inneholder `--`,
-- når man klikker "gg" så kommer lazygit.... man må trykke LEADER først!
 - kan ikke ctrl+backspace riktig i insert mode. skal slette ordet bak markøren
   - tror det bare funker i vanlig vim?
      - kanskje det hjelper å bruke vim-fugitive....?
