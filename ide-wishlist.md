@@ -16,6 +16,8 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
           - det funker i VScode terminal da, selv med nvim
 - etter å ha åpnet :DiffviewFileHistory el. så kan man ikke kjøre leader pv eller noe! whyyyy
 - noen ganger slutter code search i telescope å funke....
+  - tror det er fordi den automatisk søker etter order som er under cursor, at den bruker den som et fundament. startspunkt.
+- enable kommenter-ut for insert mode også. gc funker bare i visual mode så langt. se dokumentasjonen til de som lagde dette verktøyet (tpope?)
 
 ## Git
 
