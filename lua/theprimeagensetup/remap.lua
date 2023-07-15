@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
-
- -- returnere til nvim file explorer
+-- returnere til nvim file explorer
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- space pv
 
@@ -10,11 +9,10 @@ vim.keymap.set("i", "<A-j>", "<Esc>:m+<CR>")
 vim.keymap.set("i", "<A-k>", "<Esc>:m-2<CR>")
 
  -- overlater dette til autohotkey/autokey script
- vim.keymap.set("i", "<A-p>", "{}<Esc>i")
- vim.keymap.set("i", "<A-å>", "}")
- vim.keymap.set("i", "<A-ø>", "[]<Esc>i")
- vim.keymap.set("i", "<A-æ>", "]")
-
+vim.keymap.set("i", "<A-p>", "{}<Esc>i")
+vim.keymap.set("i", "<A-å>", "}")
+vim.keymap.set("i", "<A-ø>", "[]<Esc>i")
+vim.keymap.set("i", "<A-æ>", "]")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -34,7 +32,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
- vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")                                            -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
