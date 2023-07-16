@@ -18,12 +18,12 @@ toggleterm.setup({
     -- open_mapping = "<A-Char-248>", -- ok
 
     -- open_mapping = "<C-ø>", -- fail
+    -- open_mapping = "<C-Char-248>", -- fail
 
     -- open_mapping = "<C-[>", -- fail, men nesten! det er for bokstaven Å! Og så vil denne få ESC til å åpne terminal også.... :/
     -- open_mapping = "<C-o/>", -- fail
     -- open_mapping = [[<C-\>]], -- fail. finner ikke hvilken tast
     -- open_mapping = "<C-]>", -- fail. finner ikke hvilken tast som tilsvarer ]
 
-    -- open_mapping = "<C-Char-248>", -- fail
     direction = "float"
 })
