@@ -92,10 +92,75 @@ notice: file must be added/tracked in order for it to appear
 
 **Toggleterm**
 
-to be decided
+`[F7]`
 
 **Multiple cursors**
 
 Marker valgt frase i visual mode
 
 `Ctrl+n` / `Ctrl+N` for å cycle frem/tilbake
+
+**Vim Fugitive**
+
+`:G`
+
+`:Gclog` List changes
+
+Commit maps  
+
+cc (gc)                     Create a commit.
+
+ca (gc!)                     Amend the last commit and edit the message.
+
+ce (gcn!)                      Amend the last commit without editing the message.
+
+cw                      Reword the last commit.
+
+cvc                     Create a commit with -v.
+
+cva                     Amend the last commit with -v
+
+cf                      Create a `fixup!` commit for the commit under the
+                        cursor.
+
+cF                      Create a `fixup!` commit for the commit under the
+                        cursor and immediately rebase it.
+
+cs                      Create a `squash!` commit for the commit under the
+                        cursor.
+
+cS                      Create a `squash!` commit for the commit under the
+                        cursor and immediately rebase it.
+
+cA                      Create a `squash!` commit for the commit under the
+                        cursor and edit the message.
+
+c<Space>                Populate command line with ":Git commit ".
+
+                                                *fugitive_cr*
+crc                     Revert the commit under the cursor.
+
+crn                     Revert the commit under the cursor in the index and
+                        work tree, but do not actually commit the changes.
+
+cr<Space>               Populate command line with ":Git revert ".
+
+                                                *fugitive_cm*
+cm<Space>               Populate command line with ":Git merge ".
+
+c?                      Show this help.
+
+                                                *fugitive_cb*
+                                                *fugitive_co*
+Checkout/branch maps  
+
+coo                     Check out the commit under the cursor.
+
+cb<Space>               Populate command line with ":Git branch ".
+
+co<Space>               Populate command line with ":Git checkout ".
+
+cb?                     Show this help.
+co?
+
+
