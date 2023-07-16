@@ -72,17 +72,17 @@ nvim .
 
 Space refereres til i configs som `<leader>` forresten.
 
-**Fuzzy finder**
+**Fuzzy finder** 
 
 `[space] pf`
 
-**Fuzzy finder (git repo)**
+**Fuzzy finder (git repo)** 
 
 notice: file must be added/tracked in order for it to appear
 
 `[Ctrl+p]`
 
-**Search in files**
+**Search in files** 
 
 `[space] ps`
 
@@ -92,5 +92,10 @@ notice: file must be added/tracked in order for it to appear
 
 **Toggleterm**
 
-`[ctrl]+l`
+to be decided
 
+**Multiple cursors**
+
+Marker valgt frase i visual mode
+
+`Ctrl+n` / `Ctrl+N` for å cycle frem/tilbake
