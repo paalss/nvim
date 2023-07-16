@@ -22,6 +22,8 @@ local opts = { noremap = true, silent = true }
  map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
  -- Close buffer
  map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+ -- Restore buffer
+ map('n', '<A-t>', '<Cmd>BufferRestore<CR>', opts)
  -- Wipeout buffer
  --                 :BufferWipeout
  -- Close commands
@@ -31,6 +33,6 @@ local opts = { noremap = true, silent = true }
  --                 :BufferCloseBuffersLeft
  --                 :BufferCloseBuffersRight
  --
- 
+
 
 
