@@ -54,7 +54,6 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
 | ✅ syntax highlighter |                                                      |
 | npm?                 | tro jeg har det automatisk i den emulerte terminalen |
 | syntax highlighter   | funker ikke helt da                                  |
-| syntax highlighter   | funker ikke helt da                                  |
 | ✅ skikkelig terminal | toggleterm                                           |
 | prettier             |                                                      |
 | typescript support   |                                                      |
