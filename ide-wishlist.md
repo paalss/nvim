@@ -19,13 +19,13 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
 
 ## Git
 
-| ønske                                   | verktøy                                          |
-| --------------------------------------- | ------------------------------------------------ |
-| ✅ bedre git diff                        | git delta (installert på ubuntu)                |
-| ✅ merge tool & current index comparison | sindrets/diffview                                                |
-| git graph-ish oversikt?                 |                                                  |
-| status bar med branch name?             |                                                  |
-| git diff som gjør det mulig å endre på unstaged changes (og åpne tilhørende fil*)             |                                                  |
+    | ønske                                   | verktøy                                          |
+    | --------------------------------------- | ------------------------------------------------ |
+    | ✅ bedre git diff                        | git delta (installert på ubuntu)                |
+    | ✅ merge tool & current index comparison | sindrets/diffview                                                |
+    | git graph-ish oversikt?                 |                                                  |
+    | status bar med branch name?             |                                                  |
+    | git diff som gjør det mulig å endre på unstaged changes (og åpne tilhørende fil*)             |                                                  |
 
 *: Kan lazygit dette? Eller fugitive eller forgit?
 
@@ -63,12 +63,10 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
 |                      |                                                      |
 
 -   VSCode features
-    -   multiple cursors (ctrl+D)
-    -   åpne siste lukkede fil (ctrl+shift+T)
     -   dupliser linje (ctrl+alt+opp/ned)
     -   at IDE husker bufferne du hadde åpne når du sist dro til den mappen
     -  gitsigns
-    - gitlens git blame
+    - gitlens git blame 
     - rename filer
     - file explorer
         - collapse all folders
@@ -78,7 +76,6 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
     - https://github.com/windwp/nvim-autopairs {}
     - innrykk justering med tab og shift tab
     - autokey/autohotkey for å lage curly braces slik som på mac 
-
 
 
 https://markdownbeautifier.com/
