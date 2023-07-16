@@ -52,12 +52,13 @@ return require('packer').startup(function(use)
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 	    require("toggleterm").setup()
     end}
+    use('tpope/vim-fugitive')
     use {
 	    'VonHeikemen/lsp-zero.nvim',
 	    branch = 'v2.x',
 	    requires = {
 		    -- LSP Support
-		    {'neovim/nvim-lspconfig'},             -- Required
+	 	    {'neovim/nvim-lspconfig'},             -- Required
 		    {                                      -- Optional
 		    'williamboman/mason.nvim',
 		    run = function()
