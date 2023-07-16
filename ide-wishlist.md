@@ -15,18 +15,19 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
         - kan uansett ikke bruke vanlig vim som git default editor, da får man error
           - det funker i VScode terminal da, selv med nvim
 - etter å ha åpnet :DiffviewFileHistory el. så kan man ikke kjøre leader pv eller noe! whyyyy
-- noen ganger slutter code search i telescope å funke....
-  - tror det er fordi den automatisk søker etter order som er under cursor, at den bruker den som et fundament. startspunkt.
 - enable kommenter-ut for insert mode også. gc funker bare i visual mode så langt. se dokumentasjonen til de som lagde dette verktøyet (tpope?)
 
 ## Git
 
 | ønske                                   | verktøy                                          |
 | --------------------------------------- | ------------------------------------------------ |
-| ✅ bedre git diff                        | git delta (installert på ubuntu)                 |
-| ✅ merge tool & current index comparison | - sindrets/diffview.nvim? - men det funker ikke? |
+| ✅ bedre git diff                        | git delta (installert på ubuntu)                |
+| ✅ merge tool & current index comparison | sindrets/diffview                                                |
 | git graph-ish oversikt?                 |                                                  |
 | status bar med branch name?             |                                                  |
+| git diff som gjør det mulig å endre på unstaged changes (og åpne tilhørende fil*)             |                                                  |
+
+*: Kan lazygit dette? Eller fugitive eller forgit?
 
 ## Finn kode/filer
 
