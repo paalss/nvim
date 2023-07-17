@@ -47,7 +47,7 @@ just `"vim"` won't do. Or any other editor.
 visit: https://dandavison.github.io/delta/installation.html
 
 +-----------------+------------------------------------------------+
-| Debian / Ubuntu | sudo dpkg -i git-delta-musl_0.16.5_amd64.deb   |
+| Debian / Ubuntu | `sudo dpkg -i git-delta-musl_0.16.5_amd64.deb` |
 +-----------------+------------------------------------------------+
 
 `git diff | delta`
@@ -99,6 +99,53 @@ notice: file must be added/tracked in order for it to appear
 Marker valgt frase i visual mode
 
 `Ctrl+n` / `Ctrl+N` for å cycle frem/tilbake
+
+**Autokey**
+
+Installer på Ubuntu
+
+- Offisiell README: https://github.com/autokey/autokey
+  - Installasjonsguide: https://github.com/autokey/autokey/wiki/Installing
+  - Releases: https://github.com/autokey/autokey/releases/
+
+- Offisiell dokumentasjon for versjon >0.96.0: https://autokey.github.io/index.html
+  - eksempelkode finnes på:
+    - wiki: https://github.com/autokey/autokey/wiki
+    - features: https://github.com/autokey/autokey/wiki/Features
+    - example scripts: https://github.com/autokey/autokey/wiki/Example-Scripts
+
+
+sjekk at python versjon er over 3.7
+
+```bash
+sudo apt --fix-broken install
+python3 --version
+```
+
+gå til releases og last ned common og gtk-versjonen. sistnevnte kan byttes ut med qt versjonen btw, det skal visstnok ikke være så stor forksjell.
+
+`cd` til der du har installert dem.
+
+```bash
+VERSION="0.96.0"    # definer VERSION variabel til matchende versjon
+sudo dpkg --install autokey-common_${VERSION}_all.deb autokey-gtk_${VERSION}_all.deb
+sudo apt --fix-broken install # in the case of dpkg complaining about missing dependencies, it is crucial to run this command
+```
+
+Check installation
+
+```bash
+autokey-run -h
+autokey-gtk -h
+```
+
+...skal begge returnere help-text.
+
+avinstallere:
+
+```bash
+sudo apt-get remove autokey-common autokey-gtk
+```
 
 **Vim Fugitive**
 
