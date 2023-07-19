@@ -13,14 +13,24 @@
 ^+9::SendText "}" ; Ctrl Shift 9
 
 
+; ---------- "REMAP" ----------
+
+; move line
+
+!k::Send "{Esc}:m-2{Enter}"
+!j::Send "{Esc}:m{+}{Enter}"
+
+; duplicate line
+
+!+k::Send "yyP"
+!+j::Send "yyp"
+
 ; ---------- "TOGGLETERM" ----------
 
 ^ø::Send "{F7}" ; (toggleterm.lua uses this button) 
 
 
 ; ---------- "TODO" ---------- 
-
-; kopiere linjer (kjøre yyp og yyP), må muligens fjerne 'move line up/down' fra remap.lua
 
 ; matching pair addon
 
