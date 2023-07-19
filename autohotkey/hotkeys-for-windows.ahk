@@ -11,9 +11,8 @@
 ; ---------- "TEXT" ----------
 
 ::ftw::Free the whales ; ved å skrive ftw og mellomrom/tab, blir autocorrect til Free the whales.
- 
-^+8::SendText "{" ; Ctrl Shift 8
 
+^+8::SendText "{" ; Ctrl Shift 8
 ^+9::SendText "}" ; Ctrl Shift 9
 
 
