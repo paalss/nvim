@@ -1,3 +1,7 @@
+; limit hotkeys to console windows (Windows subsystem for linux / Ubuntu)
+; use Window Spy to find class names & other info about windows: https://amourspirit.github.io/AutoHotkey-Snippit/WindowSpy.html
+#HotIf WinActive("ahk_class ConsoleWindowClass")
+
 ; keyboard-shortcuts/remappings for windows users:
 ; ! Alt
 ; <^>! AltGr
@@ -50,3 +54,5 @@
 ^w:: Send "{Esc}:BufferClose{Enter}"
 
 !Esc::ExitApp
+
+#HotIf
