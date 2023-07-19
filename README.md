@@ -36,6 +36,25 @@ sudo apt-get install git -y
 git --version
 ```
 
+### AutoHotkey
+
+#### Start script
+
+Run ahk file from command-line: write path tp AutoHotkey executable and what file to run, eg.:
+
+```bash
+'/mnt/c/Program Files/AutoHotkey/v2/AutoHotkey.exe' hotkeys-for-windows.ahk
+^C
+```
+
+or
+
+click 'run script' from the right-click menu on the ahk-file
+
+#### Stop script
+
+`Alt+Esc`
+
 ### use nvim for committing code from terminal
 
 just `"vim"` won't do. Or any other editor.
@@ -64,7 +83,7 @@ https://www.youtube.com/watch?v=91p1Fp7Db5c
 nvim .
 ```
 
-## Neovim
+### Neovim
 
 **Return to Neovim explorer**
 
@@ -94,15 +113,13 @@ notice: file must be added/tracked in order for it to appear
 
 `[F7]`
 
+Autohotkey: `ctrl+ø`
+
 **Multiple cursors**
 
 Marker valgt frase i visual mode
 
 `Ctrl+n` / `Ctrl+N` for å cycle frem/tilbake
-
-**Autohotkey**
-
-klikk run script på ahk fila
 
 **Vim Fugitive**
 
