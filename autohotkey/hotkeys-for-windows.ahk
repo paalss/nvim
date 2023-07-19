@@ -47,6 +47,13 @@
 ^PgDn::Send "{Esc}:BufferNext{Enter}"
 ^F12::Send "{Esc}:BufferNext{Enter}"
 
+; move buffers
+
++^PgUp::Send "{Esc}:BufferMoveNext{Enter}"
++^F11::Send "{Esc}:BufferMoveNext{Enter}"
++^PgDn::Send "{Esc}:BufferMovePrevious{Enter}"
++^F12::Send "{Esc}:BufferMovePrevious{Enter}"
+
 ; other
 
 ^+t:: Send "{Esc}:BufferRestore{Enter}"
