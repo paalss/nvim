@@ -26,8 +26,8 @@
 
 ; duplicate line
 
-!+k::Send "yyP"
-!+j::Send "yyp"
+!+k::Send "{Esc}yyP"
+!+j::Send "{Esc}yyp"
 
 ; ---------- "TOGGLETERM" ----------
 
