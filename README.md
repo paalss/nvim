@@ -38,13 +38,14 @@ git --version
 
 ### AutoHotkey
 
+Install AutoHotkey: https://www.autohotkey.com/
+
 #### Start script
 
 Run ahk file from command-line: write path tp AutoHotkey executable and what file to run, eg.:
 
 ```bash
-'/mnt/c/Program Files/AutoHotkey/v2/AutoHotkey.exe' hotkeys-for-windows.ahk
-^C
+timeout 0.1s bash autohotkey/start-ahk.sh
 ```
 
 or
