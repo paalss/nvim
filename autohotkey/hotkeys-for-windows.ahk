@@ -28,14 +28,10 @@
 !+k::Send "{Esc}yyP"
 !+j::Send "{Esc}yyp"
 
+
 ; ---------- "TOGGLETERM" ----------
 
 ^ø::Send "{F7}" ; (toggleterm.lua uses this button) 
-
-
-; ---------- "TODO" ---------- 
-
-; matching pair addon
 
 
 ; ---------- "BARBAR" ----------
