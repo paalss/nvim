@@ -23,6 +23,7 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
     | --------------------------------------- | ------------------------------------------------ |
     | ✅ bedre git diff                        | git delta (installert på ubuntu)                |
     | ✅ merge tool & current index comparison | sindrets/diffview                                                |
+    | en lazygit hvor man kan endre på filer gjennom diff-vindu |                                |
     | git graph-ish oversikt?                 |                                                  |
     | status bar med branch name?             |                                                  |
     | git diff som gjør det mulig å endre på unstaged changes (og åpne tilhørende fil*)             |                                                  |
