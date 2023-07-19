@@ -38,12 +38,14 @@
 ; ---------- "BARBAR" ----------
 
 ; navigate buffers
+
 ^PgUp::Send "{Esc}:BufferPrevious{Enter}"
 ^F11::Send "{Esc}:BufferPrevious{Enter}"
 ^PgDn::Send "{Esc}:BufferNext{Enter}"
 ^F12::Send "{Esc}:BufferNext{Enter}"
 
 ; other
+
 ^+t:: Send "{Esc}:BufferRestore{Enter}"
 ^w:: Send "{Esc}:BufferClose{Enter}"
 
