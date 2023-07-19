@@ -46,6 +46,7 @@
 ^F11::Send "{Esc}:BufferPrevious{Enter}"
 ^PgDn::Send "{Esc}:BufferNext{Enter}"
 ^F12::Send "{Esc}:BufferNext{Enter}"
+^Tab::Send "{Esc}:b{#}{Enter}" ; to previous buffer
 
 ; move buffers
 
