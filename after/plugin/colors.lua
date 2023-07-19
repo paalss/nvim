@@ -1,4 +1,3 @@
--- aaa
 function ColorMyPencils(color)
 	-- set the color scheme
 	-- default color settes til rose-pine
