@@ -48,6 +48,8 @@ Lazygit kan ta deg med til gjeldende fil, ja.
 
 -   markdown-completion (listepunkter)
 
+- Table of Contents til markdown
+
 ## Annet
 
 | øsnke                | verktøy                                              |
@@ -62,6 +64,7 @@ Lazygit kan ta deg med til gjeldende fil, ja.
 | debug environment    |                                                      |
 | keymap cheatsheet    |                                                      |
 |                      |                                                      |
+
 
 -   VSCode features
     - visual mode flytting av flere linjer på én gang
