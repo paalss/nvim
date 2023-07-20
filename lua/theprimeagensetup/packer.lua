@@ -51,10 +51,10 @@ return require('packer').startup(function(use)
         },
     })
     use('tpope/vim-commentary')
-    use('tpope/vim-fugitive')
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end }
+    -- use('tpope/vim-fugitive')
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
