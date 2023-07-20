@@ -1,15 +1,25 @@
-# Nvim configs ThePrimeagen tutorial
+# Påls Neovim config
 
-https://www.youtube.com/watch?v=w7i4amO_zaE
+Built on
 
-## Install package manager: packer.nvim
+````
+NVIM v0.9.0
+Build type: Release
+LuaJIT 2.1.0-beta3
+``````
+
+## Setup
+
+[Install neovim](docs/neovim-install.md)
+
+### Install package manager: packer.nvim
 
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-## Setup
+### Install dependencies
 
 ```bash
 nvim lua/theprimeagensetup/packer
@@ -19,11 +29,10 @@ nvim lua/theprimeagensetup/packer
 
 `:PackerSync`
 
-## Update git on ubuntu
-
-sindrets/gitdiff requires
-- Neovim ≥ 0.7.0
+**dependency sindrets/gitdiff requires**
 - Git ≥ 2.31.0
+
+### Update git on ubuntu
 
 Check `git --version`
 
@@ -36,11 +45,17 @@ sudo apt-get install git -y
 git --version
 ```
 
-### AutoHotkey
+### Setup AutoHotkey (Windows&WSL)
 
-Install AutoHotkey: https://www.autohotkey.com/
+AutoHotkey makes it far more easier to create hotkeys/mappings.
 
-#### Start script
+AutoHotkey is available for Windows, which you should be using if you use Windows & WSL.
+
+**Install AutoHotkey:**
+
+https://www.autohotkey.com/
+
+**Start script**
 
 Run ahk file from command-line: write path tp AutoHotkey executable and what file to run, eg.:
 
@@ -52,23 +67,24 @@ or
 
 click 'run script' from the right-click menu on the ahk-file
 
-#### Stop script
+**Stop script**
 
 `Alt+Esc`
 
-### use nvim for committing code from terminal
-
-just `"vim"` won't do. Or any other editor.
+### Use (n)vim as commit message tool
 
 `git config --global core.editor "nvim"`
 
-### install git delta (better git diff)
+Just `"vim"` won't do. It'll cause an error.
+
+### Install git delta (better git diff)
 
 visit: https://dandavison.github.io/delta/installation.html
 
-+-----------------+------------------------------------------------+
-| Debian / Ubuntu | `sudo dpkg -i git-delta-musl_0.16.5_amd64.deb` |
-+-----------------+------------------------------------------------+
+| Debian / Ubuntu | `sudo dpkg -i git-delta-musl_1.16.5_amd64.deb` |
+| --------------- | :--------------------------------------------: |
+
+**Usage**
 
 `git diff | delta`
 
@@ -76,13 +92,63 @@ see more
 
 https://www.youtube.com/watch?v=91p1Fp7Db5c
 
-## Keyboard shortcuts
+## Utilities
+
+### Markdownpreview
+
+Toggle markdown preview
+
+1. navigate to md file
+
+2. `<leader>mark`
 
 **Enter Neovim file explorer**
 
 ```bash
 nvim .
 ```
+
+### Lazygit
+
+Open
+
+`[space] gg`
+
+Use editor way to commit:
+
+`C`
+
+Edit file in new modal:
+
+`e`
+
+Open file in default code editor:
+
+`o`
+
+### Toggleterm
+
+**Open:**
+
+- `F7`
+- ahk: `ctrl+ø`
+
+
+### Fuzzy finder
+
+**Fuzzy finder** 
+
+`[Ctrl+p]`
+
+**Fuzzy finder (git repo)** 
+
+notice: file must be added/tracked in order for it to appear
+
+`[space] pf`
+
+**Search in files** 
+
+`[space] ps`
 
 ### Neovim
 
@@ -92,97 +158,12 @@ nvim .
 
 Space refereres til i configs som `<leader>` forresten.
 
-**Fuzzy finder** 
-
-`[space] pf`
-
-**Fuzzy finder (git repo)** 
-
-notice: file must be added/tracked in order for it to appear
-
-`[Ctrl+p]`
-
-**Search in files** 
-
-`[space] ps`
-
-**LazyGit**
-
-`[space] gg`
-
-**Toggleterm**
-
-`[F7]`
-
-Autohotkey: `ctrl+ø`
-
 **Multiple cursors**
 
 Marker valgt frase i visual mode
 
 `Ctrl+n` / `Ctrl+N` for å cycle frem/tilbake
 
-**Vim Fugitive**
+`Ctrl+Q` for å fjerne valg
 
-`:G`
-
-`:Gclog` List changes
-
-Commit maps  
-
-cc (gc)                     Create a commit.
-
-ca (gc!)                     Amend the last commit and edit the message.
-
-ce (gcn!)                      Amend the last commit without editing the message.
-
-cw                      Reword the last commit.
-
-cvc                     Create a commit with -v.
-
-cva                     Amend the last commit with -v
-
-cf                      Create a `fixup!` commit for the commit under the
-                        cursor.
-
-cF                      Create a `fixup!` commit for the commit under the
-                        cursor and immediately rebase it.
-
-cs                      Create a `squash!` commit for the commit under the
-                        cursor.
-
-cS                      Create a `squash!` commit for the commit under the
-                        cursor and immediately rebase it.
-
-cA                      Create a `squash!` commit for the commit under the
-                        cursor and edit the message.
-
-c<Space>                Populate command line with ":Git commit ".
-
-                                                *fugitive_cr*
-crc                     Revert the commit under the cursor.
-
-crn                     Revert the commit under the cursor in the index and
-                        work tree, but do not actually commit the changes.
-
-cr<Space>               Populate command line with ":Git revert ".
-
-                                                *fugitive_cm*
-cm<Space>               Populate command line with ":Git merge ".
-
-c?                      Show this help.
-
-                                                *fugitive_cb*
-                                                *fugitive_co*
-Checkout/branch maps  
-
-coo                     Check out the commit under the cursor.
-
-cb<Space>               Populate command line with ":Git branch ".
-
-co<Space>               Populate command line with ":Git checkout ".
-
-cb?                     Show this help.
-co?
-
-
+`Ctrl+1` for å hoppe over en occurence

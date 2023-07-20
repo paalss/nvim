@@ -14,7 +14,7 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
      - kanskje det hjelper å bruke vim-fugitive....?
         - kan uansett ikke bruke vanlig vim som git default editor, da får man error
           - det funker i VScode terminal da, selv med nvim
-- etter å ha åpnet :DiffviewFileHistory el. så kan man ikke kjøre leader pv eller noe! whyyyy
+            - kanskje det bare funker i VSCode
 - enable kommenter-ut for insert mode også. gc funker bare i visual mode så langt. se dokumentasjonen til de som lagde dette verktøyet (tpope?)
 
 ## Git
@@ -30,6 +30,8 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
 
 *: Kan lazygit dette? Eller fugitive eller forgit?
 
+Lazygit kan ta deg med til gjeldende fil, ja.
+
 ## Finn kode/filer
 
 | ønske                         | verktøy                |
@@ -43,8 +45,6 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
 | ✅jump to declaration          | tror jeg er installert |
 
 ## Markdown
-
--   markdown-preview
 
 -   markdown-completion (listepunkter)
 
@@ -64,7 +64,9 @@ UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var
 |                      |                                                      |
 
 -   VSCode features
-    -   dupliser linje (ctrl+alt+opp/ned)
+    - visual mode flytting av flere linjer på én gang
+    - mus-middel-tast-marker i VS Code. Dupliser selectionen by place
+        - visual multi kan sikkert dette
     -   at IDE husker bufferne du hadde åpne når du sist dro til den mappen
     -  gitsigns
     - gitlens git blame 
