@@ -82,7 +82,7 @@ Just `"vim"` won't do. It'll cause an error.
 visit: https://dandavison.github.io/delta/installation.html
 
 | Debian / Ubuntu | `sudo dpkg -i git-delta-musl_1.16.5_amd64.deb` |
-| --------------- | :--------------------------------------------: |
+| --------------- | ---------------------------------------------- |
 
 **Usage**
 
@@ -109,6 +109,8 @@ nvim .
 ```
 
 ### Lazygit
+
+Lazygit is configured to use git delta. Make sure to either install that or remove that `pager` option in config.yml.
 
 Open
 
@@ -156,7 +158,7 @@ Open file in default code editor:
 ----
 **Column selection**
 
-. `[ctrl]+[up/down arrowkey]`
+`[ctrl]+[up/down arrowkey]`
 
 
 **Multiple cursors**
