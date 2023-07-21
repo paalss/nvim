@@ -1,4 +1,4 @@
-# Påls Neovim config
+# Pål's Neovim config
 
 Built on
 
@@ -100,7 +100,7 @@ Toggle markdown preview
 
 1. navigate to md file
 
-2. `<leader>mark`
+2. `[space] mark`
 
 **Enter Neovim file explorer**
 
@@ -114,9 +114,9 @@ Open
 
 `[space] gg`
 
-Use editor way to commit:
+Commit using git's default configured editor
 
-`C`
+`C` (capital c)
 
 Edit file in new modal:
 
@@ -128,21 +128,19 @@ Open file in default code editor:
 
 ### Toggleterm
 
-**Open:**
+**Toggle open/close**
 
 - `F7`
-- ahk: `ctrl+ø`
+- ahk: `[ctrl]+ø`
 
 
 ### Fuzzy finder
 
-**Fuzzy finder** 
+**Search all filenames** 
 
-`[Ctrl+p]`
+`[Ctrl]+p`
 
-**Fuzzy finder (git repo)** 
-
-notice: file must be added/tracked in order for it to appear
+**Search all git repo tracked files** 
 
 `[space] pf`
 
@@ -150,20 +148,25 @@ notice: file must be added/tracked in order for it to appear
 
 `[space] ps`
 
-### Neovim
+### Vim visual multi
 
-**Return to Neovim explorer**
+1. Visual mode `v`
+2. Enter  visual multi mode `[ctrl]+n`
 
-`[space] pv`
+----
+**Column selection**
 
-Space refereres til i configs som `<leader>` forresten.
+. `[ctrl]+[up/down arrowkey]`
+
 
 **Multiple cursors**
 
-Marker valgt frase i visual mode
+`[Ctrl]+n` / `[Ctrl]+N` to add mode markings
 
-`Ctrl+n` / `Ctrl+N` for å cycle frem/tilbake
 
-`Ctrl+Q` for å fjerne valg
+### Neovim
 
-`Ctrl+1` for å hoppe over en occurence
+**Return to Neovim explorer**
+ 
+`[space] pv`
+ 
