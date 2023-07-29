@@ -234,6 +234,18 @@ Detailed information on how to use this plugin can be found in :h nvim-surround.
 
 `[ctrl]+e`
 
+### Colorshceme (Catppuccin)
+
+**set colorscheme**
+
+eg. `:colorscheme catppuccin-mocha`
+
+- `catppuccin`
+- `catppuccin-latte`
+- `catppuccin-frappe`
+- `catppuccin-macchiato`
+- `catppuccin-mocha`
+
 ### Neovim
 
 **Return to Neovim explorer**
