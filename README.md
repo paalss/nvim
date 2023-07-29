@@ -206,13 +206,13 @@ operator, which stands for "you surround". It can be used via
 associated with {char}. For example, `ysa")` means "you surround around quotes
 with parentheses".
 
-- `ys` (you surround/add)
-- `cs` (change surrounding)
-- `ds` (delete surrounding)
-
 **Surround visual selection**
 
 `S` (uppercase)
+
+- `ys` (you surround/add)
+- `cs` (change surrounding)
+- `ds` (delete surrounding)
 
 **W/o visual selection**
 
