@@ -42,10 +42,11 @@ return require('packer').startup(function(use)
             "MunifTanjim/nui.nvim",
         }
     }
+    use 'martinsione/darkplus.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
     -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
     use('nvim-tree/nvim-web-devicons') -- OPTIONAL: for file icons
-    use('lewis6991/gitsigns.nvim')  -- OPTIONAL: for git status
+    use('lewis6991/gitsigns.nvim')     -- OPTIONAL: for git status
     use('romgrk/barbar.nvim')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('mbbill/undotree')
@@ -81,9 +82,9 @@ return require('packer').startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
 end)

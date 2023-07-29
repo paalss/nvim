@@ -1,7 +1,7 @@
 function ColorMyPencils(color)
 	-- set the color scheme
 	-- default color settes til rose-pine
-	color = color or "catppuccin"
+	color = color or "darkplus"
 	vim.cmd.colorscheme(color)
 
 	-- set transparent background
