@@ -50,6 +50,11 @@ Lazygit kan ta deg med til gjeldende fil, ja.
 
 - Table of Contents til markdown
 
+## HTML
+
+- Open in browser (slik som med markdown preview)
+- emmet (auto closing tag, encapsulate with `<>`)
+
 ## Annet
 
 | øsnke                | verktøy                                              |
