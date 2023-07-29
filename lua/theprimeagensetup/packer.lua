@@ -15,6 +15,15 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                --  Configuration here, or leave empty to use defaults
+            })
+        end
+    })
     use 'sindrets/diffview.nvim'
     use {
         "mg979/vim-visual-multi",
@@ -25,7 +34,7 @@ return require('packer').startup(function(use)
         branch = "v2.x",
         requires = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "nvim-tree/nvim-web-devicons",     -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
         }
     }
@@ -75,9 +84,9 @@ return require('packer').startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
 end)
