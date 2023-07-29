@@ -228,12 +228,21 @@ with parentheses".
 
 Detailed information on how to use this plugin can be found in :h nvim-surround.usage.
 
+### File explorer (Neo tree)
+
+**Open file explorer**
+
+`[ctrl]+e`
+
 ### Neovim
 
 **Return to Neovim explorer**
  
 `[space] pv`
 
-**Open file explorer**
+**Paste from OS clipboard**
 
-`[ctrl]+e`
+1. insert mode
+2. disable helper features like auto-newline-comments: `:set paste`
+3. paste: `[shift]+[right mouse click]`
+4. re-enable helper features: `:set nopaste`
