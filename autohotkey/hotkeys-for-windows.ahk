@@ -59,3 +59,10 @@
 !Esc::ExitApp
 
 #HotIf
+
+#HotIf WinActive("ahk_class MozillaWindowClass")
+
+; ^F11::Send ^{PgUp}
+; ^F12::Send ^{PgDn}
+
+#HotIf
