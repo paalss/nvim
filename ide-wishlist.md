@@ -76,16 +76,12 @@ Lazygit kan ta deg med til gjeldende fil, ja.
     - mus-middel-tast-marker i VS Code. Dupliser selectionen by place
         - visual multi kan sikkert dette
     -   at IDE husker bufferne du hadde åpne når du sist dro til den mappen
-    -  gitsigns
-    - gitlens git blame 
     - rename filer
     - file explorer
         - collapse all folders
         - open all folders
-    - tabs
-       - tastatursnarveier likens som i VSCode og firefox
-    - https://github.com/windwp/nvim-autopairs {}
     - innrykk justering med tab og shift tab
+    - indentination signs (rulers)
     - autokey/autohotkey for å lage curly braces slik som på mac 
 
 
