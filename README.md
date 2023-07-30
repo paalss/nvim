@@ -14,6 +14,7 @@
   * [Install git delta (better git diff)](#install-git-delta-better-git-diff)
 - [Utilities](#utilities)
   * [Markdown preview](#markdown-preview)
+  * [Language errors (LSP zero)](#language-errors-lsp-zero)
   * [Git](#git)
     + [Editor git signs (Gitsigns)](#editor-git-signs-gitsigns)
     + [Source control (Lazygit)](#source-control-lazygit)
@@ -145,6 +146,12 @@ Toggle markdown preview
 ```bash
 nvim .
 ```
+
+### Language errors (LSP zero)
+
+1. move cursor over line
+2. :lua vim.diagnostic.open_float()
+
 
 ### Git
 
