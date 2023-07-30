@@ -14,11 +14,16 @@
   * [Install git delta (better git diff)](#install-git-delta-better-git-diff)
 - [Utilities](#utilities)
   * [Markdown preview](#markdown-preview)
-  * [Source control (Lazygit)](#source-control-lazygit)
+  * [Git](#git)
+    + [Editor git signs (Gitsigns)](#editor-git-signs-gitsigns)
+    + [Source control (Lazygit)](#source-control-lazygit)
   * [In-Neovim-buffer terminal (Toggleterm)](#in-neovim-buffer-terminal-toggleterm)
-  * [Fuzzy finder (telescope)](#fuzzy-finder-telescope)
+  * [File navigation](#file-navigation)
+    + [Fuzzy finder (telescope)](#fuzzy-finder-telescope)
+    + [File explorer (Neo tree)](#file-explorer-neo-tree)
   * [Multiple cursors (Vim visual multi)](#multiple-cursors-vim-visual-multi)
   * [Surround (Nvim surround)](#surround-nvim-surround)
+  * [Colorshceme/theme (darkplus)](#colorshcemetheme-darkplus)
   * [Neovim](#neovim)
 
 <!-- tocstop -->
@@ -141,7 +146,15 @@ Toggle markdown preview
 nvim .
 ```
 
-### Source control (Lazygit)
+### Git
+
+#### Editor git signs (Gitsigns)
+
+**Git blame line**
+
+`[space] tb`
+
+#### Source control (Lazygit)
 
 Lazygit is configured to use git delta. Make sure to either install that or remove that `pager` option in config.yml.
 
@@ -153,7 +166,7 @@ Lazygit is configured to use git delta. Make sure to either install that or remo
 
 `[space] glo`
 
-**Open file history**
+**Open git history for this file**
 
 `[space] glgp`
 
@@ -177,7 +190,9 @@ Lazygit is configured to use git delta. Make sure to either install that or remo
 - ahk: `[ctrl]+ø`
 
 
-### Fuzzy finder (telescope)
+### File navigation
+
+#### Fuzzy finder (telescope)
 
 **Search all filenames** 
 
@@ -190,6 +205,14 @@ Lazygit is configured to use git delta. Make sure to either install that or remo
 **Search in files** 
 
 `[space] ps`
+
+
+#### File explorer (Neo tree)
+
+**Open file explorer**
+
+`[ctrl]+e`
+
 
 ### Multiple cursors (Vim visual multi)
 
@@ -235,12 +258,6 @@ with parentheses".
     delete(functi*on calls)     dsf             function calls
 
 Detailed information on how to use this plugin can be found in :h nvim-surround.usage.
-
-### File explorer (Neo tree)
-
-**Open file explorer**
-
-`[ctrl]+e`
 
 ### Colorshceme/theme (darkplus)
 
