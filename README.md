@@ -277,3 +277,8 @@ eg. `:colorscheme darkplus`
 2. disable helper features like auto-newline-comments: `:set paste`
 3. paste: `[shift]+[right mouse click]`
 4. re-enable helper features: `:set nopaste`
+
+**Indent line**
+
+1. `i`
+2. `[ctrl]+t` / `[ctrl]+d`
