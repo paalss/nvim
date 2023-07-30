@@ -145,9 +145,17 @@ nvim .
 
 Lazygit is configured to use git delta. Make sure to either install that or remove that `pager` option in config.yml.
 
-**Open**
+**Open overview**
 
 `[space] gg`
+
+**Open git history**
+
+`[space] glo`
+
+**Open file history**
+
+`[space] glgp`
 
 **Commit using git's default configured editor (nvim)**
 
