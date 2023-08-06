@@ -19,6 +19,7 @@
     + [Editor git signs (Gitsigns)](#editor-git-signs-gitsigns)
     + [Source control (Lazygit)](#source-control-lazygit)
   * [In-Neovim-buffer terminal (Toggleterm)](#in-neovim-buffer-terminal-toggleterm)
+  * [Project navitation](#project-navitation)
   * [File navigation](#file-navigation)
     + [Fuzzy finder (telescope)](#fuzzy-finder-telescope)
     + [File explorer (Neo tree)](#file-explorer-neo-tree)
