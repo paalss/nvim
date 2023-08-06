@@ -1,12 +1,7 @@
 ; limit hotkeys to console windows (Windows subsystem for linux / Ubuntu)
 ; use Window Spy to find class names & other info about windows: https://amourspirit.github.io/AutoHotkey-Snippit/WindowSpy.html
-#HotIf WinActive("ahk_class ConsoleWindowClass")
 
-; keyboard-shortcuts/remappings for windows users:
-; ! Alt
-; <^>! AltGr
-; ^ ctrl
-; + Shift
+!Esc::ExitApp
 
 ; ---------- "TEXT" ----------
 
@@ -15,6 +10,13 @@
 ^+8::SendText "{" ; Ctrl Shift 8
 ^+9::SendText "}" ; Ctrl Shift 9
 
+#HotIf WinActive("ahk_class ConsoleWindowClass")
+
+; keyboard-shortcuts/remappings for windows users:
+; ! Alt
+; <^>! AltGr
+; ^ ctrl
+; + Shift
 
 ; ---------- "REMAP" ----------
 
@@ -56,9 +58,13 @@
 ^+t:: Send "{Esc}:BufferRestore{Enter}"
 ^w:: Send "{Esc}:BufferClose{Enter}"
 
-!Esc::ExitApp
+#HotIf
+
+#HotIf WinActive("ahk_class SunAwtFrame")
+
 
 #HotIf
+
 
 #HotIf WinActive("ahk_class MozillaWindowClass")
 
