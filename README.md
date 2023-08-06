@@ -196,6 +196,12 @@ Lazygit is configured to use git delta. Make sure to either install that or remo
 - `F7`
 - ahk: `[ctrl]+ø`
 
+### Project navitation
+
+Open recent project
+
+1. Open Lazygit
+2. [ctrl]+r
 
 ### File navigation
 
