@@ -92,3 +92,4 @@ https://markdownbeautifier.com/
 - prevent neovim newline --
 - kill terminal, new terminal 
 (kanskje man kan skrive `exit` og så åpne på nytt?)
+- adjacent.nvim
