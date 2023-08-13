@@ -51,7 +51,7 @@ local plugins = {
     ('nvim-tree/nvim-web-devicons'), -- OPTIONAL: for file icons
     ('lewis6991/gitsigns.nvim'),     -- OPTIONAL: for git status
     ('romgrk/barbar.nvim'),
-    'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' },
+    'nvim-treesitter/nvim-treesitter', { build = ':TSUpdate' },
     ('mbbill/undotree'),
     ({
         "kdheepak/lazygit.nvim",
@@ -68,7 +68,7 @@ local plugins = {
     }, -- ('tpope/vim-fugitive')
     ({
         "iamcco/markdown-preview.nvim",
-        run = function()
+        build = function()
             vim.fn["mkdp#util#install"]()
         end
     }),
@@ -80,7 +80,7 @@ local plugins = {
             {
                 -- Optional
                 'williamboman/mason.nvim',
-                run = function()
+                build = function()
                     pcall(vim.cmd, 'MasonUpdate')
                 end
             }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
