@@ -13,11 +13,11 @@ return { {
         local cmp = require('cmp')
         cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end
-}, ('mbbill/undotree'), ({
+}, 'mbbill/undotree', {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
     dependencies = { "nvim-lua/plenary.nvim" }
-}), {
+}, {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     dependencies = {                     -- LSP Support

@@ -25,8 +25,6 @@
     - [Project navitation](#project-navitation)
     - [File navigation](#file-navigation)
       - [Fuzzy finder (telescope)](#fuzzy-finder-telescope)
-      - [File explorer (Neo tree)](#file-explorer-neo-tree)
-    - [Multiple cursors (Vim visual multi)](#multiple-cursors-vim-visual-multi)
     - [Surround (Nvim surround)](#surround-nvim-surround)
     - [Colorshceme/theme (darkplus)](#colorshcemetheme-darkplus)
     - [Neovim](#neovim)
@@ -161,9 +159,11 @@ nvim .
 
 #### Editor git signs (Gitsigns)
 
-**Git blame line**
-
-`[space] tb`
+```
+vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
+vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+```
 
 #### Source control (Lazygit)
 
