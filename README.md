@@ -62,7 +62,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ### Install dependencies
 
 ```bash
-nvim lua/theprimeagensetup/packer
+nvim lua/setup/packer
 ```
 
 `:so`
