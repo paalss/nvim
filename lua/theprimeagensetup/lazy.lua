@@ -18,13 +18,13 @@ local plugins = {
     },
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
+        version = '0.1.1',
         -- or                            , branch = '0.1.x',
         dependencies = {{'nvim-lua/plenary.nvim'}}
     },
     {
         "kylechui/nvim-surround",
-        tag = "*", -- Use for stability; omit to  `main` branch for the latest features
+        version = "*", -- Use for stability; omit to  `main` branch for the latest features
         config = function()
             require("nvim-surround").setup({
                 --  Configuration here, or leave empty to  defaults
@@ -65,7 +65,7 @@ local plugins = {
     'tpope/vim-commentary',
     {
         "akinsho/toggleterm.nvim",
-        tag = '*',
+        version = '*',
         config = function()
             require("toggleterm").setup()
         end
