@@ -85,6 +85,10 @@ Lazygit kan ta deg med til gjeldende fil, ja.
     - autokey/autohotkey for å lage curly braces slik som på mac 
 
 
+- Kickstart features:
+  - nvim med convential commits greie som autocompleter feature til `feature(scope): Title` Det er nice
+
+
 https://markdownbeautifier.com/
 
 
