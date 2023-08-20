@@ -1,4 +1,4 @@
-vim.g.mapleader = " "
+
 -- returnere til nvim file explorer
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- space pv
