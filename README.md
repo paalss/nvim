@@ -52,12 +52,11 @@ LuaJIT 2.1.0-beta3
 
 [Install neovim](docs/neovim-install.md)
 
-### Install package manager: packer.nvim
+**Install this config**
 
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
+Clone this into `~/.config`
+
+_Path to init.lua should be:_ `~/.config/nvim/init.lua`
 
 ### Install dependencies
 
