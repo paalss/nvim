@@ -61,13 +61,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 ### Install dependencies
 
-```bash
-nvim lua/setup/packer
-```
-
-`:so`
-
-`:PackerSync`
+`:Lazy`
 
 **dependency sindrets/gitdiff requires**
 - Git ≥ 2.31.0
