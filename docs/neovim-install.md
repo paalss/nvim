@@ -36,11 +36,14 @@ Installasjonen over gir bare 0.4.3, desverre. Versjon 0.9.0 er ikke tilgjengelig
 
 Last ned tarball, se https://github.com/neovim/neovim/releases/tag/v0.9.0
 
-```bash
-tar xzvf nvim-linux64.tar.gz
-```
-
 Flytt til `~/.local/bin/`
+
+```bash
+cd ~/.local/bin
+tar xzvf nvim-linux64.tar.gz
+rm nvim-linux64.tar.gz
+ln -s ./nvim-linux64/bin/nvim ./nvim
+```
 
 Extract...
 
