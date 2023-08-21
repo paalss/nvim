@@ -40,12 +40,10 @@ Flytt til `~/.local/bin/`
 
 ```bash
 cd ~/.local/bin
-tar xzvf nvim-linux64.tar.gz
+tar xzvf nvim-linux64.tar.gz # extract
 rm nvim-linux64.tar.gz
-ln -s ./nvim-linux64/bin/nvim ./nvim
+ln -s ./nvim-linux64/bin/nvim ./nvim # create symbolic link
 ```
-
-Extract...
 
 Følg denne tutorialen, den er steinbra :+1: https://www.youtube.com/watch?v=2wapxsfzLho&list=LL&index=5
 
