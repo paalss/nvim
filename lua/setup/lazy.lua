@@ -64,13 +64,7 @@ local plugins = {
         dependencies = { "nvim-lua/plenary.nvim" }
     },
     'tpope/vim-commentary',
-    {
-        "akinsho/toggleterm.nvim",
-        version = '*',
-        config = function()
-            require("toggleterm").setup()
-        end
-    },
+    'numToStr/FTerm.nvim',
     -- ('tpope/vim-fugitive')
     {
         "iamcco/markdown-preview.nvim",
