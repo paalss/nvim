@@ -109,6 +109,25 @@ click 'run script' from the right-click menu on the ahk-file
 
 Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm).
 
+### Install Lazygit
+
+As explained in https://github.com/jesseduffield/lazygit#ubuntu,
+
+run
+
+```bash
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+```
+
+Verify installation
+
+```bash
+lazygit --version
+```
+
 ### Install git delta (better git diff)
 
 visit: https://dandavison.github.io/delta/installation.html
@@ -156,9 +175,12 @@ nvim .
 
 `[space] tb`
 
-#### Source control (Lazygit)
+#### Source control (Lazygit.nvim)
 
-Lazygit is configured to use git delta. Make sure to either install that or remove that `pager` option in config.yml.
+Requirements:
+
+- Lazygit has to be installed
+- Lazygit is configured to use **git delta**. Make sure to either install that or remove that `pager` option in config.yml.
 
 **Open overview**
 
