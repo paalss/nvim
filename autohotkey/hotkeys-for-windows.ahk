@@ -34,7 +34,7 @@
 
 ; ---------- "TOGGLETERM" ----------
 
-^ø::Send "<A-i>" ; (toggleterm.lua uses this button) 
+^ø::Send "<A-i>" ; (fterm.lua uses this button) 
 
 
 ; ---------- "BARBAR" ----------
