@@ -90,11 +90,9 @@ https://www.autohotkey.com/
 
 **Start script**
 
-Run ahk file from command-line: write path tp AutoHotkey executable and what file to run, eg.:
+Run ahk file
 
-```bash
-timeout 0.1s bash autohotkey/start-ahk.sh
-```
+`:lua Ahk()`
 
 or
 
