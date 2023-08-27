@@ -6,7 +6,6 @@
 
 - [Neovim info](#neovim-info)
 - [Install & setup Neovim](#install--setup-neovim)
-  * [Install package manager: packer.nvim](#install-package-manager-packernvim)
   * [Install dependencies](#install-dependencies)
   * [Update git on ubuntu](#update-git-on-ubuntu)
   * [Setup AutoHotkey (Windows&WSL)](#setup-autohotkey-windowswsl)
@@ -54,7 +53,7 @@ LuaJIT 2.1.0-beta3
 
 **Install this config**
 
-Clone this into `~/.config`
+Clone this repo into `~/.config`
 
 _Path to init.lua should be:_ `~/.config/nvim/init.lua`
 
@@ -106,7 +105,7 @@ click 'run script' from the right-click menu on the ahk-file
 
 `git config --global core.editor "nvim"`
 
-Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm.
+Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm).
 
 ### Install git delta (better git diff)
 
@@ -185,7 +184,7 @@ Lazygit is configured to use git delta. Make sure to either install that or remo
 
 **Toggle open/close**
 
-- `F7`
+- `[Alt]+i`
 - ahk: `[ctrl]+ø`
 
 ### Project navitation
@@ -193,7 +192,7 @@ Lazygit is configured to use git delta. Make sure to either install that or remo
 Open recent project
 
 1. Open Lazygit
-2. [ctrl]+r
+2. `[ctrl]+r`
 
 ### File navigation
 
