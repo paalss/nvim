@@ -23,8 +23,7 @@
 
 ; move line
 
-!k::Send "{Esc}:m-2{Enter}"
-!j::Send "{Esc}:m{+}{Enter}"
+; (see remap.lua)
 
 ; duplicate line
 
