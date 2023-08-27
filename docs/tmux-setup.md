@@ -5,27 +5,57 @@ apt install tmux
 ```
 
 Start a new session
+
 ```bash
 tmux new
 ```
 
 Stop session
 
-`[Ctrl]+b d` / `exit`
+`exit`
 
+Detach from session
 
-## Create new panes
+`[Ctrl]+b d`
+
+List active sessions
+
+`tmux ls`
+
+Re-attach to session
+
+`tmux attack -t [nubmer]`
+
+## Panes
+
+### Create new pane
 
 To the right
 
 `[Ctrl]+b %`
 
+At the bottom
+
 `[Ctrl]+b "`
 
-## Navigate between panes
+### Navigate between panes
 
-`[Ctrl]+b` -- release ctrl -- `[piltast]`
+`[Ctrl]+b` `[arrowkey]`
 
-Resize panes
+### Resize panes
 
-`[Ctrl]+b` -- hold ctrl -- `[piltast]`
+`[Ctrl]+b+[arrowkey]`
+
+## Windows
+
+### Create new window
+
+`[ctrl]+b` `c`
+
+### Navigate windows
+
+`[Ctrl]+b` `[number]`
+
+### Rename window
+
+`[Ctrl]+b` `,`
