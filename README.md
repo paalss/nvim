@@ -87,6 +87,8 @@ AutoHotkey is available for Windows, which you should be using if you use Window
 
 https://www.autohotkey.com/
 
+Download v2.0, launch `AutoHotkey_2.x.x_setup`, accept the default suggestions
+
 **Start script**
 
 Run ahk file
@@ -111,7 +113,9 @@ Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assu
 
 visit: https://dandavison.github.io/delta/installation.html
 
-| Debian / Ubuntu | `sudo dpkg -i git-delta-musl_1.16.5_amd64.deb` |
+Download the deb for Debian / Ubuntu
+
+| Debian / Ubuntu | `sudo dpkg -i git-delta-musl_x.xx.x_amd64.deb` |
 | --------------- | ---------------------------------------------- |
 
 **Usage**
