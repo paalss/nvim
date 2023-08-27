@@ -32,9 +32,9 @@
 !+j::Send "{Esc}yyp"
 
 
-; ---------- "TOGGLETERM" ----------
+; ---------- "FTerm" ----------
 
-^ø::Send "<A-i>" ; (fterm.lua uses this button) 
+^ø::Send "{Alt down}i{Alt up}" ; (fterm.lua uses this button)
 
 
 ; ---------- "BARBAR" ----------
