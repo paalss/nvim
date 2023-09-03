@@ -299,7 +299,7 @@ eg. `:colorscheme darkplus`
 
 **Return to Neovim explorer**
  
-`[space] pv`
+`[space] vv`
 
 **Paste from OS clipboard**
 

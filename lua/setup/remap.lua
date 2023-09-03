@@ -1,7 +1,7 @@
 
 -- returnere til nvim file explorer
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- space pv
+vim.keymap.set("n", "<leader>vv", vim.cmd.Ex) -- space pv
 
 -- move line
 vim.keymap.set("n", "<A-k>", ":m-2<CR>")  -- Alt k --> move line down
