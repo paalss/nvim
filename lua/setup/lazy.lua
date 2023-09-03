@@ -98,7 +98,6 @@ local plugins = {
             { 'L3MON4D3/LuaSnip' }                      -- Required
         }
     },
-    "rafamadriz/friendly-snippets"
 }
 
 require("lazy").setup(plugins, {})
