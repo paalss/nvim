@@ -1,6 +1,7 @@
 {
   "FTerm.nvim": { "branch": "master", "commit": "d1320892cc2ebab472935242d9d992a2c9570180" },
   "LuaSnip": { "branch": "master", "commit": "c4d6298347f7707e9757351b2ee03d0c00da5c20" },
+  "adjacent.nvim": { "branch": "main", "commit": "a555ab92d61aa6fbbfa1bfaef4633b663563f04e" },
   "barbar.nvim": { "branch": "master", "commit": "8cca17ea0ced3ba564e5da972a25600edafe7d7b" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
   "darkplus.nvim": { "branch": "main", "commit": "6101ffce60682208e9e076710299d189ce11c40d" },

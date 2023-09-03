@@ -1,4 +1,6 @@
 local builtin = require('telescope.builtin')
+require('telescope').load_extension("adjacent")
+vim.keymap.set('n', '<leader>adj', "<cmd>Telescope adjacent<CR>", { noremap = true, silent = false })
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>pf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', function()
