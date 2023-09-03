@@ -7,7 +7,9 @@
 
 ::ftw::Free the whales ; ved å skrive ftw og mellomrom/tab, blir autocorrect til Free the whales.
 
-::pre::_pre-merge-request.sh has been run
+::_pre::_pre-merge-request.sh
+::prem::_pre-merge-request.sh has been run
+
 ^+8::SendText "{" ; Ctrl Shift 8
 ^+9::SendText "}" ; Ctrl Shift 9
 
