@@ -94,7 +94,7 @@ Download v2.0, launch `AutoHotkey_2.x.x_setup`, accept the default suggestions
 
 Run ahk file
 
-`:lua Ahk()`
+`:lua Ahk()` (might need to source `:so` `autohotkey/init.lua` first)
 
 or
 
