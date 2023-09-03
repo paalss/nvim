@@ -1,10 +1,9 @@
-
 -- returnere til nvim file explorer
 
 vim.keymap.set("n", "<leader>vv", vim.cmd.Ex) -- space pv
 
 -- move line
-vim.keymap.set("n", "<A-k>", ":m-2<CR>")  -- Alt k --> move line down
+vim.keymap.set("n", "<A-k>", ":m-2<CR>") -- Alt k --> move line down
 vim.keymap.set("n", "<A-j>", ":m+<CR>")  -- Alt j --> mode line up
 
 -- duplicate line
