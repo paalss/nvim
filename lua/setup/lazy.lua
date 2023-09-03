@@ -16,6 +16,7 @@ local plugins = {
             require("nvim-autopairs").setup {}
         end
     },
+    'djoshea/vim-autoread',
     {
         'nvim-telescope/telescope.nvim',
         version = '0.1.1',
@@ -60,7 +61,7 @@ local plugins = {
     },
     -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    'lewis6991/gitsigns.nvim',  -- OPTIONAL: for git status
+    'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
     'romgrk/barbar.nvim',
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
@@ -82,7 +83,7 @@ local plugins = {
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
-        dependencies = {        -- LSP Support
+        dependencies = {                 -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
             {
                 -- Optional
@@ -92,9 +93,9 @@ local plugins = {
                 end
             }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },            -- Required
-            { 'hrsh7th/cmp-nvim-lsp' },        -- Required
-            { 'L3MON4D3/LuaSnip' }             -- Required
+            { 'hrsh7th/nvim-cmp' },                     -- Required
+            { 'hrsh7th/cmp-nvim-lsp' },                 -- Required
+            { 'L3MON4D3/LuaSnip' }                      -- Required
         }
     }
 }
