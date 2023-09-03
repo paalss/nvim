@@ -90,6 +90,13 @@ local plugins = {
             { 'L3MON4D3/LuaSnip' }                  -- Required
         }
     }
+	'martinsione/darkplus.nvim',
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 }
 
 require("lazy").setup(plugins, {})
