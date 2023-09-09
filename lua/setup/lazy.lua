@@ -11,6 +11,47 @@ vim.g.mapleader = " "
 
 local plugins = {
     {
+        -- LSP Configuration & Plugins
+        'neovim/nvim-lspconfig',
+        dependencies = {
+        -- Automatically install LSPs to stdpath for neovim
+        { 'williamboman/mason.nvim', config = true },
+        'williamboman/mason-lspconfig.nvim',
+
+        -- Useful status updates for LSP
+        -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+        { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+
+        -- Additional lua configuration, makes nvim stuff amazing!
+        'folke/neodev.nvim',
+        },
+    },
+    {
+        -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+        -- Snippet Engine & its associated nvim-cmp source
+        'L3MON4D3/LuaSnip',
+        'saadparwaiz1/cmp_luasnip',
+
+        -- Adds LSP completion capabilities
+        'hrsh7th/cmp-nvim-lsp',
+
+        -- Adds a number of user-friendly snippets
+        'rafamadriz/friendly-snippets',
+        },
+    },
+    {
+        -- Add indentation guides even on blank lines
+        'lukas-reineke/indent-blankline.nvim',
+        -- Enable `lukas-reineke/indent-blankline.nvim`
+        -- See `:help indent_blankline.txt`
+        opts = {
+        char = '┊',
+        show_trailing_blankline_indent = false,
+        },
+    },
+    {
         "windwp/nvim-autopairs",
         config = function()
             require("nvim-autopairs").setup {}
@@ -80,24 +121,91 @@ local plugins = {
             vim.fn["mkdp#util#install"]()
         end
     },
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        dependencies = {                 -- LSP Support
-            { 'neovim/nvim-lspconfig' }, -- Required
-            {
-                -- Optional
-                'williamboman/mason.nvim',
-                build = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end
-            }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },                     -- Required
-            { 'hrsh7th/cmp-nvim-lsp' },                 -- Required
-            { 'L3MON4D3/LuaSnip' }                      -- Required
-        }
-    },
+	-- {
+	-- 	'L3MON4D3/LuaSnip',
+	-- 	event = 'InsertEnter',
+	-- 	dependencies = { 'rafamadriz/friendly-snippets' },
+	-- 	build = (not jit.os:find('Windows'))
+	-- 			and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
+	-- 		or nil,
+	-- 	-- stylua: ignore
+	-- 	keys = {
+	-- 		{
+	-- 			'<C-l>',
+	-- 			function() require('luasnip').expand_or_jump() end,
+	-- 			mode = { 'i', 's' },
+	-- 		},
+	-- 	},
+	-- 	opts = {
+	-- 		-- Don't store snippet history for less overhead
+	-- 		history = false,
+	-- 		-- Event on which to check for exiting a snippet's region
+	-- 		region_check_events = 'InsertEnter',
+	-- 		delete_check_events = 'InsertLeave',
+	-- 		ft_func = function()
+	-- 			return vim.split(vim.bo.filetype, '.', { plain = true })
+	-- 		end,
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		require('luasnip').setup(opts)
+	-- 		require('luasnip.loaders.from_vscode').lazy_load()
+	-- 		require('luasnip.loaders.from_lua').load({ paths = './snippets' })
+	-- 		vim.api.nvim_create_user_command('LuaSnipEdit', function()
+	-- 			require('luasnip.loaders.from_lua').edit_snippet_files()
+	-- 		end, {})
+	-- 	end,
+	-- },
+        
 }
 
 require("lazy").setup(plugins, {})
+
+
+-- [[ Configure nvim-cmp ]]
+-- See `:help cmp`
+local cmp = require 'cmp'
+local luasnip = require 'luasnip'
+require('luasnip.loaders.from_vscode').lazy_load()
+luasnip.config.setup {}
+
+cmp.setup {
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end
+    },
+    mapping = cmp.mapping.preset.insert {
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete {},
+        ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true
+        },
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_locally_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, {'i', 's'}),
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, {'i', 's'})
+    },
+    sources = {{
+        name = 'nvim_lsp'
+    }, {
+        name = 'luasnip'
+    }}
+}
