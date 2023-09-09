@@ -121,40 +121,6 @@ local plugins = {
             vim.fn["mkdp#util#install"]()
         end
     },
-	-- {
-	-- 	'L3MON4D3/LuaSnip',
-	-- 	event = 'InsertEnter',
-	-- 	dependencies = { 'rafamadriz/friendly-snippets' },
-	-- 	build = (not jit.os:find('Windows'))
-	-- 			and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-	-- 		or nil,
-	-- 	-- stylua: ignore
-	-- 	keys = {
-	-- 		{
-	-- 			'<C-l>',
-	-- 			function() require('luasnip').expand_or_jump() end,
-	-- 			mode = { 'i', 's' },
-	-- 		},
-	-- 	},
-	-- 	opts = {
-	-- 		-- Don't store snippet history for less overhead
-	-- 		history = false,
-	-- 		-- Event on which to check for exiting a snippet's region
-	-- 		region_check_events = 'InsertEnter',
-	-- 		delete_check_events = 'InsertLeave',
-	-- 		ft_func = function()
-	-- 			return vim.split(vim.bo.filetype, '.', { plain = true })
-	-- 		end,
-	-- 	},
-	-- 	config = function(_, opts)
-	-- 		require('luasnip').setup(opts)
-	-- 		require('luasnip.loaders.from_vscode').lazy_load()
-	-- 		require('luasnip.loaders.from_lua').load({ paths = './snippets' })
-	-- 		vim.api.nvim_create_user_command('LuaSnipEdit', function()
-	-- 			require('luasnip.loaders.from_lua').edit_snippet_files()
-	-- 		end, {})
-	-- 	end,
-	-- },
         
 }
 
