@@ -41,21 +41,4 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>help", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-
 lsp.setup()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
