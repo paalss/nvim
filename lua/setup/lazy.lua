@@ -14,9 +14,9 @@ local plugins = {
         -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
         dependencies = {
-        -- Automatically install LSPs to stdpath for neovim
-        { 'williamboman/mason.nvim', config = true },
-        'williamboman/mason-lspconfig.nvim',
+            -- Automatically install LSPs to stdpath for neovim
+            { 'williamboman/mason.nvim', config = true },
+            'williamboman/mason-lspconfig.nvim',
 
         -- Useful status updates for LSP
         -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -65,6 +65,7 @@ local plugins = {
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
     "MaximilianLloyd/adjacent.nvim",
+    'ThePrimeagen/harpoon',
     {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to  `main` branch for the latest features
@@ -85,13 +86,6 @@ local plugins = {
             'nvim-tree/nvim-web-devicons',
             lazy = true
         }
-    },
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        dependencies = { "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim" }
     },
     'martinsione/darkplus.nvim',
     {
