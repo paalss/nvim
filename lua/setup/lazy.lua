@@ -18,27 +18,27 @@ local plugins = {
             { 'williamboman/mason.nvim', config = true },
             'williamboman/mason-lspconfig.nvim',
 
-        -- Useful status updates for LSP
-        -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+            -- Useful status updates for LSP
+            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+            { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
-        -- Additional lua configuration, makes nvim stuff amazing!
-        'folke/neodev.nvim',
+            -- Additional lua configuration, makes nvim stuff amazing!
+            'folke/neodev.nvim',
         },
     },
     {
         -- Autocompletion
         'hrsh7th/nvim-cmp',
         dependencies = {
-        -- Snippet Engine & its associated nvim-cmp source
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
+            -- Snippet Engine & its associated nvim-cmp source
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
 
-        -- Adds LSP completion capabilities
-        'hrsh7th/cmp-nvim-lsp',
+            -- Adds LSP completion capabilities
+            'hrsh7th/cmp-nvim-lsp',
 
-        -- Adds a number of user-friendly snippets
-        'rafamadriz/friendly-snippets',
+            -- Adds a number of user-friendly snippets
+            'rafamadriz/friendly-snippets',
         },
     },
     {
@@ -47,8 +47,8 @@ local plugins = {
         -- Enable `lukas-reineke/indent-blankline.nvim`
         -- See `:help indent_blankline.txt`
         opts = {
-        char = '┊',
-        show_trailing_blankline_indent = false,
+            char = '┊',
+            show_trailing_blankline_indent = false,
         },
     },
     {
@@ -115,8 +115,24 @@ local plugins = {
             vim.fn["mkdp#util#install"]()
         end
     },
-        
+    {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        dependencies = {                 -- LSP Support
+            { 'neovim/nvim-lspconfig' }, -- Required
+            {
+                -- Optional
+                'williamboman/mason.nvim',
+                build = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end
+            }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },                     -- Required
+            { 'hrsh7th/cmp-nvim-lsp' },                 -- Required
+            { 'L3MON4D3/LuaSnip' }                      -- Required
+        }
+    },
 }
 
 require("lazy").setup(plugins, {})
-
