@@ -8,7 +8,7 @@
 - [Install & setup Neovim](#install--setup-neovim)
   * [Install dependencies](#install-dependencies)
   * [Update git on ubuntu](#update-git-on-ubuntu)
-  * [Setup AutoHotkey (Windows&WSL)](#setup-autohotkey-windowswsl)
+  * [Setup AutoHotkey (for Windows)](#setup-autohotkey-for-windows)
   * [Use (n)vim as commit message tool](#use-nvim-as-commit-message-tool)
   * [Install Lazygit](#install-lazygit)
   * [Install git delta (better git diff)](#install-git-delta-better-git-diff)
@@ -18,14 +18,12 @@
   * [Git](#git)
     + [Editor git signs (Gitsigns)](#editor-git-signs-gitsigns)
     + [Source control (Lazygit.nvim)](#source-control-lazygitnvim)
-  * [In-Neovim-buffer terminal (Toggleterm)](#in-neovim-buffer-terminal-toggleterm)
+  * [In-Neovim-buffer terminal (FTerm)](#in-neovim-buffer-terminal-fterm)
   * [Project navitation](#project-navitation)
   * [File navigation](#file-navigation)
     + [Fuzzy finder (telescope)](#fuzzy-finder-telescope)
-    + [File explorer (Neo tree)](#file-explorer-neo-tree)
   * [Multiple cursors (Vim visual multi)](#multiple-cursors-vim-visual-multi)
   * [Surround (Nvim surround)](#surround-nvim-surround)
-  * [Colorshceme/theme (darkplus)](#colorshcemetheme-darkplus)
   * [Neovim](#neovim)
 
 <!-- tocstop -->
@@ -40,7 +38,7 @@ Close and reopen file to see changes
 
 ## Neovim info
 
-Built on
+This config is built on
 
 ````
 NVIM v0.9.0
@@ -49,6 +47,8 @@ LuaJIT 2.1.0-beta3
 ``````
 
 ## Install & setup Neovim
+
+Windows user? --> use WSL
 
 [Install neovim](docs/neovim-install.md)
 
@@ -78,7 +78,7 @@ sudo apt-get install git -y
 git --version
 ```
 
-### Setup AutoHotkey (Windows&WSL)
+### Setup AutoHotkey (for Windows)
 
 AutoHotkey makes it far more easier to create hotkeys/mappings.
 
@@ -207,7 +207,7 @@ Requirements:
 
 `o`
 
-### In-Neovim-buffer terminal (Toggleterm)
+### In-Neovim-buffer terminal (FTerm)
 
 **Toggle open/close**
 
@@ -225,25 +225,7 @@ Open recent project
 
 #### Fuzzy finder (telescope)
 
-**Search all filenames** 
-
-`[Ctrl]+p`
-
-**Search all git repo tracked files** 
-
-`[space] pf`
-
-**Search in files** 
-
-`[space] ps`
-
-
-#### File explorer (Neo tree)
-
-**Open file explorer**
-
-`[ctrl]+e`
-
+telescope.lua 
 
 ### Multiple cursors (Vim visual multi)
 
@@ -289,12 +271,6 @@ with parentheses".
     delete(functi*on calls)     dsf             function calls
 
 Detailed information on how to use this plugin can be found in :h nvim-surround.usage.
-
-### Colorshceme/theme (darkplus)
-
-**set colorscheme**
-
-eg. `:colorscheme darkplus`
 
 ### Neovim
 
