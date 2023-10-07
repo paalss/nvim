@@ -97,6 +97,7 @@ local plugins = {
     -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
+    {'akinsho/git-conflict.nvim', version = "*", config = true},
     'romgrk/barbar.nvim',
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
