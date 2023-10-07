@@ -90,7 +90,7 @@ local plugins = {
     -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-    {'akinsho/git-conflict.nvim', version = "*", config = true},
+    -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
     'martinsione/darkplus.nvim',
     {
         "folke/tokyonight.nvim",
