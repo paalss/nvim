@@ -2,7 +2,6 @@ local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 
-
 lsp.ensure_installed({
     'tsserver',
     'eslint',
@@ -54,11 +53,11 @@ cmp.setup {
             end
         end, {'i', 's'})
     },
-    sources = {{
+    sources = { {
         name = 'nvim_lsp'
     }, {
         name = 'luasnip'
-    }}
+    } }
 }
 
 lsp.on_attach(function(client, bufnr)
