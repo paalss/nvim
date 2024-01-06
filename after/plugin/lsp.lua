@@ -34,6 +34,9 @@ cmp.setup {
             behavior = cmp.ConfirmBehavior.Replace,
             select = false
         },
+        -- navigate to next, text previewed in file
+        -- Enter will create full snippet
+        -- Any other than Tab or Enter will leave preview as is
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
