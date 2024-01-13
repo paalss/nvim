@@ -1,5 +1,13 @@
 local builtin = require('telescope.builtin')
 require('telescope').load_extension("adjacent")
+
+local telescope = require("telescope")
+
+telescope.setup {
+  defaults = {
+    file_ignore_patterns = { ".git/" }
+  }
+}
 vim.keymap.set('n', '<leader>cc', "<cmd>Telescope adjacent<CR>", { noremap = true, silent = false })
 
 vim.keymap.set('n', '<C-p>', [[<cmd>Telescope find_files hidden=true<CR>]], { noremap = true })
