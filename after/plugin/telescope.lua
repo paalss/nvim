@@ -11,8 +11,11 @@ telescope.setup {
 vim.keymap.set('n', '<leader>cc', "<cmd>Telescope adjacent<CR>", { noremap = true, silent = false })
 
 vim.keymap.set('n', '<C-p>', [[<cmd>Telescope find_files hidden=true<CR>]], { noremap = true })
+vim.keymap.set('n', '<leader>files', [[<cmd>Telescope find_files hidden=true<CR>]], { noremap = true })
 
 vim.keymap.set('n', '<A-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>git', builtin.git_files, {})
+
 vim.keymap.set('n', '<leader>pf', builtin.git_files, {})
 
 vim.keymap.set('n', '<leader>pp', function()
