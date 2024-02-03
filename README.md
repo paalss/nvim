@@ -144,7 +144,7 @@ Download the deb for Debian / Ubuntu
 
 see more
 
-https://www.youtube.com/watch?v=91p1Fp7Db5c
+<https://www.youtube.com/watch?v=91p1Fp7Db5c>
 
 ## Utilities
 
@@ -162,7 +162,15 @@ Toggle markdown preview
 nvim .
 ```
 
-### Language errors (LSP zero)
+### Show Errors
+
+#### Show all errors in project
+
+```
+Trouble
+```
+
+#### Language errors (LSP zero)
 
 1. move cursor over line
 2. :lua vim.diagnostic.open_float()
@@ -207,7 +215,7 @@ Requirements:
 
 `o`
 
-### In-Neovim-buffer terminal (FTerm)
+### In-Neovim-buffer terminal (FTerm) (Constantly breaks. Same with Toggleterm. Maybe remove)
 
 **Toggle open/close**
 
@@ -287,5 +295,10 @@ Detailed information on how to use this plugin can be found in :h nvim-surround.
 
 **Indent line**
 
-1. `i`
-2. `[ctrl]+t` / `[ctrl]+d`
+INSERT MODE
+
+`[ctrl]+t` / `[ctrl]+d`
+
+VISUAL MODE 
+
+`<` or `>`
