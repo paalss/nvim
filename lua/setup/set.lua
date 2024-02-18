@@ -1,4 +1,5 @@
 -- vim.opt.guicursor = "" -- tykk cursor i insert mde
+vim.o.mouse = "" -- disable mouse interaction (useful for copy-pasting with mouse)
 vim.opt.nu = true
 -- vim.opt.relativenumber = true
 
