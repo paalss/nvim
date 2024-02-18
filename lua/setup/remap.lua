@@ -17,6 +17,8 @@ vim.keymap.set("n", "<A-Down>", ":m+<CR>")  -- Alt Down mode line up
 
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<A-Up>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv") 
 
 vim.keymap.set("n", "J", "mzJ`z")
 
