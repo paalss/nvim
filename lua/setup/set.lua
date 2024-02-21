@@ -19,6 +19,7 @@ vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.inccommand = "split"
 
 vim.opt.termguicolors = true
 
