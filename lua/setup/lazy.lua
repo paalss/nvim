@@ -12,6 +12,7 @@ vim.g.mapleader = " "
 local plugins = {
 	{
 		"folke/trouble.nvim",
+    pin = true,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 			-- your configuration comes here
@@ -23,6 +24,7 @@ local plugins = {
 		"nvim-neorg/neorg",
 		build = ":Neorg sync-parsers",
 		-- tag = "*",
+    pin = true,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("neorg").setup {
@@ -43,6 +45,7 @@ local plugins = {
 	{
 		-- LSP Configuration & Plugins
 		'neovim/nvim-lspconfig',
+    pin = true,
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
 			{ 'williamboman/mason.nvim', config = true },
@@ -59,6 +62,7 @@ local plugins = {
 	{
 		-- Autocompletion
 		'hrsh7th/nvim-cmp',
+    pin = true,
 		dependencies = {
 			-- Snippet Engine & its associated nvim-cmp source
 			'L3MON4D3/LuaSnip',
@@ -77,68 +81,76 @@ local plugins = {
 		-- Enable `lukas-reineke/indent-blankline.nvim`
 		-- See `:help indent_blankline.txt`
     main = "ibl",
+    pin = true,
 		opts = {
 			indent = { char = '┊' }
 		},
-	},'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
+	},{'https://gitlab.com/HiPhish/rainbow-delimiters.nvim', pin = true},
 	{
 		"windwp/nvim-autopairs",
+    pin = true,
 		config = function()
 			require("nvim-autopairs").setup {}
 		end
 	},
-	'djoshea/vim-autoread',
+	{'djoshea/vim-autoread', pin = true},
 	{
 		'nvim-telescope/telescope.nvim',
 		version = '0.1.1',
 		-- or                            , branch = '0.1.x',
-		dependencies = { { 'nvim-lua/plenary.nvim' } }
+		dependencies = { { 'nvim-lua/plenary.nvim' } },
+    pin = true,
 	},
-	"MaximilianLloyd/adjacent.nvim",
-	'ThePrimeagen/harpoon',
+	{"MaximilianLloyd/adjacent.nvim", pin = true},
+	{'ThePrimeagen/harpoon', pin = true},
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to  `main` branch for the latest features
+    pin = true,
 		config = function()
 			require("nvim-surround").setup({
 				--  Configuration here, or leave empty to  defaults
 			})
 		end
 	},
-	'sindrets/diffview.nvim',
+	{'sindrets/diffview.nvim', pin = true},
 	{
 		"mg979/vim-visual-multi",
+    pin = true,
 		branch = "master"
 	},
 	{
 		'nvim-lualine/lualine.nvim',
+    pin = true,
 		dependencies = {
 			'nvim-tree/nvim-web-devicons',
 			lazy = true
 		}
 	},
 	-- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-	'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-	'lewis6991/gitsigns.nvim',    -- OPTIONAL: for git status
+	{'nvim-tree/nvim-web-devicons', pin = true}, -- OPTIONAL: for file icons
+	{'lewis6991/gitsigns.nvim', pin = true},    -- OPTIONAL: for git status
 	-- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
-	'martinsione/darkplus.nvim',
+	{'martinsione/darkplus.nvim', pin = true},
 	{
 		"folke/tokyonight.nvim",
+    pin = true,
 		lazy = false,
 		priority = 1000,
 		opts = {},
 	},
-	'romgrk/barbar.nvim',
-	'nvim-treesitter/nvim-treesitter',
+	{'romgrk/barbar.nvim', pin = true},
+	{'nvim-treesitter/nvim-treesitter', pin = true},
 	build = ':TSUpdate',
-	'mbbill/undotree',
+	{'mbbill/undotree', pin = true},
 	{
 		"kdheepak/lazygit.nvim",
 		-- optional for floating window border decoration
+    pin = true,
 		dependencies = { "nvim-lua/plenary.nvim" }
 	},
-	'tpope/vim-commentary',
-	'numToStr/FTerm.nvim',
+	{'tpope/vim-commentary', pin = true},
+	{'numToStr/FTerm.nvim', pin = true},
 	-- ('tpope/vim-fugitive')
 	{
 		"iamcco/markdown-preview.nvim",
@@ -149,6 +161,7 @@ local plugins = {
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
+    pin = true,
 		dependencies = {            -- LSP Support
 			{ 'neovim/nvim-lspconfig' }, -- Required
 			{
