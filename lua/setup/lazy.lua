@@ -80,7 +80,7 @@ local plugins = {
 			char = '┊',
 			show_trailing_blankline_indent = false,
 		},
-	},
+	},'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
 	{
 		"windwp/nvim-autopairs",
 		config = function()
