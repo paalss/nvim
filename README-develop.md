@@ -8,5 +8,5 @@ git merge develop
 ### Refresh lua
 
 ```
-:source %
+:so %
 ```
