@@ -38,4 +38,5 @@ au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=2
 augroup END
 ]]
 
--- vim.opt.clipboard:append("unnamed") -- share with system clipboard
+-- share neovim clipboard with OS system (works for windows 11 & Ubuntu in Terminal)
+vim.o.clipboard = 'unnamedplus'
