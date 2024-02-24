@@ -48,9 +48,7 @@ Build type: Release
 LuaJIT 2.1.0-beta3
 ``````
 
-## Install & setup Neovim
-
-Windows user? --> use WSL
+## Install & setup Neovim in WSL
 
 [Install neovim](docs/neovim-install.md)
 

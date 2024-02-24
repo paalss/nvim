@@ -4,3 +4,9 @@
 git checkout master
 git merge develop
 ```
+
+### Refresh lua
+
+```
+:source %
+```

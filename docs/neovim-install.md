@@ -68,10 +68,18 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 
 https://astronvim.com/
 
-## Install a nerd font
+## Install a nerd mono font
 
 Ubuntu nerd font funker for en eller annen grunn ikke. Du får installert den, men den dukker ikke opp i WSL/Ubuntu on windows-menyen. 
 Men du kan installere denne: [Meslo](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf) 
 eller [3270NerdFont](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/3270/Regular/3270NerdFont-Regular.ttf) for eksempel
 
 Congratulations!
+
+F.eks.
+
+CodeNewRoman Font Mono
+
+![fontface](suitable-fontfamily.png)
+
+Bruk en mono fixed-width font. Ellers ser det stygt ut.
