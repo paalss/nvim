@@ -21,6 +21,6 @@ wk.register({
   pa = { "ggVGp", "paste all" },
   s = {
     name = "case toggle",
-    s = {"f_x~f_x~", "snake_case -> camelCase" },
+    s = { "f_x~", "snake_case -> camelCase" },
   }
 }, { prefix = "-"})
