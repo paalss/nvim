@@ -13,8 +13,8 @@ wk.register({
   name = "hard coded macros",
   e = {
     name = "className={} toggle `${}`",
-    e = {"f{a`${<esc>f}i}`<esc>B", "{classes.___} -> {`${classes.___} `}" },
-    d = {"f`xxxf}xxB", "{`${classes.___}`} -> {classes.___}" },
+    e = { "f{a`${<esc>f}i}`<esc>B", "{classes.___} -> {`${classes.___} `}" },
+    d = { "f`xxxf}xxB", "{`${classes.___}`} -> {classes.___}" },
   },
   a = { "ggVG", "mark all" },
   ya = { "ggVGy", "yank all" },
@@ -23,4 +23,4 @@ wk.register({
     name = "case toggle",
     s = { "f_x~", "snake_case -> camelCase" },
   }
-}, { prefix = "-"})
+}, { prefix = "-" })
