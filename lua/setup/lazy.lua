@@ -10,19 +10,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		}
-	},
   {
     "folke/trouble.nvim",
     pin = true,
@@ -149,7 +136,6 @@ local plugins = {
     priority = 1000,
     opts = {},
   },
-  { 'romgrk/barbar.nvim',              pin = true },
   { 'nvim-treesitter/nvim-treesitter', pin = true },
   build = ':TSUpdate',
   { 'mbbill/undotree',      pin = true },
