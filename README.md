@@ -222,20 +222,22 @@ Requirements:
 - `[Alt]+i`
 - ahk: `[ctrl]+ø`
 
-### Project navitation
+### Navigation
 
-Open recent project
+#### Project navitation
+
+#Open recent project
 
 1. Open Lazygit
 2. `[ctrl]+r`
 
-### File navigation
+#### File navigation
 
-#### Fuzzy finder (telescope)
+##### Fuzzy finder (telescope)
 
 telescope.lua 
 
-### Multiple cursors (Vim visual multi)
+#### Multiple cursors (Vim visual multi)
 
 1. Visual mode `v`
 2. Enter  visual multi mode `[ctrl]+n`
@@ -279,6 +281,15 @@ with parentheses".
     delete(functi*on calls)     dsf             function calls
 
 Detailed information on how to use this plugin can be found in :h nvim-surround.usage.
+
+### Command preview
+
+<https://github.com/smjonas/live-command.nvim>
+
+Preview norm and macros
+
+- `:Norm` to preview `:norm`
+- `:At a` to preview `:norm @a`
 
 ### Neovim
 
