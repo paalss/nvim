@@ -5,7 +5,7 @@
 <!-- toc -->
 
 - [Neovim info](#neovim-info)
-- [Install & setup Neovim](#install--setup-neovim)
+- [Install & setup Neovim in WSL](#install--setup-neovim-in-wsl)
   * [Install dependencies](#install-dependencies)
   * [Update git on ubuntu](#update-git-on-ubuntu)
   * [Setup AutoHotkey (for Windows)](#setup-autohotkey-for-windows)
@@ -21,11 +21,13 @@
     + [Editor git signs (Gitsigns)](#editor-git-signs-gitsigns)
     + [Source control (Lazygit.nvim)](#source-control-lazygitnvim)
   * [In-Neovim-buffer terminal (FTerm) (Constantly breaks. Same with Toggleterm. Maybe remove)](#in-neovim-buffer-terminal-fterm-constantly-breaks-same-with-toggleterm-maybe-remove)
-  * [Project navitation](#project-navitation)
-  * [File navigation](#file-navigation)
-    + [Fuzzy finder (telescope)](#fuzzy-finder-telescope)
-  * [Multiple cursors (Vim visual multi)](#multiple-cursors-vim-visual-multi)
+  * [Navigation](#navigation)
+    + [Project navitation](#project-navitation)
+    + [File navigation](#file-navigation)
+      - [Fuzzy finder (telescope)](#fuzzy-finder-telescope)
+    + [Multiple cursors (Vim visual multi)](#multiple-cursors-vim-visual-multi)
   * [Surround (Nvim surround)](#surround-nvim-surround)
+  * [Command preview](#command-preview)
   * [Neovim](#neovim)
 
 <!-- tocstop -->
