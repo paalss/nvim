@@ -4,6 +4,9 @@ wk.register({
   a = {
     "Add to harpoon"
   },
+  hd = {
+    "Diff this"
+  },
   tb = {
     "Git blame"
   },
