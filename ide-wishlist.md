@@ -4,19 +4,6 @@ ting jeg trenger for å gjøre Neovim til den ideelle IDE
 
 UNDERSØK hvordan man printer ut karakter-resultatet av en tastekombinasjon. Var det ctrl+V og så den tasten det gjalt?
 
-## Bugfixes
-
--   når man limer inn kode med kommentarer, så blir linjen med kommentaren, samt alle de følgende linjene kommentert ut.
-    -   reproduser: f.eks. kopier noe lua kode med system clipboard (ctrl+C). Kodesnutten må inneholde `--`. Lim det inn i en lua fil.
-    -   noe i en lua fil fra system clipboard og det inneholder `--`,
-- kan ikke ctrl+backspace riktig i insert mode. skal slette ordet bak markøren
-  - tror det bare funker i vanlig vim?
-     - kanskje det hjelper å bruke vim-fugitive....?
-        - kan uansett ikke bruke vanlig vim som git default editor, da får man error
-          - det funker i VScode terminal da, selv med nvim
-            - kanskje det bare funker i VSCode
-- enable kommenter-ut for insert mode også. gc funker bare i visual mode så langt. se dokumentasjonen til de som lagde dette verktøyet (tpope?)
-
 ## Git
 
     | ønske                                   | verktøy                                          |
