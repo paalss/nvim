@@ -37,9 +37,9 @@ local plugins = {
       require("live-command").setup {
         commands = {
           Norm = { cmd = "norm" },
-          At = {
+          Reg = {
             cmd = "norm",
-            -- This will transform ":5At a" into ":norm 5@a"
+            -- This will transform ":5Reg a" into ":norm 5@a"
             args = function(opts)
               return (opts.count == -1 and "" or opts.count) .. "@" .. opts.args
             end,
