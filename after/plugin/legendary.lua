@@ -3,7 +3,14 @@ local legendary = require('legendary')
 
 legendary.setup({
   lazy_nvim = { auto_register = true },
-  keymaps = {}
+  keymaps = {
+    { "<leader>all",    "ggVG",                   description = "mark all" },
+    { "<leader>ya",     "ggVGy",                  description = "yank all" },
+    { "<leader>pa",     "ggVGp",                  description = "paste all" },
+    { "<leader>snakam", "f_x~",                   description = "snake_case -> camelCase" },
+    { "<leader>classt", "f{a`${<esc>f}i}`<esc>B", description = "{classes.___} -> {`${classes.___} `}" },
+    { "<leader>classu", "f`xxxf}xxB",             description = "{`${classes.___}`} -> {classes.___}" },
+  }
 })
 
 map({ "n", "v" }, '<leader>leg', '<Cmd>Legendary<CR>', {})
