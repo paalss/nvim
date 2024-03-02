@@ -20,7 +20,7 @@ local opts = { noremap = true, silent = true }
  -- map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
  -- Pin/unpin buffer
  map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
- -- Close buffer
+ -- Close buffer. Same as running: :bd
  map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
  -- Restore buffer
  map('n', '<A-t>', '<Cmd>BufferRestore<CR>', opts)
