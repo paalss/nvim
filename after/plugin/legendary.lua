@@ -6,8 +6,8 @@ legendary.setup({
   keymaps = {}
 })
 
-map('n', '<leader>leg', '<Cmd>Legendary<CR>', {})
-map('n', '<leader>lek', '<Cmd>Legendary keymaps<CR>', {})
-map('n', '<leader>lec', '<Cmd>Legendary commands<CR>', {})
-map('n', '<leader>lef', '<Cmd>Legendary functions<CR>', {})
-map('n', '<leader>lea', '<Cmd>Legendary autocmds<CR>', {})
+map('x', '<leader>leg', '<Cmd>Legendary<CR>', {})
+map('x', '<leader>lek', '<Cmd>Legendary keymaps<CR>', {})
+map('x', '<leader>lec', '<Cmd>Legendary commands<CR>', {})
+map('x', '<leader>lef', '<Cmd>Legendary functions<CR>', {})
+map('x', '<leader>lea', '<Cmd>Legendary autocmds<CR>', {})
