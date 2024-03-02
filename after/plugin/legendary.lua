@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local legendary = require('legendary')
 
 legendary.setup({
@@ -6,8 +6,8 @@ legendary.setup({
   keymaps = {}
 })
 
-map('x', '<leader>leg', '<Cmd>Legendary<CR>', {})
-map('x', '<leader>lek', '<Cmd>Legendary keymaps<CR>', {})
-map('x', '<leader>lec', '<Cmd>Legendary commands<CR>', {})
-map('x', '<leader>lef', '<Cmd>Legendary functions<CR>', {})
-map('x', '<leader>lea', '<Cmd>Legendary autocmds<CR>', {})
+map({ "n", "v" }, '<leader>leg', '<Cmd>Legendary<CR>', {})
+map({ "n", "v" }, '<leader>lek', '<Cmd>Legendary keymaps<CR>', {})
+map({ "n", "v" }, '<leader>lec', '<Cmd>Legendary commands<CR>', {})
+map({ "n", "v" }, '<leader>lef', '<Cmd>Legendary functions<CR>', {})
+map({ "n", "v" }, '<leader>lea', '<Cmd>Legendary autocmds<CR>', {})
