@@ -1,6 +1,7 @@
 local map = vim.api.nvim_set_keymap
+local legendary = require('legendary')
 
-require('legendary').setup({
+legendary.setup({
   lazy_nvim = { auto_register = true },
   keymaps = {}
 })
