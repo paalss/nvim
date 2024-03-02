@@ -1,10 +1,8 @@
+local map = vim.api.nvim_set_keymap
+
 require('legendary').setup({
   lazy_nvim = { auto_register = true },
-  keymaps = { {
-    '<leader>legend',
-    function()
-      print("LEGENDARY")
-    end,
-    description = "Say legendary"
-  } }
+  keymaps = {}
 })
+
+map('n', '<leader>leg', '<Cmd>Legendary<CR>', {})
