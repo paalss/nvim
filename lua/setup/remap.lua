@@ -3,10 +3,10 @@
 vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 -- move line
-vim.keymap.set("n", "<A-k>", ":m-2<CR>")   -- Alt k --> move line down
-vim.keymap.set("n", "<A-j>", ":m+<CR>")    -- Alt j --> mode line up
-vim.keymap.set("n", "<A-Up>", ":m-2<CR>")  -- Alt Up --> move line down
-vim.keymap.set("n", "<A-Down>", ":m+<CR>") -- Alt Down mode line up
+vim.keymap.set("n", "<A-k>", ":m-2<CR>", { desc = "Move line up" })
+vim.keymap.set("n", "<A-j>", ":m+<CR>", { desc = "Move line down" })
+vim.keymap.set("n", "<A-Up>", ":m-2<CR>", { desc = "Move line up" })
+vim.keymap.set("n", "<A-Down>", ":m+<CR>", { desc = "Move line down" })
 
 -- duplicate line
 
@@ -15,10 +15,10 @@ vim.keymap.set("n", "<A-Down>", ":m+<CR>") -- Alt Down mode line up
 -- vim.keymap.set("i", "<A-j>", "<Esc>:m+<CR>")
 -- vim.keymap.set("i", "<A-k>", "<Esc>:m-2<CR>")
 
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "<A-Up>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
+vim.keymap.set("v", "<A-Up>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) up" })
+vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) down" })
 
 vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
 vim.keymap.set("n", "<leader>yall", "ggVGy", { desc = "yank all" })
@@ -33,8 +33,8 @@ vim.keymap.set("n", "J", "mzJ`z") --keep cursor at same place while remvoving en
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 
-vim.keymap.set("n", "n", "nzzzv") -- keep search terms in the middle
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
@@ -47,7 +47,7 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "Q", "<nop>") -- disable Q
+vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
@@ -60,7 +60,8 @@ vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- replace the word your cursor is on
-vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+  { desc = "Replace all occurences of word under cursor" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
