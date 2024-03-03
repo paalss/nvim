@@ -13,6 +13,7 @@
   * [Install Lazygit](#install-lazygit)
   * [Install git delta (better git diff)](#install-git-delta-better-git-diff)
 - [Utilities](#utilities)
+  * [Search & view all keymaps](#search--view-all-keymaps)
   * [Markdown preview](#markdown-preview)
   * [Show Errors](#show-errors)
     + [Show all errors in project](#show-all-errors-in-project)
