@@ -20,11 +20,18 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<A-Up>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
+vim.keymap.set("n", "<leader>yall", "ggVGy", { desc = "yank all" })
+vim.keymap.set("n", "<leader>pall", "ggVGp", { desc = "paste all" })
+vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
+vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
+vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
+
+vim.keymap.set("n", "J", "mzJ`z") --keep cursor at same place while remvoving end of line whitespaces
 
 -- page up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up"})
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 
 vim.keymap.set("n", "n", "nzzzv") -- keep search terms in the middle
 vim.keymap.set("n", "N", "Nzzzv")
