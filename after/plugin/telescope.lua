@@ -1,3 +1,4 @@
+-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 local builtin = require('telescope.builtin')
 require('telescope').load_extension("adjacent")
 
@@ -26,6 +27,22 @@ end, { desc = "Text search" })
 vim.keymap.set('n', '<leader>p0', builtin.live_grep, { desc = 'Live text search' })
 
 
+-- current file text search previewed in buffer
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '/ Search results in telescope window' })
+
+
 -- other
 vim.keymap.set('n', '<C-l>', builtin.keymaps, { desc = 'Find keymaps' })
 -- vim.keymap.set('n', '<C-l>', [[<cmd>Telescope keymaps hidden=true<CR>]], { desc = "Find keymaps", noremap = true })
+
+
+-- search neovim ~/.config
+vim.keymap.set('n', '<leader>sn', function()
+  builtin.find_files { cwd = vim.fn.stdpath 'config' }
+end, { desc = 'Search Neovim ~/.config files' })
