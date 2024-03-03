@@ -43,9 +43,9 @@
 !+j::Send "{Esc}yyp"
 
 
-; ---------- "FTerm" ----------
+; ---------- "Terminal tmux behavior" ----------
 
-^ø::Send "{Alt down}i{Alt up}" ; (fterm.lua uses this button)
+^ø::Send "{Ctrl down}m{Ctrl up}" ; (tmux.lua uses this button)
 
 
 ; ---------- "BARBAR" ----------

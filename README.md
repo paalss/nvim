@@ -222,12 +222,21 @@ Requirements:
 
 `o`
 
-### In-Neovim-buffer terminal (FTerm) (Constantly breaks. Same with Toggleterm. Maybe remove)
+### Terminal
 
-**Toggle open/close**
+You need to start `nvim` inside of tmux for this to work
 
-- `[Alt]+i`
-- ahk: `[ctrl]+ø`
+eg.
+```
+tmux new
+nvim .
+```
+
+The terminal is just a new tmux horizontal pane at the bottom.
+
+Open terminal with `Ctrl m`
+
+Close with `exit` (better yet create an alias for "exit" in your `.bashrc` file. I'm using `alias q="exit"`)
 
 ### Navigation
 
