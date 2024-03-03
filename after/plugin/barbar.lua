@@ -1,6 +1,8 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+-- gt and gT
+
 -- Move to previous/next
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { desc = "Previous buffer/tab", noremap = true, silent = true })
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', { desc = "Next buffer/tab", noremap = true, silent = true })
