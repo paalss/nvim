@@ -150,6 +150,10 @@ see more
 
 ## Utilities
 
+### Search & view all keymaps
+
+`Ctrl l` (`:Telescope keymaps`)
+
 ### Markdown preview
 
 Toggle markdown preview
