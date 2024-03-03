@@ -3,10 +3,10 @@
 vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 -- move line
-vim.keymap.set("n", "<A-k>", ":m-2<CR>") -- Alt k --> move line down
-vim.keymap.set("n", "<A-j>", ":m+<CR>")  -- Alt j --> mode line up
-vim.keymap.set("n", "<A-Up>", ":m-2<CR>") -- Alt Up --> move line down
-vim.keymap.set("n", "<A-Down>", ":m+<CR>")  -- Alt Down mode line up
+vim.keymap.set("n", "<A-k>", ":m-2<CR>")   -- Alt k --> move line down
+vim.keymap.set("n", "<A-j>", ":m+<CR>")    -- Alt j --> mode line up
+vim.keymap.set("n", "<A-Up>", ":m-2<CR>")  -- Alt Up --> move line down
+vim.keymap.set("n", "<A-Down>", ":m+<CR>") -- Alt Down mode line up
 
 -- duplicate line
 
@@ -43,7 +43,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>") -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format()
+  vim.lsp.buf.format()
 end)
 
 -- quick fix list navigation
