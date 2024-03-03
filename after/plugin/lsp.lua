@@ -1,3 +1,4 @@
+-- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
@@ -66,55 +67,60 @@ cmp.setup {
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
+  -- go somewhere
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {
     desc = "Go to definition",
     buffer = bufnr,
     remap = false
   })
+  vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
+    {
+      desc = "Find usages of word/variable",
+      buffer = bufnr,
+      remap = false
+    })
+  -- vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, 'Go to definition')
+  -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, 'Find usages of word/variable')
+
+  -- show information
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {
     desc = "Show definition",
     buffer = bufnr,
     remap = false
   })
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
-    {
-      desc = "open diagnostic",
-      buffer = bufnr,
-      remap = false
-    })
-
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
-    {
-      desc = "code action",
-      buffer = bufnr,
-      remap = false
-    })
-
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end,
-    {
-      desc = "code references",
-      buffer = bufnr,
-      remap = false
-    })
-
-  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
-    {
-      desc = "rename",
-      buffer = bufnr,
-      remap = false
-    })
-
   vim.keymap.set("n", "<leader>help", function() vim.lsp.buf.signature_help() end,
     {
       desc = "help",
       buffer = bufnr,
       remap = false
     })
+
+
+  -- do something
+  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
+    {
+      desc = "rename",
+      buffer = bufnr,
+      remap = false
+    })
+  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
+    {
+      desc = "code action",
+      buffer = bufnr,
+      remap = false
+    })
+  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
+    {
+      desc = "open diagnostic",
+      buffer = bufnr,
+      remap = false
+    })
+  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+
+
+  -- other
+  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
 end)
 
 lsp.setup()
