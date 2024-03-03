@@ -51,7 +51,9 @@ Build type: Release
 LuaJIT 2.1.0-beta3
 ``````
 
-## Install & setup Neovim in WSL
+## Install & setup
+
+Guide for setting up this Neovim config in Ubuntu in WSL
 
 [Install neovim](docs/neovim-install.md)
 
@@ -111,7 +113,9 @@ click 'run script' from the right-click menu on the ahk-file
 
 `git config --global core.editor "nvim"`
 
-Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm).
+`git config --global core.editor "vim"`
+
+<!-- Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm). -->
 
 ### Install Lazygit
 
@@ -148,6 +152,10 @@ Download the deb for Debian / Ubuntu
 see more
 
 <https://www.youtube.com/watch?v=91p1Fp7Db5c>
+
+### Install tmux
+
+Do it!
 
 ## Utilities
 
