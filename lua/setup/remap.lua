@@ -23,8 +23,8 @@ vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- page up/down
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up"})
 
 vim.keymap.set("n", "n", "nzzzv") -- keep search terms in the middle
 vim.keymap.set("n", "N", "Nzzzv")
