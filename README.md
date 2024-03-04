@@ -240,11 +240,39 @@ tmux new
 nvim .
 ```
 
+#### Open new terminal in view
+
 The terminal is just a new tmux horizontal pane at the bottom.
 
 Open terminal with `Ctrl m`
 
+#### Exit terminal
+
 Close with `exit` (better yet create an alias for "exit" in your `.bashrc` file. I'm using `alias q="exit"`)
+
+<!-- #### Minimize (move away) terminal -->
+
+<!-- Go to tmux pane you want to break -->
+
+<!-- (In tmux command mode) -->
+
+<!-- ``` -->
+<!-- :break-pane -dP -->
+<!-- ``` -->
+
+
+<!-- Bring back -->
+
+<!-- ``` -->
+
+<!-- ````` -->
+
+#### Temprorarily jump out of Neovim
+
+Suspend Neovim: `ctrl z`
+
+Bring back Neovim: `fg`
+
 
 ### Navigation
 
