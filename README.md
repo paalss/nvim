@@ -157,6 +157,12 @@ see more
 
 Do it!
 
+Then use the config in this repo! (Of course, if you already have a tmux config, rename it so it won't be overwritten)
+
+```bash
+cp ~/.config/nvim/.tmux.conf ~/.tmux.conf
+```
+
 ## Utilities
 
 ### Search & view all keymaps
