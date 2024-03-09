@@ -11,6 +11,9 @@ vim.g.mapleader = " "
 
 local plugins = {
   {
+    "christoomey/vim-tmux-navigator"
+  },
+  {
     'stevearc/dressing.nvim',
     opts = {},
   },

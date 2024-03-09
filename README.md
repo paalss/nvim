@@ -163,11 +163,23 @@ Then use the config in this repo! (Of course, if you already have a tmux config,
 cp ~/.config/nvim/.tmux.conf ~/.tmux.conf
 ```
 
+**Install plugin manager**
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```````
+
+**Install plugins**
+
+Open tmux, and run:
+
+`C-b I`
+
 ## Utilities
 
 ### Search & view all keymaps
 
-`Ctrl l` (`:Telescope keymaps`)
+`Ctrl i` (`:Telescope keymaps`)
 
 ### Markdown preview
 
@@ -236,42 +248,33 @@ Requirements:
 
 `o`
 
+### Neovim & tmux split/pane navigation
+
+`Ctrl [jhkl]`
+
 ### Terminal
 
-You need to start `nvim` inside of tmux for this to work
+The 'terminal' here is just a tmux pane -- Neovim terminal plugins such as Toggleterm and FTerm crashed a lot and were a pain to use
+
+Start Neovim inside of tmux
 
 eg.
 ```
-tmux new
+tmux
 nvim .
 ```
 
 #### Open new terminal in view
 
-The terminal is just a new tmux horizontal pane at the bottom.
-
 Open terminal with `Ctrl m`
+
+#### Maximize/restore pane
+
+`Ctrl b` m
 
 #### Exit terminal
 
 Close with `exit` (better yet create an alias for "exit" in your `.bashrc` file. I'm using `alias q="exit"`)
-
-<!-- #### Minimize (move away) terminal -->
-
-<!-- Go to tmux pane you want to break -->
-
-<!-- (In tmux command mode) -->
-
-<!-- ``` -->
-<!-- :break-pane -dP -->
-<!-- ``` -->
-
-
-<!-- Bring back -->
-
-<!-- ``` -->
-
-<!-- ````` -->
 
 #### Temprorarily jump out of Neovim
 
@@ -282,8 +285,8 @@ Bring back Neovim: `fg`
 
 ### Navigation
 
-#### Project navitation
 
+#### Project navitation
 #Open recent project
 
 1. Open Lazygit
@@ -301,14 +304,6 @@ telescope.lua
 2. Enter  visual multi mode `[ctrl]+n`
 
 ----
-
-**Column selection**
-
-`[ctrl]+[up/down arrowkey]`
-
-**Multiple cursors**
-
-`[Ctrl]+n` / `[Ctrl]+N` to add mode markings
 
 ### Surround (Nvim surround)
 
