@@ -13,3 +13,6 @@ vim.keymap.set("n", "<leader>6", function() ui.nav_file(6) end, { desc = "Open H
 vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end, { desc = "Open Harpoon file #7" })
 vim.keymap.set("n", "<leader>8", function() ui.nav_file(8) end, { desc = "Open Harpoon file #8" })
 vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end, { desc = "Open Harpoon file #9" })
+
+vim.keymap.set("n", "<A-,>", function() ui.nav_prev() end, { desc = "Go to next Harpoon file" })
+vim.keymap.set("n", "<A-.>", function() ui.nav_next() end, { desc = "Go to prev Harpoon file" })
