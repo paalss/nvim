@@ -162,7 +162,6 @@ local plugins = {
     priority = 1000,
     opts = {},
   },
-  { 'romgrk/barbar.nvim',              pin = true },
   { 'nvim-treesitter/nvim-treesitter', pin = true },
   build = ':TSUpdate',
   { 'mbbill/undotree',      pin = true },

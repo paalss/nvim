@@ -4,12 +4,12 @@ local opts = { noremap = true, silent = true }
 -- gt and gT
 
 -- Move to previous/next
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { desc = "Previous buffer/tab", noremap = true, silent = true })
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', { desc = "Next buffer/tab", noremap = true, silent = true })
--- Re-order to previous/next
-map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', { desc = "Move buffer left", noremap = true, silent = true })
-map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { desc = "Move buffer right", noremap = true, silent = true })
---
+-- map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { desc = "Previous buffer/tab", noremap = true, silent = true })
+-- map('n', '<A-.>', '<Cmd>BufferNext<CR>', { desc = "Next buffer/tab", noremap = true, silent = true })
+-- -- Re-order to previous/next
+--map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', { desc = "Move buffer left", noremap = true, silent = true })
+--map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { desc = "Move buffer right", noremap = true, silent = true })
+
 -- Goto buffer in position...
 -- At the moment A-2 and A-4 are used for printing @ and $ (Autohotkey)
 -- map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
@@ -24,11 +24,11 @@ map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { desc = "Move buffer right", norem
 -- map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 
 -- Pin/unpin buffer
-map('n', '<leader>pin', '<Cmd>BufferPin<CR>', { desc = "Pin buffer", noremap = true, silent = true })
+-- map('n', '<leader>pin', '<Cmd>BufferPin<CR>', { desc = "Pin buffer", noremap = true, silent = true })
 -- Close buffer. Same as running: :bd
-map('n', '<A-c>', '<Cmd>BufferClose<CR>', { desc = "Close buffer", noremap = true, silent = true })
+-- map('n', '<A-c>', '<Cmd>BufferClose<CR>', { desc = "Close buffer", noremap = true, silent = true })
 -- Restore buffer
-map('n', '<A-t>', '<Cmd>BufferRestore<CR>', { desc = "Restore buffer", noremap = true, silent = true })
+-- map('n', '<A-t>', '<Cmd>BufferRestore<CR>', { desc = "Restore buffer", noremap = true, silent = true })
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands
