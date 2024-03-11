@@ -10,7 +10,10 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
-  { 'alvan/vim-closetag', pin=true },
+  {
+    'alvan/vim-closetag',
+    pin = true
+  },
   {
     "christoomey/vim-tmux-navigator"
   },
@@ -165,7 +168,7 @@ local plugins = {
   },
   { 'nvim-treesitter/nvim-treesitter', pin = true },
   build = ':TSUpdate',
-  { 'mbbill/undotree',      pin = true },
+  { 'mbbill/undotree',                 pin = true },
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
