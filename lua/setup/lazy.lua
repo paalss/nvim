@@ -10,7 +10,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
-  { 'alvan/vim-closetag', pin=true }
+  { 'alvan/vim-closetag', pin=true },
   {
     "christoomey/vim-tmux-navigator"
   },
