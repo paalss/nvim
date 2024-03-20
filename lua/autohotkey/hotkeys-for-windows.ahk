@@ -23,6 +23,8 @@
 !2::Send "@"
 !4::Send "$"
 
+<^>!-::Send "–"
+
 #HotIf WinActive("ahk_class ConsoleWindowClass")
 
 ; keyboard-shortcuts/remappings for windows users:
