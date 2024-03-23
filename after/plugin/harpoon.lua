@@ -19,3 +19,8 @@ vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end, { desc = "Open H
 
 vim.keymap.set("n", "<A-,>", function() ui.nav_prev() end, { desc = "Go to next Harpoon file" })
 vim.keymap.set("n", "<A-.>", function() ui.nav_next() end, { desc = "Go to prev Harpoon file" })
+
+vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#63698c')
+-- vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7')
+vim.cmd('highlight! HarpoonActive guibg=NONE guifg=white')
+vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7')
