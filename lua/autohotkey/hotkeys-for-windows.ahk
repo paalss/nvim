@@ -23,7 +23,7 @@
 !2::Send "@"
 !4::Send "$"
 
-<^>!-::Send "–"
+<^>!-::Send "–" ; print en-dash
 
 #HotIf WinActive("ahk_class ConsoleWindowClass")
 
@@ -54,23 +54,33 @@
 
 ; navigate buffers
 
-^PgUp::Send "{Esc}:BufferPrevious{Enter}"
-^F11::Send "{Esc}:BufferPrevious{Enter}"
-^PgDn::Send "{Esc}:BufferNext{Enter}"
-^F12::Send "{Esc}:BufferNext{Enter}"
-^Tab::Send "{Esc}:b{#}{Enter}" ; to previous buffer
+; ^PgUp::Send "{Esc}:BufferPrevious{Enter}"
+; ^F11::Send "{Esc}:BufferPrevious{Enter}"
+; ^PgDn::Send "{Esc}:BufferNext{Enter}"
+; ^F12::Send "{Esc}:BufferNext{Enter}"
+; ^Tab::Send "{Esc}:b{#}{Enter}" ; to previous buffer
 
 ; move buffers
 
-+^PgUp::Send "{Esc}:BufferMoveNext{Enter}"
-+^F11::Send "{Esc}:BufferMoveNext{Enter}"
-+^PgDn::Send "{Esc}:BufferMovePrevious{Enter}"
-+^F12::Send "{Esc}:BufferMovePrevious{Enter}"
+; +^PgUp::Send "{Esc}:BufferMoveNext{Enter}"
+; +^F11::Send "{Esc}:BufferMoveNext{Enter}"
+; +^PgDn::Send "{Esc}:BufferMovePrevious{Enter}"
+; +^F12::Send "{Esc}:BufferMovePrevious{Enter}"
+
+
+; ------- "HARPOON" ---------------
+
+; not working:
+
+; ^PgUp::Send "{Esc}{Alt down},{Alt up}"
+; ^F11::Send "{Esc}{Alt down},{Alt up}"
+; ^PgDn::Send "{Esc}{Alt down}.{Alt up}"
+; ^F12::Send "{Esc}{Alt down}.{Alt up}"
 
 ; other
 
-^+t:: Send "{Esc}:BufferRestore{Enter}"
-^w:: Send "{Esc}:BufferClose{Enter}"
+; ^+t:: Send "{Esc}:BufferRestore{Enter}"
+; ^w:: Send "{Esc}:BufferClose{Enter}"
 
 #HotIf
 
