@@ -12,10 +12,10 @@ vim.g.mapleader = " "
 local plugins = {
   {
     "startup-nvim/startup.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     config = function()
       require "startup".setup()
     end
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
   {
     'alvan/vim-closetag',
