@@ -10,6 +10,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
+	{
+		"startup-nvim/startup.nvim",
+		requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+		config = function()
+			require"startup".setup()
+		end
+	},
   {
     'alvan/vim-closetag',
     pin = true
