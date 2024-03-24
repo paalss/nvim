@@ -15,15 +15,24 @@ vim.keymap.set("n", "<A-Down>", ":m+<CR>", { desc = "Move line down" })
 -- vim.keymap.set("i", "<A-j>", "<Esc>:m+<CR>")
 -- vim.keymap.set("i", "<A-k>", "<Esc>:m-2<CR>")
 
+-- move lines 
+
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 vim.keymap.set("v", "<A-Up>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) up" })
 vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) down" })
 
+-- code snippets
+
+vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA")
+
+-- action shortcuts
+
 vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
 vim.keymap.set("n", "<leader>yall", "ggyG", { desc = "yank all" })
 vim.keymap.set("n", "<leader>dall", "ggdG", { desc = "delete all" })
 vim.keymap.set("n", "<leader>pall", "ggVGp", { desc = "paste all" })
+vim.keymap.set("n", "<leader>del", "cc<esc>", { desc = "delete line" })
 vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
 vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
