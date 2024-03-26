@@ -10,25 +10,26 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
-	{
-		'goolord/alpha-nvim',
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
-		config = function()
-      local alpha = require'alpha'
-      local dashboard = require'alpha.themes.dashboard'
+  {
+    'goolord/alpha-nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      local alpha = require 'alpha'
+      local dashboard = require 'alpha.themes.dashboard'
       dashboard.section.header.val = {
-             [[                               __                ]],
-             [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-             [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-             [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-             [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-             [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-             [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-             [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+
+        [[  /$$$$$$   /$$               /$$                  /$$              ]],
+        [[ /$$__  $$ | $$              | $$                 |__/              ]],
+        [[| $$  \__//$$$$$$    /$$$$$$ | $$   /$$ /$$    /$$ /$$ /$$$$$$/$$$$ ]],
+        [[|  $$$$$$|_  $$_/   |____  $$| $$  /$$/|  $$  /$$/| $$| $$_  $$_  $$]],
+        [[ \____  $$ | $$      /$$$$$$$| $$$$$$/  \  $$/$$/ | $$| $$ \ $$ \ $$]],
+        [[ /$$  \ $$ | $$ /$$ /$$__  $$| $$_  $$   \  $$$/  | $$| $$ | $$ | $$]],
+        [[|  $$$$$$/ |  $$$$/|  $$$$$$$| $$ \  $$   \  $/   | $$| $$ | $$ | $$]],
+        [[ \______/   \___/   \_______/|__/  \__/    \_/    |__/|__/ |__/ |__/]],
       }
       alpha.setup(dashboard.config)
-		end
-	},
+    end
+  },
 	{
 		'alvan/vim-closetag',
 		pin = true
