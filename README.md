@@ -173,7 +173,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Open tmux, and run:
 
-`C-b I`
+`Ctrl b, I`
 
 ## Utilities
 
