@@ -1,7 +1,7 @@
 -- vim.opt.guicursor = "" -- tykk cursor i insert mde
 vim.o.mouse = "" -- disable mouse interaction (useful for copy-pasting with mouse)
--- vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.nu = true -- on relativenumber, overwrite 0 with current line number
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
