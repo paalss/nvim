@@ -4,16 +4,10 @@
 
 <!-- toc -->
 
-- [Neovim info](#neovim-info)
-- [Install & setup Neovim in WSL](#install--setup-neovim-in-wsl)
-  * [Install dependencies](#install-dependencies)
-  * [Update git on ubuntu](#update-git-on-ubuntu)
-  * [Setup AutoHotkey (for Windows)](#setup-autohotkey-for-windows)
-  * [Use (n)vim as commit message tool](#use-nvim-as-commit-message-tool)
-  * [Install Lazygit](#install-lazygit)
-  * [Install git delta (better git diff)](#install-git-delta-better-git-diff)
-- [Utilities](#utilities)
-  * [Search & view all keymaps](#search--view-all-keymaps)
+- [Requirements](#requirements)
+  * [Semi-requirements / nice to have](#semi-requirements--nice-to-have)
+- [Installation](#installation)
+- [Usage & utilities](#usage--utilities)
   * [Markdown preview](#markdown-preview)
   * [Show Errors](#show-errors)
     + [Show all errors in project](#show-all-errors-in-project)
@@ -21,7 +15,10 @@
   * [Git](#git)
     + [Editor git signs (Gitsigns)](#editor-git-signs-gitsigns)
     + [Source control (Lazygit.nvim)](#source-control-lazygitnvim)
-  * [In-Neovim-buffer terminal (FTerm) (Constantly breaks. Same with Toggleterm. Maybe remove)](#in-neovim-buffer-terminal-fterm-constantly-breaks-same-with-toggleterm-maybe-remove)
+  * [Neovim & tmux split/pane navigation](#neovim--tmux-splitpane-navigation)
+  * [Terminal](#terminal)
+    + [Exit terminal](#exit-terminal)
+    + [Temprorarily jump out of Neovim](#temprorarily-jump-out-of-neovim)
   * [Navigation](#navigation)
     + [Project navitation](#project-navitation)
     + [File navigation](#file-navigation)
@@ -33,36 +30,25 @@
 
 <!-- tocstop -->
 
-## Neovim info
+## Requirements
 
-This config is built on
+<details>
+    <summary>Neovim version 0.9.0</summary>
 
+**My Neovim info**
 ````
 NVIM v0.9.0
 Build type: Release
 LuaJIT 2.1.0-beta3
 ``````
 
-## Install & setup
+[How to install Neovim 0.9 in Ubuntu in WSL](docs/neovim-install.md)
+</details>
 
-Guide for setting up this Neovim config in Ubuntu in WSL
+<details>
+    <summary>Git</summary>
 
-[Install neovim](docs/neovim-install.md)
-
-**Install this config**
-
-Clone this repo into `~/.config`
-
-_Path to init.lua should be:_ `~/.config/nvim/init.lua`
-
-### Install dependencies
-
-`:Lazy`
-
-**dependency sindrets/gitdiff requires**
-- Git ≥ 2.31.0
-
-### Update git on ubuntu
+**How to update git on Ubuntu**
 
 Check `git --version`
 
@@ -74,12 +60,16 @@ sudo apt-get update
 sudo apt-get install git -y
 git --version
 ```
+</details>
 
-### Setup AutoHotkey (for Windows)
+### Semi-requirements / nice to have
 
-AutoHotkey makes it far more easier to create hotkeys/mappings.
+<details>
+    <summary>Autohotkey (for Windows)</summary>
 
-AutoHotkey is available for Windows, which you should be using if you use Windows & WSL.
+I have made some additional keymaps using Authotkey.
+
+(Some keymaps are too hard / impossible to define in plain Neovim)
 
 **Install AutoHotkey:**
 
@@ -100,18 +90,12 @@ click 'run script' from the right-click menu on the ahk-file
 **Stop script**
 
 `Alt+Esc`
+</details>
 
-### Use (n)vim as commit message tool
+<details>
+    <summary>LazyGit</summary>
 
-`git config --global core.editor "nvim"`
-
-`git config --global core.editor "vim"`
-
-<!-- Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm). -->
-
-### Install Lazygit
-
-As explained in https://github.com/jesseduffield/lazygit#ubuntu,
+Install as explained in https://github.com/jesseduffield/lazygit#ubuntu,
 
 run
 
@@ -127,10 +111,12 @@ Verify installation
 ```bash
 lazygit --version
 ```
+</details>
 
-### Install git delta (better git diff)
+<details>
+    <summary>Git delta (Better git diff)</summary>
 
-visit: https://dandavison.github.io/delta/installation.html
+visit: <https://dandavison.github.io/delta/installation.html>
 
 Download the deb for Debian / Ubuntu
 
@@ -144,12 +130,14 @@ Download the deb for Debian / Ubuntu
 see more
 
 <https://www.youtube.com/watch?v=91p1Fp7Db5c>
+</details>
 
-### Install tmux
+<details>
+    <summary>Tmux</summary>
 
-Do it!
+Install it!
 
-Then use the config in this repo! (Of course, if you already have a tmux config, rename it so it won't be overwritten)
+Then use the config in this repo as your tmux config!
 
 ```bash
 cp ~/.config/nvim/.tmux.conf ~/.tmux.conf
@@ -165,13 +153,36 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Open tmux, and run:
 
-`Ctrl b, I`
+`[ctrl] b, I`
+</details>
 
-## Utilities
+<details>
+    <summary>(N)vim as commit message tool</summary>
 
-### Search & view all keymaps
+**Use (n)vim as commit message tool**
 
-`Ctrl i` (`:Telescope keymaps`)
+`git config --global core.editor "nvim"`
+
+`git config --global core.editor "vim"`
+
+<!-- Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm). -->
+</details>
+
+## Installation 
+
+**Clone config**
+
+Clone this repo into `~/.config`
+
+_Result:_ `~/.config/nvim/`
+
+To start Neovim, navigate to where you want to open Neovim, and run `nvim`
+
+<!-- Start Neovim (`nvim`), or run `:Lazy` once started to install dependencies -->
+
+## Usage & utilities
+
+- View welcome screen with important keybindings: Run `nvim`
 
 ### Markdown preview
 
@@ -180,12 +191,6 @@ Toggle markdown preview
 1. navigate to md file
 
 2. `[space] mark`
-
-**Enter Neovim file explorer**
-
-```bash
-nvim .
-```
 
 ### Show Errors
 
@@ -214,7 +219,6 @@ Trouble
 Requirements:
 
 - Lazygit has to be installed
-- Lazygit is configured to use **git delta**. Make sure to either install that or remove that `pager` option in config.yml.
 
 **Open overview**
 
@@ -228,7 +232,7 @@ Requirements:
 
 `[space] glgp`
 
-**Commit using git's default configured editor (nvim)**
+**Commit using git's default configured editor -> (n)vim**
 
 `C` (uppercase)
 
@@ -242,7 +246,11 @@ Requirements:
 
 ### Neovim & tmux split/pane navigation
 
-`[ctrl] [jhkl]`
+Requirements:
+
+- Tmux has to be installed
+
+Split/pane navigation: `[ctrl] [jhkl]`
 
 ### Terminal
 
@@ -256,14 +264,6 @@ tmux
 nvim .
 ```
 
-#### Open new terminal in view
-
-Open terminal with `ctrl m`
-
-#### Maximize/restore pane
-
-`[ctrl] b` m
-
 #### Exit terminal
 
 Close with `exit` (better yet create an alias for "exit" in your `.bashrc` file. I'm using `alias q="exit"`)
@@ -274,9 +274,7 @@ Suspend Neovim: `[ctrl] z`
 
 Bring back Neovim: `fg`
 
-
 ### Navigation
-
 
 #### Project navitation
 #Open recent project
@@ -349,8 +347,8 @@ Preview norm and macros
 3. paste: `[shift]+[right mouse click]`
 4. re-enable helper features: `:set nopaste`
 
-**Indent line**
 
+**Indent line**
 INSERT MODE
 
 `[ctrl] t` / `[ctrl] d`
