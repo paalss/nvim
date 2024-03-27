@@ -27,6 +27,10 @@ local plugins = {
         [[|  $$$$$$/ |  $$$$/|  $$$$$$$| $$ \  $$   \  $/   | $$| $$ | $$ | $$]],
         [[ \______/   \___/   \_______/|__/  \__/    \_/    |__/|__/ |__/ |__/]],
       }
+      dashboard.section.buttons.val = {
+        -- dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+        dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
+      }
       alpha.setup(dashboard.config)
     end
   },
