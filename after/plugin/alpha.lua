@@ -23,7 +23,7 @@ local head = {
 local block1 = {
   type = "text",
   val = {
-    [[CTRL i           Search keybindings]],
+    [[CTRL i/TAB       Search keybindings]],
     [[CTRL m           Open terminal (tmux pane)]],
     [[CTRL b, m        Maximize pane]],
   },
