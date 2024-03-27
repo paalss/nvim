@@ -23,9 +23,9 @@ local head = {
 local block1 = {
   type = "text",
   val = {
-    [[CTRL I           Search keybindings]],
-    [[CTRL M           Open terminal (tmux pane)]],
-    [[CTRL X, M        Maximize pane]],
+    [[CTRL i           Search keybindings]],
+    [[CTRL m           Open terminal (tmux pane)]],
+    [[CTRL b, m        Maximize pane]],
   },
   opts = {
     position = "center",
