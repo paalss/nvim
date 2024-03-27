@@ -79,9 +79,9 @@ local plugins = {
     config = function()
       require("neorg").setup {
         load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.defaults"] = {},  -- Loads default behaviour
           ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.dirman"] = { -- Manages Neorg workspaces
+          ["core.dirman"] = {      -- Manages Neorg workspaces
             config = {
               workspaces = {
                 notes = "~/notes",
@@ -210,7 +210,7 @@ local plugins = {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     pin = true,
-    dependencies = {            -- LSP Support
+    dependencies = {               -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
       {
         -- Optional
@@ -220,9 +220,9 @@ local plugins = {
         end
       }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },                  -- Required
-      { 'hrsh7th/cmp-nvim-lsp' },              -- Required
-      { 'L3MON4D3/LuaSnip' }                   -- Required
+      { 'hrsh7th/nvim-cmp' },                     -- Required
+      { 'hrsh7th/cmp-nvim-lsp' },                 -- Required
+      { 'L3MON4D3/LuaSnip' }                      -- Required
     }
   },
 }
