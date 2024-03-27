@@ -206,7 +206,7 @@ Trouble
 #### Language errors (LSP zero)
 
 1. move cursor over line
-2. :lua vim.diagnostic.open_float()
+2. `[space] vd`
 
 
 ### Git
@@ -250,7 +250,7 @@ Requirements:
 
 ### Neovim & tmux split/pane navigation
 
-`Ctrl [jhkl]`
+`[ctrl] [jhkl]`
 
 ### Terminal
 
@@ -266,11 +266,11 @@ nvim .
 
 #### Open new terminal in view
 
-Open terminal with `Ctrl m`
+Open terminal with `ctrl m`
 
 #### Maximize/restore pane
 
-`Ctrl b` m
+`[ctrl] b` m
 
 #### Exit terminal
 
@@ -278,7 +278,7 @@ Close with `exit` (better yet create an alias for "exit" in your `.bashrc` file.
 
 #### Temprorarily jump out of Neovim
 
-Suspend Neovim: `ctrl z`
+Suspend Neovim: `[ctrl] z`
 
 Bring back Neovim: `fg`
 
@@ -290,7 +290,7 @@ Bring back Neovim: `fg`
 #Open recent project
 
 1. Open Lazygit
-2. `[ctrl]+r`
+2. `[ctrl] r`
 
 #### File navigation
 
@@ -301,7 +301,7 @@ telescope.lua
 #### Multiple cursors (Vim visual multi)
 
 1. Visual mode `v`
-2. Enter  visual multi mode `[ctrl]+n`
+2. Enter  visual multi mode `[ctrl] n`
 
 ----
 
@@ -361,7 +361,7 @@ Preview norm and macros
 
 INSERT MODE
 
-`[ctrl]+t` / `[ctrl]+d`
+`[ctrl] t` / `[ctrl] d`
 
 VISUAL MODE 
 
