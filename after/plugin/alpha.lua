@@ -31,7 +31,7 @@ local block1 = {
     [[SPC pp           Search text]],
     [[]],
     [[–––––––––––––––––––– Tmux ––––––––––––––––––––]],
-    [[CTRL m           Open terminal]],
+    [[CTRL m           Open terminal pane]],
     [[CTRL b, m        Maximize pane]],
     [[]],
     [[–––––––––––––––––––– Other ––––––––––––––––––––]],
