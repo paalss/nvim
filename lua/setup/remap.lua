@@ -18,7 +18,7 @@ vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) down"
 
 -- code snippets
 
-vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add template-backticks-code in markdown" })
+vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
 
 -- action shortcuts
 
