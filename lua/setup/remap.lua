@@ -1,5 +1,3 @@
--- returnere til nvim file explorer
-
 vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 -- move line
