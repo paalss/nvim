@@ -172,9 +172,11 @@ Open tmux, and run:
 
 **Clone config**
 
-Clone this repo into `~/.config`
+:warning: If you already have a `.config/nvim`-directory with important files, make sure to create a backup of it first!
 
-_Result:_ `~/.config/nvim/`
+```sh
+git clone git@github.com:paalss/nvim.git ~/.config/nvim
+```
 
 To start Neovim, navigate to where you want to open Neovim, and run `nvim`
 
