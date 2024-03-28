@@ -50,7 +50,11 @@
 ^ø::Send "{Ctrl down}m{Ctrl up}" ; (tmux.lua uses this button)
 
 
-; ---------- "BARBAR" ----------
+; ----------- "Tabline / buffer management" --------------
+
+^t::Send "{Ctrl down}6"
+
+; ------- "BARBAR" --------
 
 ; navigate buffers
 
@@ -68,7 +72,7 @@
 ; +^F12::Send "{Esc}:BufferMovePrevious{Enter}"
 
 
-; ------- "HARPOON" ---------------
+; ------ "HARPOON" ---------
 
 ; not working:
 

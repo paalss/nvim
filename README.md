@@ -32,6 +32,22 @@
 ## Requirements
 
 <details>
+    <summary>Linux/WSL</summary>
+
+I'm using Ubuntu through WSL on Windows 10 & 11
+
+---
+
+A note on Windows 11 & its Terminal app:
+
+- `[ctrl] [tab]` is automatically set up to "move to next tab"
+- I have _also_ defined a `[ctrl] [tab]` keybinding in the autohotkey file, to "move to previous open tab" (just like hitting `[ctrl] 6` in vim)
+
+If you want to use the latter, you'll have to delete the former. You can open up Terminal settings and delete the "move to next tab".
+
+</details>
+
+<details>
     <summary>Neovim version 0.9.0</summary>
 
 **My Neovim info**
@@ -173,7 +189,7 @@ Open tmux, and run:
 **Clone config**
 
 > [!WARNING]
-> If you already have a `.config/nvim`-directory with important files, make sure to create a backup of it first!
+> If you already have a `.config/nvim`-directory with important files, make sure to create a backup of them first!
 
 ```sh
 git clone git@github.com:paalss/nvim.git ~/.config/nvim
