@@ -1,3 +1,5 @@
+![Coding file opened in Neovim](./docs/using-nvim.png)
+
 # Pål's Neovim config
 
 ## Table of contents
