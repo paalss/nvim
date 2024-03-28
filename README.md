@@ -299,9 +299,9 @@ Preview norm and macros
 
 ### Neovim
 
-**Return to Neovim explorer**
- 
-`[space] vv`
+**Return to last opened window (buffer)**
+
+`[ctrl] 6`
 
 **Paste from OS clipboard**
 
