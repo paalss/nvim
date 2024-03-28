@@ -225,7 +225,7 @@ Requirements:
 
 - Tmux has to be installed
 
-Split/pane navigation: `[ctrl] [jhkl]`
+Split/pane navigation: `[ctrl] [j/h/k/l]`
 
 ### Terminal
 
@@ -248,14 +248,6 @@ Close with `exit` (better yet create an alias for "exit" in your `.bashrc` file.
 Suspend Neovim: `[ctrl] z`
 
 Bring back Neovim: `fg`
-
-### Navigation
-
-#### Project navitation
-#Open recent project
-
-1. Open Lazygit
-2. `[ctrl] r`
 
 ### Other tools
 
