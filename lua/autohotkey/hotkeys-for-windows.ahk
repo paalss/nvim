@@ -55,7 +55,7 @@
 
 ; ----------- "Tabline / buffer management" --------------
 
-^t::Send "{Ctrl down}6"
+^Tab::Send "{Ctrl down}6{Ctrl up}" 
 
 ; ------- "BARBAR" --------
 
