@@ -5,7 +5,6 @@
 <!-- toc -->
 
 - [Requirements](#requirements)
-  * [Semi-requirements / nice to have](#semi-requirements--nice-to-have)
 - [Installation](#installation)
 - [Usage & utilities](#usage--utilities)
   * [Markdown preview](#markdown-preview)
@@ -62,10 +61,12 @@ git --version
 ```
 </details>
 
-### Semi-requirements / nice to have
+<br>
+
+**Semi-requirements / nice to have**
 
 <details>
-    <summary>Autohotkey (for Windows)</summary>
+    <summary>Autohotkey (Windows app, for extra keymaps)</summary>
 
 I have made some additional keymaps using Authotkey.
 
@@ -93,9 +94,9 @@ click 'run script' from the right-click menu on the ahk-file
 </details>
 
 <details>
-    <summary>LazyGit</summary>
+    <summary>LazyGit (UI for version control)</summary>
 
-Install as explained in https://github.com/jesseduffield/lazygit#ubuntu,
+Install as explained in <https://github.com/jesseduffield/lazygit#ubuntu>,
 
 run
 
@@ -133,11 +134,10 @@ see more
 </details>
 
 <details>
-    <summary>Tmux</summary>
+    <summary>Tmux (for terminal window management)</summary>
 
-Install it!
-
-Then use the config in this repo as your tmux config!
+1. Install it
+2. Then use the config in this repo as your tmux config
 
 ```bash
 cp ~/.config/nvim/.tmux.conf ~/.tmux.conf
@@ -172,7 +172,8 @@ Open tmux, and run:
 
 **Clone config**
 
-:warning: If you already have a `.config/nvim`-directory with important files, make sure to create a backup of it first!
+> [!WARNING]
+> If you already have a `.config/nvim`-directory with important files, make sure to create a backup of it first!
 
 ```sh
 git clone git@github.com:paalss/nvim.git ~/.config/nvim
