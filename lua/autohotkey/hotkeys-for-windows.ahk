@@ -31,6 +31,10 @@
 
 <^>!-::Send "–" ; print en-dash
 
+; create some hotkeys/keymaps/keybindings/shortcuts ONLY for terminal applications.
+; - ConsoleWindowClass = Windows 10 WSL terminal (I think)
+; - CASCADIA_HOSTING_WINDOW_CLASS = Windows 11 Terminal
+#HotIf WinActive("ahk_class ConsoleWindowClass") || WinActive("ahk_class CASCADIA_HOSTING_WINDOW_CLASS")
 
 ; ---------- "REMAP" ----------
 
