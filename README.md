@@ -203,37 +203,9 @@ Toggle markdown preview
 Trouble
 ```
 
-#### Language errors (LSP zero)
-
-1. move cursor over line
-2. `[space] vd`
-
-
 ### Git
 
-#### Editor git signs (Gitsigns)
-
-**Git blame line**
-
-`[space] tb`
-
 #### Source control (Lazygit.nvim)
-
-Requirements:
-
-- Lazygit has to be installed
-
-**Open overview**
-
-`[space] gg`
-
-**Open git history**
-
-`[space] glo`
-
-**Open git history for this file**
-
-`[space] glgp`
 
 **Commit using git's default configured editor -> (n)vim**
 
@@ -285,11 +257,7 @@ Bring back Neovim: `fg`
 1. Open Lazygit
 2. `[ctrl] r`
 
-#### File navigation
-
-##### Fuzzy finder (telescope)
-
-telescope.lua 
+### Other tools
 
 #### Multiple cursors (Vim visual multi)
 
@@ -298,7 +266,7 @@ telescope.lua
 
 ----
 
-### Surround (Nvim surround)
+#### Surround (Nvim surround)
 
 The primary way of adding a new pair to the buffer is via the normal-mode *ys*
 operator, which stands for "you surround". It can be used via
@@ -328,7 +296,7 @@ with parentheses".
 
 Detailed information on how to use this plugin can be found in :h nvim-surround.usage.
 
-### Command preview
+#### Command preview (live command)
 
 <https://github.com/smjonas/live-command.nvim>
 
