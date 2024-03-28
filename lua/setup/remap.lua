@@ -20,17 +20,23 @@ vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code bloc
 
 -- action shortcuts
 
+-- -- all text
 vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
 vim.keymap.set("n", "<leader>yall", "ggyG", { desc = "yank all" })
 vim.keymap.set("n", "<leader>dall", "ggdG", { desc = "delete all" })
 vim.keymap.set("n", "<leader>pall", "ggVGp", { desc = "paste all" })
+
+-- -- normal mode line management
 vim.keymap.set("n", "<leader>cc", "cc<esc>", { desc = "delete line" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
+
+-- -- casing management
 vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
 vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 
+-- --- other
 vim.keymap.set("n", "J", "mzJ`z") --keep cursor at same place while remvoving end of line whitespaces
 
 -- page up/down
