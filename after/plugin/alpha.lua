@@ -23,13 +23,18 @@ local head = {
 local block1 = {
   type = "text",
   val = {
+    [[–––––––––––––––––––– Search ––––––––––––––––––––]],
     [[CTRL i/TAB       Search keymaps]],
     [[CTRL p           Search files]],
     [[SPC cc           Search adjacent files]],
     [[SPC p0           Search text live]],
     [[SPC pp           Search text]],
-    [[CTRL m           Open terminal (tmux pane)]],
+    [[]],
+    [[–––––––––––––––––––– Tmux ––––––––––––––––––––]],
+    [[CTRL m           Open terminal]],
     [[CTRL b, m        Maximize pane]],
+    [[]],
+    [[–––––––––––––––––––– Other ––––––––––––––––––––]],
     [[SPC vv           Open Neovim explorer]],
     [[SPC hh           Open lazy.nvim]],
     [[SPC gg           Open Lazygit]],
@@ -42,13 +47,13 @@ local block1 = {
   },
 }
 
-
 local opts = {
   layout = {
     { type = "padding", val = 2 },
     head,
     { type = "padding", val = 2 },
     block1,
+    { type = "padding", val = 2 },
   }
 }
 alpha.setup(opts)
