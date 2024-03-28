@@ -45,6 +45,7 @@ A note on Windows 11 & its Terminal app:
 
 If you want to use the latter, you'll have to delete the former. You can open up Terminal settings and delete the "move to next tab".
 
+---
 </details>
 
 <details>
@@ -58,6 +59,7 @@ LuaJIT 2.1.0-beta3
 ``````
 
 [How to install Neovim 0.9 in Ubuntu in WSL](docs/neovim-install.md)
+---
 </details>
 
 <details>
@@ -75,6 +77,7 @@ sudo apt-get update
 sudo apt-get install git -y
 git --version
 ```
+---
 </details>
 
 <br>
@@ -107,6 +110,7 @@ click 'run script' from the right-click menu on the ahk-file
 **Stop script**
 
 `Alt+Esc`
+---
 </details>
 
 <details>
@@ -128,6 +132,7 @@ Verify installation
 ```bash
 lazygit --version
 ```
+---
 </details>
 
 <details>
@@ -147,6 +152,7 @@ Download the deb for Debian / Ubuntu
 see more
 
 <https://www.youtube.com/watch?v=91p1Fp7Db5c>
+---
 </details>
 
 <details>
@@ -170,6 +176,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 Open tmux, and run:
 
 `[ctrl] b, I`
+---
 </details>
 
 <details>
@@ -182,6 +189,7 @@ Open tmux, and run:
 `git config --global core.editor "vim"`
 
 <!-- Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm). -->
+---
 </details>
 
 ## Installation 
@@ -202,14 +210,6 @@ To start Neovim, navigate to where you want to open Neovim, and run `nvim`
 ## Usage & utilities
 
 - View welcome screen with important keybindings: Run `nvim`
-
-### Markdown preview
-
-Toggle markdown preview
-
-1. navigate to md file
-
-2. `[space] mark`
 
 ### Show Errors
 
