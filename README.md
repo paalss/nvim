@@ -7,24 +7,18 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage & utilities](#usage--utilities)
-  * [Markdown preview](#markdown-preview)
   * [Show Errors](#show-errors)
     + [Show all errors in project](#show-all-errors-in-project)
-    + [Language errors (LSP zero)](#language-errors-lsp-zero)
   * [Git](#git)
-    + [Editor git signs (Gitsigns)](#editor-git-signs-gitsigns)
     + [Source control (Lazygit.nvim)](#source-control-lazygitnvim)
   * [Neovim & tmux split/pane navigation](#neovim--tmux-splitpane-navigation)
   * [Terminal](#terminal)
     + [Exit terminal](#exit-terminal)
     + [Temprorarily jump out of Neovim](#temprorarily-jump-out-of-neovim)
-  * [Navigation](#navigation)
-    + [Project navitation](#project-navitation)
-    + [File navigation](#file-navigation)
-      - [Fuzzy finder (telescope)](#fuzzy-finder-telescope)
+  * [Other tools](#other-tools)
     + [Multiple cursors (Vim visual multi)](#multiple-cursors-vim-visual-multi)
-  * [Surround (Nvim surround)](#surround-nvim-surround)
-  * [Command preview](#command-preview)
+    + [Surround (Nvim surround)](#surround-nvim-surround)
+    + [Command preview (live command)](#command-preview-live-command)
   * [Neovim](#neovim)
 
 <!-- tocstop -->
@@ -59,6 +53,7 @@ LuaJIT 2.1.0-beta3
 ``````
 
 [How to install Neovim 0.9 in Ubuntu in WSL](docs/neovim-install.md)
+
 ---
 </details>
 
@@ -77,6 +72,7 @@ sudo apt-get update
 sudo apt-get install git -y
 git --version
 ```
+
 ---
 </details>
 
@@ -110,6 +106,7 @@ click 'run script' from the right-click menu on the ahk-file
 **Stop script**
 
 `Alt+Esc`
+
 ---
 </details>
 
@@ -132,6 +129,7 @@ Verify installation
 ```bash
 lazygit --version
 ```
+
 ---
 </details>
 
@@ -152,6 +150,7 @@ Download the deb for Debian / Ubuntu
 see more
 
 <https://www.youtube.com/watch?v=91p1Fp7Db5c>
+
 ---
 </details>
 
@@ -176,6 +175,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 Open tmux, and run:
 
 `[ctrl] b, I`
+
 ---
 </details>
 
@@ -189,6 +189,7 @@ Open tmux, and run:
 `git config --global core.editor "vim"`
 
 <!-- Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm). -->
+
 ---
 </details>
 
