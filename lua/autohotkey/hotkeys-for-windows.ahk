@@ -1,6 +1,12 @@
 ; limit hotkeys to console windows (Windows subsystem for linux / Ubuntu)
 ; use Window Spy to find class names & other info about windows: https://amourspirit.github.io/AutoHotkey-Snippit/WindowSpy.html
 
+; keyboard-shortcuts/remappings for windows users:
+; ! Alt
+; <^>! AltGr
+; ^ ctrl
+; + Shift
+
 !Esc::ExitApp
 
 ; -------------- OPEN WEBSITE -------------
@@ -25,13 +31,6 @@
 
 <^>!-::Send "–" ; print en-dash
 
-#HotIf WinActive("ahk_class ConsoleWindowClass")
-
-; keyboard-shortcuts/remappings for windows users:
-; ! Alt
-; <^>! AltGr
-; ^ ctrl
-; + Shift
 
 ; ---------- "REMAP" ----------
 
