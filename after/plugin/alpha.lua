@@ -26,7 +26,7 @@ local block1 = {
     [[–––––––––––––––––––– Search ––––––––––––––––––––]],
     [[CTRL i/TAB       Search keymaps]],
     [[CTRL p           Search files]],
-    [[SPC cc           Search adjacent files]],
+    [[SPC adj          Search adjacent files]],
     [[SPC p0           Search text live]],
     [[SPC pp           Search text]],
     [[]],
