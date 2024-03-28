@@ -3,19 +3,13 @@
 vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 -- move line
+
 vim.keymap.set("n", "<A-k>", ":m-2<CR>", { desc = "Move line up" })
 vim.keymap.set("n", "<A-j>", ":m+<CR>", { desc = "Move line down" })
 vim.keymap.set("n", "<A-Up>", ":m-2<CR>", { desc = "Move line up" })
 vim.keymap.set("n", "<A-Down>", ":m+<CR>", { desc = "Move line down" })
 
--- duplicate line
-
--- (see hotkeys-for-windows.ahk)
-
--- vim.keymap.set("i", "<A-j>", "<Esc>:m+<CR>")
--- vim.keymap.set("i", "<A-k>", "<Esc>:m-2<CR>")
-
--- move lines 
+-- move lines
 
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
@@ -33,6 +27,8 @@ vim.keymap.set("n", "<leader>yall", "ggyG", { desc = "yank all" })
 vim.keymap.set("n", "<leader>dall", "ggdG", { desc = "delete all" })
 vim.keymap.set("n", "<leader>pall", "ggVGp", { desc = "paste all" })
 vim.keymap.set("n", "<leader>del", "cc<esc>", { desc = "delete line" })
+vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
+vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
 vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
@@ -40,6 +36,7 @@ vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`}
 vim.keymap.set("n", "J", "mzJ`z") --keep cursor at same place while remvoving end of line whitespaces
 
 -- page up/down
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 
@@ -70,6 +67,7 @@ end)
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- replace the word your cursor is on
+
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
   { desc = "Replace all occurences of word under cursor" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
