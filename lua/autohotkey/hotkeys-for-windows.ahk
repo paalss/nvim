@@ -77,12 +77,10 @@
 
 ; ------ "HARPOON" ---------
 
-; not working:
-
-; ^PgUp::Send "{Esc}{Alt down},{Alt up}"
-; ^F11::Send "{Esc}{Alt down},{Alt up}"
-; ^PgDn::Send "{Esc}{Alt down}.{Alt up}"
-; ^F12::Send "{Esc}{Alt down}.{Alt up}"
+^PgUp::Send "{Esc}{Alt down},{Alt up}"
+^F11::Send "{Esc}{Alt down},{Alt up}"
+^PgDn::Send "{Esc}{Alt down}.{Alt up}"
+^F12::Send "{Esc}{Alt down}.{Alt up}"
 
 ; other
 
