@@ -11,6 +11,9 @@ vim.g.mapleader = " "
 
 local plugins = {
   {
+    'ThePrimeagen/vim-be-good'
+  },
+  {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
