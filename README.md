@@ -337,3 +337,4 @@ VISUAL MODE
 eg. help with lualine:
 
 `:tab h lualine`
+
