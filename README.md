@@ -323,6 +323,7 @@ Preview norm and macros
 
 
 **Indent line**
+
 INSERT MODE
 
 `[ctrl] t` / `[ctrl] d`
@@ -330,3 +331,9 @@ INSERT MODE
 VISUAL MODE 
 
 `<` or `>`
+
+**Open help pages in new tab**
+
+eg. help with lualine:
+
+`:tab h lualine`
