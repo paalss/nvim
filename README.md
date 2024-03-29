@@ -176,7 +176,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Open tmux, and run:
 
-`[ctrl] b, I`
+`[ctrl] x, I`
 
 ---
 </details>
@@ -237,14 +237,6 @@ Trouble
 **Open file in default code editor:**
 
 `o`
-
-### Neovim & tmux split/pane navigation
-
-Requirements:
-
-- Tmux has to be installed
-
-Split/pane navigation: `[ctrl] [j/h/k/l]`
 
 ### Terminal
 
