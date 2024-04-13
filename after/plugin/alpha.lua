@@ -41,6 +41,7 @@ local block1 = {
     [[SPC gg           Open Lazygit]],
     [[SPC glo          Open git history]],
     [[SPC glgp         Open git history for currrent file]],
+    [[SPC sn           Search Neovim config files]],
   },
   opts = {
     position = "center",

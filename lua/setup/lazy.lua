@@ -165,7 +165,7 @@ local plugins = {
   { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
   -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
-  -- { 'martinsione/darkplus.nvim',   pin = true },
+  { 'martinsione/darkplus.nvim',   pin = true },
   {
     "folke/tokyonight.nvim",
     pin = true,
