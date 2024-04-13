@@ -4,6 +4,7 @@
   "alpha-nvim": { "branch": "main", "commit": "41283fb402713fc8b327e60907f74e46166f4cfd" },
   "ayu-vim": { "branch": "master", "commit": "0745635421688ce777f663d13531996cb4da6514" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
+  "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "darkplus.nvim": { "branch": "main", "commit": "6101ffce60682208e9e076710299d189ce11c40d" },
   "diffview.nvim": { "branch": "main", "commit": "db97e667e03294bfa9f15e544e78f3082247bf79" },
