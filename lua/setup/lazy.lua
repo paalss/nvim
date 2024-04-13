@@ -22,11 +22,13 @@ local plugins = {
     pin = true
   },
   {
-    "christoomey/vim-tmux-navigator"
+    "christoomey/vim-tmux-navigator",
+    pin = true
   },
   {
     'stevearc/dressing.nvim',
     opts = {},
+    pin = true
   },
   {
     "folke/trouble.nvim",
