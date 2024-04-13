@@ -26,7 +26,8 @@
 function ColorMyPencils(color)
 	-- set the color scheme
 
-	color = color or "darkplus"
+	color = color or "ayu"
+	-- color = color or "darkplus"
 	-- color = color or "tokyonight-night"
 	vim.cmd.colorscheme(color)
 
