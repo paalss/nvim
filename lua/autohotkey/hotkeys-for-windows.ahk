@@ -101,3 +101,11 @@
 ; ^F12::Send ^{PgDn}
 
 #HotIf
+
+
+#HotIf WinActive("ahk_class Chrome_WidgetWin_1")
+
+; In Chrome/Edge extension "Quickkey", you can go to previous tab by hitting ALT z
+^Tab::Send "{Alt down}z{Alt up}"
+
+#HotIf
