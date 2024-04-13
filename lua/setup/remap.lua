@@ -41,11 +41,11 @@ vim.keymap.set("n", "J", "mzJ`z") --keep cursor at same place while remvoving en
 
 -- page up/down
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 
-vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
-vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
+-- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
+-- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
