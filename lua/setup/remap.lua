@@ -18,6 +18,8 @@ vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) down"
 
 vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
 
+vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg", { desc = "Delete commit message" })
+
 -- action shortcuts
 
 -- -- all text
