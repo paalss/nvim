@@ -98,6 +98,15 @@ lsp.on_attach(function(client, bufnr)
       remap = false
     })
 
+  -- diagnostics
+  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
+    {
+      desc = "open diagnostic, language errors",
+      buffer = bufnr,
+      remap = false
+    })
+  vim.keymap.set("n", ",n", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("n", ",p", function() vim.diagnostic.goto_prev() end, opts)
 
   -- do something
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
@@ -112,14 +121,6 @@ lsp.on_attach(function(client, bufnr)
       buffer = bufnr,
       remap = false
     })
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
-    {
-      desc = "open diagnostic, language errors",
-      buffer = bufnr,
-      remap = false
-    })
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
 
 
   -- other
