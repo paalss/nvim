@@ -182,6 +182,7 @@ local plugins = {
   { 'nvim-treesitter/nvim-treesitter', pin = true },
   build = ':TSUpdate',
   { 'mbbill/undotree',                 pin = true },
+  { 'tpope/vim-fugitive',              pin = true },
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
