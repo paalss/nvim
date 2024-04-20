@@ -28,9 +28,11 @@
 ## Requirements
 
 <details>
-    <summary>Linux/WSL</summary>
+    <summary>WSL</summary>
 
 I'm using Ubuntu through WSL on Windows 10 & 11
+
+yanking to OS clipboard registry is currently set up for WSL specifically. See lazy.lua and `:h clipboard-wsl`
 
 ---
 
