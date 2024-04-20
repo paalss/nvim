@@ -14,9 +14,17 @@ telescope.setup {
 -- file search --
 vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Find files' })
 -- vim.keymap.set('n', '<C-p>', [[<cmd>Telescope find_files hidden=true<CR>]], { desc = "Find files", noremap = true })
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search help tags' })
+vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = 'Search and set colorscheme' })
+vim.keymap.set('n', '<leader>sr', builtin.registers, { desc = 'Search paste registers registry clipboard' })
+vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search telescope functionality' })
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
+vim.keymap.set('n', '<leader>sr', builtin.buffers, { desc = 'Search open buffers' })
+vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<A-p>', builtin.git_files, { desc = "Find git files" })
 vim.keymap.set('n', '<leader>adj', "<cmd>Telescope adjacent<CR>",
   { desc = "Find adjacent files", noremap = true, silent = false })
+vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Continue last search' })
 
 
 -- text search
