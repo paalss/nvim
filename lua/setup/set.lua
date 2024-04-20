@@ -1,5 +1,5 @@
 -- vim.opt.guicursor = "" -- tykk cursor i insert mde
-vim.o.mouse = "" -- disable mouse interaction (useful for copy-pasting with mouse)
+vim.o.mouse = ""  -- disable mouse interaction (useful for copy-pasting with mouse)
 vim.opt.relativenumber = true
 vim.opt.nu = true -- on relativenumber, overwrite 0 with current line number
 
@@ -21,8 +21,8 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.inccommand = "nosplit"
-vim.opt.ignorecase = true       -- Ignore case letters when search
-vim.opt.smartcase = true        -- Ignore lowercase for the whole pattern
+vim.opt.ignorecase = true -- Ignore case letters when search
+vim.opt.smartcase = true  -- Ignore lowercase for the whole pattern
 
 vim.opt.termguicolors = true
 
