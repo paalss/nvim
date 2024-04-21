@@ -18,10 +18,9 @@ vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) down"
 
 vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
 
-vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg", { desc = "Delete commit message" })
-
 -- action shortcuts
 
+vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>", { desc = "Abort git commit" })
 -- -- all text
 vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
 vim.keymap.set("n", "<leader>yall", "ggyG", { desc = "yank all" })
