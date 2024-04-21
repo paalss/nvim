@@ -221,10 +221,10 @@ To start Neovim, navigate to where you want to open Neovim, and run `nvim`
 
 ##### Fugitive
 
-Maps:
+Maps: \
 `:h fugitive-maps`
 
-Commit maps:
+Commit maps: \
 `:h fugitive_c`
 
 ##### Lazygit.nvim
