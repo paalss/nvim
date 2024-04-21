@@ -24,8 +24,9 @@ vim.keymap.set("n", "<leader>pas", ":set paste<CR>", { desc = "Set paste" })
 vim.keymap.set("n", "<leader>nopas", ":set nopaste<CR>", { desc = "Set nopaste" })
 vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>", { desc = "Abort git commit" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
-vim.keymap.set("n", "<leader>ed", ":so<CR>", { desc = "Source file" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
+vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
+vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 -- -- all text
 vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
@@ -80,9 +81,9 @@ end)
 
 -- replace the word your cursor is on
 
-vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
   { desc = "Replace all occurences of word under cursor" })
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 -- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below split" })
