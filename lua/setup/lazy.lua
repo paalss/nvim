@@ -32,6 +32,7 @@ local plugins = {
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    pin = true
   },
   {
     'alvan/vim-closetag',
