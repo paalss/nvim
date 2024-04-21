@@ -20,7 +20,13 @@ vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code bloc
 
 -- action shortcuts
 
+vim.keymap.set("n", "<leader>pas", ":set paste<CR>", { desc = "Set paste" })
+vim.keymap.set("n", "<leader>nopas", ":set nopaste<CR>", { desc = "Set nopaste" })
 vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>", { desc = "Abort git commit" })
+vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write" })
+vim.keymap.set("n", "<leader>ed", ":so<CR>", { desc = "Source file" })
+
 -- -- all text
 vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
 vim.keymap.set("n", "<leader>yall", "ggyG", { desc = "yank all" })
@@ -86,4 +92,3 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize -4<CR>", { desc = "Resize split up" }
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split down" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
-
