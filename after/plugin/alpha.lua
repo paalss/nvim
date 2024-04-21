@@ -42,6 +42,7 @@ local block1 = {
     [[SPC gt           Open Fugitive]],
     [[]],
     [[–––––––––––––––––––– Other ––––––––––––––––––––]],
+    [[SPC y*           Yank to OS system registry]],
     [[SPC vv           Open Neovim explorer]],
     [[SPC hh           Open lazy.nvim]],
     [[SPC glo          Open git history]],
