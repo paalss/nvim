@@ -42,4 +42,4 @@ augroup END
 ]]
 
 -- share neovim clipboard with OS system (works for windows 11 & Ubuntu in Terminal)
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
