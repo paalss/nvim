@@ -32,7 +32,7 @@
 
 I'm using Ubuntu through WSL on Windows 10 & 11
 
-yanking to OS clipboard registry is currently set up for WSL specifically. See lazy.lua and `:h clipboard-wsl`
+Yanking to OS clipboard registry is currently customized for WSL specifically (`let g:clipboard = {` from `lazy.lua`). Aside: `:h clipboard-wsl`
 
 ---
 
@@ -214,19 +214,21 @@ To start Neovim, navigate to where you want to open Neovim, and run `nvim`
 
 ## Usage & utilities
 
-- View welcome screen with important keybindings: Run `nvim`
-
-### Show Errors
-
-#### Show all errors in project
-
-```
-Trouble
-```
+- View welcome screen and important keybindings: Run `nvim`
 
 ### Git
 
-#### Source control (Lazygit.nvim)
+#### Source control 
+
+##### Fugitive
+
+Maps:
+`:h fugitive-maps`
+
+Commit maps:
+`:h fugitive_c`
+
+##### Lazygit.nvim
 
 **Commit using git's default configured editor -> (n)vim**
 
