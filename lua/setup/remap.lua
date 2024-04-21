@@ -25,6 +25,7 @@ vim.keymap.set("n", "<leader>nopas", ":set nopaste<CR>", { desc = "Set nopaste" 
 vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>", { desc = "Abort git commit" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
+vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
