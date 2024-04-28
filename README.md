@@ -313,6 +313,12 @@ Preview norm and macros
 
 ### Neovim
 
+**HTML attribute omni completion**
+
+1. Insert mode
+2. Begin writing
+2. `[ctrl] x, [ctrl] o`
+
 **Return to last opened window (buffer)**
 
 `[ctrl] 6`
