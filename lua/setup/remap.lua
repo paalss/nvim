@@ -20,9 +20,11 @@ vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code bloc
 
 -- action shortcuts
 
-vim.keymap.set("n", "<leader>pas", ":set paste<CR>", { desc = "Set paste" })
-vim.keymap.set("n", "<leader>nopas", ":set nopaste<CR>", { desc = "Set nopaste" })
+vim.keymap.set("n", "<leader>sepa", ":set paste<CR>", { desc = "Set paste" })
+vim.keymap.set("n", "<leader>seno", ":set nopaste<CR>", { desc = "Set nopaste" })
 vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>", { desc = "Abort git commit" })
+
+-- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
