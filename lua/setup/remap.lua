@@ -50,7 +50,7 @@ vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{class
 vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 
 -- --- other
-vim.keymap.set("n", "J", "mzJ`z") --keep cursor at same place while remvoving end of line whitespaces
+vim.keymap.set("n", "J", "mzJ`z") -- keep cursor at same place while remvoving end of line whitespaces
 
 -- page up/down
 
