@@ -22,6 +22,7 @@ vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code bloc
 
 vim.keymap.set("n", "<leader>sepa", ":set paste<CR>", { desc = "Set paste" })
 vim.keymap.set("n", "<leader>seno", ":set nopaste<CR>", { desc = "Set nopaste" })
+vim.keymap.set("n", "<leader>paste", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
 vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>", { desc = "Abort git commit" })
 
 -- -- basic commands
@@ -96,3 +97,4 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize -4<CR>", { desc = "Resize split up" }
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split down" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
+
