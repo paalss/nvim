@@ -317,7 +317,7 @@ Preview norm and macros
 
 1. Insert mode
 2. Begin writing
-2. `[ctrl] x, [ctrl] o`
+3. `[ctrl] x, [ctrl] o`
 
 **Return to last opened window (buffer)**
 
