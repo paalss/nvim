@@ -20,12 +20,16 @@ vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code bloc
 
 -- action shortcuts
 
-vim.keymap.set("n", "<leader>pas", ":set paste<CR>", { desc = "Set paste" })
-vim.keymap.set("n", "<leader>nopas", ":set nopaste<CR>", { desc = "Set nopaste" })
 vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>", { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
+vim.keymap.set("n", "<leader>sepa", ":set paste<CR>", { desc = "Set paste" })
+vim.keymap.set("n", "<leader>seno", ":set nopaste<CR>", { desc = "Set nopaste" })
+vim.keymap.set("n", "<leader>paste", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
+
+-- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
+vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
@@ -46,7 +50,7 @@ vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{class
 vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 
 -- --- other
-vim.keymap.set("n", "J", "mzJ`z") --keep cursor at same place while remvoving end of line whitespaces
+vim.keymap.set("n", "J", "mzJ`z") -- keep cursor at same place while remvoving end of line whitespaces
 
 -- page up/down
 
@@ -93,3 +97,4 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize -4<CR>", { desc = "Resize split up" }
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split down" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
+
