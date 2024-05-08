@@ -23,11 +23,11 @@
 ::prem::`_pre-merge-request.sh`
 ::precheck:: :white_check_mark: `_pre-merge-request.sh` has been run
 
-::cl::console.log(){left 1}
-::cg::console.group(){left 1}
-::cge::console.groupEnd(){left 1}
-::ce::console.error(){left 1}
-::cw::console.warn(){left 1}
+::log::console.log(){left 1}
+::group::console.group(){left 1}
+::groupend::console.groupEnd(){left 1}
+::error::console.error(){left 1}
+::warn::console.warn(){left 1}
 
 ^+8::SendText "{" ; Ctrl Shift 8
 ^+9::SendText "}" ; Ctrl Shift 9
