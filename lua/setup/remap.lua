@@ -78,6 +78,9 @@ vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
 end)
 
+vim.keymap.set("n", "<leader>cop", ":copen<CR>", { desc = "Open quickfix list" })
+vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
+
 -- quick fix list navigation
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 -- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -98,4 +101,3 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize -4<CR>", { desc = "Resize split up" }
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split down" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
-
