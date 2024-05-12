@@ -32,7 +32,7 @@ local block1 = {
     [[SPC p0           Search text live]],
     [[SPC pp           Search text]],
     [[]],
-    [[–––––––––––––––––––– Panes ––––––––––––––––––––]],
+    [[––––––––––––––––– Tmux Panes ––––––––––––––––––––]],
     [[CTRL x, m        Maximize pane]],
     [[CTRL x, hjkl     Resize pane]],
     [[CTRL hjkl        move to pane]],
