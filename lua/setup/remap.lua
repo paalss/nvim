@@ -28,7 +28,7 @@ vim.keymap.set("n", "<leader>paste", ":set paste<CR>\"*p<esc>:set nopaste<CR>", 
 
 -- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
+vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
