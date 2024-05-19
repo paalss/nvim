@@ -253,6 +253,10 @@ tmux
 nvim .
 ```
 
+---
+
+You can also run `:terminal` and `:autoinsert`, but I haven't tested that as much
+
 #### Exit terminal
 
 Close with `exit` (better yet create an alias for "exit" in your `.bashrc` file. I'm using `alias q="exit"`)
