@@ -24,6 +24,8 @@ vim.keymap.set('n', '<leader><C-p>', [[<cmd>Telescope find_files hidden=true<CR>
 vim.keymap.set('n', '<A-p>', builtin.git_files, { desc = "Find git files" })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search open buffers' })
 vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
+vim.keymap.set('n', '<leader>adj', "<cmd>Telescope adjacent<CR>",
+  { desc = "Find adjacent files", noremap = true, silent = false })
 
 -- text search
 vim.keymap.set('n', '<leader>pø', builtin.grep_string, { desc = 'Current word search' })
@@ -58,8 +60,6 @@ vim.keymap.set('n', '<C-i>', builtin.keymaps, { desc = 'Find keymaps' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search help tags' })
 vim.keymap.set('n', '<leader>se', builtin.registers, { desc = 'Search paste registers registry clipboard' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
-vim.keymap.set('n', '<leader>adj', "<cmd>Telescope adjacent<CR>",
-  { desc = "Find adjacent files", noremap = true, silent = false })
 
 -- search neovim ~/.config
 vim.keymap.set('n', '<leader>sn', function()
