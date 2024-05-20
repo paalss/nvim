@@ -17,7 +17,7 @@ telescope.setup {
 -- end, { desc = "Send to quickfix list" })
 
 
--- file search --
+-- file search
 vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Find files' })
 vim.keymap.set('n', '<leader><C-p>', [[<cmd>Telescope find_files hidden=true<CR>]],
   { desc = "Find hidden files", noremap = true })
@@ -32,16 +32,16 @@ vim.keymap.set('n', '<leader>pp', function()
 end, { desc = "Text search" })
 vim.keymap.set('n', '<leader>p0', builtin.live_grep, { desc = 'Live text search' })
 
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search help tags' })
+-- git history
+vim.keymap.set('n', '<leader>tlo', builtin.git_commits, { desc = 'Show git history' })
+vim.keymap.set('n', '<leader>tblo', builtin.git_bcommits, { desc = 'Show git history (diff)' })
+
+-- colorscheme
 vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = 'Search and set colorscheme' })
-vim.keymap.set('n', '<leader>se', builtin.registers, { desc = 'Search paste registers registry clipboard' })
+
+-- telescope
 vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search telescope functionality' })
-vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
-vim.keymap.set('n', '<leader>adj', "<cmd>Telescope adjacent<CR>",
-  { desc = "Find adjacent files", noremap = true, silent = false })
 vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Continue last search' })
-
-
 
 -- current file text search previewed in buffer
 vim.keymap.set('n', '<leader>/', function()
@@ -52,11 +52,14 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '/ Search results in telescope window' })
 
-
 -- other
 vim.keymap.set('n', '<C-i>', builtin.keymaps, { desc = 'Find keymaps' })
 -- vim.keymap.set('n', '<C-l>', [[<cmd>Telescope keymaps hidden=true<CR>]], { desc = "Find keymaps", noremap = true })
-
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search help tags' })
+vim.keymap.set('n', '<leader>se', builtin.registers, { desc = 'Search paste registers registry clipboard' })
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
+vim.keymap.set('n', '<leader>adj', "<cmd>Telescope adjacent<CR>",
+  { desc = "Find adjacent files", noremap = true, silent = false })
 
 -- search neovim ~/.config
 vim.keymap.set('n', '<leader>sn', function()
