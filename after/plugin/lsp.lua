@@ -93,7 +93,7 @@ lsp.on_attach(function(client, bufnr)
   })
   vim.keymap.set("n", "<leader>help", function() vim.lsp.buf.signature_help() end,
     {
-      desc = "help",
+      desc = "Signature help current word",
       buffer = bufnr,
       remap = false
     })
