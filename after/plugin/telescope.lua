@@ -44,6 +44,7 @@ vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = 'Search and set 
 -- telescope
 vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search telescope functionality' })
 vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Continue last search' })
+vim.keymap.set('n', '<leader>planets', builtin.planets, { desc = 'Literal telescope' })
 
 -- current file text search previewed in buffer
 vim.keymap.set('n', '<leader>/', function()
