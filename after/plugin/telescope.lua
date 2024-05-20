@@ -34,9 +34,10 @@ vim.keymap.set('n', '<leader>pp', function()
 end, { desc = "Text search" })
 vim.keymap.set('n', '<leader>p0', builtin.live_grep, { desc = 'Live text search' })
 
--- git history
+-- git search
 vim.keymap.set('n', '<leader>tlo', builtin.git_commits, { desc = 'Show git history' })
 vim.keymap.set('n', '<leader>tblo', builtin.git_bcommits, { desc = 'Show git history (diff)' })
+vim.keymap.set('n', '<leader>tgb', builtin.git_branches, { desc = 'Show git branches' })
 
 -- colorscheme
 vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = 'Search and set colorscheme' })
