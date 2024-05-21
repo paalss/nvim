@@ -27,7 +27,7 @@
 ## Requirements
 
 <details>
-    <summary>WSL</summary>
+    <summary><b>WSL</b></summary>
 
 I'm using Ubuntu through WSL on Windows 10 & 11
 
@@ -46,7 +46,7 @@ If you want to use the latter, you'll have to delete the former. You can open up
 </details>
 
 <details>
-    <summary>Neovim version 0.9.0</summary>
+    <summary><b>Neovim version 0.9.0</b></summary>
 
 **My Neovim info**
 ````
@@ -61,7 +61,7 @@ LuaJIT 2.1.0-beta3
 </details>
 
 <details>
-    <summary>Git</summary>
+    <summary><b>Git</b></summary>
 
 **How to update git on Ubuntu**
 
@@ -84,7 +84,7 @@ git --version
 **Semi-requirements / nice to have**
 
 <details>
-    <summary>Autohotkey (Windows app, for extra keymaps)</summary>
+    <summary><b>Autohotkey (Windows app, for extra keymaps)</b></summary>
 
 I have made some additional keymaps using Authotkey.
 
@@ -114,7 +114,7 @@ click 'run script' from the right-click menu on the ahk-file
 </details>
 
 <details>
-    <summary>LazyGit (UI for version control)</summary>
+    <summary><b>LazyGit (UI for version control)</b></summary>
 
 Install as explained in <https://github.com/jesseduffield/lazygit#ubuntu>,
 
@@ -137,7 +137,7 @@ lazygit --version
 </details>
 
 <details>
-    <summary>Git delta (Better git diff)</summary>
+    <summary><b>Git delta (Better git diff)</b></summary>
 
 visit: <https://dandavison.github.io/delta/installation.html>
 
@@ -158,7 +158,7 @@ see more
 </details>
 
 <details>
-    <summary>Tmux (for terminal window management)</summary>
+    <summary><b>Tmux (for terminal window management)</b></summary>
 
 1. Install it
 2. Then use the config in this repo as your tmux config
@@ -183,7 +183,7 @@ Open tmux, and run:
 </details>
 
 <details>
-    <summary>(N)vim as commit message tool</summary>
+    <summary><b>(N)vim as commit message tool</b></summary>
 
 **Use (n)vim as commit message tool**
 
