@@ -11,6 +11,8 @@ telescope.setup {
     mappings = {
       i = {
         ["<esc>"] = require('telescope.actions').close,
+        ["<C-j>"] = require('telescope.actions').cycle_history_next,
+        ["<C-k>"] = require('telescope.actions').cycle_history_prev,
       },
     }
   },
