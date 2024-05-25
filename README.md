@@ -329,11 +329,7 @@ Preview norm and macros
 
 **Paste from OS clipboard**
 
-1. insert mode
-2. disable helper features like auto-newline-comments: `:set paste`
-3. paste: `[shift]+[right mouse click]`
-4. re-enable helper features: `:set nopaste`
-
+`[space] paste`
 
 **Indent line**
 
