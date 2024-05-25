@@ -7,18 +7,15 @@ local telescope = require("telescope")
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { ".git/" }
-  },
-  pickers = {
-    find_files = {
-      mappings = {
-        i = {
-          ["<esc>"] = require('telescope.actions').close,
-        },
-      }
+    file_ignore_patterns = { ".git/" },
+    mappings = {
+      i = {
+        ["<esc>"] = require('telescope.actions').close,
+      },
     }
-  }
+  },
 }
+
 
 -- vim.keymap.set('n', '<leader>sq', function(...)
 --   actions.send_to_qflist(...)
