@@ -1,6 +1,6 @@
 -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 local builtin = require('telescope.builtin')
--- local actions = require('telescope.actions')
+local actions = require('telescope.actions')
 require('telescope').load_extension("adjacent")
 
 local telescope = require("telescope")
@@ -10,12 +10,23 @@ telescope.setup {
     file_ignore_patterns = { ".git/" },
     mappings = {
       i = {
-        ["<esc>"] = require('telescope.actions').close,
-        ["<C-j>"] = require('telescope.actions').cycle_history_next,
-        ["<C-k>"] = require('telescope.actions').cycle_history_prev,
+        ["<esc>"] = actions.close,
+        ["<C-j>"] = actions.cycle_history_next,
+        ["<C-k>"] = actions.cycle_history_prev,
       },
     }
   },
+
+  pickers = {
+    help_tags = {
+      mappings = {
+        i = {
+          -- open help_tags result in new tab
+          ["<CR>"] = actions.select_tab
+        }
+      }
+    }
+  }
 }
 
 
