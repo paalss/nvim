@@ -317,12 +317,6 @@ Preview norm and macros
 
 ### Neovim
 
-**HTML attribute omni completion**
-
-1. Insert mode
-2. Begin writing
-3. `[ctrl] x, [ctrl] o`
-
 **Return to last opened window (buffer)**
 
 `[ctrl] 6`
@@ -340,10 +334,4 @@ INSERT MODE
 VISUAL MODE 
 
 `<` or `>`
-
-**Open help pages in new tab**
-
-eg. help with lualine:
-
-`:tab h lualine`
 
