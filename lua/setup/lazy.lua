@@ -28,6 +28,9 @@ local plugins = {
     'ThePrimeagen/vim-be-good'
   },
   {
+    'homogulosus/vim-diff'
+  },
+  {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     pin = true
