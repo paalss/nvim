@@ -21,7 +21,7 @@ telescope.setup {
     help_tags = {
       mappings = {
         i = {
-          -- open help_tags result in new tab
+          -- open help_tags result in new tab instead of split
           ["<CR>"] = actions.select_tab
         }
       }
