@@ -52,6 +52,7 @@ vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`}
 
 -- --- other
 vim.keymap.set("n", "J", "mzJ`z") -- keep cursor at same place while remvoving end of line whitespaces
+vim.keymap.set("n", "<leader>pat", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
 
 -- page up/down
 
