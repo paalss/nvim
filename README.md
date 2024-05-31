@@ -183,19 +183,14 @@ Open tmux, and run:
 </details>
 
 <details>
-    <summary><b>(N)vim as commit message tool</b></summary>
+    <summary><b>Emmet-ls (node)</b></summary>
 
-**Use (n)vim as commit message tool**
-
-`git config --global core.editor "nvim"`
-
-`git config --global core.editor "vim"`
-
-<!-- Just `"vim"` won't do. It'll cause an error upon commiting from toggleterm (assuming the same goes for Fterm). -->
+1. Install node
+2. `npm install -g emmet-ls`
+3. for jsx code completion
 
 ---
 </details>
-
 ## Installation 
 
 **Clone config**
