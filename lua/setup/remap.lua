@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 -- -- all text
-vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
+vim.keymap.set("n", "<leader>vall", "ggVG", { desc = "mark all" })
 vim.keymap.set("n", "<leader>yall", "ggyG", { desc = "yank all" })
 vim.keymap.set("n", "<leader>dall", "ggdG", { desc = "delete all" })
 vim.keymap.set("n", "<leader>pall", "ggVGp", { desc = "paste all" })
