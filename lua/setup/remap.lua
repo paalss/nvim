@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader>sepa", ":set paste<CR>", { desc = "Set paste" })
 vim.keymap.set("n", "<leader>seno", ":set nopaste<CR>", { desc = "Set nopaste" })
-vim.keymap.set("n", "<leader>paste", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
+vim.keymap.set("n", "<leader>pas", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
 
 -- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })

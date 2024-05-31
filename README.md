@@ -315,18 +315,3 @@ Preview norm and macros
 **Return to last opened window (buffer)**
 
 `[ctrl] 6`
-
-**Paste from OS clipboard**
-
-`[space] paste`
-
-**Indent line**
-
-INSERT MODE
-
-`[ctrl] t` / `[ctrl] d`
-
-VISUAL MODE 
-
-`<` or `>`
-
