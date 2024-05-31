@@ -75,9 +75,21 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
+
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
-end)
+end, { desc = "lsp format" })
+
+-- Set a keymap only for React files (JavaScript and TypeScript)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
+      { desc = "Format with Neoformat", noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
+  end,
+})
 
 vim.keymap.set("n", "<leader>cop", ":copen<CR>", { desc = "Open quickfix list" })
 vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })

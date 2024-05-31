@@ -27,6 +27,7 @@ local plugins = {
   {
     'ThePrimeagen/vim-be-good'
   },
+  { 'sbdchd/neoformat' },
   {
     'homogulosus/vim-diff'
   },
@@ -150,7 +151,7 @@ local plugins = {
       require("nvim-autopairs").setup {}
     end
   },
-  { 'djoshea/vim-autoread',                               pin = true },
+  { 'djoshea/vim-autoread',          pin = true },
   {
     'nvim-telescope/telescope.nvim',
     version = '0.1.1',
