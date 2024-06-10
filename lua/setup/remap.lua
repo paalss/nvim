@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>dcom", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader>sepa", ":set paste<CR>", { desc = "Set paste" })
 vim.keymap.set("n", "<leader>seno", ":set nopaste<CR>", { desc = "Set nopaste" })
-vim.keymap.set("n", "<leader>paste", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
+vim.keymap.set("n", "<leader>pas", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
 
 -- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 -- -- all text
-vim.keymap.set("n", "<leader>all", "ggVG", { desc = "mark all" })
+vim.keymap.set("n", "<leader>vall", "ggVG", { desc = "mark all" })
 vim.keymap.set("n", "<leader>yall", "ggyG", { desc = "yank all" })
 vim.keymap.set("n", "<leader>dall", "ggdG", { desc = "delete all" })
 vim.keymap.set("n", "<leader>pall", "ggVGp", { desc = "paste all" })
@@ -52,6 +52,7 @@ vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`}
 
 -- --- other
 vim.keymap.set("n", "J", "mzJ`z") -- keep cursor at same place while remvoving end of line whitespaces
+vim.keymap.set("n", "<leader>pat", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
 
 -- page up/down
 
@@ -74,9 +75,21 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
+
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
-end)
+end, { desc = "lsp format" })
+
+-- Set a keymap only for React files (JavaScript and TypeScript)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
+      { desc = "Format with Neoformat", noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
+  end,
+})
 
 vim.keymap.set("n", "<leader>cop", ":copen<CR>", { desc = "Open quickfix list" })
 vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })

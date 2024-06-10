@@ -42,11 +42,10 @@ local block1 = {
     [[SPC gt           Open Fugitive]],
     [[]],
     [[–––––––––––––––––––– Other ––––––––––––––––––––]],
+    [[SPC te           Open terminal]],
     [[SPC y*           Yank to OS system registry]],
     [[SPC vv           Open Neovim explorer]],
     [[SPC hh           Open lazy.nvim]],
-    [[SPC glo          Open git history]],
-    [[SPC glgp         Open git history for currrent file]],
     [[SPC sn           Search Neovim config files]],
   },
   opts = {
