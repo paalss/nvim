@@ -28,7 +28,7 @@ function ColorMyPencils(color)
 
 	-- color = color or "ayu"
 	-- color = color or "darkplus"
-	color = color or "tokyonight-night"
+	color = color or "ayu"
 	vim.cmd.colorscheme(color)
 
 	-- set transparent background
