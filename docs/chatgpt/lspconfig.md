@@ -8,6 +8,7 @@ Certainly! To configure Neovim using lazy.nvim instead of packer.nvim, follow th
 
 Here's the complete configuration using lazy.nvim:
 
+
 ```lua
 -- Install lazy.nvim if not already installed
 -- This is the recommended installation script for lazy.nvim
