@@ -34,6 +34,7 @@
 ^+9::SendText "}" ; Ctrl Shift 9
 
 !2::Send "@"
+!3::Send "~"
 !4::Send "$"
 
 <^>!-::Send "–" ; print en-dash
