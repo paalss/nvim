@@ -1,3 +1,9 @@
+write an lsp config in lua that does the following:
+- tab button switches focus to the next field
+- ctrl n and ctrl p navigates down and up in the autocompletion menu
+
+
+
 Certainly! To configure Neovim using lazy.nvim instead of packer.nvim, follow the steps below. The lazy.nvim plugin manager simplifies plugin management and allows for lazy loading of plugins.
 
     Install lazy.nvim: Follow the installation instructions for lazy.nvim if you haven't already.
