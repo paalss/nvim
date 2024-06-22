@@ -7,7 +7,7 @@ local telescope = require("telescope")
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { ".git/" },
+    file_ignore_patterns = { ".git/", "node_modules" },
     mappings = {
       i = {
         ["<esc>"] = actions.close,
@@ -18,6 +18,9 @@ telescope.setup {
   },
 
   pickers = {
+    find_files = {
+      find_command = { "rg", "--files", "--hidden", "--no-ignore-vcs" },
+    },
     help_tags = {
       mappings = {
         i = {
@@ -38,8 +41,8 @@ telescope.setup {
 
 -- file search
 vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Find files' })
-vim.keymap.set('n', '<leader><C-p>', [[<cmd>Telescope find_files hidden=true<CR>]],
-  { desc = "Find hidden files", noremap = true })
+-- vim.keymap.set('n', '<leader><C-p>', [[<cmd>Telescope find_files hidden=true<CR>]],
+-- { desc = "Find hidden files", noremap = true })
 vim.keymap.set('n', '<A-p>', builtin.git_files, { desc = "Find git files" })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search open buffers' })
 vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
