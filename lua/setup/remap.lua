@@ -16,7 +16,9 @@ vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) down"
 
 -- code snippets
 
-vim.keymap.set("n", "<leader>tma", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
+vim.keymap.set("n", "<leader>tg", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
+vim.keymap.set("n", "<leader>tbg", "i```bash<CR>```<esc>O", { desc = "Add bash code block in markdown" })
+vim.keymap.set("n", "<leader>txg", "i```tsx<CR>```<esc>O", { desc = "Add tsx code block in markdown" })
 
 -- action shortcuts
 
