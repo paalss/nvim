@@ -72,6 +72,8 @@ vim.keymap.set("n", "<leader>pat", ":echo expand('%:p')<CR>", { desc = "print pa
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 
+vim.keymap.set("n", "<C-e>", "<C-e>", { desc = "Scroll down" })
+vim.keymap.set("n", "<C-y>", "<C-y>", { desc = "Scroll up" })
 
 vim.keymap.set("n", "<S-d>", "<S-L>2j", { desc = "Scroll 2 lines down" })
 vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
