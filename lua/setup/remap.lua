@@ -1,6 +1,3 @@
-vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
-
-
 -- shortcuts/typing
 
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At" })
@@ -109,7 +106,7 @@ vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Lef
 vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
--- navigation
+-- file navigation
 
 -- -- page up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
@@ -124,9 +121,11 @@ vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
 -- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
 -- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
 
+-- page navigation
 
--- help pages
+vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
+-- -- help pages
 vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
 
 
