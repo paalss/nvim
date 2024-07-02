@@ -121,6 +121,10 @@ vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
 -- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
 
 
+-- help pages
+
+vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
+
 -- split management
 
 -- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
