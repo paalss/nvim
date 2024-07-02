@@ -67,36 +67,12 @@ vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase"
 vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 
--- --- other
-vim.keymap.set("n", "J", "mzJ`z") -- keep cursor at same place while remvoving end of line whitespaces
-vim.keymap.set("n", "<leader>pat", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
-
-
--- navigation
-
--- -- page up/down
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
-
-vim.keymap.set("n", "<C-e>", "<C-e>", { desc = "Scroll down" })
-vim.keymap.set("n", "<C-y>", "<C-y>", { desc = "Scroll up" })
-
-vim.keymap.set("n", "<S-d>", "<S-L>2j", { desc = "Scroll 2 lines down" })
-vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
-
--- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
--- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
-
-vim.keymap.set("i", "<C-c>", "<Esc>")
-
-vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
-
+-- -- formatting
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
 end, { desc = "lsp format" })
 
--- Set a keymap only for React files (JavaScript and TypeScript)
+-- For React files (JavaScript and TypeScript)
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   callback = function()
@@ -107,6 +83,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- quickfix list
 vim.keymap.set("n", "<leader>cop", ":copen<CR>", { desc = "Open quickfix list" })
 vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 
@@ -116,11 +93,35 @@ vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 -- vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
--- replace the word your cursor is on
+-- --- other
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
+vim.keymap.set("n", "<leader>pat", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
+vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 
 vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
   { desc = "Replace all occurences of word under cursor" })
 vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
+
+
+-- navigation
+
+-- -- page up/down
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
+
+vim.keymap.set("n", "<C-e>", "<C-e>", { desc = "Scroll down" }) -- add desc to default maps
+vim.keymap.set("n", "<C-y>", "<C-y>", { desc = "Scroll up" })
+
+vim.keymap.set("n", "<S-d>", "<S-L>2j", { desc = "Scroll 2 lines down" })
+vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
+
+-- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
+-- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
+
+
+-- split management
 
 -- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 -- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below split" })
