@@ -21,7 +21,7 @@ vim.keymap.set("v", "<A-Up>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) up" })
 vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) down" })
 
 -- -- add new/delete line
-vim.keymap.set("n", "<leader>cc", "dd<esc>", { desc = "delete line" })
+vim.keymap.set("n", "<leader>cc", "cc<esc>", { desc = "delete line" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
