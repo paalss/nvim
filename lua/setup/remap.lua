@@ -2,10 +2,10 @@ vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 -- shortcuts/typing
 
-vim.keymap.set({ "n", "i" }, "<A-2>", "@", { desc = "At" })
-vim.keymap.set({ "n", "i" }, "<A-3>", "~", { desc = "Tilde" })
-vim.keymap.set({ "n", "i" }, "<A-4>", "$", { desc = "Dollar sign" })
-vim.keymap.set({ "n", "i" }, "<A-5>", "%", { desc = "Percent" })
+vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At" })
+vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Tilde" })
+vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
+vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 
 -- line management
 
