@@ -91,3 +91,8 @@ vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnost
 vim.keymap.set('n', '<leader>sn', function()
   builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = 'Search Neovim ~/.config files' })
+
+-- search live_rep in neovim ~/.config
+vim.keymap.set('n', '<leader>s2', function()
+  builtin.live_grep { cwd = vim.fn.stdpath 'config' }
+end, { desc = 'Live text search Neovim ~/.config files' })
