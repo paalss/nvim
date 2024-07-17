@@ -1,4 +1,4 @@
--- vim.keymap.set("n", "<leader>glo", ":DiffviewFileHistory<CR>")
+vim.keymap.set("n", "<leader>glo", ":DiffviewFileHistory<CR>", { desc = "Show git history" })
 -- vim.keymap.set("n", "<leader>glgp", ":DiffviewFileHistory %<CR>")
 
 vim.keymap.set("n", "<leader>gg", ":DiffviewOpen<CR>", { desc = "Open git status (compate current index)" })
