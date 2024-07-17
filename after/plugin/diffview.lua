@@ -1,3 +1,20 @@
+local diffview = require 'diffview'
+
+
+diffview.setup {
+  keymaps = {
+    file_panel = {
+      {
+        "n", "eee", ":echo 'AAAAAAA'<CR>", { desc = "Commit mmmm" }
+      }
+    }
+  }
+}
+
+-- https://github.com/sindrets/diffview.nvim/blob/main/USAGE.md#committing
+
+
+
 -- Git status and close
 vim.keymap.set("n", "<leader>gg", ":DiffviewOpen<CR>", { desc = "Open git status (compate current index)" })
 vim.keymap.set("n", "<leader>gh", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" })
