@@ -2,11 +2,15 @@ local diffview = require 'diffview'
 
 diffview.setup {
   keymaps = {
+    view = {
+      { "n", "q", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+    },
     file_panel = {
       { "n", "cc",  ":Git commit<CR>",                   { desc = "Commit" } },
       { "n", "caa", ":Git commit --amend<CR>",           { desc = "Commit amend" } },
       { "n", "can", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
-    }
+      { "n", "q",   "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
+    },
   }
 }
 
