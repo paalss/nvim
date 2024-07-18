@@ -12,6 +12,9 @@ diffview.setup {
       {
         "n", "can", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" }
       },
+      {
+        "n", "q", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" }
+      }
     }
   }
 }
