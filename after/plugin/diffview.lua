@@ -3,18 +3,9 @@ local diffview = require 'diffview'
 diffview.setup {
   keymaps = {
     file_panel = {
-      {
-        "n", "cc", ":Git commit<CR>", { desc = "Commit" }
-      },
-      {
-        "n", "caa", ":Git commit --amend<CR>", { desc = "Commit amend" }
-      },
-      {
-        "n", "can", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" }
-      },
-      {
-        "n", "q", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" }
-      }
+      { "n", "cc",  ":Git commit<CR>",                   { desc = "Commit" } },
+      { "n", "caa", ":Git commit --amend<CR>",           { desc = "Commit amend" } },
+      { "n", "can", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
     }
   }
 }
