@@ -127,7 +127,9 @@ vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
 vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 -- -- help pages
+
 vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
+vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j", { desc = "Scrolling help" })
 
 
 -- split management
