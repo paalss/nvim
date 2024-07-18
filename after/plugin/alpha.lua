@@ -38,6 +38,7 @@ local block1 = {
     [[CTRL hjkl        move to pane]],
     [[]],
     [[–––––––––––––––––––– Git ––––––––––––––––––––]],
+    [[SPC gg           Open Diffview]],
     [[SPC lg           Open Lazygit]],
     [[SPC gt           Open Fugitive]],
     [[]],
