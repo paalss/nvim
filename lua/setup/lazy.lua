@@ -40,9 +40,6 @@ local plugins = {
     }
   },
   {
-    'homogulosus/vim-diff'
-  },
-  {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     pin = true
