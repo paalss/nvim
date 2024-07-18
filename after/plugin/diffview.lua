@@ -1,19 +1,20 @@
 local diffview = require 'diffview'
 
-
 diffview.setup {
   keymaps = {
     file_panel = {
       {
-        "n", "eee", ":echo 'AAAAAAA'<CR>", { desc = "Commit mmmm" }
-      }
+        "n", "cc", ":Git commit<CR>", { desc = "Commit" }
+      },
+      {
+        "n", "caa", ":Git commit --amend<CR>", { desc = "Commit amend" }
+      },
+      {
+        "n", "can", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" }
+      },
     }
   }
 }
-
--- https://github.com/sindrets/diffview.nvim/blob/main/USAGE.md#committing
-
-
 
 -- Git status and close
 vim.keymap.set("n", "<leader>gg", ":DiffviewOpen<CR>", { desc = "Open git status (compate current index)" })
