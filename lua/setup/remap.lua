@@ -55,11 +55,11 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d")
 
 -- -- all text
-vim.keymap.set("n", "<leader>va", "ggVG", { desc = "mark all" })
-vim.keymap.set("n", "<leader>ya", "mzggyG`z", { desc = "yank all" })
-vim.keymap.set("n", "<leader><leader>ya", "mzgg\"+yG`z", { desc = "yank all to OS registry" })
-vim.keymap.set("n", "<leader>da", "ggdG", { desc = "delete all" })
-vim.keymap.set("n", "<leader>pa", "ggVGp", { desc = "paste all" })
+vim.keymap.set("n", "<leader>val", "ggVG", { desc = "mark all" })
+vim.keymap.set("n", "<leader>yal", "mzggyG`z", { desc = "yank all" })
+vim.keymap.set("n", "<leader><leader>yal", "mzgg\"+yG`z", { desc = "yank all to OS registry" })
+vim.keymap.set("n", "<leader>dal", "ggdG", { desc = "delete all" })
+vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- casing management
 vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
