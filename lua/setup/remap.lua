@@ -51,11 +51,9 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 -- -- registers
 vim.keymap.set("x", "<leader>p", "\"_dP")
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
-vim.keymap.set("n", "<leader>de", "\"_d")
-vim.keymap.set("v", "<leader>de", "\"_d")
+vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d")
 
 -- -- all text
 vim.keymap.set("n", "<leader>vall", "ggVG", { desc = "mark all" })
@@ -129,7 +127,8 @@ vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 -- -- help pages
 
 vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
-vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j", { desc = "Scrolling help" })
+vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j",
+  { desc = "Scrolling help" })
 
 
 -- split management
