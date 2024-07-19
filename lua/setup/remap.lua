@@ -35,8 +35,7 @@ vim.keymap.set("n", "<leader>txg", "i```tsx<CR>```<esc>O", { desc = "Add tsx cod
 
 -- action shortcuts
 
-vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
-  { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
+-- -- pasting
 vim.keymap.set("n", "<leader>sepa", ":set paste<CR>", { desc = "Set paste" })
 vim.keymap.set("n", "<leader>seno", ":set nopaste<CR>", { desc = "Set nopaste" })
 vim.keymap.set("n", "<leader>po", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
@@ -72,7 +71,7 @@ vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
 end, { desc = "lsp format" })
 
--- For React files (JavaScript and TypeScript)
+-- -- -- For React files (JavaScript and TypeScript)
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   callback = function()
@@ -83,17 +82,19 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- quickfix list
+-- -- quickfix list
 vim.keymap.set("n", "<leader>cop", ":copen<CR>", { desc = "Open quickfix list" })
 vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 
--- quick fix list navigation
+-- -- quick fix list navigation
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 -- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 -- vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
--- --- other
+-- -- other
+vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
+  { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
 vim.keymap.set("n", "<leader>pat", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -105,9 +106,9 @@ vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Lef
 vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
--- file navigation
+-- navigation
 
--- -- page up/down
+-- -- code navigation
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 
@@ -120,12 +121,10 @@ vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
 -- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
 -- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
 
--- page navigation
-
+-- -- file navigation
 vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 -- -- help pages
-
 vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
 vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j",
   { desc = "Scrolling help" })
