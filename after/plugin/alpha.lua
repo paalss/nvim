@@ -21,6 +21,12 @@ local head = {
   },
 }
 
+vim.keymap.set("n", "<leader>aa", function()
+  vim.cmd('so "%"')
+  vim.cmd('Alpha')
+end
+, { desc = "Open and refresh intro splash screen" })
+
 
 local block1 = {
   type = "text",
