@@ -84,7 +84,7 @@ end, { desc = '/ Search results in telescope window' })
 vim.keymap.set('n', '<C-i>', builtin.keymaps, { desc = 'Find keymaps' })
 -- vim.keymap.set('n', '<C-l>', [[<cmd>Telescope keymaps hidden=true<CR>]], { desc = "Find keymaps", noremap = true })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search help tags' })
-vim.keymap.set('n', '<leader>se', builtin.registers, { desc = 'Search paste registers registry clipboard' })
+vim.keymap.set('n', '<leader>sg', builtin.registers, { desc = 'Search paste registers registry clipboard' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
 
 -- search neovim ~/.config
