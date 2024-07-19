@@ -15,6 +15,7 @@
 +F2::Run "http://localhost:8000/"
 +F3::Run "http://localhost:8000/graphql/"
 +F4::Run "http://localhost:6006/"
++F5::Run "http://localhost:3000/tenant/"
 
 ; ---------- "TEXT" ----------
 
@@ -33,7 +34,9 @@
 ^+9::SendText "}" ; Ctrl Shift 9
 
 !2::Send "@"
+!3::Send "~ "
 !4::Send "$"
+!5::Send "%"
 
 <^>!-::Send "–" ; print en-dash
 

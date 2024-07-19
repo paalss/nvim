@@ -7,7 +7,7 @@ local telescope = require("telescope")
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { ".git/" },
+    file_ignore_patterns = { ".git/", "node_modules" },
     mappings = {
       i = {
         ["<esc>"] = actions.close,
@@ -18,6 +18,9 @@ telescope.setup {
   },
 
   pickers = {
+    find_files = {
+      find_command = { "rg", "--files", "--hidden", "--no-ignore-vcs" },
+    },
     help_tags = {
       mappings = {
         i = {
@@ -38,8 +41,8 @@ telescope.setup {
 
 -- file search
 vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Find files' })
-vim.keymap.set('n', '<leader><C-p>', [[<cmd>Telescope find_files hidden=true<CR>]],
-  { desc = "Find hidden files", noremap = true })
+-- vim.keymap.set('n', '<leader><C-p>', [[<cmd>Telescope find_files hidden=true<CR>]],
+-- { desc = "Find hidden files", noremap = true })
 vim.keymap.set('n', '<A-p>', builtin.git_files, { desc = "Find git files" })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search open buffers' })
 vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
@@ -54,7 +57,7 @@ end, { desc = "Text search" })
 vim.keymap.set('n', '<leader>p0', builtin.live_grep, { desc = 'Live text search' })
 
 -- git search -- shortcut convention: use oh-my-bash/zsh -ish
-vim.keymap.set('n', '<leader>glo', builtin.git_commits, { desc = 'Show git history' })
+-- vim.keymap.set('n', '<leader>glo', builtin.git_commits, { desc = 'Show git history' })
 vim.keymap.set('n', '<leader>glod', builtin.git_bcommits, { desc = 'Show git history (diff)' })
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Show git branches' })
 vim.keymap.set('n', '<leader>gstl', builtin.git_stash, { desc = 'Show git stashes' })
@@ -88,3 +91,8 @@ vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnost
 vim.keymap.set('n', '<leader>sn', function()
   builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = 'Search Neovim ~/.config files' })
+
+-- search live_rep in neovim ~/.config
+vim.keymap.set('n', '<leader>s2', function()
+  builtin.live_grep { cwd = vim.fn.stdpath 'config' }
+end, { desc = 'Live text search Neovim ~/.config files' })

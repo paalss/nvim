@@ -29,7 +29,15 @@ local plugins = {
   },
   { 'sbdchd/neoformat' },
   {
-    'homogulosus/vim-diff'
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    enabled = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
   },
   {
     'goolord/alpha-nvim',
@@ -190,8 +198,7 @@ local plugins = {
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
   -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
   { 'martinsione/darkplus.nvim',   pin = true },
-  { 'ayu-theme/ayu-vim',           pin = true },
-  { "catppuccin/nvim",             name = "catppuccin", priority = 1000, pin = true },
+  { 'bignimbus/pop-punk.vim',      pin = true },
   {
     "folke/tokyonight.nvim",
     pin = true,
