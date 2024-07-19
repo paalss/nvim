@@ -55,11 +55,11 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d")
 
 -- -- all text
-vim.keymap.set("n", "<leader>vall", "ggVG", { desc = "mark all" })
-vim.keymap.set("n", "<leader>yall", "mzggyG`z", { desc = "yank all" })
-vim.keymap.set("n", "<leader><leader>yall", "mzgg\"+yG`z", { desc = "yank all to OS registry" })
-vim.keymap.set("n", "<leader>dall", "ggdG", { desc = "delete all" })
-vim.keymap.set("n", "<leader>pall", "ggVGp", { desc = "paste all" })
+vim.keymap.set("n", "<leader>va", "ggVG", { desc = "mark all" })
+vim.keymap.set("n", "<leader>ya", "mzggyG`z", { desc = "yank all" })
+vim.keymap.set("n", "<leader><leader>ya", "mzgg\"+yG`z", { desc = "yank all to OS registry" })
+vim.keymap.set("n", "<leader>da", "ggdG", { desc = "delete all" })
+vim.keymap.set("n", "<leader>pa", "ggVGp", { desc = "paste all" })
 
 -- -- casing management
 vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
@@ -96,7 +96,7 @@ vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
-vim.keymap.set("n", "<leader>pat", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
+vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
