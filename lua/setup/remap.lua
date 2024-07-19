@@ -100,11 +100,10 @@ vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "print pat
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
-
 vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
   { desc = "Replace all occurences of word under cursor" })
 vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
-
+vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git clean -fd", { desc = "Nuke working tree" })
 
 -- navigation
 
