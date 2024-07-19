@@ -191,6 +191,7 @@ Open tmux, and run:
 
 ---
 </details>
+
 ## Installation 
 
 **Clone config**
