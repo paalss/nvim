@@ -25,7 +25,7 @@ local head = {
 -- eg: opts.hl = "String"
 
 vim.keymap.set("n", "<leader>aa", function()
-  vim.cmd('so "%"')
+  -- vim.cmd('so "%"')
   vim.cmd('Alpha')
 end
 , { desc = "Open and refresh intro splash screen" })
