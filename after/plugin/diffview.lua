@@ -17,7 +17,7 @@ diffview.setup {
 }
 
 -- Git status and close
-vim.keymap.set("n", "<leader>gg", ":DiffviewOpen<CR>", { desc = "Open git status (compate current index)" })
+vim.keymap.set("n", "<leader>gg", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
 vim.keymap.set("n", "<leader>gh", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- Git log
