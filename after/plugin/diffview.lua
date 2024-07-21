@@ -3,7 +3,8 @@ local diffview = require 'diffview'
 diffview.setup {
   keymaps = {
     view = {
-      { "n", "q", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "q",         ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "v", "<leader>s", ":diffput<CR>",       { desc = "Stage selection" } }
     },
     file_panel = {
       { "n", "cc",  ":Git commit<CR>",                   { desc = "Commit" } },
