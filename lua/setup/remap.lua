@@ -36,8 +36,8 @@ vim.keymap.set("n", "<leader>txg", "i```tsx<CR>```<esc>O", { desc = "Add tsx cod
 -- action shortcuts
 
 -- -- pasting
-vim.keymap.set("n", "<leader>sepa", ":set paste<CR>", { desc = "Set paste" })
-vim.keymap.set("n", "<leader>seno", ":set nopaste<CR>", { desc = "Set nopaste" })
+vim.keymap.set("n", "<leader>spa", ":set paste<CR>", { desc = "Set paste" })
+vim.keymap.set("n", "<leader>sno", ":set nopaste<CR>", { desc = "Set nopaste" })
 vim.keymap.set("n", "<leader>po", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
 
 -- -- basic commands
