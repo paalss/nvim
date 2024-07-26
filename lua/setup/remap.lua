@@ -56,7 +56,7 @@ vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d")
 
 -- -- all text
 vim.keymap.set("n", "<leader>val", "ggVG", { desc = "mark all" })
-vim.keymap.set("n", "<leader>yal", "mzggyG`z", { desc = "yank all" })
+vim.keymap.set("n", "<leader>yal", ":%y<CR>", { desc = "yank all" })
 vim.keymap.set("n", "<leader><leader>yal", "mzgg\"+yG`z", { desc = "yank all to OS registry" })
 vim.keymap.set("n", "<leader>dal", "ggdG", { desc = "delete all" })
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
