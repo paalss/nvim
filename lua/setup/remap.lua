@@ -75,8 +75,8 @@ end, { desc = "lsp format" })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   callback = function()
-    vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
-      { desc = "Format with Neoformat", noremap = true, silent = true })
+    -- vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
+        -- { desc = "Format with Neoformat", noremap = true, silent = true })
     vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
     vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
   end,
