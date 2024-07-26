@@ -10,6 +10,11 @@
 sudo snap install nvim --classic
 ```
 
+Snap docs:
+
+- https://snapcraft.io/install/nvim/ubuntu
+- https://snapcraft.io/nvim
+
 #### Med Tarball (v0.9.0 Neovim)
 
 Versjon 0.9.0 er ikke tilgjengelig med Apt, så må bruke Tarball metoden for å få 0.9.0. For å installere nyere versjon på linux kan du kjøre tarball metoden.
