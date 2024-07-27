@@ -21,7 +21,7 @@ rm nvim-linux64.tar.gz
 ln -s ./nvim-linux64/bin/nvim ./nvim # create symbolic link
 ```
 
-Følg denne tutorialen, den er steinbra :+1: https://www.youtube.com/watch?v=2wapxsfzLho&list=LL&index=5
+Følg denne tutorialen, den er steinbra :+1: https://www.youtube.com/watch?v=2wapxsfzLho
 
 ### Med Apt (Enklest installasjon, men gir bare v0.4.3 Neovim)
 
