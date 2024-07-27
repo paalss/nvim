@@ -4,16 +4,7 @@
 
 ### Ubuntu/WSL
 
-#### Med Snap (v0.10.0 Neovim)
-
-```bash
-sudo snap install nvim --classic
-```
-
-Snap docs:
-
-- https://snapcraft.io/install/nvim/ubuntu
-- https://snapcraft.io/nvim
+Don't install nvim v0.10.0. Packages such as Telescope doesn't work with that yet.
 
 #### Med Tarball (v0.9.0 Neovim)
 
