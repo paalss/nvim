@@ -27,6 +27,10 @@ local plugins = {
   {
     'ThePrimeagen/vim-be-good'
   },
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+     dependencies = { 'nvim-lua/plenary.nvim' }
+  },
   { 'sbdchd/neoformat' },
   {
     'nvim-telescope/telescope.nvim',
