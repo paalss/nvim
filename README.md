@@ -79,6 +79,20 @@ git --version
 ---
 </details>
 
+<details>
+Install Ripgrep for Telescope
+
+Ubuntu
+```bash
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
+sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
+```
+
+Other installation methods: <https://github.com/BurntSushi/ripgrep>
+
+---
+</details>
+
 <br>
 
 **Semi-requirements / nice to have**
