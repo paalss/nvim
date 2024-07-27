@@ -4,13 +4,15 @@
 
 ### Ubuntu/WSL
 
-Don't install nvim v0.10.0. Packages such as Telescope doesn't work with that yet.
+Ikke installer nvim v0.10.0. Telescope funker ikke med det, blant annet
 
 #### Med Tarball (v0.9.0 Neovim)
 
 Versjon 0.9.0 er ikke tilgjengelig med Apt, så må bruke Tarball metoden for å få 0.9.0. For å installere nyere versjon på linux kan du kjøre tarball metoden.
 
 Last ned tarball, se https://github.com/neovim/neovim/releases/tag/v0.9.0
+
+Scroll helt ned til bunnen og la assets loade først
 
 Flytt til `~/.local/bin/`
 
