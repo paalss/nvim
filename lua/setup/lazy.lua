@@ -29,15 +29,10 @@ local plugins = {
   },
   { 'sbdchd/neoformat' },
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    enabled = true,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
+    'nvim-telescope/telescope.nvim',
+    -- tag = '0.1.8',
+    tag = '0.1.4',
+    dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {
     'goolord/alpha-nvim',
@@ -81,28 +76,6 @@ local plugins = {
         }
       }
     end
-  },
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    -- tag = "*",
-    pin = true,
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.defaults"] = {},  -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.dirman"] = {      -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/notes",
-              },
-            },
-          },
-        },
-      }
-    end,
   },
   {
     -- LSP Configuration & Plugins
@@ -168,7 +141,6 @@ local plugins = {
     pin = true,
   },
   { "MaximilianLloyd/adjacent.nvim", pin = true },
-  { 'ThePrimeagen/harpoon',          pin = true },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to  `main` branch for the latest features
@@ -206,10 +178,9 @@ local plugins = {
     priority = 1000,
     opts = {},
   },
-  { 'nvim-treesitter/nvim-treesitter', pin = true },
   build = ':TSUpdate',
-  { 'mbbill/undotree',                 pin = true },
-  { 'tpope/vim-fugitive',              pin = true },
+  { 'mbbill/undotree',    pin = true },
+  { 'tpope/vim-fugitive', pin = true },
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
