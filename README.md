@@ -7,6 +7,7 @@
 <!-- toc -->
 
 - [Requirements](#requirements)
+  * [Semi-requirements / nice to have](#semi-requirements--nice-to-have)
 - [Installation](#installation)
 - [Usage & utilities](#usage--utilities)
   * [Git](#git)
@@ -120,7 +121,7 @@ sudo apt install nodejs npm
 
 <br>
 
-**Semi-requirements / nice to have**
+### Semi-requirements / nice to have
 
 <details>
     <summary><b>Autohotkey (Windows app, for extra keymaps)</b></summary>
