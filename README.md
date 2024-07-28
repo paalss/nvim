@@ -9,6 +9,7 @@
 - [Requirements](#requirements)
   * [Semi-requirements / nice to have](#semi-requirements--nice-to-have)
 - [Installation](#installation)
+  * [Start Neovim](#start-neovim)
 - [Usage & utilities](#usage--utilities)
   * [Git](#git)
     + [Source control](#source-control)
@@ -219,7 +220,7 @@ If you want to use this repo's `.tmux.conf`-file as your tmux config
 
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```````
+```
 
 **Install plugins**
 
@@ -251,9 +252,15 @@ Open tmux, and run:
 git clone git@github.com:paalss/nvim.git ~/.config/nvim
 ```
 
-To start Neovim, navigate to where you want to open Neovim, and run `nvim`
+### Start Neovim
 
-<!-- Start Neovim (`nvim`), or run `:Lazy` once started to install dependencies -->
+In WSL, navigate to the files you want to edit and run:
+
+```bash
+nvim
+```
+
+If you get errors, try `:Lazy restore` to use the package versions specified in lazy-lock.json
 
 ## Usage & utilities
 
