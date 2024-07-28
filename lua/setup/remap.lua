@@ -76,7 +76,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   callback = function()
     -- vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
-        -- { desc = "Format with Neoformat", noremap = true, silent = true })
+    -- { desc = "Format with Neoformat", noremap = true, silent = true })
     vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
     vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
   end,
@@ -93,6 +93,8 @@ vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- -- other
+vim.keymap.set("n", "<leader><leader>dca", ":cq<CR>",
+  { desc = "Abort everything (amend commits, merge commits etc.)" })
 vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
