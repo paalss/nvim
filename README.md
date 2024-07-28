@@ -79,6 +79,45 @@ git --version
 ---
 </details>
 
+<details>
+    <summary><b>Install Ripgrep for Telescope</b></summary>
+
+Ubuntu
+
+```bash
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
+sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
+```
+
+Other installation methods: <https://github.com/BurntSushi/ripgrep>
+
+---
+</details>
+
+<details>
+    <summary><b>Install C compiler for Nvim-treesitter</b></summary>
+
+Ubuntu
+
+```bash
+sudo apt install build-essential
+```
+
+---
+</details>
+
+<details>
+    <summary><b>Install nodejs and npm for Lsp-zero (tsserver, html etc.)</b></summary>
+
+Ubuntu
+
+```bash
+sudo apt install nodejs npm
+```
+
+---
+</details>
+
 <br>
 
 **Semi-requirements / nice to have**
