@@ -103,6 +103,19 @@ Ubuntu
 sudo apt install build-essential
 ```
 
+---
+</details>
+
+<details>
+    <summary><b>Install nodejs and npm for Lsp-zero (tsserver, html etc.)</b></summary>
+
+Ubuntu
+
+```bash
+sudo apt install nodejs npm
+```
+
+---
 </details>
 
 <br>
