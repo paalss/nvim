@@ -199,12 +199,20 @@ see more
 <details>
     <summary><b>Tmux (for terminal window management)</b></summary>
 
-1. Install it
-2. Then use the config in this repo as your tmux config
+Ubuntu or Debian
 
 ```bash
-cp ~/.config/nvim/.tmux.conf ~/.tmux.conf
+apt install tmux
 ```
+
+Other installation methods: <https://github.com/tmux/tmux/wiki/Installing>
+
+If you want to use this repo's `.tmux.conf`-file as your tmux config
+
+> [!WARNING]
+> This Neovim will OVERWRITE your ~/.tmux.conf if you have one
+
+`[space] [space] tmux`
 
 **Install plugin manager**
 
@@ -216,7 +224,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 Open tmux, and run:
 
-`[ctrl] x, I`
+`[tmux prefix], I`
 
 ---
 </details>
