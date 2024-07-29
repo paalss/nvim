@@ -374,3 +374,5 @@ Preview norm and macros
 
 
 ![Commiting with convential commits](./docs/ascii-art.png)
+
+![Intro page](./docs/stakvim.png)
