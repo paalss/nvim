@@ -252,6 +252,8 @@ Open tmux, and run:
 git clone git@github.com:paalss/nvim.git ~/.config/nvim
 ```
 
+![Intro page](./docs/stakvim.png)
+
 ### Start Neovim
 
 In WSL, navigate to the files you want to edit and run:
@@ -374,5 +376,3 @@ Preview norm and macros
 
 
 ![Commiting with convential commits](./docs/ascii-art.png)
-
-![Intro page](./docs/stakvim.png)
