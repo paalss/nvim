@@ -7,7 +7,9 @@
 <!-- toc -->
 
 - [Requirements](#requirements)
+  * [Semi-requirements / nice to have](#semi-requirements--nice-to-have)
 - [Installation](#installation)
+  * [Start Neovim](#start-neovim)
 - [Usage & utilities](#usage--utilities)
   * [Git](#git)
     + [Source control](#source-control)
@@ -79,9 +81,48 @@ git --version
 ---
 </details>
 
+<details>
+    <summary><b>Install Ripgrep for Telescope</b></summary>
+
+Ubuntu
+
+```bash
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
+sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
+```
+
+Other installation methods: <https://github.com/BurntSushi/ripgrep>
+
+---
+</details>
+
+<details>
+    <summary><b>Install C compiler for Nvim-treesitter</b></summary>
+
+Ubuntu
+
+```bash
+sudo apt install build-essential
+```
+
+---
+</details>
+
+<details>
+    <summary><b>Install nodejs and npm for Lsp-zero (tsserver, html etc.)</b></summary>
+
+Ubuntu
+
+```bash
+sudo apt install nodejs npm
+```
+
+---
+</details>
+
 <br>
 
-**Semi-requirements / nice to have**
+### Semi-requirements / nice to have
 
 <details>
     <summary><b>Autohotkey (Windows app, for extra keymaps)</b></summary>
@@ -160,24 +201,32 @@ see more
 <details>
     <summary><b>Tmux (for terminal window management)</b></summary>
 
-1. Install it
-2. Then use the config in this repo as your tmux config
+Ubuntu or Debian
 
 ```bash
-cp ~/.config/nvim/.tmux.conf ~/.tmux.conf
+apt install tmux
 ```
+
+Other installation methods: <https://github.com/tmux/tmux/wiki/Installing>
+
+If you want to use this repo's `.tmux.conf`-file as your tmux config
+
+> [!WARNING]
+> This Neovim will OVERWRITE your ~/.tmux.conf if you have one
+
+`[space] [space] tmux`
 
 **Install plugin manager**
 
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```````
+```
 
 **Install plugins**
 
 Open tmux, and run:
 
-`[ctrl] x, I`
+`[tmux prefix], I`
 
 ---
 </details>
@@ -203,9 +252,15 @@ Open tmux, and run:
 git clone git@github.com:paalss/nvim.git ~/.config/nvim
 ```
 
-To start Neovim, navigate to where you want to open Neovim, and run `nvim`
+### Start Neovim
 
-<!-- Start Neovim (`nvim`), or run `:Lazy` once started to install dependencies -->
+In WSL, navigate to the files you want to edit and run:
+
+```bash
+nvim
+```
+
+If you get errors, try `:Lazy restore` to use the package versions specified in lazy-lock.json
 
 ## Usage & utilities
 

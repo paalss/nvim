@@ -206,8 +206,11 @@ local plugins = {
     priority = 1000,
     opts = {},
   },
-  { 'nvim-treesitter/nvim-treesitter', pin = true },
-  build = ':TSUpdate',
+  {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    pin = true
+  },
   { 'mbbill/undotree',                 pin = true },
   { 'tpope/vim-fugitive',              pin = true },
   {

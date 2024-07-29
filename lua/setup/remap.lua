@@ -4,7 +4,7 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
-
+vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-6>", "`", { desc = "Bactick" })
 
 -- line management
 
@@ -57,8 +57,8 @@ vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d")
 -- -- all text
 vim.keymap.set("n", "<leader>val", "ggVG", { desc = "mark all" })
 vim.keymap.set("n", "<leader>yal", ":%y<CR>", { desc = "yank all" })
-vim.keymap.set("n", "<leader><leader>yal", "mzgg\"+yG`z", { desc = "yank all to OS registry" })
-vim.keymap.set("n", "<leader>dal", "ggdG", { desc = "delete all" })
+vim.keymap.set("n", "<leader><leader>yal", "ggVG\"+y", { desc = "yank all to OS registry" })
+vim.keymap.set("n", "<leader>dal", ":%d<CR>", { desc = "delete all" })
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- casing management
@@ -75,8 +75,8 @@ end, { desc = "lsp format" })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   callback = function()
-    vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
-      { desc = "Format with Neoformat", noremap = true, silent = true })
+    -- vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
+    -- { desc = "Format with Neoformat", noremap = true, silent = true })
     vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
     vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
   end,
@@ -93,6 +93,8 @@ vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- -- other
+vim.keymap.set("n", "<leader><leader>dca", ":cq<CR>",
+  { desc = "Abort everything (amend commits, merge commits etc.)" })
 vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
@@ -111,11 +113,11 @@ vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git cle
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 
-vim.keymap.set("n", "<C-e>", "<C-e>", { desc = "Scroll down" }) -- add desc to default maps
-vim.keymap.set("n", "<C-y>", "<C-y>", { desc = "Scroll up" })
+vim.keymap.set("n", "<C-e>", "<C-e>2jzz", { desc = "Scroll down" }) -- scroll 2 lines and keep cursor in middle
+vim.keymap.set("n", "<C-y>", "<C-y>2kzz", { desc = "Scroll up" })
 
-vim.keymap.set("n", "<S-d>", "<S-L>2j", { desc = "Scroll 2 lines down" })
-vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
+-- vim.keymap.set("n", "<S-d>", "<S-L>2j", { desc = "Scroll 2 lines down" })
+-- vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
 
 -- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
 -- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })

@@ -37,6 +37,7 @@
 !3::Send "~ "
 !4::Send "$"
 !5::Send "%"
+!6::Send "` "
 
 <^>!-::Send "–" ; print en-dash
 
