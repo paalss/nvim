@@ -57,7 +57,7 @@ end, { desc = "Text search" })
 vim.keymap.set('n', '<leader>p0', builtin.live_grep, { desc = 'Live text search' })
 
 -- git search -- shortcut convention: use oh-my-bash/zsh -ish
--- vim.keymap.set('n', '<leader>glo', builtin.git_commits, { desc = 'Show git history' })
+vim.keymap.set('n', '<leader>glo', builtin.git_commits, { desc = 'Show git history (Telescope)' })
 vim.keymap.set('n', '<leader>glod', builtin.git_bcommits, { desc = 'Show git history (diff)' })
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Show git branches' })
 vim.keymap.set('n', '<leader>gstl', builtin.git_stash, { desc = 'Show git stashes' })
