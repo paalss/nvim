@@ -371,3 +371,6 @@ Preview norm and macros
 **Return to last opened window (buffer)**
 
 `[ctrl] 6`
+
+
+![Commiting with convential commits](./docs/ascii-art.png)
