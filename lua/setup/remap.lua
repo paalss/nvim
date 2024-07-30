@@ -94,7 +94,7 @@ vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- -- other
-vim.keymap.set("n", "<leader><leader>dca", ":cq<CR>",
+vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
 vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
