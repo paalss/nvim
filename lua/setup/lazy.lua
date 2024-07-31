@@ -28,6 +28,7 @@ local plugins = {
     'ThePrimeagen/vim-be-good'
   },
   { 'sbdchd/neoformat' },
+  { 'dstein64/vim-menu' },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
