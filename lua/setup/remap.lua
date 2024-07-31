@@ -114,8 +114,8 @@ vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git cle
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 
-vim.keymap.set("n", "<C-e>", "<C-e>2jzz", { desc = "Scroll down" }) -- scroll 2 lines and keep cursor in middle
-vim.keymap.set("n", "<C-y>", "<C-y>2kzz", { desc = "Scroll up" })
+vim.keymap.set("n", "<C-e>", "<C-e>2j", { desc = "Scroll down" }) -- scroll 2 lines
+vim.keymap.set("n", "<C-y>", "<C-y>2k", { desc = "Scroll up" })
 
 -- vim.keymap.set("n", "<S-d>", "<S-L>2j", { desc = "Scroll 2 lines down" })
 -- vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
