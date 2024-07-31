@@ -29,5 +29,5 @@ vim.keymap.set("n", "<leader><leader>glo", ":DiffviewFileHistory<CR>", { desc = 
 vim.keymap.set("n", "<leader>glgp", ":DiffviewFileHistory %<CR>", { desc = "Show git history for current file" })
 
 -- Compare working index with branch
-vim.keymap.set("n", "<leader>gy", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master" })
-vim.keymap.set("n", "<leader>gr", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main" })
+vim.keymap.set("n", "<leader>gy", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
+vim.keymap.set("n", "<leader>gr", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
