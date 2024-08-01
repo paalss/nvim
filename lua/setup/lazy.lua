@@ -27,6 +27,10 @@ local plugins = {
   {
     'ThePrimeagen/vim-be-good'
   },
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+  },
   { 'sbdchd/neoformat' },
   { 'dstein64/vim-menu' },
   { 'RRethy/vim-illuminate' },
