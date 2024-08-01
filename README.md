@@ -63,7 +63,7 @@ LuaJIT 2.1.0-beta3
 </details>
 
 <details>
-    <summary><b>Git</b></summary>
+    <summary><b>Git version over 2.31.0 (For Diffview.nvim)</b></summary>
 
 **How to update git on Ubuntu**
 

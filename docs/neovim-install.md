@@ -4,7 +4,7 @@
 
 ### Ubuntu/WSL
 
-Ikke installer nvim v0.10.0. Telescope funker ikke med det, blant annet
+<!-- Ikke installer nvim v0.10.0. Telescope funker ikke med det, blant annet -->
 
 #### Med Tarball (v0.9.0 Neovim)
 
