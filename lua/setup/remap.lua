@@ -107,6 +107,7 @@ vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Lef
   { desc = "Replace all occurences of word under cursor" })
 vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git clean -fd", { desc = "Nuke working tree" })
+vim.keymap.set("n", "gx", "gx", { desc = "Open link (Netrw)" })
 
 -- navigation
 
