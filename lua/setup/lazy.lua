@@ -157,7 +157,7 @@ local plugins = {
       indent = { char = '┊' }
     },
   },
-  { 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim', pin = true },
+  { 'HiPhish/rainbow-delimiters.nvim', pin = true },
   {
     "windwp/nvim-autopairs",
     pin = true,
@@ -165,7 +165,7 @@ local plugins = {
       require("nvim-autopairs").setup {}
     end
   },
-  { 'djoshea/vim-autoread',          pin = true },
+  { 'djoshea/vim-autoread',            pin = true },
   {
     'nvim-telescope/telescope.nvim',
     version = '0.1.1',
@@ -217,8 +217,8 @@ local plugins = {
     run = ':TSUpdate',
     pin = true
   },
-  { 'mbbill/undotree',                 pin = true },
-  { 'tpope/vim-fugitive',              pin = true },
+  { 'mbbill/undotree',    pin = true },
+  { 'tpope/vim-fugitive', pin = true },
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
