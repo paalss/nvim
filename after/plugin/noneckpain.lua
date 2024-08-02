@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>bb", ":Noneckpain<CR>", { desc = "Center current buffer (noneckpain)" })
+vim.keymap.set("n", "<leader>bb", ":NoNeckPain<CR>", { desc = "Center current buffer (noneckpain)" })
