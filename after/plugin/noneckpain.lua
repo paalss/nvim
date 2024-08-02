@@ -1,1 +1,5 @@
 vim.keymap.set("n", "<leader>bb", ":NoNeckPain<CR>", { desc = "Center current buffer (noneckpain)" })
+vim.keymap.set("n", "<leader>bg", ":NoNeckPainResize 100<CR>", { desc = "Noneckpain: Default width" })
+vim.keymap.set("n", "<leader>bl", ":NoNeckPainToggleRightSide<CR>", { desc = "Noneckpain: Toggle right buffer" })
+vim.keymap.set("n", "<C-Up>", ":NoNeckPainWidthUp<CR>", { desc = "Noneckpain: Increase width" })
+vim.keymap.set("n", "<C-Down>", ":NoNeckPainWidthDown<CR>", { desc = "Noneckpain: Decrease width" })
