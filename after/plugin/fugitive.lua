@@ -1,7 +1,9 @@
 vim.keymap.set("n", "<leader>gt", ":Git<CR>", { desc = "Open Git – Fugitive" }) -- TODO: disable if it's unnecessary
 vim.keymap.set("n", "<leader>gf", ":Gwrite<CR>", { desc = "Write and stage buffer" }) -- TODO: disable if superseded by gitsign's stage_buffer
 vim.keymap.set("n", "<leader>ga", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files to git" })
-vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { desc = "Git commit" })
+vim.keymap.set("n", "<leader>gcc", ":G commit<CR>", { desc = "Git commit" })
+vim.keymap.set("n", "<leader>gcaa", ":G commit --amend<CR>", { desc = "Git commit --amend" })
+vim.keymap.set("n", "<leader>gcan", ":G commit --amend --no-edit<CR>", { desc = "Git commit --amend --no-edit" })
 vim.keymap.set("n", "<leader>g5", ":Gdiffsplit<CR>", { desc = "Open git status (Fugitive)" }) -- TODO: disable if superseded by diffview
 vim.keymap.set("n", "\\glo", ":G log", { desc = "Show git history (Fugitive)" })
 vim.keymap.set("n", "\\gr", ":Gdiffsplit main<CR>", { desc = "Compare with main (Fugitive)" })
