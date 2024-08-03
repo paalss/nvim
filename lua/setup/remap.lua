@@ -145,4 +145,4 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split dow
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
 
-vim.keymap.set("n", "+", "<C-w>w", { desc = "Go to next split" })
+vim.keymap.set("n", "<A-w>", "<C-w>w", { desc = "Go to next split" })
