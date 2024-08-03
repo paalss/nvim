@@ -4,16 +4,17 @@ vim.keymap.set("n", "<leader>gf", ":Gwrite<CR>", { desc = "Write and stage buffe
 
 -- oh-my-bash style shortcuts
 
-vim.keymap.set("n", "<leader>ga", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files to git" })
-vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { desc = "Git commit" })
+vim.keymap.set("n", "<leader>ga", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files (omb)" })
+vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { desc = "Git commit (omb)" })
 
 -- fugitive style shortcuts
 
-vim.keymap.set("n", "<leader>S", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files to git" })
+vim.keymap.set("n", "<leader>S", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files" })
+vim.keymap.set("n", "<leader>U", ":wa<CR>:G reset HEAD<CR>", { desc = "Unstage/remove all files" })
 vim.keymap.set("n", "<leader>cc", ":G commit<CR>", { desc = "Git commit" })
 vim.keymap.set("n", "<leader>ca", ":G commit --amend<CR>", { desc = "Git commit --amend" })
 vim.keymap.set("n", "<leader>ce", ":G commit --amend --no-edit<CR>", { desc = "Git commit --amend --no-edit" })
--- vim.keymap.set("n", "<leader>cw", ":G commit --reword<CR>", { desc = "Git commit --amend" })
+vim.keymap.set("n", "<leader>cw", ":G commit --reword<CR>", { desc = "Git commit --amend" })
 
 vim.keymap.set("n", "<leader>g5", ":Gdiffsplit<CR>", { desc = "Open git status (Fugitive)" }) -- TODO: disable if superseded by diffview
 vim.keymap.set("n", "\\glo", ":G log", { desc = "Show git history (Fugitive)" })
