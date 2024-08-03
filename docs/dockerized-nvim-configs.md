@@ -1,16 +1,4 @@
-# notes
-
-```
-sudo snap install docker
-```
-
-lunarvim har
-
-LV_BRANCH='release-1.4/neovim-0.9'
-
----
-
-# har ikke prøvd denne ennå
+# Ubuntu
 
 sudo docker run -w /root -it --rm ubuntu:latest bash -c '
   apt-get update && apt-get install -y git nodejs npm lazygit neovim build-essential ripgrep
@@ -20,7 +8,7 @@ sudo docker run -w /root -it --rm ubuntu:latest bash -c '
 
 
 
-# denne funker ikke
+# Alpine
 
 er rare greier som skjer ved oppstart med Harpoon.
 
@@ -78,4 +66,20 @@ docker run -w /root -it --rm alpine:edge sh -uelic '
 
 # Lunarvim
 
-docker run -w /tmp -it --rm alpine:edge sh -uelic 'addgroup -S lunaruser && adduser -S lunaruser -G lunaruser --shell /bin/sh && apk add yarn git python3 cargo neovim ripgrep alpine-sdk bash curl --update && LV_BRANCH='release-1.4/neovim-0.9' su -c "bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/release-1.4/neovim-0.9/utils/installer/install.sh) --no-install-dependencies" lunaruser && su -c /home/lunaruser/.local/bin/lvim lunaruser'
+docker run -w /tmp -it --rm alpine:edge sh -uelic '
+  addgroup -S lunaruser &&
+  adduser -S lunaruser -G lunaruser --shell /bin/sh &&
+  apk add yarn git python3 cargo neovim ripgrep alpine-sdk bash curl --update &&
+  LV_BRANCH="release-1.4/neovim-0.9" su -c "bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/release-1.4/neovim-0.9/utils/installer/install.sh) --no-install-dependencies" lunaruser &&
+  su -c /home/lunaruser/.local/bin/lvim lunaruser
+'
+
+---
+
+```
+sudo snap install docker
+```
+
+lunarvim har
+
+LV_BRANCH='release-1.4/neovim-0.9'
