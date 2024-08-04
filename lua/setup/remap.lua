@@ -68,6 +68,9 @@ vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase"
 vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 
+-- -- snippets
+vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
+
 -- -- formatting
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
