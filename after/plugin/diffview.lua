@@ -31,3 +31,19 @@ vim.keymap.set("n", "<leader>glgp", ":DiffviewFileHistory %<CR>", { desc = "Show
 -- Compare working index with branch
 vim.keymap.set("n", "<leader>gy", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
 vim.keymap.set("n", "<leader>gr", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
+
+-- Function to open Diffview with a specified branch
+local function open_diffview()
+  local branch = vim.fn.input("Enter the branch/commit to compare with: ")
+  vim.cmd("DiffviewOpen " .. branch)
+end
+
+-- Keymap to call the function
+vim.keymap.set("n", "<A-r>", open_diffview, { desc = "Compare with specified branch (Diffview)" })
+
+
+
+
+
+
+
