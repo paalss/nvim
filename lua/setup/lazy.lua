@@ -27,11 +27,6 @@ local plugins = {
   {
     'ThePrimeagen/vim-be-good'
   },
-  {
-    'stevearc/conform.nvim',
-    opts = {},
-  },
-  { 'sbdchd/neoformat' },
   { 'dstein64/vim-menu' },
   { 'shortcuts/no-neck-pain.nvim', version = "*"},
   { 'RRethy/vim-illuminate' },
