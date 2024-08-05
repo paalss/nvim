@@ -12,25 +12,25 @@ diffview.setup {
       { "n", "do",    "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
     },
     file_panel = {
-      { "n", "cc",  ":Git commit<CR>",                   { desc = "Commit" } },
+      { "n", "cc", ":Git commit<CR>",                   { desc = "Commit" } },
       { "n", "ca", ":Git commit --amend<CR>",           { desc = "Commit amend" } },
       { "n", "ce", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
-      { "n", "q",   "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
+      { "n", "q",  "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
     },
   }
 }
 
 -- Git status and close
-vim.keymap.set("n", "<leader>gg", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
-vim.keymap.set("n", "<leader>gh", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" }) -- TODO: disable if it's unnecessary
+vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
+vim.keymap.set("n", "<leader>dc", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- Git log
-vim.keymap.set("n", "<leader><leader>glo", ":DiffviewFileHistory<CR>", { desc = "Show git history (Diffview)" })
-vim.keymap.set("n", "<leader>glgp", ":DiffviewFileHistory %<CR>", { desc = "Show git history for current file" })
+vim.keymap.set("n", "<leader><leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show git history (Diffview)" })
+vim.keymap.set("n", "<leader>dlgp", ":DiffviewFileHistory %<CR>", { desc = "Show git history for current file" })
 
 -- Compare working index with branch
-vim.keymap.set("n", "<leader>gy", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
-vim.keymap.set("n", "<leader>gr", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
+vim.keymap.set("n", "<leader>dy", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
+vim.keymap.set("n", "<leader>dr", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
 
 -- Function to open Diffview with a specified branch
 local function open_diffview()
@@ -39,11 +39,4 @@ local function open_diffview()
 end
 
 -- Keymap to call the function
-vim.keymap.set("n", "<A-r>", open_diffview, { desc = "Compare with specified branch (Diffview)" })
-
-
-
-
-
-
-
+vim.keymap.set("n", "<leader>df", open_diffview, { desc = "Compare with specified branch (Diffview)" })
