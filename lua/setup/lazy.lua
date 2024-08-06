@@ -28,9 +28,8 @@ local plugins = {
     'ThePrimeagen/vim-be-good'
   },
   { 'dstein64/vim-menu' },
-  { 'shortcuts/no-neck-pain.nvim',   version = "*" },
+  { 'shortcuts/no-neck-pain.nvim', version = "*"},
   { 'RRethy/vim-illuminate' },
-  { 'AndreyKozlov1984/vim-format-js' },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",

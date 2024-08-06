@@ -10,15 +10,11 @@ const b = 2
 
 
 
-export const Button = ({
-
-
-
-  children }) => {
+export const Button = ({ children }) => {
   return (
     <button>
-      <span>mmmmmmmmmmmmmm</span>
+            <span>mmmmmmmmmmmmmm</span>
       {children}
     </button>
- )
+  )
 }
