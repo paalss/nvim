@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>jj", ":Mason<CR>", { desc = "Open Mason" })
+vim.keymap.set("n", "<leader>ma", ":Mason<CR>", { desc = "Open Mason" })
