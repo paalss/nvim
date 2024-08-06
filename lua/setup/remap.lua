@@ -97,6 +97,11 @@ vim.keymap.set("n", "<leader>clo", ":ccl<CR>", { desc = "close quickfix list" })
 -- vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+
+-- -- indenting
+vim.keymap.set("v", ">", ">V", { desc = "add indent" })
+vim.keymap.set("v", "<", "<V", { desc = "remove indent" })
+
 -- -- other
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
