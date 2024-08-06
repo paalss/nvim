@@ -99,8 +99,8 @@ vim.keymap.set("n", "<leader>clo", ":ccl<CR>", { desc = "close quickfix list" })
 
 
 -- -- indenting
-vim.keymap.set("v", ">", ">V", { desc = "add indent" })
-vim.keymap.set("v", "<", "<V", { desc = "remove indent" })
+vim.keymap.set("v", ">", ">gv", { desc = "add indent" })
+vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
 
 -- -- other
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
