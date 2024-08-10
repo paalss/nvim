@@ -5,7 +5,7 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Ti
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
-vim.keymap.set({ "n", "v", "x", "!" }, "ø", ":", { desc = "Colon" })
+vim.keymap.set({ "n", "v", "x" }, "ø", ":", { desc = "Colon" })
 
 
 -- line management
