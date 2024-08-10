@@ -7,6 +7,7 @@ vim.keymap.set("n", "<leader>gf", ":Gwrite<CR>", { desc = "Write and stage buffe
 vim.keymap.set("n", "<leader>ga", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files (omb)" })
 vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { desc = "Git commit (omb)" })
 
+-- https://neovim.io/doc/user/lua-guide.html#lua-guide-commands-create
 vim.api.nvim_create_user_command('Ga', "G add -A", {})
 vim.api.nvim_create_user_command('Gc', "G commit", {})
 

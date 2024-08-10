@@ -1,5 +1,6 @@
 -- shortcuts/typing
 
+-- https://neovim.io/doc/user/options.html#%27langmap%27
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
