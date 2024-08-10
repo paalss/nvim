@@ -5,7 +5,12 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Ti
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
+
 vim.keymap.set({ "n", "v", "x" }, "ø", ":", { desc = "Colon" })
+vim.keymap.set({ "n", "v", "x" }, "åå", "[[", { desc = "Double opening square brackets" })
+vim.keymap.set({ "n", "v", "x" }, "¨¨¨¨", "]]", { desc = "Double closing square brackets" })
+vim.keymap.set({ "n", "v", "x" }, "Å", "{", { desc = "Opening curly bracket" })
+vim.keymap.set({ "n", "v", "x" }, "^^", "}", { desc = "Closing curly bracket" })
 
 
 -- line management
