@@ -98,9 +98,9 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.keymap.set("n", "<leader>co", ":copen<CR>", { desc = "Open quickfix list" })
 vim.keymap.set("n", "<leader>clo", ":ccl<CR>", { desc = "close quickfix list" })
 
--- -- quick fix list navigation
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- quick fix list navigation
+vim.keymap.set("n", "<A-a>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>zz")
 -- vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
