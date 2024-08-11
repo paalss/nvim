@@ -15,6 +15,10 @@ vim.api.nvim_create_user_command('Ga', function(opts)
 end, { nargs = 1 })
 -- :Gc
 vim.api.nvim_create_user_command('Gc', "G commit --verbose", {})
+-- :Gcn
+vim.api.nvim_create_user_command('Gcn', "G commit --verbose --amend --no-edit", {})
+-- :Gcan
+vim.api.nvim_create_user_command('Gcan', "G commit --verbose --amend --no-edit --all", {})
 
 -- fugitive style shortcuts
 
