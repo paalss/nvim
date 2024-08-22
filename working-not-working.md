@@ -1,3 +1,17 @@
+
+# 24-08-22 dfsfaoifdfojafaeffjpfioj
+
+**funker ikke hjemme**
+
+- vim fugitive. bytte ut med mini.git?
+
+**funker**
+
+- ctrl v paster OS registry innhold
+- telescope vise registry (:registers innhold)
+- copy from tmux to OS
+
+
 # 24-08-05 fdsfaffdsfsiafjs
 
 **funker**

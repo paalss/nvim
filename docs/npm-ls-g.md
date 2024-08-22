@@ -23,5 +23,4 @@ B
 ├── postcss@8.4.31
 ├── react-select@5.8.0 -> ./../../../../../code/test/andres-kode/react-select/packages/react-select
 ├── react@
-├── tenant-frontend-app@0.1.0 -> ./../../../../../code/tenant-frontend-app
 └── vite-librarymode-storybook@0.0.0 -> ./../../../../../code/test/vite-librarymode-storybook
