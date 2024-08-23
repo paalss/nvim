@@ -1,4 +1,4 @@
-# 24-08-23 fdsiaofdoajafdjfnda
+# 24-08-23 fdsiaofdoajafdjfndafdksfdsfafoafafdfafijaofjaijfaoijffdjafajfkaldjfljflajflajlji
 
 **funker**
 
@@ -9,7 +9,11 @@
 
 - ctrl v paster OS registry innhold
 
-# 24-08-22 dfsfaoifdfojafaeffjpfioj
+**funker ikke hjemme**
+
+- vim fugitive. bytte ut med mini.git?
+
+# 24-08-22 dfsfaoifdfojafaeffjpfiojfdsafafaifjjfaifjoaijfoifjdkfjfoajoidjejttejajairjrioarlkei
 
 **funker ikke hjemme**
 
@@ -22,7 +26,7 @@
 - copy from tmux to OS
 
 
-# 24-08-05 fdsfaffdsfsiafjs
+# 24-08-05 fdsfaffdsfsiafjsfdisfdnaoifoafjiaofjaiofjodajfoafjiadosfjdsioajfodjaofijofdjioijafnhoe
 
 **funker**
 
