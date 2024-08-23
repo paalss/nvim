@@ -1,3 +1,13 @@
+# 24-08-23 fdsiaofdoajafdjfnda
+
+**funker**
+
+- alpha intro splash screen
+- telescope vise registry (:registers innhold)
+
+**funker ikke jobb**
+
+- ctrl v paster OS registry innhold
 
 # 24-08-22 dfsfaoifdfojafaeffjpfioj
 
