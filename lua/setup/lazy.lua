@@ -33,7 +33,7 @@ local plugins = {
   },
   { 'sbdchd/neoformat' },
   { 'dstein64/vim-menu' },
-  { 'shortcuts/no-neck-pain.nvim', version = "*"},
+  { 'shortcuts/no-neck-pain.nvim', version = "*" },
   { 'RRethy/vim-illuminate' },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -147,13 +147,19 @@ local plugins = {
   { 'djoshea/vim-autoread',            pin = true },
   {
     'nvim-telescope/telescope.nvim',
-    version = '0.1.1',
+    tag = '0.1.8',
     -- or                            , branch = '0.1.x',
     dependencies = { { 'nvim-lua/plenary.nvim' } },
     pin = true,
   },
   { "MaximilianLloyd/adjacent.nvim", pin = true },
-  { 'ThePrimeagen/harpoon',          pin = true },
+  {
+    'ThePrimeagen/harpoon',
+    branch = "harpoon2",
+    dependencies = {
+      "nvim-lua/plenary.nvim"
+    }
+  },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to  `main` branch for the latest features
@@ -164,7 +170,7 @@ local plugins = {
       })
     end
   },
-  { 'sindrets/diffview.nvim',      pin = true },
+  { 'sindrets/diffview.nvim',        pin = true },
   {
     "mg979/vim-visual-multi",
     pin = true,
@@ -208,7 +214,7 @@ local plugins = {
   {
     "iamcco/markdown-preview.nvim",
     build = function()
-      vim.fn["mkdp#util#install"]()
+      -- vim.fn["mkdp#util#install"]()
     end
   },
   {
