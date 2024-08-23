@@ -19,14 +19,10 @@ vim.keymap.set({ "n", "v", "x" }, "^^", "}", { desc = "Closing curly bracket" })
 -- -- move line
 vim.keymap.set("n", "<A-k>", ":m-2<CR>", { desc = "Move line up" })
 vim.keymap.set("n", "<A-j>", ":m+<CR>", { desc = "Move line down" })
-vim.keymap.set("n", "<A-Up>", ":m-2<CR>", { desc = "Move line up" })
-vim.keymap.set("n", "<A-Down>", ":m+<CR>", { desc = "Move line down" })
 
 -- -- move lines
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
-vim.keymap.set("v", "<A-Up>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) up" })
-vim.keymap.set("v", "<A-Down>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) down" })
 
 -- -- add new/delete line
 vim.keymap.set("n", "<S-c>", "cc<esc>", { desc = "delete line" })
