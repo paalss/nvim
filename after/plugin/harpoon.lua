@@ -1,8 +1,14 @@
 local harpoon = require("harpoon")
 
 -- REQUIRED
-harpoon:setup({})
+harpoon:setup({
+  global_settings = {
+    tabline = true,
+  }
+})
 -- REQUIRED
+
+require('harpoon-tabline').setup()
 
 vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = "Add to Harpoon" })
 vim.keymap.set("n", "<A-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "View Harpoon" })
