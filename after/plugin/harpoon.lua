@@ -31,3 +31,9 @@ vim.keymap.set("n", "<leader>9", function() harpoon:list():select(9) end, { desc
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<A-,>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<A-.>", function() harpoon:list():next() end)
+
+vim.api.nvim_set_hl(0, 'HarpoonActive', { foreground = 'white', background = 'NONE' })
+vim.api.nvim_set_hl(0, 'HarpoonInactive', { foreground = '#63698c', background = 'NONE' })
+vim.api.nvim_set_hl(0, 'HarpoonNumberActive', { foreground = '#7aa2f7', background = 'NONE' })
+vim.api.nvim_set_hl(0, 'HarpoonNumberInactive', { foreground = '#7aa2f7', background = 'NONE' })
+vim.api.nvim_set_hl(0, 'TabLineFill', { foreground = 'white', background = 'NONE' })
