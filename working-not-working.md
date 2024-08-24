@@ -1,3 +1,11 @@
+# 24-08-24 dsfklafmlflflffdospkfafdafjflajfkadifoajfodjoapfjkaflajifodfkjsalfjkslfjakdlddjfal
+
+**funker**
+
+- fugitive commit
+  - må bare slette ~/.vim/undodir hvis det er corrupted
+
+
 # 24-08-23 fdsiaofdoajafdjfndafdksfdsfafoafafdfafijaofjaijfaoijffdjafajfkaldjfljflajflajlji
 
 **funker**
