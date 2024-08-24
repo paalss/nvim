@@ -4,7 +4,7 @@
 
 ### Ubuntu/WSL
 
-<!-- Ikke installer nvim v0.10.0. Telescope funker ikke med det, blant annet -->
+Ikke installer nvim v0.10.0. Telescope og harpoon vil ikke funke. Og rare bugs dukker opp ved `ce` av og til og jeg gidder ikke bruke tid på det.
 
 #### Med Tarball (v0.9.0 Neovim)
 
