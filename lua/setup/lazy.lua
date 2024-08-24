@@ -301,7 +301,8 @@ local plugins = {
     pin = true
   },
   { 'mbbill/undotree',    pin = true },
-  { 'tpope/vim-fugitive', pin = true },
+  { 'echasnovski/mini-git', version = false, main = 'mini.git' },
+  -- { 'tpope/vim-fugitive', pin = true },
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
