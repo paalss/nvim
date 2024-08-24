@@ -10,6 +10,11 @@ harpoon:setup({
 
 require('harpoon-tabline').setup()
 
+-- vim.keymap.set("n", "<leader><leader>hd", function ()
+--  ui.toggle_quick_menu()
+--  vim.cmd(":%d")
+-- end, { desc = "Delete all Harpoon marks"})
+
 vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = "Add to Harpoon" })
 vim.keymap.set("n", "<A-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "View Harpoon" })
 
