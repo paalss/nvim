@@ -8,9 +8,23 @@
 --     rust = { "rustfmt", lsp_format = "fallback" },
 --     -- Conform will run the first available formatter
 --     javascript = { "prettierd", "prettier", stop_after_first = true },
+--     javascriptreact = { "prettierd", "prettier" },
+--     markdown = { "prettierd", "prettier" },
+--     graphql = { "prettierd", "prettier" },
+--     html = { "html-lsp" },
+--     bash = { "beautysh" },
+--     yaml = { "yamlfix" },
+--     css = { "prettierd", "prettier" },
+--     scss = { "prettierd", "prettier" },
 --   },
 -- })
--- -- vim.keymap.set("n", "<A-f>", conform.format, { desc = "format with conform" }) -- not sure if this even works
--- vim.keymap.set("n", "<A-f>", function()
---   conform.format()
+
+
+-- vim.keymap.set("n", "<A-f>", conform.format, { desc = "format with conform" }) -- not sure if this even works
+-- vim.keymap.set({ "n", "v" }, "<A-f>", function()
+--   conform.format({
+--     lsp_fallback = true,
+--     async = false,
+--     timeout_ms = 500
+--   })
 -- end, { desc = "format with conform" }) -- not sure if this even works

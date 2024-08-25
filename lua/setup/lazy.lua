@@ -29,6 +29,7 @@ local plugins = {
   },
   -- {
   --   'stevearc/conform.nvim',
+  --   branch = "nvim-0.9",
   --   opts = {},
   -- },
   { 'sbdchd/neoformat' },

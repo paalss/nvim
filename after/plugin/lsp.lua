@@ -1,8 +1,22 @@
 -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
+-- vim.lsp.start({
+--   name = 'myserver',
+--   cmd = { 'typescript-language-server' },
+--   root_dir = vim.fs.dirname(vim.fs.find({ '.git' }, { upward = true })[1])
+-- })
 
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   callback = function(args)
+--     local client = vim.lsp.get_client_by_id(args.data.client_id)
+--     if client.server_capabilities.hoverProvider then
+--       vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = args.buf })
+--     end
+--   end
+-- })
+
+lsp.preset('recommended')
 lsp.ensure_installed({
   'tsserver',
   'eslint',
