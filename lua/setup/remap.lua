@@ -75,6 +75,8 @@ vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`}
 vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
 
 -- -- formatting
+vim.keymap.set("n", "<leader><leader>prett", ":! npx prettier . --write", { desc = "Format with prettier" })
+
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
 end, { desc = "lsp format" })
