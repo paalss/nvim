@@ -31,8 +31,9 @@ vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status
 vim.keymap.set("n", "<leader>dq", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- Git history
-vim.keymap.set("n", "<leader><leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show git history (Diffview)" })
-vim.keymap.set("n", "<leader>dlgp", ":DiffviewFileHistory %<CR>", { desc = "Show git history for current file (Diffview)" })
+vim.keymap.set("n", "<leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show git history (Diffview)" })
+vim.keymap.set("n", "<leader>dlgp", ":DiffviewFileHistory %<CR>",
+  { desc = "Show git history for current file (Diffview)" })
 
 -- Compare working index with branch
 vim.keymap.set("n", "<leader>dy", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
