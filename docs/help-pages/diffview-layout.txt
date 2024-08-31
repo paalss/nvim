@@ -1,0 +1,83 @@
+
+            *diffview-layouts*
+            {diff1_plain}
+                Available for: merge_tool
+
+                This is a plain, singular window. This is available in case
+                you prefer to edit conflict markers manually without the
+                visual noise from diffs.
+
+                ┌──────────────┐
+                │              │
+                │              │
+                │      B       │
+                │              │
+                │              │
+                └──────────────┘
+
+            {diff2_horizontal}
+                Available for: diff_view, file_history_view
+
+                ┌──────┬───────┐
+                │      │       │
+                │      │       │
+                │  A   │   B   │
+                │      │       │
+                │      │       │
+                └──────┴───────┘
+
+            {diff2_vertical}
+                Available for: diff_view, file_history_view
+
+                ┌──────────────┐
+                │      A       │
+                │              │
+                ├──────────────┤
+                │      B       │
+                │              │
+                └──────────────┘
+
+            {diff3_horizontal}
+                Available for: merge_tool
+
+                ┌────┬────┬────┐
+                │    │    │    │
+                │    │    │    │
+                │ A  │ B  │ C  │
+                │    │    │    │
+                │    │    │    │
+                └────┴────┴────┘
+
+            {diff3_vertical}
+                Available for: merge_tool
+
+                ┌──────────────┐
+                │      A       │
+                ├──────────────┤
+                │      B       │
+                ├──────────────┤
+                │      C       │
+                └──────────────┘
+
+            {diff3_mixed}
+                Available for: merge_tool
+
+                ┌──────┬───────┐
+                │  A   │   C   │
+                │      │       │
+                ├──────┴───────┤
+                │      B       │
+                │              │
+                └──────────────┘
+
+            {diff4_mixed}
+                Available for: merge_tool
+
+                ┌────┬────┬────┐
+                │ A  │ D  │ C  │
+                │    │    │    │
+                ├────┴────┴────┤
+                │      B       │
+                │              │
+                └──────────────┘
+
