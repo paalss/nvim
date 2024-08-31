@@ -30,7 +30,7 @@ vim.keymap.set("n", "<leader>ce", ":G commit --amend --no-edit<CR>", { desc = "G
 vim.keymap.set("n", "<leader>cw", ":G commit --reword<CR>", { desc = "Git commit --amend" })
 
 vim.keymap.set("n", "<leader>g5", ":Gdiffsplit<CR>", { desc = "Open git status (Fugitive)" }) -- TODO: disable if superseded by diffview
-vim.keymap.set("n", "\\glo", ":G log<CR>", { desc = "Show git history (Fugitive)" })
+vim.keymap.set("n", "\\glo", ":G log<CR>", { desc = "Show commit history (Fugitive)" })
 vim.keymap.set("n", "\\gb", ":G branch<CR>", { desc = "Show git branches (Fugitive)" })
 vim.keymap.set("n", "\\gr", ":Gdiffsplit main<CR>", { desc = "Compare with main (Fugitive)" })
 vim.keymap.set("n", "\\gy", ":Gdiffsplit master<CR>", { desc = "Compare with master (Fugitive)" })
