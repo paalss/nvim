@@ -17,6 +17,9 @@ diffview.setup {
       { "n", "ce", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
       { "n", "q",  "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
     },
+    file_history_panel = {
+      { "n", "<leader>c", "0f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } } -- walk to <commit-hash>, run :DiffviewOpen <commit-hash>
+    }
   }
 }
 
