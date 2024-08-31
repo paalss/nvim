@@ -8,7 +8,7 @@ diffview.setup {
       { "n", "<S-u>",     "V:diffget<CR>",      { desc = "Unstage line" } },
       { "v", "<S-s>",     ":diffput<CR>",       { desc = "Stage selection" } },
       { "v", "<S-u>",     ":diffget<CR>",       { desc = "Unstage selection" } },
-      { "n", "dp",        "dp",                 { desc = "Stage hunk" } }, -- add desc to existing map
+      { "n", "dp",        "dp",                 { desc = "Stage hunk" } },   -- add desc to existing map
       { "n", "do",        "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
     },
     file_panel = {
