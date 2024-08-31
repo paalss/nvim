@@ -89,11 +89,11 @@ vim.keymap.set('n', '<leader>sg', builtin.registers, { desc = 'Search paste regi
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
 
 -- search neovim ~/.config
-vim.keymap.set('n', '<leader>sn', function()
+vim.keymap.set('n', '\\<C-p>', function()
   builtin.find_files { cwd = vim.fn.stdpath 'config' }
 end, { desc = 'Search Neovim ~/.config files' })
 
 -- search live_rep in neovim ~/.config
-vim.keymap.set('n', '<leader>s2', function()
+vim.keymap.set('n', '\\p0', function()
   builtin.live_grep { cwd = vim.fn.stdpath 'config' }
 end, { desc = 'Live text search Neovim ~/.config files' })
