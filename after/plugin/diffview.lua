@@ -35,15 +35,18 @@ vim.keymap.set("n", "<leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show co
 vim.keymap.set("n", "<leader>dlgp", ":DiffviewFileHistory %<CR>",
   { desc = "Show commit history for current file (Diffview)" })
 
--- Compare working index with branch
+-- Compare working index with...
+
+-- -- branch
 vim.keymap.set("n", "<leader>dy", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
 vim.keymap.set("n", "<leader>dr", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
 
--- Function to open Diffview with a specified branch
+-- -- word under cursor
+vim.keymap.set("n", "<leader>dcc", ":DiffviewOpen <C-r><C-w><CR>", {desc = "Compare with commit-hash/branch under cursor (Diffview)"})
+
+-- -- Prompt-value branch
 local function open_diffview()
   local branch = vim.fn.input("Enter the branch/commit to compare with: ")
   vim.cmd("DiffviewOpen " .. branch)
 end
-
--- Keymap to call the function
 vim.keymap.set("n", "<leader>df", open_diffview, { desc = "Compare with specified branch (Diffview)" })
