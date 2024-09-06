@@ -13,7 +13,7 @@
 
 +F1::Run "https://localhost/"
 +F2::Run "http://localhost:8000/"
-+F3::Run "http://localhost:8000/graphql/"
++F3::Run "http://localhost/graphql/"
 +F4::Run "http://localhost:6006/"
 +F5::Run "http://localhost:3000/tenant/"
 
