@@ -3,13 +3,13 @@ local diffview = require 'diffview'
 diffview.setup {
   keymaps = {
     view = {
-      { "n", "<leader>q", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
-      { "n", "<S-s>",     "V:diffput<CR>",      { desc = "Stage line" } },
-      { "n", "<S-u>",     "V:diffget<CR>",      { desc = "Unstage line" } },
-      { "v", "<S-s>",     ":diffput<CR>",       { desc = "Stage selection" } },
-      { "v", "<S-u>",     ":diffget<CR>",       { desc = "Unstage selection" } },
-      { "n", "dp",        "dp",                 { desc = "Stage hunk" } },   -- add desc to existing map
-      { "n", "do",        "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
+      { "n", "<A-q>", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "<S-s>", "V:diffput<CR>",      { desc = "Stage line" } },
+      { "n", "<S-u>", "V:diffget<CR>",      { desc = "Unstage line" } },
+      { "v", "<S-s>", ":diffput<CR>",       { desc = "Stage selection" } },
+      { "v", "<S-u>", ":diffget<CR>",       { desc = "Unstage selection" } },
+      { "n", "dp",    "dp",                 { desc = "Stage hunk" } },       -- add desc to existing map
+      { "n", "do",    "do",                 { desc = "Unstage hunk" } },     -- add desc to existing map
     },
     file_panel = {
       { "n", "cc", ":Git commit<CR>",                   { desc = "Commit" } },
