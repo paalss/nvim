@@ -19,7 +19,8 @@ diffview.setup {
     },
     file_history_panel = {
       -- similar: Diffview builtin functionality: CTRL ALT d
-      { "n", "<leader>c", "0f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } } -- walk to <commit-hash>, run :DiffviewOpen <commit-hash>
+      { "n", "<leader>c",        "0f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } },                   -- walk to <commit-hash>, run :DiffviewOpen <commit-hash>
+      { "n", "<leader><leader>", "0f|;w:G checkout <C-r><C-w><CR>",   { desc = "Checkout to commit (Diffview/Fugitive)" } } -- walk to <commit-hash>, run :DiffviewOpen <commit-hash>
     }
   }
 }
@@ -42,7 +43,8 @@ vim.keymap.set("n", "<leader>dy", ":DiffviewOpen origin/master<CR>", { desc = "C
 vim.keymap.set("n", "<leader>dr", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
 
 -- -- word under cursor
-vim.keymap.set("n", "<leader>dcc", ":DiffviewOpen <C-r><C-w><CR>", {desc = "Compare with commit-hash/branch under cursor (Diffview)"})
+vim.keymap.set("n", "<leader>dcc", ":DiffviewOpen <C-r><C-w><CR>",
+  { desc = "Compare with commit-hash/branch under cursor (Diffview)" })
 
 -- -- Prompt-value branch
 local function open_diffview()
