@@ -18,9 +18,16 @@ diffview.setup {
       { "n", "q",  "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
     },
     file_history_panel = {
-      -- similar: Diffview builtin functionality: CTRL ALT d
-      { "n", "<leader>c",        "0f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } },                   -- walk to <commit-hash>, run :DiffviewOpen <commit-hash>
-      { "n", "<leader><leader>", "0f|;w:G checkout <C-r><C-w><CR>",   { desc = "Checkout to commit (Diffview/Fugitive)" } } -- walk to <commit-hash>, run :DiffviewOpen <commit-hash>
+      -- find commit hash regardless of cursor positioning setup:
+
+      -- $file<CR>f|;w ____ breakdown
+
+      -- $ ensure cursor is after 'file'
+      -- ?file<CR> backwards search for 'file'
+      -- f1;w walk to <commit hash>
+      -- :DiffviewOpen<CR> Open Diffview <commit hash>
+      { "n", "<leader>c",        "$?file<CR>f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } }, -- similar: Diffview builtin functionality: CTRL ALT d
+      { "n", "<leader><leader>", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>",   { desc = "Checkout to commit (Diffview/Fugitive)" } }
     }
   }
 }
