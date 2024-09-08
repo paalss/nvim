@@ -8,17 +8,18 @@ diffview.setup {
       { "n", "<S-u>", "V:diffget<CR>",      { desc = "Unstage line" } },
       { "v", "<S-s>", ":diffput<CR>",       { desc = "Stage selection" } },
       { "v", "<S-u>", ":diffget<CR>",       { desc = "Unstage selection" } },
-      { "n", "dp",    "dp",                 { desc = "Stage hunk" } },       -- add desc to existing map
-      { "n", "do",    "do",                 { desc = "Unstage hunk" } },     -- add desc to existing map
+      { "n", "dp",    "dp",                 { desc = "Stage hunk" } },   -- add desc to existing map
+      { "n", "do",    "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
     },
     file_panel = {
-      { "n", "cc", ":Git commit<CR>",                   { desc = "Commit" } },
-      { "n", "ca", ":Git commit --amend<CR>",           { desc = "Commit amend" } },
-      { "n", "ce", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
-      { "n", "q",  "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
+      { "n", "<A-q>", ":DiffviewClose<CR>",                { desc = "Close Diffview" } },
+      { "n", "cc",    ":Git commit<CR>",                   { desc = "Commit" } },
+      { "n", "ca",    ":Git commit --amend<CR>",           { desc = "Commit amend" } },
+      { "n", "ce",    ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
+      { "n", "q",     "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
     },
     file_history_panel = {
-      { "n", "<A-q>", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "<A-q>",            ":DiffviewClose<CR>",                         { desc = "Close Diffview" } },
       -- find commit hash regardless of cursor positioning setup:
 
       -- $file<CR>f|;w ____ breakdown
