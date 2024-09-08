@@ -51,6 +51,7 @@ local block1 = {
     [[]],
     [[––––––––––––––––––– Help ––––––––––––––––––––––––]],
     [[SPC sh           Search Help]],
+    [[Alt s            Open menu]],
     [[CTRL i/TAB       Search keymaps]],
     [[]],
     [[]],
