@@ -33,7 +33,6 @@ local plugins = {
   --   opts = {},
   -- },
   { 'sbdchd/neoformat' },
-  { 'dstein64/vim-menu' },
   { 'shortcuts/no-neck-pain.nvim', version = "*" },
   { 'RRethy/vim-illuminate' },
   {
