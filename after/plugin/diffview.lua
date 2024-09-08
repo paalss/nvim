@@ -18,6 +18,7 @@ diffview.setup {
       { "n", "q",  "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
     },
     file_history_panel = {
+      { "n", "<A-q>", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- find commit hash regardless of cursor positioning setup:
 
       -- $file<CR>f|;w ____ breakdown
