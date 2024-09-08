@@ -53,10 +53,10 @@ vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 -- -- registers
-vim.keymap.set("x", "<leader>P", "\"_dP")
-vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y")
+vim.keymap.set("x", "<leader>P", "\"_dP", { desc = "Delete to black hole register and paste" })
+vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry" })
 vim.keymap.set("n", "<leader>Y", "\"+Y")
-vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d")
+vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d", { desc = "Delete to black hole registry" })
 
 -- -- all text
 vim.keymap.set("n", "<A-v>", "ggVG", { desc = "mark all" })
