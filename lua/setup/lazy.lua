@@ -32,6 +32,7 @@ local plugins = {
   --   branch = "nvim-0.9",
   --   opts = {},
   -- },
+  { 'skywind3000/vim-quickui' },
   { 'sbdchd/neoformat' },
   { 'shortcuts/no-neck-pain.nvim', version = "*" },
   { 'RRethy/vim-illuminate' },
