@@ -62,7 +62,7 @@ local block1 = {
     [[]],
     [[–––––––––––––––––––– Git ––––––––––––––––––––]],
     [[SPC dd           Open Diffview]],
-    [[SPC lg           Open Lazygit]],
+    [[SPC gg          Open Lazygit]],
     [[SPC gt           Open Fugitive]],
     [[]],
     [[]],
