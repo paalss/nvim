@@ -36,6 +36,7 @@ local plugins = {
   { 'sbdchd/neoformat' },
   { 'shortcuts/no-neck-pain.nvim', version = "*" },
   { 'RRethy/vim-illuminate' },
+  { 'farmergreg/vim-lastplace' },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
