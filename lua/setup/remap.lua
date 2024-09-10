@@ -54,9 +54,9 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 -- -- registers
 vim.keymap.set("x", "<leader>P", "\"_dP", { desc = "Delete to black hole register and paste" })
+vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d", { desc = "Delete to black hole registry" })
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry" })
 vim.keymap.set("n", "<leader>Y", "\"+Y")
-vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d", { desc = "Delete to black hole registry" })
 
 -- -- all text
 vim.keymap.set("n", "<A-v>", "ggVG", { desc = "mark all" })
@@ -115,7 +115,7 @@ vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
 vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]], { noremap = true, silent = true })
-vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("i", "<C-c>", "<Esc>") -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
