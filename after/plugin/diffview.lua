@@ -50,6 +50,7 @@ vim.keymap.set("n", "<leader>dlgp", ":DiffviewFileHistory %<CR>",
 -- -- branch
 vim.keymap.set("n", "<leader>dy", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
 vim.keymap.set("n", "<leader>dr", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
+vim.keymap.set("n", "<leader>dt", ":DiffviewOpen origin/develop<CR>", { desc = "Compare with develop (Diffview)" })
 
 -- -- word under cursor
 vim.keymap.set("n", "<leader>dcc", ":DiffviewOpen <C-r><C-w><CR>",
