@@ -11,8 +11,21 @@ call quickui#menu#reset()
 
 call quickui#menu#install("&Option", [
 			\ ["Set &Paste %{&paste? 'Off':'On'}\tSPC sto", "set paste!","%{&paste? 'Turn on for coding':'Turn on for pasting from OS registry'}"],
-      \ [ "--", '' ],
 			\ ])
+
+call quickui#menu#install('&Git', [
+      \ [ "Compare with", '' ],
+			\ ["ma&ster\tSPC dy", "DiffviewOpen master"],
+			\ ["ma&in\tSPC dr", "DiffviewOpen main"],
+			\ ["&develop\tSPC dt", "DiffviewOpen develop"],
+      \ [ "--", '' ],
+      \ [ "File history\tSPC dlgp", "DiffviewFileHistory %", "Show commit history for current file"],
+			\ ], 10000)
+
+call quickui#menu#install('E&xplore', [
+			\ ["&Netrw explore\tSPC vv", "Ex"],
+			\ ["&Neotree\tAlt r", "Neotree toggle reveal float"],
+			\ ], 10000)
 
 " register HELP menu with weight 10000
 call quickui#menu#install('H&elp', [
@@ -24,15 +37,6 @@ call quickui#menu#install('H&elp', [
 			\ ['&Summary', 'help summary', ''],
 			\ ], 10000)
 
-call quickui#menu#install('&Git', [
-			\ ['&Compare with master', 'DiffviewOpen master'],
-			\ ], 10000)
-
-call quickui#menu#install('E&xplore', [
-			\ ['&Netrw explore', 'Ex', 'SPC vv'],
-			\ ['&Neotree', 'Neotree toggle reveal float', 'Alt r'],
-			\ ], 10000)
-
 " enable to display tips in the cmdline
 let g:quickui_show_tip = 1
 ]]
@@ -40,14 +44,3 @@ let g:quickui_show_tip = 1
 
 vim.keymap.set("n", "<A-s>", ":call quickui#menu#open()<CR>", { desc = "Open menu (Quickui)" })
 
-
-
--- dsfsd
--- fdsfsd
---
---
--- set paste
-
-
-
---
