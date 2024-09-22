@@ -22,7 +22,7 @@ call quickui#menu#install('&Git', [
       \ [ "--", "" ],
       \ [ "History", "" ],
       \ [ "&Repo history\tSPC dlo", "DiffviewFileHistory", "Show commit history for entire repository" ],
-      \ [ "File history\tSPC dlgp", "DiffviewFileHistory %", "Show commit history for current file"],
+      \ [ "&File history\tSPC dlgp", "DiffviewFileHistory %", "Show commit history for current file"],
 			\ ], 10000)
 
 call quickui#menu#install('E&xplore', [
