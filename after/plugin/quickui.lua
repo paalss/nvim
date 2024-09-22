@@ -15,19 +15,19 @@ call quickui#menu#install("&Option", [
 
 " -- vim.keymap.set("n", "<leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
 call quickui#menu#install('&Git', [
-      \ [ "&Compare with", "" ],
+      \ [ "Compare with", "" ],
 			\ ["Ma&ster\tSPC dy", "DiffviewOpen master"],
 			\ ["Ma&in\tSPC dr", "DiffviewOpen main"],
 			\ ["&Develop\tSPC dt", "DiffviewOpen develop"],
       \ [ "--", "" ],
-      \ [ "&History", "" ],
+      \ [ "History", "" ],
       \ [ "&Repo history\tSPC dlo", "DiffviewFileHistory", "Show commit history for entire repository" ],
       \ [ "File history\tSPC dlgp", "DiffviewFileHistory %", "Show commit history for current file"],
 			\ ], 10000)
 
 call quickui#menu#install('E&xplore', [
-			\ ["&Netrw explore\tSPC vv", "Ex"],
-			\ ["&Neotree\tAlt r", "Neotree toggle reveal float"],
+			\ ["Ne&trw explore\tSPC vv", "Ex"],
+			\ ["Ne&otree\tAlt r", "Neotree toggle reveal float"],
 			\ ], 10000)
 
 " register HELP menu with weight 10000
