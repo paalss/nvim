@@ -26,12 +26,14 @@ call quickui#menu#install('&Git', [
 			\ ], 10000)
 
 call quickui#menu#install('E&xplore', [
+			\ ["Find files\tCTRL p", "Telescope find_files", "Find files (Telescope)"],
 			\ ["Ne&trw explore\tSPC vv", "Ex"],
 			\ ["Ne&otree\tAlt r", "Neotree toggle reveal float"],
 			\ ], 10000)
 
 " register HELP menu with weight 10000
 call quickui#menu#install('H&elp', [
+			\ ["&Keymaps\tTAB", 'Telescope keymaps', 'Show all keymaps (Telescope)'],
 			\ ["&Cheatsheet", 'help index', ''],
 			\ ['T&ips', 'help tips', ''],
 			\ ['--',''],
