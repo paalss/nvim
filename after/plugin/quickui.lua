@@ -10,7 +10,8 @@ call quickui#menu#reset()
 " script inside %{...} will be evaluated and expanded in the string
 
 call quickui#menu#install("&Option", [
-			\ ["Set &Paste %{&paste? 'Off':'On'}\tSPC sto", "set paste!","%{&paste? 'Turn on for coding':'Turn on for pasting from OS registry'}"],
+			\ ["Set &paste %{&paste? 'Off':'On'}\tSPC sto", "set paste!","%{&paste? 'Turn on for coding':'Turn on for pasting from OS registry'}"],
+			\ ["Set &relative number %{&relativenumber? 'Off':'On'}\t---", "set relativenumber!"],
 			\ ])
 
 " -- vim.keymap.set("n", "<leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
