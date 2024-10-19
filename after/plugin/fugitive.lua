@@ -29,7 +29,7 @@ vim.keymap.set("n", "<leader>U", ":wa<CR>:G restore --staged .<CR>", { desc = "U
 vim.keymap.set("n", "<leader>cc", ":G commit<CR>", { desc = "Git commit" })
 vim.keymap.set("n", "<leader>ca", ":G commit --amend<CR>", { desc = "Git commit --amend" })
 vim.keymap.set("n", "<leader>ce", ":G commit --amend --no-edit<CR>", { desc = "Git commit --amend --no-edit" })
-vim.keymap.set("n", "<leader>cw", ":G commit --reword<CR>", { desc = "Git commit --amend" })
+vim.keymap.set("n", "<leader>cw", ":G commit --reword<CR>", { desc = "Git commit --reword" })
 
 -- -- status
 vim.keymap.set("n", "\\glo", ":G log<CR>", { desc = "Show commit history (Fugitive)" })
