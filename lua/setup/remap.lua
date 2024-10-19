@@ -108,11 +108,12 @@ vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>zz")
 vim.keymap.set("v", ">", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
 
+
 -- -- other
+vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
+{ desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
-vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
-  { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
 vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]], { noremap = true, silent = true })

@@ -20,8 +20,11 @@ call quickui#menu#install("&Option", [
 			\ ["Colo&rscheme\tSPC scr", 'Telescope colorscheme'],
 			\ ])
 
-" -- vim.keymap.set("n", "<leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
 call quickui#menu#install('&Git', [
+      \ [ "Abort commit", "" ],
+      \ [ "&Normal\tSPC dca", "gg/#<CR>kdgg:q!<CR>", "Abort normal commit" ],
+      \ [ "&Force\tSPC SPC dca", "gg/#<CR>Vggy:cq<CR>", "Abort merge/amend/etc. commit" ],
+      \ [ "--", "" ],
       \ [ "Compare with", "" ],
 			\ ["Ma&ster\tSPC dy", "DiffviewOpen master", "Compare with master"],
 			\ ["Ma&in\tSPC dr", "DiffviewOpen main", "Compare with main"],
@@ -33,8 +36,9 @@ call quickui#menu#install('&Git', [
 			\ ], 10000)
 
 call quickui#menu#install("E&dit", [
-      \ ["Indent &right\t---", ">>"],
-      \ ["Indent &left\t---", "<<"],
+      \ ["Indent", ""],
+      \ ["&Right\t---", ">>", "Indent right"],
+      \ ["&Left\t---", "<<", "Indent left"],
 			\ ], 10000)
 
 call quickui#menu#install('E&xplore', [
