@@ -19,7 +19,6 @@ call quickui#menu#install("&Option", [
       \ [ "Telescope", "" ],
 			\ ["Colo&rscheme\tSPC scr", 'Telescope colorscheme'],
 			\ ])
-"" vim.keymap.set('n', '<leader>scr', builtin.colorscheme, { desc = 'Search and set colorscheme' })
 
 " -- vim.keymap.set("n", "<leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
 call quickui#menu#install('&Git', [
@@ -33,6 +32,11 @@ call quickui#menu#install('&Git', [
       \ [ "&File history\tSPC dlgp", "DiffviewFileHistory %", "Show commit history for current file"],
 			\ ], 10000)
 
+call quickui#menu#install("E&dit", [
+      \ ["Indent &right\t---", ">>"],
+      \ ["Indent &left\t---", "<<"],
+			\ ], 10000)
+
 call quickui#menu#install('E&xplore', [
 			\ ["Find files\tCTRL p", "Telescope find_files", "Find files (Telescope)"],
 			\ ["Ne&trw explore\tSPC vv", "Ex"],
@@ -41,7 +45,7 @@ call quickui#menu#install('E&xplore', [
 
 " register HELP menu with weight 10000
 call quickui#menu#install('H&elp', [
-			\ ["&Keymaps\tTAB", 'Telescope keymaps', 'Show all keymaps (Telescope)'],
+      \ ["&Keymaps\tTAB", 'Telescope keymaps', 'Show all keymaps (Telescope)'],
 			\ ["&Cheatsheet", 'help index', ''],
 			\ ['T&ips', 'help tips', ''],
 			\ ['--',''],
