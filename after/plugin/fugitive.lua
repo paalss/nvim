@@ -27,8 +27,8 @@ vim.api.nvim_create_user_command('Gcan', "G commit --verbose --amend --no-edit -
 vim.keymap.set("n", "<leader>S", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files" })
 vim.keymap.set("n", "<leader>U", ":wa<CR>:G restore --staged .<CR>", { desc = "Unstage/remove all files" })
 vim.keymap.set("n", "<leader>cc", ":G commit<CR>", { desc = "Git commit" })
-vim.keymap.set("n", "<leader>ca", ":G commit --amend<CR>", { desc = "Git commit --amend" })
-vim.keymap.set("n", "<leader>ce", ":G commit --amend --no-edit<CR>", { desc = "Git commit --amend --no-edit" })
+vim.keymap.set("n", "<leader>ca", ":G commit --amend<CR>", { desc = "gc!    Git commit --amend" })
+vim.keymap.set("n", "<leader>ce", ":G commit --amend --no-edit<CR>", { desc = "gcn!   Git commit --amend --no-edit" })
 vim.keymap.set("n", "<leader>cw", ":G commit --reword<CR>", { desc = "Git commit --reword" })
 
 -- -- status
