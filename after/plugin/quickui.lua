@@ -23,9 +23,9 @@ call quickui#menu#install("&Option", [
 " G commit --verbose --amend --no-edit --all
 call quickui#menu#install('&Git', [
       \ [ "Amend commit", "" ],
-      \ [ "gc!", "G commit --verbose --amend", "git commit --verbose --amend" ],
-      \ [ "gcn!", "G commit --verbose --amend --no-edit", "git commit --verbose --amend --no-edit" ],
-      \ [ "gcan!", "G commit --verbose --amend --no-edit --all", "git commit --verbose --amend --no-edit --all" ],
+      \ [ "gc!\tSPC ca", "G commit --verbose --amend", "git commit --verbose --amend" ],
+      \ [ "gcn!\tSPC ce", "G commit --verbose --amend --no-edit", "git commit --verbose --amend --no-edit" ],
+      \ [ "gcan!\tSPC cx", "G commit --verbose --amend --no-edit --all", "git commit --verbose --amend --no-edit --all" ],
       \ [ "--", "" ],
       \ [ "Abort commit", "" ],
       \ [ "&Normal\tSPC dca", "gg/#<CR>kdgg:q!<CR>", "Abort normal commit" ],
