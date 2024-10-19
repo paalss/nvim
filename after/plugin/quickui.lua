@@ -20,17 +20,18 @@ call quickui#menu#install("&Option", [
 			\ ["Colo&rscheme\tSPC scr", 'Telescope colorscheme'],
 			\ ])
 
-" G commit --verbose --amend --no-edit --all
+
+""      \ [ "--", "" ],
+""      \ [ "Abort commit", "" ],
+""      \ [ "&Normal\tSPC dca", "gg/#<CR>kdgg:q!<CR>", "Abort normal commit" ],
+""      \ [ "&Force\tSPC SPC dca", "gg/#<CR>Vggy:cq<CR>", "Abort merge/amend/etc. commit" ],
+""      \ [ "--", "" ],
+
 call quickui#menu#install('&Git', [
       \ [ "Amend commit", "" ],
       \ [ "gc!\tSPC ca", "G commit --verbose --amend", "git commit --verbose --amend" ],
       \ [ "gcn!\tSPC ce", "G commit --verbose --amend --no-edit", "git commit --verbose --amend --no-edit" ],
       \ [ "gcan!\tSPC cx", "G commit --verbose --amend --no-edit --all", "git commit --verbose --amend --no-edit --all" ],
-      \ [ "--", "" ],
-      \ [ "Abort commit", "" ],
-      \ [ "&Normal\tSPC dca", "gg/#<CR>kdgg:q!<CR>", "Abort normal commit" ],
-      \ [ "&Force\tSPC SPC dca", "gg/#<CR>Vggy:cq<CR>", "Abort merge/amend/etc. commit" ],
-      \ [ "--", "" ],
       \ [ "Compare with", "" ],
 			\ ["Ma&ster\tSPC dy", "DiffviewOpen master", "Compare with master"],
 			\ ["Ma&in\tSPC dr", "DiffviewOpen main", "Compare with main"],
