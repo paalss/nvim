@@ -37,8 +37,8 @@ call quickui#menu#install('&Git', [
 
 call quickui#menu#install("E&dit", [
       \ ["Indent", ""],
-      \ ["&Right\t---", ">>", "Indent right"],
-      \ ["&Left\t---", "<<", "Indent left"],
+      \ ["&Right\t>>", ">>", "Indent right"],
+      \ ["&Left\t<<", "<<", "Indent left"],
 			\ ], 10000)
 
 call quickui#menu#install('E&xplore', [
