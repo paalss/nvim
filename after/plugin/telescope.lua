@@ -65,7 +65,7 @@ vim.keymap.set('n', '<leader>gstl', builtin.git_stash, { desc = 'Show git stashe
 vim.keymap.set('n', '<leader>gst', builtin.git_status, { desc = 'Show git status' })
 
 -- colorscheme
-vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = 'Search and set colorscheme' })
+vim.keymap.set('n', '<leader>scr', builtin.colorscheme, { desc = 'Search and set colorscheme' })
 
 -- telescope
 vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search telescope functionality' })

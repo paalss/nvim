@@ -12,8 +12,8 @@ call quickui#menu#reset()
 call quickui#menu#install("&Option", [
 			\ ["Set &paste %{&paste? 'Off':'On'}\tSPC sto", "set paste!","%{&paste? 'Turn on for coding':'Turn on for pasting from OS registry'}"],
 			\ ["Set &relative number %{&relativenumber? 'Off':'On'}\t---", "set relativenumber!"],
-			\ ["Set &colorcolumn On\t---", "set colorcolumn=80"],
-			\ ["Set c&olorcolumn Off\t---", "set colorcolumn="],
+			\ ["Set &colorcolumn On\tSPC sco", "set colorcolumn=80"],
+			\ ["Set c&olorcolumn Off\tSPC sclo", "set colorcolumn="],
 			\ ])
 
 " -- vim.keymap.set("n", "<leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
