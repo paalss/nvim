@@ -19,9 +19,9 @@ call quickui#menu#install("&Option", [
 " -- vim.keymap.set("n", "<leader>dlo", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
 call quickui#menu#install('&Git', [
       \ [ "Compare with", "" ],
-			\ ["Ma&ster\tSPC dy", "DiffviewOpen master"],
-			\ ["Ma&in\tSPC dr", "DiffviewOpen main"],
-			\ ["&Develop\tSPC dt", "DiffviewOpen develop"],
+			\ ["Ma&ster\tSPC dy", "DiffviewOpen master", "Compare with master"],
+			\ ["Ma&in\tSPC dr", "DiffviewOpen main", "Compare with main"],
+			\ ["&Develop\tSPC dt", "DiffviewOpen develop", "Compare with develop"],
       \ [ "--", "" ],
       \ [ "History", "" ],
       \ [ "&Repo history\tSPC dlo", "DiffviewFileHistory", "Show commit history for entire repository" ],
