@@ -11,13 +11,13 @@ call quickui#menu#reset()
 
 call quickui#menu#install("&Option", [
       \ [ "Set", "" ],
-			\ ["&Paste %{&paste? 'Off':'On'}\tSPC sto", "set paste!","%{&paste? 'Turn on for coding':'Turn on for pasting from OS registry'}"],
-			\ ["&Relative number %{&relativenumber? 'Off':'On'}\t---", "set relativenumber!"],
-			\ ["&Colorcolumn On\tSPC sco", "set colorcolumn=80"],
-			\ ["C&olorcolumn Off\tSPC sclo", "set colorcolumn="],
+			\ ["&Paste %{&paste? 'Off':'On'}\tSPC sto", "set paste!","%{&paste? 'set nopaste - Turn on for coding':'set paste - Turn on for pasting from OS registry'}"],
+			\ ["&Relative number %{&relativenumber? 'Off':'On'}\t---", "set relativenumber!", "set relativenumber!"],
+			\ ["&Colorcolumn On\tSPC sco", "set colorcolumn=80",  "set colorcolumn=80"],
+			\ ["C&olorcolumn Off\tSPC sclo", "set colorcolumn=", "set colorcolumn="],
       \ [ "--", "" ],
       \ [ "Telescope", "" ],
-			\ ["Colo&rscheme\tSPC scr", 'Telescope colorscheme'],
+			\ ["Colo&rscheme\tSPC scr", "Telescope colorscheme", "Telescope colorscheme"],
 			\ ])
 
 
@@ -32,6 +32,7 @@ call quickui#menu#install('&Git', [
       \ [ "gc!\tSPC ca", "G commit --verbose --amend", "git commit --verbose --amend" ],
       \ [ "gcn!\tSPC ce", "G commit --verbose --amend --no-edit", "git commit --verbose --amend --no-edit" ],
       \ [ "gcan!\tSPC cx", "G commit --verbose --amend --no-edit --all", "git commit --verbose --amend --no-edit --all" ],
+      \ [ "--", "" ],
       \ [ "Compare with", "" ],
 			\ ["Ma&ster\tSPC dy", "DiffviewOpen master", "Compare with master"],
 			\ ["Ma&in\tSPC dr", "DiffviewOpen main", "Compare with main"],
@@ -49,20 +50,20 @@ call quickui#menu#install("E&dit", [
 			\ ], 10000)
 
 call quickui#menu#install('E&xplore', [
-			\ ["Find files\tCTRL p", "Telescope find_files", "Find files (Telescope)"],
-			\ ["Ne&trw explore\tSPC vv", "Ex"],
-			\ ["Ne&otree\tAlt r", "Neotree toggle reveal float"],
+			\ ["Find files\tCTRL p", "Telescope find_files", "Telescope find_files"],
+			\ ["Ne&trw explore\tSPC vv", "Ex", "Ex"],
+			\ ["Ne&otree\tAlt r", "Neotree toggle reveal float",  "Neotree toggle revealfloat"],
 			\ ], 10000)
 
 " register HELP menu with weight 10000
 call quickui#menu#install('H&elp', [
-      \ ["&Keymaps\tTAB", 'Telescope keymaps', 'Show all keymaps (Telescope)'],
-			\ ["&Cheatsheet", 'help index', ''],
-			\ ['T&ips', 'help tips', ''],
+      \ ["&Keymaps\tTAB", "Telescope keymaps", "Telescope keymaps"],
+			\ ["&Cheatsheet", 'help index', 'help index'],
+			\ ['T&ips', 'help tips', 'help tips'],
 			\ ['--',''],
-			\ ["&Tutorial", 'help tutor', ''],
-			\ ['&Quick Reference', 'help quickref', ''],
-			\ ['&Summary', 'help summary', ''],
+			\ ["&Tutorial", 'help tutor', 'help tutor'],
+			\ ['&Quick Reference', 'help quickref', 'help quickref'],
+			\ ['&Summary', 'help summary', 'help summary'],
 			\ ], 10000)
 
 " enable to display tips in the cmdline
