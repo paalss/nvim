@@ -111,7 +111,7 @@ vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
 
 -- -- other
 vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
-{ desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
+  { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
@@ -164,3 +164,13 @@ vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize 
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
 
 vim.keymap.set("n", "<A-w>", "<C-w>w", { desc = "Go to next split" })
+
+-- add colorcolumn only for commit messages
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "COMMIT_EDITMSG",
+  callback = function()
+    vim.schedule(function()
+      vim.opt_local.colorcolumn = "73" -- indicating where text needs to wrap
+    end)
+  end,
+})

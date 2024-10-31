@@ -34,7 +34,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "73" -- for commit messages
+-- colorcolumn: see remap.lua
 
 vim.cmd [[
 augroup highlight_yank
