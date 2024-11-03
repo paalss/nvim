@@ -94,7 +94,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- -- quickfix list
-vim.keymap.set("n", "<leader>co", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
+vim.keymap.set("n", "<leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
 vim.keymap.set("n", "<leader>clo", ":ccl<CR>", { desc = "close quickfix list" })
 
 -- quick fix list navigation
