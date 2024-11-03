@@ -33,6 +33,7 @@ local plugins = {
   --   opts = {},
   -- },
   { 'skywind3000/vim-quickui' },
+  { 'echasnovski/mini.nvim',       version = '*' },
   { 'TamaMcGlinn/quickfixdd' },
   { 'sbdchd/neoformat' },
   { 'shortcuts/no-neck-pain.nvim', version = "*" },
