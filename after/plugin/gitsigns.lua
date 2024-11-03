@@ -9,10 +9,19 @@ require('gitsigns').setup {
     end
 
     -- Navigation
-    map('n', '+', function()
+
+    local function go_to_next_hunk()
       if vim.wo.diff then return ']c' end
       vim.schedule(function() gs.next_hunk() end)
       return '<Ignore>'
+    end
+
+    map('n', '<F7>', function()
+      go_to_next_hunk()
+    end, { desc = "go to next diff hunk - Webstorm", expr = true })
+
+    map('n', '+', function()
+      go_to_next_hunk()
     end, { desc = "go to next diff hunk", expr = true })
 
     map('n', '-', function()
