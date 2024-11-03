@@ -137,6 +137,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 vim.keymap.set("n", "<C-e>", "<C-e><C-e>", { desc = "Scroll down" }) -- scroll 2 lines
 vim.keymap.set("n", "<C-y>", "<C-y><C-y>", { desc = "Scroll up" })
 
+-- -- git navigation
+-- see gitsigns.lua
+
 -- vim.keymap.set("n", "<S-d>", "<S-L>2j", { desc = "Scroll 2 lines down" })
 -- vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
 
