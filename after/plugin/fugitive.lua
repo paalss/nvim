@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>gx", ":Gwread<CR>", { desc = "Revert uncommited cha
 -- oh-my-bash style shortcuts
 
 vim.keymap.set("n", "<leader>ga", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files (omb)" })
-vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { desc = "Git commit (omb)" })
+vim.keymap.set("n", "<leader>gc", ":G commit --verbose<CR>", { desc = "Git commit (omb)" })
 
 -- oh-my-bash style commands -- https://neovim.io/doc/user/lua-guide.html#lua-guide-commands-create
 

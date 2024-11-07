@@ -1,3 +1,9 @@
+-- Set background color for added lines
+-- vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#A6E22E", fg = "NONE", ctermfg = "NONE", ctermbg = "Green" })
+
+-- Set background color for removed lines
+-- vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#F92672", fg = "NONE", ctermfg = "NONE", ctermbg = "Red" })
+
 -- -- Define a Lua function ConflictsHighlight
 -- function ConflictsHighlight()
 --     -- Define a region pattern for conflicts
@@ -43,3 +49,5 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
+
+
