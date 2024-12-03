@@ -25,7 +25,7 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 
 -- -- add new/delete line
-vim.keymap.set("n", "<A-c>", "cc<esc>", { desc = "delete line" })
+vim.keymap.set("n", "<leader>cd", "cc<esc>", { desc = "delete line" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
@@ -61,6 +61,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- -- all text
 vim.keymap.set("n", "<A-v>", "ggVG", { desc = "mark all" })
+vim.keymap.set("n", "<A-c>", "ggVGc", { desc = "Change everything" })
 vim.keymap.set("n", "<A-y>", ":%y<CR>", { desc = "yank all" })
 vim.keymap.set("n", "<leader><A-y>", ":%y+<CR>", { desc = "yank all to OS registry" })
 vim.keymap.set("n", "<A-d>", ":%d<CR>", { desc = "delete all" })
