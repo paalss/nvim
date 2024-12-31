@@ -10,6 +10,8 @@ call quickui#menu#reset()
 " script inside %{...} will be evaluated and expanded in the string
 
 call quickui#menu#install("&Option", [
+      \ [ "AutoHotKey\tSPC ahk", "lua Ahk()", "Turn on AutoHotKey" ],
+      \ [ "--", "" ],
       \ [ "Set", "" ],
 			\ ["&Paste %{&paste? 'Off':'On'}\tSPC sto", "set paste!","%{&paste? 'set nopaste - Turn on for coding':'set paste - Turn on for pasting from OS registry'}"],
 			\ ["&Relative number %{&relativenumber? 'Off':'On'}\t---", "set relativenumber!", "set relativenumber!"],
