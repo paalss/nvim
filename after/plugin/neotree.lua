@@ -1,5 +1,10 @@
 require("neo-tree").setup({
-  close_if_last_window = true
+  close_if_last_window = true,
+  window = {
+    mappings = {
+      ["l"] = "open"
+    }
+  }
 })
 vim.keymap.set("n", "<A-r>", "<cmd>Neotree toggle reveal<cr>", { desc = "Toggle file explorer" })
 vim.keymap.set("n", "<leader><A-r>", "<cmd>Neotree toggle reveal float<cr>", { desc = "Toggle file explorer (float)" })
