@@ -21,6 +21,9 @@ telescope.setup {
     find_files = {
       find_command = { "rg", "--files", "--hidden", "--no-ignore-vcs" },
     },
+    live_grep = {
+      find_command = { "rg", "--files", "--hidden", "--no-ignore-vcs" },
+    },
     help_tags = {
       mappings = {
         i = {
