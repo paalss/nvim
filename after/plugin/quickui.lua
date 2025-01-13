@@ -41,7 +41,6 @@ call quickui#menu#install('C&ompare', [
 			\ ["Ma&ster\tSPC dy", "DiffviewOpen master", "Compare with master"],
 			\ ["Ma&in\tSPC dr", "DiffviewOpen main", "Compare with main"],
 			\ ["&Develop\tSPC dt", "DiffviewOpen develop", "Compare with develop"],
-      \ ["&Hash under cursor\tSPC dcc", "DiffviewOpen <C-r><C-w><CR>", "Compare with commit-hash/branch under cursor"],
       \ [ "--", "" ],
       \ [ "History", "" ],
       \ [ "&Repo history\tSPC dlo", "DiffviewFileHistory", "Show commit history for entire repository" ],
