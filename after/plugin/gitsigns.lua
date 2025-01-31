@@ -50,7 +50,8 @@ require('gitsigns').setup {
     -- -- view
     map('n', '<leader>hp', gs.preview_hunk, { desc = "Preview hunk" })
     map('n', '<leader>hb', function() gs.blame_line { full = true } end)
-    map('n', '<leader>tbb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
+    map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
+    -- map('n', '<leader>tbb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
     map('n', '<leader>hd', gs.diffthis)
     map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "Diffthis 2" })
     map('n', '<leader>td', gs.toggle_deleted)
@@ -62,31 +63,31 @@ require('gitsigns').setup {
 
 
 
-local function blame_and_checkout()
-    local gs = require('gitsigns')
-    gs.blame_line({ full = true }) -- Get full blame info
-    vim.defer_fn(function()
-        -- Get commit hash from last blame message
-        local blame_msg = vim.fn.getreg('"') -- Default unnamed register (last yank)
-        local commit_hash = blame_msg:match("(%w+)%s") -- Extract first word (commit hash)
+-- local function blame_and_checkout()
+--     local gs = require('gitsigns')
+--     gs.blame_line({ full = true }) -- Get full blame info
+--     vim.defer_fn(function()
+--         -- Get commit hash from last blame message
+--         local blame_msg = vim.fn.getreg('"') -- Default unnamed register (last yank)
+--         local commit_hash = blame_msg:match("(%w+)%s") -- Extract first word (commit hash)
 
-        if commit_hash then
-            -- Copy hash to system clipboard
-            vim.fn.setreg("+", commit_hash) -- Clipboard register
-            vim.fn.setreg('"', commit_hash) -- Default register
+--         if commit_hash then
+--             -- Copy hash to system clipboard
+--             vim.fn.setreg("+", commit_hash) -- Clipboard register
+--             vim.fn.setreg('"', commit_hash) -- Default register
 
-            -- Ask to checkout commit
-            local choice = vim.fn.input("Checkout commit " .. commit_hash .. "? (y/n): ")
-            if choice:lower() == "y" then
-                vim.cmd("Git checkout " .. commit_hash) -- Use Fugitive or !git checkout
-            else
-                print("Copied hash: " .. commit_hash)
-            end
-        else
-            print("Could not extract commit hash.")
-        end
-    end, 100) -- Slight delay to allow blame to populate
-end
+--             -- Ask to checkout commit
+--             local choice = vim.fn.input("Checkout commit " .. commit_hash .. "? (y/n): ")
+--             if choice:lower() == "y" then
+--                 vim.cmd("Git checkout " .. commit_hash) -- Use Fugitive or !git checkout
+--             else
+--                 print("Copied hash: " .. commit_hash)
+--             end
+--         else
+--             print("Could not extract commit hash.")
+--         end
+--     end, 400) -- Slight delay to allow blame to populate
+-- end
 
 -- Map it to a keybinding
 vim.keymap.set("n", "<leader>tbc", blame_and_checkout, { noremap = true, silent = true })
