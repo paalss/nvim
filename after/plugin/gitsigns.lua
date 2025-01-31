@@ -90,5 +90,5 @@ require('gitsigns').setup {
 -- end
 
 -- Map it to a keybinding
-vim.keymap.set("n", "<leader>tbc", blame_and_checkout, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>tbc", blame_and_checkout, { noremap = true, silent = true })
 
