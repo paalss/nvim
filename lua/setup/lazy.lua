@@ -27,6 +27,7 @@ local plugins = {
   {
     'ThePrimeagen/vim-be-good'
   },
+  { 'https://github.com/adelarsq/vim-matchit' },
   -- {
   --   'stevearc/conform.nvim',
   --   branch = "nvim-0.9",
