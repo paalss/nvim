@@ -56,7 +56,7 @@ call quickui#menu#install("E&dit", [
 call quickui#menu#install('E&xplore', [
 			\ ["Find files\tCTRL p", "Telescope find_files", "Telescope find_files"],
 			\ ["Ne&trw explore\tSPC vv", "Ex", "Ex"],
-			\ ["Ne&otree\tAlt r", "Neotree toggle reveal float",  "Neotree toggle revealfloat"],
+			\ ["Ne&otree\tALT r ALT r", "Neotree toggle reveal",  "Neotree toggle reveal"],
 			\ ], 10000)
 
 " register HELP menu with weight 10000
