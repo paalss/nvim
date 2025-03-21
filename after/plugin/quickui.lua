@@ -61,7 +61,7 @@ call quickui#menu#install('E&xplore', [
 
 " register HELP menu with weight 10000
 call quickui#menu#install('H&elp', [
-      \ ["&Keymaps\tTAB", "Telescope keymaps", "Telescope keymaps"],
+      \ ["&Keymaps\tSPC sk", "Telescope keymaps", "Telescope keymaps"],
 			\ ["&Cheatsheet", 'help index', 'help index'],
 			\ ['T&ips', 'help tips', 'help tips'],
 			\ ['--',''],
