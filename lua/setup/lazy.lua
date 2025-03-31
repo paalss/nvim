@@ -73,8 +73,12 @@ local plugins = {
   {
     "christoomey/vim-tmux-navigator",
     pin = true
-  },
-  {
+	},
+	-- {
+	-- 	"mrjones2014/smart-splits.nvim",
+	-- 	pin = true
+	-- },
+	{
     'stevearc/dressing.nvim',
     opts = {},
     pin = true
