@@ -3,7 +3,7 @@
 -- https://neovim.io/doc/user/options.html#%27langmap%27
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At" })
 vim.keymap.set({ "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Tilde" })
-vim.keymap.set({ "n" }, "<A-3>", "~<BS>", { desc = "Tilde" })
+vim.keymap.set({ "n" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
