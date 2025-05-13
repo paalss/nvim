@@ -1,6 +1,7 @@
 local diffview = require 'diffview'
 
 diffview.setup {
+  watch_index = true,
   keymaps = {
     view = {
       { "n", "<A-q>", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
