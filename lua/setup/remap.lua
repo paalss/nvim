@@ -71,8 +71,7 @@ vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- casing management
 vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
-vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
-vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
+vim.keymap.set("n", "<leader>cas", "g~iW", { desc = "Toggle case for Word" })
 
 -- -- snippets
 vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
@@ -110,13 +109,18 @@ vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>zz")
 vim.keymap.set("v", ">", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
 
+-- git
 
--- -- other
-vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
+
+-- -- other
+vim.keymap.set("n", "<leader>tr", "ci\"", { desc = "Insert mode in quotes" })
+vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
+vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
+vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
 vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]], { noremap = true, silent = true })
