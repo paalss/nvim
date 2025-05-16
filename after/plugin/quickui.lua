@@ -59,6 +59,11 @@ call quickui#menu#install('E&xplore', [
 			\ ["Ne&otree\tALT r ALT r", "Neotree toggle reveal",  "Neotree toggle reveal"],
 			\ ], 10000)
 
+call quickui#menu#install('&s registry', [
+			\ ["Delete to s registry\tSPC sd", "\"sd", "Delete and save output to s registry"],
+			\ ["Paste from s registry\tSPC sp", "\"sp", "Paste s registry contents"],
+			\ ], 10000)
+
 " register HELP menu with weight 10000
 call quickui#menu#install('H&elp', [
       \ ["&Keymaps\tSPC sk", "Telescope keymaps", "Telescope keymaps"],

@@ -30,21 +30,19 @@ vim.keymap.set("n", "<leader>cd", "cc<esc>", { desc = "delete line" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
-
 -- markdown template code block
 
 vim.keymap.set("n", "<leader>tg", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
 vim.keymap.set("n", "<leader>tbg", "i```bash<CR>```<esc>O", { desc = "Add bash code block in markdown" })
 vim.keymap.set("n", "<leader>txg", "i```tsx<CR>```<esc>O", { desc = "Add tsx code block in markdown" })
 
-
 -- action shortcuts
 
 -- -- pasting
-vim.keymap.set("n", "<leader>spa", ":set paste<CR>", { desc = "Set paste" })
+vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
 vim.keymap.set("n", "<leader>sto", ":set paste!<CR>", { desc = "Set toggle paste" })
 vim.keymap.set("n", "<leader>sno", ":set nopaste<CR>", { desc = "Set nopaste" })
-vim.keymap.set("n", "<leader>po", ":set paste<CR>\"*p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
+vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
 
 -- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
@@ -58,9 +56,11 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 -- vim.keymap.set("x", "<leader>P", "\"_dP", { desc = "Delete to black hole register and paste" })
 -- vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d", { desc = "Delete to black hole registry" })
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry" })
+vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry"})
 vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry"})
+vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry"})
 
 -- -- all text
 vim.keymap.set("n", "<A-v>", "ggVG", { desc = "mark all" })
