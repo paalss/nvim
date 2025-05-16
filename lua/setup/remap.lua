@@ -117,7 +117,7 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
 
 -- -- other
-vim.keymap.set("n", "<leader>tr", "ci\"", { desc = "Insert mode in quotes" })
+vim.keymap.set("n", "<leader>tr", "ci\"", { desc = "Insert mode in quotes. Populate translation" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
