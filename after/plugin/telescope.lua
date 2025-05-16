@@ -62,17 +62,17 @@ end, { desc = "Text search" })
 vim.keymap.set('n', '<leader>p0', builtin.live_grep, { desc = 'Live text search' })
 
 -- git search -- shortcut convention: use oh-my-bash/zsh -ish
-vim.keymap.set('n', '<leader>glo', builtin.git_commits, { desc = 'Show git history (Telescope)' })
-vim.keymap.set('n', '<leader>glod', builtin.git_bcommits, { desc = 'Show git history (diff)' })
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Show git branches' })
-vim.keymap.set('n', '<leader>gstl', builtin.git_stash, { desc = 'Show git stashes' })
-vim.keymap.set('n', '<leader>gst', builtin.git_status, { desc = 'Show git status' })
+-- vim.keymap.set('n', '<leader>glo', builtin.git_commits, { desc = 'Show git history (Telescope)' })
+-- vim.keymap.set('n', '<leader>glod', builtin.git_bcommits, { desc = 'Show git history (diff)' })
+-- vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'Show git branches' })
+-- vim.keymap.set('n', '<leader>gstl', builtin.git_stash, { desc = 'Show git stashes' })
+-- vim.keymap.set('n', '<leader>gst', builtin.git_status, { desc = 'Show git status' })
 
 -- colorscheme
 vim.keymap.set('n', '<leader>scr', builtin.colorscheme, { desc = 'Search and set colorscheme' })
 
 -- telescope
-vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search telescope functionality' })
+-- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = 'Search telescope functionality' })
 vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Continue last search' })
 vim.keymap.set('n', '<leader>planets', builtin.planets, { desc = 'Literal telescope' })
 
@@ -90,7 +90,7 @@ vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Find keymaps' })
 -- vim.keymap.set('n', '<C-l>', [[<cmd>Telescope keymaps hidden=true<CR>]], { desc = "Find keymaps", noremap = true })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search help tags' })
 vim.keymap.set('n', '<leader>sg', builtin.registers, { desc = 'Search paste registers registry clipboard' })
-vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
+vim.keymap.set('n', '<leader>si', builtin.diagnostics, { desc = 'Search diagnostics' })
 
 -- search neovim ~/.config
 vim.keymap.set('n', '\\<C-p>', function()
