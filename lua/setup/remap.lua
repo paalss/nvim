@@ -8,11 +8,11 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Do
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
 
-vim.keymap.set({ "n", "v", "x" }, "ø", ":", { desc = "Colon" })
-vim.keymap.set({ "n", "v", "x" }, "åå", "[[", { desc = "Double opening square brackets" })
-vim.keymap.set({ "n", "v", "x" }, "¨¨¨¨", "]]", { desc = "Double closing square brackets" })
-vim.keymap.set({ "n", "v", "x" }, "Å", "{", { desc = "Opening curly bracket" })
-vim.keymap.set({ "n", "v", "x" }, "^^", "}", { desc = "Closing curly bracket" })
+-- vim.keymap.set({ "n", "v", "x" }, "ø", ":", { desc = "Colon" })
+-- vim.keymap.set({ "n", "v", "x" }, "åå", "[[", { desc = "Double opening square brackets" })
+-- vim.keymap.set({ "n", "v", "x" }, "¨¨¨¨", "]]", { desc = "Double closing square brackets" })
+vim.keymap.set({ "n", "v", "x" }, "å", "{", { desc = "Opening curly bracket" })
+vim.keymap.set({ "n", "v", "x" }, "æ", "}", { desc = "Closing curly bracket" })
 
 
 -- line management
