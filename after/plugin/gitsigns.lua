@@ -33,19 +33,19 @@ require('gitsigns').setup {
     -- Actions
 
     -- -- stage, unstage, reset
-    map('n', '<leader>hs', gs.stage_hunk, { desc = "Stage hunk" })
-    map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "Unstage hunk" })
+    -- map('n', '<leader>hs', gs.stage_hunk, { desc = "Stage hunk" })
+    -- map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "Unstage hunk" })
     map('n', '<leader>hr', gs.reset_hunk, { desc = "Reset hunk" })
 
-    map('n', '<leader>ls', "V:Gitsigns stage_hunk", { desc = "Stage line" })
-    map('n', '<leader>lu', "V:Gitsigns undo_stage_hunk", { desc = "Unstage line" })
+    -- map('n', '<leader>ls', "V:Gitsigns stage_hunk", { desc = "Stage line" })
+    -- map('n', '<leader>lu', "V:Gitsigns undo_stage_hunk", { desc = "Unstage line" })
     map('n', '<leader>lu', "V:Gitsigns reset_hunk", { desc = "Reset line" })
 
-    map('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Stage hunk" })
+    -- map('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Stage hunk" })
     map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Reset hunk" })
 
-    map('n', '<leader>hS', gs.stage_buffer, { desc = "Stage buffer" })
-    map('n', '<leader>hR', gs.reset_buffer, { desc = "Reset buffer" })
+    -- map('n', '<leader>hS', gs.stage_buffer, { desc = "Stage buffer" })
+    -- map('n', '<leader>hR', gs.reset_buffer, { desc = "Reset buffer" })
 
     -- -- view
     map('n', '<leader>hp', gs.preview_hunk, { desc = "Preview hunk" })
@@ -54,10 +54,10 @@ require('gitsigns').setup {
     -- map('n', '<leader>tbb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
     map('n', '<leader>hd', gs.diffthis)
     map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "Diffthis 2" })
-    map('n', '<leader>td', gs.toggle_deleted)
+    map('n', '<leader>td', gs.toggle_deleted, { desc = "Show deleted" })
 
     -- Text object
-    map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+    map({ 'o', 'x' }, 'ih', ':<C-U>Gitsins select_hunk<CR>')
   end
 }
 
@@ -91,4 +91,3 @@ require('gitsigns').setup {
 
 -- Map it to a keybinding
 -- vim.keymap.set("n", "<leader>tbc", blame_and_checkout, { noremap = true, silent = true })
-

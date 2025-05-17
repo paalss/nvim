@@ -26,23 +26,17 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 
 -- -- add new/delete line
-vim.keymap.set("n", "<leader>cd", "cc<esc>", { desc = "delete line" })
+-- vim.keymap.set("n", "<leader>cd", "cc<esc>", { desc = "delete line" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
 -- markdown template code block
 
-vim.keymap.set("n", "<leader>tg", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
-vim.keymap.set("n", "<leader>tbg", "i```bash<CR>```<esc>O", { desc = "Add bash code block in markdown" })
-vim.keymap.set("n", "<leader>txg", "i```tsx<CR>```<esc>O", { desc = "Add tsx code block in markdown" })
+-- vim.keymap.set("n", "<leader>tg", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
+-- vim.keymap.set("n", "<leader>tbg", "i```bash<CR>```<esc>O", { desc = "Add bash code block in markdown" })
+-- vim.keymap.set("n", "<leader>txg", "i```tsx<CR>```<esc>O", { desc = "Add tsx code block in markdown" })
 
 -- action shortcuts
-
--- -- pasting
-vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
-vim.keymap.set("n", "<leader>sto", ":set paste!<CR>", { desc = "Set toggle paste" })
-vim.keymap.set("n", "<leader>sno", ":set nopaste<CR>", { desc = "Set nopaste" })
-vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
 
 -- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
@@ -52,49 +46,55 @@ vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
+-- -- pasting
+vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
+-- vim.keymap.set("n", "<leader>sto", ":set paste!<CR>", { desc = "Set toggle paste" })
+vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
+vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
+
 -- -- registers
 -- vim.keymap.set("x", "<leader>P", "\"_dP", { desc = "Delete to black hole register and paste" })
 -- vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d", { desc = "Delete to black hole registry" })
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry" })
 vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
 vim.keymap.set("n", "<leader>Y", "\"+Y")
-vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry"})
-vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry"})
-vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry"})
+vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry" })
+vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry" })
+vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry" })
 
 -- -- all text
-vim.keymap.set("n", "<A-v>", "ggVG", { desc = "mark all" })
-vim.keymap.set("n", "<A-c>", "ggVGc", { desc = "Change everything" })
-vim.keymap.set("n", "<A-y>", ":%y<CR>", { desc = "yank all" })
+vim.keymap.set("n", "<A-v>", "ggVG", { desc = "Mark all" })
+vim.keymap.set("n", "<A-c>", "ggVGc", { desc = "Change all" })
+vim.keymap.set("n", "<A-y>", ":%y<CR>", { desc = "Yank all" })
 vim.keymap.set("n", "<leader><A-y>", ":%y+<CR>", { desc = "yank all to OS registry" })
 vim.keymap.set("n", "<A-d>", ":%d<CR>", { desc = "delete all" })
 vim.keymap.set("n", "<leader><A-d>", ":%d+<CR>", { desc = "delete all to OS registry" })
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
--- -- casing management
-vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
+-- -- casing
+-- vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
 vim.keymap.set("n", "<leader>cas", "g~iW", { desc = "Toggle case for Word" })
 
 -- -- snippets
-vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
+-- vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
 
 -- -- formatting
 vim.keymap.set("n", "<leader><leader>prett", ":! npx prettier . --write", { desc = "Format with prettier" })
 
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>fo", function()
   vim.lsp.buf.format()
 end, { desc = "lsp format" })
 
--- -- -- For React files (JavaScript and TypeScript)
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-  callback = function()
-    -- vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
-    -- { desc = "Format with Neoformat", noremap = true, silent = true })
-    vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
-    vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
-  end,
-})
+-- -- -- -- For React files (JavaScript and TypeScript)
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+--   callback = function()
+--     -- vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
+--     -- { desc = "Format with Neoformat", noremap = true, silent = true })
+--     vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
+--     vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
+--   end,
+-- })
 
 -- -- quickfix list
 vim.keymap.set("n", "<leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
@@ -119,23 +119,24 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
 
 -- -- other
-vim.keymap.set("n", "<leader>tr", "ci\"", { desc = "Insert mode in quotes. Populate translation" })
+vim.keymap.set("n", "<leader>tr", "/__<CR>ci\"", { desc = "Insert into next translation" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
-vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
-vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
-vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "print path to current file" })
-vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]], { noremap = true, silent = true })
-vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
-vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
+-- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
+-- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
+-- vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
+vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
+vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
+  { desc = "Yank path to current file", noremap = true, silent = true })
+-- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
+-- vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
-vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-  { desc = "Replace all occurences of word under cursor" })
-vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+--   { desc = "Replace all occurences of word under cursor" })
+-- vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git clean -fd", { desc = "Nuke working tree" })
-vim.keymap.set("n", "gx", "gx", { desc = "Open link (Netrw)" })
-vim.keymap.set("n", "<leader>sco", ":set colorcolumn=80<CR>", { desc = "set colorcolumn" })
-vim.keymap.set("n", "<leader>sclo", ":set colorcolumn=<CR>", { desc = "remove colorcolumn" })
+-- vim.keymap.set("n", "gx", "gx", { desc = "Open link (Netrw)" })
+-- vim.keymap.set("n", "<leader>sco", ":set colorcolumn=80<CR>", { desc = "set colorcolumn" })
+-- vim.keymap.set("n", "<leader>sclo", ":set colorcolumn=<CR>", { desc = "remove colorcolumn" })
 
 -- navigation
 
@@ -156,12 +157,12 @@ vim.keymap.set("n", "<C-y>", "<C-y><C-y>", { desc = "Scroll up" })
 -- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
 
 -- -- file navigation
-vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 -- -- help pages
-vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
-vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j",
-  { desc = "Scrolling help" })
+-- vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
+-- vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j",
+--   { desc = "Scrolling help" })
 
 
 -- split management
