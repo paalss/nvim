@@ -75,6 +75,8 @@ vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 -- vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
 vim.keymap.set("n", "<leader>ciW", "g~iW", { desc = "Toggle case for Word" })
 vim.keymap.set("n", "<leader>ciw", "g~iw", { desc = "Toggle case for word" })
+vim.keymap.set("n", "<leader>ci\'", "g~i\'", { desc = "Toggle case inside single quotes" })
+vim.keymap.set("n", "<leader>ci\"", "g~i\"", { desc = "Toggle case inside double quotes" })
 vim.keymap.set("n", "<leader>cil", "V~", { desc = "Toggle case for line" })
 
 -- -- snippets
