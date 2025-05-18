@@ -56,7 +56,7 @@ vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>", { d
 -- vim.keymap.set("x", "<leader>P", "\"_dP", { desc = "Delete to black hole register and paste" })
 -- vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d", { desc = "Delete to black hole registry" })
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry" })
-vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
+-- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry" })
 vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry" })
