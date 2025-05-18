@@ -73,7 +73,9 @@ vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- casing
 -- vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
-vim.keymap.set("n", "<leader>cas", "g~iW", { desc = "Toggle case for Word" })
+vim.keymap.set("n", "<leader>ciW", "g~iW", { desc = "Toggle case for Word" })
+vim.keymap.set("n", "<leader>ciw", "g~iw", { desc = "Toggle case for word" })
+vim.keymap.set("n", "<leader>cil", "V~", { desc = "Toggle case for line" })
 
 -- -- snippets
 -- vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
