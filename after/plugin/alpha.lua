@@ -81,6 +81,7 @@ local block1 = {
     [[]],
     [[]],
     [[–––––––––––––––––––– Other ––––––––––––––––––––]],
+    [[|                Replay 'w' macro]],
     [[SPC bb           Center buffer (NonNeckPain)]],
     [[SPC te           Open terminal]],
     [[SPC y*           Yank to OS system registry]],
