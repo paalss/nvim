@@ -16,7 +16,8 @@ vim.keymap.set({ "n", "v", "x" }, "æ", "}", { desc = "Closing curly bracket" })
 
 
 --------------------------------------------------------
--- line management
+-- LINE MANAGEMENT
+--------------------------------------------------------
 
 -- -- move line
 vim.keymap.set("n", "<A-k>", ":m-2<CR>", { desc = "Move line up" })
@@ -31,13 +32,17 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
--- markdown template code block
+--------------------------------------------------------
+-- MARKDOWN TEMPLATE CODE BLOCK
+--------------------------------------------------------
 
 -- vim.keymap.set("n", "<leader>tg", "i```<CR>```<esc>kA", { desc = "Add code block in markdown" })
 -- vim.keymap.set("n", "<leader>tbg", "i```bash<CR>```<esc>O", { desc = "Add bash code block in markdown" })
 -- vim.keymap.set("n", "<leader>txg", "i```tsx<CR>```<esc>O", { desc = "Add tsx code block in markdown" })
 
--- action shortcuts
+--------------------------------------------------------
+-- ACTION SHORTCUTS
+--------------------------------------------------------
 
 -- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
@@ -102,7 +107,10 @@ end, { desc = "lsp format" })
 --   end,
 -- })
 
--- -- quickfix list
+--------------------------------------------------------
+-- QUICKFIX LIST
+--------------------------------------------------------
+
 vim.keymap.set("n", "<leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
 vim.keymap.set("n", "<leader>clo", ":ccl<CR>", { desc = "close quickfix list" })
 
@@ -117,14 +125,19 @@ vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>zz")
 vim.keymap.set("v", ">", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
 
--- git
+--------------------------------------------------------
+-- GIT
+--------------------------------------------------------
 
 vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
 
--- -- other
+--------------------------------------------------------
+-- OTHER
+--------------------------------------------------------
+
 vim.keymap.set("n", "<leader>tr", "/__<CR>ci\"", { desc = "Insert into next translation" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 -- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
@@ -144,7 +157,9 @@ vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git cle
 -- vim.keymap.set("n", "<leader>sco", ":set colorcolumn=80<CR>", { desc = "set colorcolumn" })
 -- vim.keymap.set("n", "<leader>sclo", ":set colorcolumn=<CR>", { desc = "remove colorcolumn" })
 
--- navigation
+--------------------------------------------------------
+-- NAVIGATION
+--------------------------------------------------------
 
 -- -- code navigation
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll page down" }) -- keep cursor in the middle
@@ -171,7 +186,9 @@ vim.keymap.set("n", "<C-y>", "<C-y><C-y>", { desc = "Scroll up" })
 --   { desc = "Scrolling help" })
 
 
--- split management
+--------------------------------------------------------
+-- SPLIT MANAGEMENT
+--------------------------------------------------------
 
 -- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 -- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below split" })
