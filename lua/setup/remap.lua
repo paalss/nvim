@@ -15,6 +15,7 @@ vim.keymap.set({ "n", "v", "x" }, "å", "{", { desc = "Opening curly bracket" })
 vim.keymap.set({ "n", "v", "x" }, "æ", "}", { desc = "Closing curly bracket" })
 
 
+--------------------------------------------------------
 -- line management
 
 -- -- move line
@@ -61,6 +62,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry" })
 vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry" })
 vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry" })
+vim.keymap.set("n", "<leader>sP", "\"sP", { desc = "Paste from s registry" })
 
 -- -- all text
 vim.keymap.set("n", "<A-v>", "ggVG", { desc = "Mark all" })
