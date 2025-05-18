@@ -327,36 +327,6 @@ Bring back Neovim: `fg`
 1. Visual mode `v`
 2. Enter  visual multi mode `[ctrl] n`
 
-----
-
-#### Surround (Nvim surround)
-
-The primary way of adding a new pair to the buffer is via the normal-mode *ys*
-operator, which stands for "you surround". It can be used via
-`ys{motion}{char}`, which surrounds a given {motion} with a delimiter pair
-associated with {char}. For example, `ysa")` means "you surround around quotes
-with parentheses".
-
-**Surround visual selection**
-
-`S` (uppercase)
-
-- `ys` (you surround/add)
-- `cs` (change surrounding)
-- `ds` (delete surrounding)
-
-**W/o visual selection**
-
-    Old text                    Command         New text
---------------------------------------------------------------------------------
-    surr*ound_words             ysiw)           (surround_words)
-    *make strings               ys$"            "make strings"
-    [delete ar*ound me!]        ds]             delete around me!
-    remove <b>HTML t*ags</b>    dst             remove HTML tags
-    'change quot*es'            cs'"            "change quotes"
-    <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
-    delete(functi*on calls)     dsf             function calls
-
 Detailed information on how to use this plugin can be found in :h nvim-surround.usage.
 
 #### Command preview (live command)
