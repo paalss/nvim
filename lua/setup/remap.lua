@@ -85,6 +85,7 @@ vim.keymap.set("n", "<leader>ciw", "g~iw", { desc = "Toggle case for word" })
 vim.keymap.set("n", "<leader>ci\'", "g~i\'", { desc = "Toggle case inside single quotes" })
 vim.keymap.set("n", "<leader>ci\"", "g~i\"", { desc = "Toggle case inside double quotes" })
 vim.keymap.set("n", "<leader>cil", "V~", { desc = "Toggle case for line" })
+vim.keymap.set("n", "<leader>ciss", "V~", { desc = "Toggle case for line" })
 
 -- -- snippets
 -- vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
@@ -141,6 +142,10 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>tr", "/__<CR>ci\"", { desc = "Insert into next translation" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
+
+-- vim.keymap.set("n", "<leader>vil", "mm0v$`m", { desc = "Visual mark line" })
+-- vim.keymap.set("n", "<leader>vil", "0v$", { desc = "Visual mark line (you can use yss from vim surround)" })
+
 -- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 -- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 -- vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
