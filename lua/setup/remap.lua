@@ -140,7 +140,7 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 --------------------------------------------------------
 
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
-vim.keymap.set("n", "<leader>tr", "/__<CR>ci\"", { desc = "Insert into next translation" })
+vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Insert into next translation" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
 -- vim.keymap.set("n", "<leader>vil", "mm0v$`m", { desc = "Visual mark line" })
