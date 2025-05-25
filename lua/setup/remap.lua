@@ -58,6 +58,7 @@ vim.keymap.set("x", "<leader>P", "\"_dP", { desc = "Delete to black hole registe
 vim.keymap.set({ "n", "v" }, "<leader>de", "\"_d", { desc = "Delete to black hole registry" })
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry" })
 vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "-", "\"-", { desc = "Use hyphen register" })
 
 -- -- all text
 vim.keymap.set("n", "<A-v>", "ggVG", { desc = "mark all" })

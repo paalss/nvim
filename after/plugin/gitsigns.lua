@@ -18,13 +18,9 @@ require('gitsigns').setup {
 
     map('n', '<F7>', function()
       go_to_next_hunk()
-    end, { desc = "go to next diff hunk - Webstorm", expr = true })
-
-    map('n', '+', function()
-      go_to_next_hunk()
     end, { desc = "go to next diff hunk", expr = true })
 
-    map('n', '-', function()
+    map('n', '<leader><F7>', function()
       if vim.wo.diff then return '[c' end
       vim.schedule(function() gs.prev_hunk() end)
       return '<Ignore>'
