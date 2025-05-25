@@ -32,6 +32,7 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
+
 --------------------------------------------------------
 -- MARKDOWN TEMPLATE CODE BLOCK
 --------------------------------------------------------
@@ -40,11 +41,11 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- vim.keymap.set("n", "<leader>tbg", "i```bash<CR>```<esc>O", { desc = "Add bash code block in markdown" })
 -- vim.keymap.set("n", "<leader>txg", "i```tsx<CR>```<esc>O", { desc = "Add tsx code block in markdown" })
 
+
 --------------------------------------------------------
--- ACTION SHORTCUTS
+-- BASIC ACTIONS
 --------------------------------------------------------
 
--- -- basic commands
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
@@ -52,26 +53,38 @@ vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
--- -- pasting
+
+--------------------------------------------------------
+-- PASTING
+--------------------------------------------------------
+
 vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
 -- vim.keymap.set("n", "<leader>sto", ":set paste!<CR>", { desc = "Set toggle paste" })
 vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
-vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>", { desc = "Paste from OS registry" })
+vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>", { desc = "Paste from OS registry (\"+p is slow)" })
 
--- -- registers
--- vim.keymap.set("x", "_p", "\"_dP", { desc = "Delete to black hole register and paste" })
--- vim.keymap.set({ "n", "v" }, "_d", "\"_d", { desc = "Delete to black hole registry" })
+
+-- registers
+
+-- -- unnamed plus / OS registry
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
--- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
 vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+Y", { desc = "Yank to OS registry (Y)" })
+-- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
+
+-- -- s
+-- vim.keymap.set("x", "_p", "\"_dP", { desc = "Delete to black hole register and paste" })
 vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry" })
 vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry" })
 vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry" })
 vim.keymap.set("n", "<leader>sP", "\"sP", { desc = "Paste from s registry" })
-vim.keymap.set("x", "<leader>P", "\"_dP", { desc = "Delete to black hole register and paste" })
-vim.keymap.set("n", "-", "\"-", { desc = "Use hyphen register" })
 
--- -- all text
+-- -- hyphen
+vim.keymap.set({ "n", "v" }, "-", "\"-", { desc = "Use hyphen register" })
+
+-- -- black hole
+vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
+
+-- all text
 vim.keymap.set("n", "<A-v>", "ggVG", { desc = "Mark all" })
 vim.keymap.set("n", "<A-c>", "ggVGc", { desc = "Change all" })
 vim.keymap.set("n", "<A-y>", ":%y<CR>", { desc = "Yank all" })
@@ -80,7 +93,11 @@ vim.keymap.set("n", "<A-d>", ":%d<CR>", { desc = "delete all" })
 vim.keymap.set("n", "<leader><A-d>", ":%d+<CR>", { desc = "delete all to OS registry" })
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
--- -- casing
+
+--------------------------------------------------------
+-- CASING
+--------------------------------------------------------
+
 -- vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
 vim.keymap.set("n", "<leader>ciW", "g~iW", { desc = "Toggle case for Word" })
 vim.keymap.set("n", "<leader>ciw", "g~iw", { desc = "Toggle case for word" })
@@ -89,10 +106,18 @@ vim.keymap.set("n", "<leader>ci\"", "g~i\"", { desc = "Toggle case inside double
 vim.keymap.set("n", "<leader>cil", "V~", { desc = "Toggle case for line" })
 vim.keymap.set("n", "<leader>ciss", "V~", { desc = "Toggle case for line" })
 
--- -- snippets
+
+--------------------------------------------------------
+-- SNIPPETS
+--------------------------------------------------------
+
 -- vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
 
--- -- formatting
+
+--------------------------------------------------------
+-- FORMATTING
+--------------------------------------------------------
+
 vim.keymap.set("n", "<leader><leader>prett", ":! npx prettier . --write", { desc = "Format with prettier" })
 
 vim.keymap.set("n", "<leader>fo", function()
@@ -109,6 +134,7 @@ end, { desc = "lsp format" })
 --     vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
 --   end,
 -- })
+
 
 --------------------------------------------------------
 -- QUICKFIX LIST
@@ -128,6 +154,7 @@ vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>zz")
 vim.keymap.set("v", ">", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
 
+
 --------------------------------------------------------
 -- GIT
 --------------------------------------------------------
@@ -136,6 +163,7 @@ vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
+
 
 --------------------------------------------------------
 -- OTHER
@@ -164,6 +192,7 @@ vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git cle
 -- vim.keymap.set("n", "gx", "gx", { desc = "Open link (Netrw)" })
 -- vim.keymap.set("n", "<leader>sco", ":set colorcolumn=80<CR>", { desc = "set colorcolumn" })
 -- vim.keymap.set("n", "<leader>sclo", ":set colorcolumn=<CR>", { desc = "remove colorcolumn" })
+
 
 --------------------------------------------------------
 -- NAVIGATION
