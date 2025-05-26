@@ -73,10 +73,12 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+Y", { desc = "Yank to OS registry 
 
 -- -- s
 -- vim.keymap.set("x", "_p", "\"_dP", { desc = "Delete to black hole register and paste" })
-vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry" })
-vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry" })
-vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry" })
-vim.keymap.set("n", "<leader>sP", "\"sP", { desc = "Paste from s registry" })
+vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry (y)" })
+vim.keymap.set("n", "<leader>sY", "\"sY", { desc = "Yank to s registry (Y)" })
+vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry (d)" })
+vim.keymap.set("n", "<leader>sD", "\"sD", { desc = "Delete to s registry (D)" })
+vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry (p)" })
+vim.keymap.set("n", "<leader>sP", "\"sP", { desc = "Paste from s registry (P)" })
 
 -- -- hyphen
 vim.keymap.set({ "n", "v" }, "-", "\"-", { desc = "Use hyphen register" })
