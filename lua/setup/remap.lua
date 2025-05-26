@@ -61,7 +61,8 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
 -- vim.keymap.set("n", "<leader>sto", ":set paste!<CR>", { desc = "Set toggle paste" })
 vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
-vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>", { desc = "Paste from OS registry (\"+p is slow)" })
+vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
+  { desc = "Paste from OS registry (\"+p is slow)" })
 
 
 -- registers
@@ -171,6 +172,7 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 -- OTHER
 --------------------------------------------------------
 
+vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Insert into next translation" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
