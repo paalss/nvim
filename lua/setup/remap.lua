@@ -11,8 +11,8 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Ba
 -- vim.keymap.set({ "n", "v", "x" }, "ø", ":", { desc = "Colon" })
 -- vim.keymap.set({ "n", "v", "x" }, "åå", "[[", { desc = "Double opening square brackets" })
 -- vim.keymap.set({ "n", "v", "x" }, "¨¨¨¨", "]]", { desc = "Double closing square brackets" })
-vim.keymap.set({ "n", "v", "x" }, "å", "{", { desc = "Opening curly bracket" })
-vim.keymap.set({ "n", "v", "x" }, "æ", "}", { desc = "Closing curly bracket" })
+vim.keymap.set({ "n", "v", "x" }, "å", "{", { desc = "Opening curly bracket / move to previous paragraph" })
+vim.keymap.set({ "n", "v", "x" }, "æ", "}", { desc = "Closing curly bracket / move to next paragraph" })
 
 
 --------------------------------------------------------
