@@ -55,8 +55,15 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 
 --------------------------------------------------------
--- PASTING
+-- YANKING, DELETING & PASTING
 --------------------------------------------------------
+
+-- yanked selection navigation
+
+-- vim.keymap.set("v", "y", "y`]", { desc = "Yank (Keep cursor in place)" })
+vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
+vim.keymap.set("n", "Å", "'[", { desc = "Go to start of yanked selection" })
+vim.keymap.set("n", "Æ", "']", { desc = "Go to end of yanked selection" })
 
 vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
 -- vim.keymap.set("n", "<leader>sto", ":set paste!<CR>", { desc = "Set toggle paste" })
@@ -74,15 +81,15 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+Y", { desc = "Yank to OS registry 
 
 -- -- s
 -- vim.keymap.set("x", "_p", "\"_dP", { desc = "Delete to black hole register and paste" })
-vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry (y)" })
-vim.keymap.set("n", "<leader>sY", "\"sY", { desc = "Yank to s registry (Y)" })
-vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry (d)" })
-vim.keymap.set("n", "<leader>sD", "\"sD", { desc = "Delete to s registry (D)" })
-vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry (p)" })
-vim.keymap.set("n", "<leader>sP", "\"sP", { desc = "Paste from s registry (P)" })
+-- vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry (y)" })
+-- vim.keymap.set("n", "<leader>sY", "\"sY", { desc = "Yank to s registry (Y)" })
+-- vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry (d)" })
+-- vim.keymap.set("n", "<leader>sD", "\"sD", { desc = "Delete to s registry (D)" })
+-- vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry (p)" })
+-- vim.keymap.set("n", "<leader>sP", "\"sP", { desc = "Paste from s registry (P)" })
 
--- -- hyphen
-vim.keymap.set({ "n", "v" }, "-", "\"-", { desc = "Use hyphen register" })
+-- -- s
+vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
 vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
@@ -172,7 +179,6 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 -- OTHER
 --------------------------------------------------------
 
-vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Insert into next translation" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
@@ -187,7 +193,7 @@ vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print pat
 vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
   { desc = "Yank path to current file", noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
--- vim.keymap.set("n", "Q", "<nop>", { desc = "disabled" }) -- disable Q
+vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" }) 
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 -- vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
 --   { desc = "Replace all occurences of word under cursor" })
