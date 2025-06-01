@@ -11,8 +11,8 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Ba
 -- vim.keymap.set({ "n", "v", "x" }, "ø", ":", { desc = "Colon" })
 -- vim.keymap.set({ "n", "v", "x" }, "åå", "[[", { desc = "Double opening square brackets" })
 -- vim.keymap.set({ "n", "v", "x" }, "¨¨¨¨", "]]", { desc = "Double closing square brackets" })
-vim.keymap.set({ "n", "v", "x" }, "å", "{", { desc = "Opening curly bracket / move to previous paragraph" })
-vim.keymap.set({ "n", "v", "x" }, "æ", "}", { desc = "Closing curly bracket / move to next paragraph" })
+vim.keymap.set({ "n", "v", "x" }, "Å", "{", { desc = "Opening curly bracket / move to previous paragraph" })
+vim.keymap.set({ "n", "v", "x" }, "Æ", "}", { desc = "Closing curly bracket / move to next paragraph" })
 
 
 --------------------------------------------------------
@@ -62,8 +62,8 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 -- vim.keymap.set("v", "y", "y`]", { desc = "Yank (Keep cursor in place)" })
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
-vim.keymap.set("n", "Å", "'[", { desc = "Go to start of yanked selection" })
-vim.keymap.set("n", "Æ", "']", { desc = "Go to end of yanked selection" })
+vim.keymap.set("n", "å", "'[", { desc = "Go to start of yanked selection" })
+vim.keymap.set("n", "æ", "']", { desc = "Go to end of yanked selection" })
 
 vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
 -- vim.keymap.set("n", "<leader>sto", ":set paste!<CR>", { desc = "Set toggle paste" })
