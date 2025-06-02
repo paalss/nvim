@@ -180,6 +180,10 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 --------------------------------------------------------
 
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "<leader>corr", ":%s/├Ñ/å/g<CR>:%s/├╕/ø/g<CR>:%s/├ª/æ/g<CR>", { desc = "Correct æøå" })
+vim.keymap.set("n", "<leader>cæ", ":%s/├ª/æ/g<CR>", { desc = "Correct æ" })
+vim.keymap.set("n", "<leader>cø", ":%s/├╕/ø/g<CR>", { desc = "Correct ø" })
+vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" })
 vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Insert into next translation" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
