@@ -126,6 +126,7 @@ vim.keymap.set("n", "<leader>cæ", ":%s/├ª/æ/g<CR>", { desc = "Correct æ" }
 vim.keymap.set("n", "<leader>cø", ":%s/├╕/ø/g<CR>", { desc = "Correct ø" })
 vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" })
 
+
 --------------------------------------------------------
 -- SNIPPETS
 --------------------------------------------------------
@@ -182,6 +183,7 @@ vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
+-- TODO keymap for loading in preious deleted commit message?
 
 
 --------------------------------------------------------
@@ -266,3 +268,4 @@ vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git cle
 -- vim.keymap.set("n", "gx", "gx", { desc = "Open link (Netrw)" })
 -- vim.keymap.set("n", "<leader>sco", ":set colorcolumn=80<CR>", { desc = "set colorcolumn" })
 -- vim.keymap.set("n", "<leader>sclo", ":set colorcolumn=<CR>", { desc = "remove colorcolumn" })
+vim.keymap.set("n", "<leader>ds", "$mo%dd`odd", { desc = "delete surroundings" })
