@@ -44,7 +44,8 @@ require('gitsigns').setup {
     -- map('n', '<leader>hR', gs.reset_buffer, { desc = "Reset buffer" })
 
     -- -- view
-    map('n', '<leader>hp', gs.preview_hunk, { desc = "Preview hunk" })
+    map('n', '<leader>hp', gs.preview_hunk_inline, { desc = "Preview hunk" })
+    -- map('n', '<leader>hp', gs.preview_hunk, { desc = "Preview hunk" })
     map('n', '<leader>hb', function() gs.blame_line { full = true } end)
     map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
     -- map('n', '<leader>tbb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
