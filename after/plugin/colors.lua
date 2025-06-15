@@ -35,6 +35,7 @@ function ColorMyPencils(color)
 	-- color = color or "tokyonight-night"
 	-- color = color or "darkplus"
 	color = color or "pop-punk"
+	-- color = color or "nightfox"
 	-- color = color or "github_dark_high_contrast"
 	-- color = color or "github_dark"
 	vim.cmd.colorscheme(color)
