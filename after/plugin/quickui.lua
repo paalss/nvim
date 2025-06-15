@@ -9,6 +9,11 @@ call quickui#menu#reset()
 
 " script inside %{...} will be evaluated and expanded in the string
 
+" call quickui#menu#install("&File", [
+"       \ [ "Save and quit\tZZ", "ZZ" ],
+"       \ [ "--", "" ],
+" 			\ ])
+
 call quickui#menu#install("&Set", [
       \ [ "AutoHotKey\tSPC ahk", "lua Ahk()", "Turn on AutoHotKey" ],
       \ [ "--", "" ],
