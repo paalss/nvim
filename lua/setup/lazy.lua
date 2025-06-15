@@ -231,7 +231,7 @@ local plugins = {
   -- 	ft = { 'typescriptreact', 'javascriptreact', 'javascript' },
   -- 	opts = {},
   -- },
-  { 'mbbill/undotree',    pin = true },
+  -- { 'mbbill/undotree',    pin = true },
   { 'tpope/vim-fugitive', pin = true },
   {
     "kdheepak/lazygit.nvim",
