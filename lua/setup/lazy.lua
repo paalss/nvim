@@ -210,13 +210,13 @@ local plugins = {
   { 'bignimbus/pop-punk.vim',      pin = true },
   -- { "EdenEast/nightfox.nvim" },
   -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   pin = true,
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
+  {
+    "folke/tokyonight.nvim",
+    pin = true,
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
