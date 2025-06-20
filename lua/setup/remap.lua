@@ -19,15 +19,21 @@ vim.keymap.set({ "n", "v", "x" }, "Æ", "}", { desc = "Closing curly bracket / m
 -- LINE MANAGEMENT
 --------------------------------------------------------
 
--- -- move line
+
+-- MOVE LINE
+
 vim.keymap.set("n", "<A-k>", ":m-2<CR>", { desc = "Move line up" })
 vim.keymap.set("n", "<A-j>", ":m+<CR>", { desc = "Move line down" })
 
--- -- move lines
+
+-- MOVE LINES
+
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 
--- -- add new/delete line
+
+-- ADD NEW/DELETE LINE
+
 -- vim.keymap.set("n", "<leader>cd", "cc<esc>", { desc = "delete line" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
@@ -58,9 +64,8 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 -- YANKING, DELETING & PASTING
 --------------------------------------------------------
 
--- yanked selection navigation
+-- NAVIGATE YANKED REGION
 
--- vim.keymap.set("v", "y", "y`]", { desc = "Yank (Keep cursor in place)" })
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
 vim.keymap.set("n", "å", "'[", { desc = "Go to start of yanked selection" })
 vim.keymap.set("n", "æ", "']", { desc = "Go to end of yanked selection" })
@@ -72,7 +77,7 @@ vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
   { desc = "Paste from OS registry (\"+p is slow)" })
 
 
--- registers
+-- REGISTERS
 
 -- -- unnamed plus / OS registry
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
@@ -80,21 +85,15 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+Y", { desc = "Yank to OS registry 
 -- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
 
 -- -- s
--- vim.keymap.set("x", "_p", "\"_dP", { desc = "Delete to black hole register and paste" })
--- vim.keymap.set("n", "<leader>sy", "\"sy", { desc = "Yank to s registry (y)" })
--- vim.keymap.set("n", "<leader>sY", "\"sY", { desc = "Yank to s registry (Y)" })
--- vim.keymap.set("n", "<leader>sd", "\"sd", { desc = "Delete to s registry (d)" })
--- vim.keymap.set("n", "<leader>sD", "\"sD", { desc = "Delete to s registry (D)" })
--- vim.keymap.set("n", "<leader>sp", "\"sp", { desc = "Paste from s registry (p)" })
--- vim.keymap.set("n", "<leader>sP", "\"sP", { desc = "Paste from s registry (P)" })
-
--- -- s
 vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
 vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
 
--- all text
+
+-- AFFECTED AREA
+
+-- -- all text
 vim.keymap.set("n", "<A-v>", "ggVG", { desc = "Mark all" })
 vim.keymap.set("n", "<A-c>", "ggVGc", { desc = "Change all" })
 vim.keymap.set("n", "<A-y>", ":%y<CR>", { desc = "Yank all" })
@@ -103,22 +102,28 @@ vim.keymap.set("n", "<A-d>", ":%d<CR>", { desc = "delete all" })
 vim.keymap.set("n", "<leader><A-d>", ":%d+<CR>", { desc = "delete all to OS registry" })
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
+-- -- line
+vim.keymap.set("n", "<leader>yl", "mo^y$`o", { desc = "Yank line" })
+vim.keymap.set("n", "<leader>dl", "^d$", { desc = "Delete line" })
+
+-- --  surroundings
+vim.keymap.set("n", "<leader>ds", "$mo%dd`odd", { desc = "Delete surroundings" })
+
 
 --------------------------------------------------------
 -- CASING
 --------------------------------------------------------
 
 -- vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
-vim.keymap.set("n", "<leader>ciW", "g~iW", { desc = "Toggle case for Word" })
+vim.keymap.set("n", "<leader>ciW", "g~iW", { desc = "Toggle case for Word (uppercase)" })
 vim.keymap.set("n", "<leader>ciw", "g~iw", { desc = "Toggle case for word" })
 vim.keymap.set("n", "<leader>ci\'", "g~i\'", { desc = "Toggle case inside single quotes" })
 vim.keymap.set("n", "<leader>ci\"", "g~i\"", { desc = "Toggle case inside double quotes" })
 vim.keymap.set("n", "<leader>cil", "V~", { desc = "Toggle case for line" })
-vim.keymap.set("n", "<leader>ciss", "V~", { desc = "Toggle case for line" })
 
 
 --------------------------------------------------------
--- NORWEGIAN CHARACTERS
+-- CORRECT NORWEGIAN CHARACTERS
 --------------------------------------------------------
 
 vim.keymap.set("n", "<leader>corr", ":%s/├Ñ/å/g<CR>:%s/├╕/ø/g<CR>:%s/├ª/æ/g<CR>", { desc = "Correct æøå" })
@@ -138,7 +143,7 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 -- FORMATTING
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader><leader>prett", ":! npx prettier . --write", { desc = "Format with prettier" })
+-- vim.keymap.set("n", "<leader><leader>prett", ":! npx prettier . --write", { desc = "Format with prettier" })
 
 vim.keymap.set("n", "<leader>fo", function()
   vim.lsp.buf.format()
@@ -163,7 +168,9 @@ end, { desc = "lsp format" })
 vim.keymap.set("n", "<leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
 vim.keymap.set("n", "<leader>clo", ":ccl<CR>", { desc = "close quickfix list" })
 
--- quick fix list navigation
+
+-- QUICK FIX LIST NAVIGATION
+
 vim.keymap.set("n", "<A-a>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>zz")
 -- vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
@@ -197,24 +204,17 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll page up" })
 vim.keymap.set("n", "<C-e>", "<C-e><C-e>", { desc = "Scroll down" }) -- scroll 2 lines
 vim.keymap.set("n", "<C-y>", "<C-y><C-y>", { desc = "Scroll up" })
 
--- -- git navigation
+
+-- GIT NAVIGATION
+
 -- see gitsigns.lua
 
--- vim.keymap.set("n", "<S-d>", "<S-L>2j", { desc = "Scroll 2 lines down" })
--- vim.keymap.set("n", "<S-u>", "<S-H>2k", { desc = "Scroll 2 lines up" })
 
--- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
--- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
+-- FILE NAVIGATION
 
--- -- file navigation
 -- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
--- -- help pages
--- vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
--- vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j",
---   { desc = "Scrolling help" })
-
-
+ 
 --------------------------------------------------------
 -- SPLIT MANAGEMENT
 --------------------------------------------------------
@@ -268,4 +268,10 @@ vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git cle
 -- vim.keymap.set("n", "gx", "gx", { desc = "Open link (Netrw)" })
 -- vim.keymap.set("n", "<leader>sco", ":set colorcolumn=80<CR>", { desc = "set colorcolumn" })
 -- vim.keymap.set("n", "<leader>sclo", ":set colorcolumn=<CR>", { desc = "remove colorcolumn" })
-vim.keymap.set("n", "<leader>ds", "$mo%dd`odd", { desc = "delete surroundings" })
+-- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
+-- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
+-- vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
+-- vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j",
+--   { desc = "Scrolling help" })
+
+
