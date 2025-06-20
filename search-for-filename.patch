@@ -1,0 +1,38 @@
+diff --git a/lua/setup/remap.lua b/lua/setup/remap.lua
+index 767bfd3..9d2c96d 100755
+--- a/lua/setup/remap.lua
++++ b/lua/setup/remap.lua
+@@ -162,6 +162,7 @@ vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
+ -- GIT
+ --------------------------------------------------------
+ 
++-- <C-c> for dca?
+ vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
+   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
+ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
+@@ -172,6 +173,15 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
+ -- OTHER
+ --------------------------------------------------------
+ 
++vim.keymap.set("n", "<leader><leader>c", "<C-r>=expand('%:t')", { desc = "Search for filename" })
++
++
++vim.keymap.set("n", "<leader><leader>i", "/\v<C-R>=escape(expand('%:p:h'), '\')<Enter><Enter>")
++
++vim.keymap.set("n", "<leader><leader>v", "/\v<C-r>=expand('%:t')", { desc = "Search for filename" })
++vim.keymap.set("n", "<leader>com", "/<C-R>expand('%:t')", { desc = "Search for filename" })
++
++
+ vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" })
+ vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
+ vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Insert into next translation" })
+@@ -183,7 +193,8 @@ vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search hig
+ -- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
+ -- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
+ -- vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
+-vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
++vim.keymap.set("n", "<leader>pt", ":echo expand('%:t')<CR>", { desc = "Print path to current file" })
++vim.keymap.set("n", "<leader>pata", ":echo '<C-r>%:t'<CR>", { desc = "Print path to current file" })
+ vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
+   { desc = "Yank path to current file", noremap = true, silent = true })
+ -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode

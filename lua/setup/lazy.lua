@@ -24,19 +24,30 @@ vim.g.clipboard = {
 vim.g.mapleader = " "
 
 local plugins = {
-  {
-    'ThePrimeagen/vim-be-good'
-  },
+  -- {
+  --   'ThePrimeagen/vim-be-good'
+  -- },
+  { 'https://github.com/adelarsq/vim-matchit' },
   -- {
   --   'stevearc/conform.nvim',
   --   branch = "nvim-0.9",
   --   opts = {},
   -- },
   { 'skywind3000/vim-quickui' },
-  { 'echasnovski/mini.nvim',       version = '*' },
+  -- {
+  --   "ribelo/taskwarrior.nvim",
+  --   opts = {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --   },
+  --   -- or
+  --   config = true
+  -- },
+  { 'echasnovski/mini.nvim',                  version = '*' },
   { 'TamaMcGlinn/quickfixdd' },
   { 'sbdchd/neoformat' },
-  { 'shortcuts/no-neck-pain.nvim', version = "*" },
+  { 'shortcuts/no-neck-pain.nvim',            version = "*" },
   { 'RRethy/vim-illuminate' },
   { 'farmergreg/vim-lastplace' },
   {
@@ -63,36 +74,40 @@ local plugins = {
     "christoomey/vim-tmux-navigator",
     pin = true
   },
-  {
-    'stevearc/dressing.nvim',
-    opts = {},
-    pin = true
-  },
-  {
-    "folke/trouble.nvim",
-    pin = true,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
-  },
-  {
-    'smjonas/live-command.nvim',
-    pin = true,
-    config = function()
-      require("live-command").setup {
-        commands = {
-          Norm = { cmd = "norm" },
-          Reg = {
-            cmd = "norm",
-            -- This will transform ":5Reg a" into ":norm 5@a"
-            args = function(opts)
-              return (opts.count == -1 and "" or opts.count) .. "@" .. opts.args
-            end,
-            range = "",
-          },
-        }
-      }
-    end
-  },
+  -- {
+  -- 	"mrjones2014/smart-splits.nvim",
+  -- 	pin = true
+  -- },
+  -- {
+  -- 'stevearc/dressing.nvim',
+  -- opts = {},
+  -- pin = true
+  -- },
+  -- {
+  --   "folke/trouble.nvim",
+  --   pin = true,
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   opts = {},
+  -- },
+  -- {
+  --   'smjonas/live-command.nvim',
+  --   pin = true,
+  --   config = function()
+  --     require("live-command").setup {
+  --       commands = {
+  --         Norm = { cmd = "norm" },
+  --         Reg = {
+  --           cmd = "norm",
+  --           -- This will transform ":5Reg a" into ":norm 5@a"
+  --           args = function(opts)
+  --             return (opts.count == -1 and "" or opts.count) .. "@" .. opts.args
+  --           end,
+  --           range = "",
+  --         },
+  --       }
+  --     }
+  --   end
+  -- },
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -162,22 +177,23 @@ local plugins = {
     dependencies = { "ThePrimeagen/harpoon" }
   },
   { 'ThePrimeagen/harpoon',          pin = true },
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to  `main` branch for the latest features
-    pin = true,
-    config = function()
-      require("nvim-surround").setup({
-        --  Configuration here, or leave empty to  defaults
-      })
-    end
-  },
-  { 'sindrets/diffview.nvim',      pin = true },
-  {
-    "mg979/vim-visual-multi",
-    pin = true,
-    branch = "master"
-  },
+  { 'tpope/vim-surround',            pin = true },
+  -- {
+  --   "kylechui/nvim-surround",
+  --   version = "*", -- Use for stability; omit to  `main` branch for the latest features
+  --   pin = true,
+  --   config = function()
+  --     require("nvim-surround").setup({
+  --       --  Configuration here, or leave empty to  defaults
+  --     })
+  --   end
+  -- },
+  { 'sindrets/diffview.nvim',        pin = true },
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   pin = true,
+  --   branch = "master"
+  -- },
   {
     'nvim-lualine/lualine.nvim',
     pin = true,
@@ -190,8 +206,10 @@ local plugins = {
   { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
   -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
-  { 'martinsione/darkplus.nvim',   pin = true },
+  -- { 'martinsione/darkplus.nvim',   pin = true },
   { 'bignimbus/pop-punk.vim',      pin = true },
+  -- { "EdenEast/nightfox.nvim" },
+  -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
   {
     "folke/tokyonight.nvim",
     pin = true,
@@ -204,7 +222,16 @@ local plugins = {
     run = ':TSUpdate',
     pin = true
   },
-  { 'mbbill/undotree',    pin = true },
+  -- {
+  -- 	'mawkler/jsx-element.nvim',
+  -- 	dependencies = {
+  -- 		'nvim-treesitter/nvim-treesitter',
+  -- 		'nvim-treesitter/nvim-treesitter-textobjects',
+  -- 	},
+  -- 	ft = { 'typescriptreact', 'javascriptreact', 'javascript' },
+  -- 	opts = {},
+  -- },
+  -- { 'mbbill/undotree',    pin = true },
   { 'tpope/vim-fugitive', pin = true },
   {
     "kdheepak/lazygit.nvim",

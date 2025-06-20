@@ -1,4 +1,4 @@
 function Ahk()
     print("Starting autohotkey")
-    vim.fn.jobstart('timeout 0.1s bash lua/autohotkey/start-ahk.sh')
+    vim.fn.jobstart('timeout 0.1s bash ~/start-ahk.sh')
 end

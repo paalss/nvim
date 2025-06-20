@@ -9,7 +9,12 @@ call quickui#menu#reset()
 
 " script inside %{...} will be evaluated and expanded in the string
 
-call quickui#menu#install("&Option", [
+" call quickui#menu#install("&File", [
+"       \ [ "Save and quit\tZZ", "ZZ" ],
+"       \ [ "--", "" ],
+" 			\ ])
+
+call quickui#menu#install("&Set", [
       \ [ "AutoHotKey\tSPC ahk", "lua Ahk()", "Turn on AutoHotKey" ],
       \ [ "--", "" ],
       \ [ "Set", "" ],
@@ -29,16 +34,18 @@ call quickui#menu#install("&Option", [
 ""      \ [ "&Force\tSPC SPC dca", "gg/#<CR>Vggy:cq<CR>", "Abort merge/amend/etc. commit" ],
 ""      \ [ "--", "" ],
 
-call quickui#menu#install('&Git', [
+call quickui#menu#install('&Commit', [
       \ [ "Amend commit", "" ],
       \ [ "gc!\tSPC ca", "G commit --verbose --amend", "git commit --verbose --amend" ],
       \ [ "gcn!\tSPC ce", "G commit --verbose --amend --no-edit", "git commit --verbose --amend --no-edit" ],
       \ [ "gcan!\tSPC cx", "G commit --verbose --amend --no-edit --all", "git commit --verbose --amend --no-edit --all" ],
-      \ [ "--", "" ],
+			\ ], 10000)
+
+call quickui#menu#install('C&ompare', [
       \ [ "Compare with", "" ],
-			\ ["Ma&ster\tSPC dy", "DiffviewOpen master", "Compare with master"],
-			\ ["Ma&in\tSPC dr", "DiffviewOpen main", "Compare with main"],
-			\ ["&Develop\tSPC dt", "DiffviewOpen develop", "Compare with develop"],
+			\ ["Ma&ster\tSPC SPC mas", "DiffviewOpen master", "Compare with master"],
+			\ ["Ma&in\tSPC SPC mai", "DiffviewOpen main", "Compare with main"],
+			\ ["&Develop\tSPC SPC dev", "DiffviewOpen develop", "Compare with develop"],
       \ [ "--", "" ],
       \ [ "History", "" ],
       \ [ "&Repo history\tSPC dlo", "DiffviewFileHistory", "Show commit history for entire repository" ],
@@ -54,12 +61,12 @@ call quickui#menu#install("E&dit", [
 call quickui#menu#install('E&xplore', [
 			\ ["Find files\tCTRL p", "Telescope find_files", "Telescope find_files"],
 			\ ["Ne&trw explore\tSPC vv", "Ex", "Ex"],
-			\ ["Ne&otree\tAlt r", "Neotree toggle reveal float",  "Neotree toggle revealfloat"],
+			\ ["Ne&otree\tALT r ALT r", "Neotree toggle reveal",  "Neotree toggle reveal"],
 			\ ], 10000)
 
 " register HELP menu with weight 10000
 call quickui#menu#install('H&elp', [
-      \ ["&Keymaps\tTAB", "Telescope keymaps", "Telescope keymaps"],
+      \ ["&Keymaps\tSPC sk", "Telescope keymaps", "Telescope keymaps"],
 			\ ["&Cheatsheet", 'help index', 'help index'],
 			\ ['T&ips', 'help tips', 'help tips'],
 			\ ['--',''],

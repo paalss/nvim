@@ -3,6 +3,8 @@ vim.o.mouse = ""  -- disable mouse interaction (useful for copy-pasting with mou
 vim.opt.relativenumber = true
 vim.opt.nu = true -- on relativenumber, overwrite 0 with current line number
 vim.o.cursorline = true
+-- vim.o.cursorcolumn = true
+-- vim.o.wildmenu = true
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -20,7 +22,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- search
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.inccommand = "nosplit"
 vim.opt.ignorecase = true -- Ignore case letters when search

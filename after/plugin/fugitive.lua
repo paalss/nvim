@@ -1,6 +1,6 @@
-vim.keymap.set("n", "<leader>gt", ":Git<CR>", { desc = "Open Git – Fugitive" }) -- TODO: disable if it's unnecessary
-vim.keymap.set("n", "<leader>gf", ":Gwrite<CR>", { desc = "Write and stage buffer" }) -- TODO: disable if superseded by gitsign's stage_buffer
-vim.keymap.set("n", "<leader>gx", ":Gwread<CR>", { desc = "Revert uncommited changes" })
+-- vim.keymap.set("n", "<leader>gt", ":Git<CR>", { desc = "Open Git – Fugitive" }) -- TODO: disable if it's unnecessary
+-- vim.keymap.set("n", "<leader>gf", ":Gwrite<CR>", { desc = "Write and stage buffer" }) -- TODO: disable if superseded by gitsign's stage_buffer
+-- vim.keymap.set("n", "<leader>gx", ":Gwread<CR>", { desc = "Revert uncommited changes" })
 
 
 -- oh-my-bash style shortcuts
@@ -24,8 +24,8 @@ vim.api.nvim_create_user_command('Gcan', "G commit --verbose --amend --no-edit -
 -- fugitive style shortcuts
 
 -- -- stage
-vim.keymap.set("n", "<leader>S", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files" })
-vim.keymap.set("n", "<leader>U", ":wa<CR>:G restore --staged .<CR>", { desc = "Unstage/remove all files" })
+-- vim.keymap.set("n", "<leader>S", ":wa<CR>:G add -A<CR>", { desc = "Stage/add all files" })
+-- vim.keymap.set("n", "<leader>U", ":wa<CR>:G restore --staged .<CR>", { desc = "Unstage/remove all files" })
 
 -- -- commit
 vim.keymap.set("n", "<leader>cc", ":G commit --verbose<CR>", { desc = "gc    Git commit" })
@@ -43,6 +43,6 @@ vim.keymap.set("n", "\\tb", ":G blame<CR>", { desc = "Show git blame for all lin
 
 -- -- diffsplit
 vim.keymap.set("n", "<leader>g5", ":Gdiffsplit<CR>", { desc = "Open git status (Fugitive)" }) -- TODO: disable if superseded by diffview
-vim.keymap.set("n", "\\gr", ":Gdiffsplit main<CR>", { desc = "Compare with main (Fugitive)" })
-vim.keymap.set("n", "\\gy", ":Gdiffsplit master<CR>", { desc = "Compare with master (Fugitive)" })
-vim.keymap.set("n", "\\gt", ":Gdiffsplit develop<CR>", { desc = "Compare with develop (Fugitive)" })
+vim.keymap.set("n", "\\mai", ":Gdiffsplit main<CR>", { desc = "Compare with main (Fugitive)" })
+vim.keymap.set("n", "\\mas", ":Gdiffsplit master<CR>", { desc = "Compare with master (Fugitive)" })
+vim.keymap.set("n", "\\dev", ":Gdiffsplit develop<CR>", { desc = "Compare with develop (Fugitive)" })
