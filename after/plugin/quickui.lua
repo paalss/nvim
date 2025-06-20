@@ -43,9 +43,9 @@ call quickui#menu#install('&Commit', [
 
 call quickui#menu#install('C&ompare', [
       \ [ "Compare with", "" ],
-			\ ["Ma&ster\tSPC dy", "DiffviewOpen master", "Compare with master"],
-			\ ["Ma&in\tSPC dr", "DiffviewOpen main", "Compare with main"],
-			\ ["&Develop\tSPC dt", "DiffviewOpen develop", "Compare with develop"],
+			\ ["Ma&ster\tSPC SPC mas", "DiffviewOpen master", "Compare with master"],
+			\ ["Ma&in\tSPC SPC mai", "DiffviewOpen main", "Compare with main"],
+			\ ["&Develop\tSPC SPC dev", "DiffviewOpen develop", "Compare with develop"],
       \ [ "--", "" ],
       \ [ "History", "" ],
       \ [ "&Repo history\tSPC dlo", "DiffviewFileHistory", "Show commit history for entire repository" ],
