@@ -115,11 +115,9 @@ vim.keymap.set("n", "<leader>ds", "$mo%dd`odd", { desc = "Delete Surroundings" }
 --------------------------------------------------------
 
 -- vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
-vim.keymap.set("n", "<leader>ciW", "g~iW", { desc = "Toggle case for Word (uppercase)" })
-vim.keymap.set("n", "<leader>ciw", "g~iw", { desc = "Toggle case for word" })
-vim.keymap.set("n", "<leader>ci\'", "g~i\'", { desc = "Toggle case inside single quotes" })
-vim.keymap.set("n", "<leader>ci\"", "g~i\"", { desc = "Toggle case inside double quotes" })
-vim.keymap.set("n", "<leader>cil", "V~", { desc = "Toggle case for line" })
+vim.keymap.set("n", "<leader>ci", "g~i", { desc = "Toggle Case Inside ..." })
+vim.keymap.set("n", "<leader>ca", "g~a", { desc = "Toggle Case Around ..." })
+vim.keymap.set("n", "<leader>cl", "V~", { desc = "Toggle Case Line" })
 
 
 --------------------------------------------------------
@@ -166,7 +164,7 @@ end, { desc = "lsp format" })
 --------------------------------------------------------
 
 vim.keymap.set("n", "<leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
-vim.keymap.set("n", "<leader>clo", ":ccl<CR>", { desc = "close quickfix list" })
+vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 
 
 -- QUICK FIX LIST NAVIGATION
