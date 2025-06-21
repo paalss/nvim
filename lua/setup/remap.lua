@@ -246,7 +246,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 --------------------------------------------------------
 
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
-vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Insert into next translation" })
+vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Populate next Translation" })
+vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"_ci\"", { desc = "Populate next translation (from insert mode)" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
 -- vim.keymap.set("n", "<leader>vil", "mm0v$`m", { desc = "Visual mark line" })
