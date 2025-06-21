@@ -103,11 +103,11 @@ vim.keymap.set("n", "<leader><A-d>", ":%d+<CR>", { desc = "delete all to OS regi
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- line
-vim.keymap.set("n", "<leader>yl", "mo^y$`o", { desc = "Yank line" })
-vim.keymap.set("n", "<leader>dl", "^d$", { desc = "Delete line" })
+vim.keymap.set("n", "<leader>yl", "mo^y$`o", { desc = "Yank Line" })
+vim.keymap.set("n", "<leader>dl", "^d$", { desc = "Delete Line" })
 
 -- --  surroundings
-vim.keymap.set("n", "<leader>ds", "$mo%dd`odd", { desc = "Delete surroundings" })
+vim.keymap.set("n", "<leader>ds", "$mo%dd`odd", { desc = "Delete Surroundings" })
 
 
 --------------------------------------------------------
