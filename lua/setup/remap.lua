@@ -1,6 +1,7 @@
 -- shortcuts/typing
 
 -- https://neovim.io/doc/user/options.html#%27langmap%27
+-- TODO: satt opp langmap? Vurder om du fortsatt bør ha 'å' og 'æ' keymapsene
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At" })
 vim.keymap.set({ "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n" }, "<A-3>", "~", { desc = "Tilde" })
@@ -197,11 +198,11 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 
 -- CODE NAVIGATION
 
-vim.keymap.set("n", "<C-d>", "23j", { desc = "Scroll page down" }) -- keep cursor in the middle
-vim.keymap.set("n", "<C-u>", "23k", { desc = "Scroll page up" })
+vim.keymap.set("n", "<C-d>", "<C-d>", { desc = "Scroll page down" }) -- keep cursor in the middle
+vim.keymap.set("n", "<C-u>", "<C-u>", { desc = "Scroll page up" })
 
-vim.keymap.set("n", "<C-e>", "<C-e><C-e>", { desc = "Scroll down" }) -- scroll 2 lines
-vim.keymap.set("n", "<C-y>", "<C-y><C-y>", { desc = "Scroll up" })
+vim.keymap.set("n", "<C-e>", "11j", { desc = "Scroll down" })
+vim.keymap.set("n", "<C-y>", "11k", { desc = "Scroll up" })
 
 
 -- GIT NAVIGATION
@@ -213,7 +214,7 @@ vim.keymap.set("n", "<C-y>", "<C-y><C-y>", { desc = "Scroll up" })
 
 -- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
- 
+
 --------------------------------------------------------
 -- SPLIT MANAGEMENT
 --------------------------------------------------------
@@ -272,5 +273,3 @@ vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git cle
 -- vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
 -- vim.keymap.set("n", "<leader>scroll", ":tab help scrolling<CR>/Scrolling horizontally<CR>nn28j",
 --   { desc = "Scrolling help" })
-
-
