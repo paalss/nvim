@@ -50,7 +50,7 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files (for 
 -- { desc = "Find hidden files", noremap = true })
 vim.keymap.set('n', '<leader><C-p>', builtin.git_files, { desc = "Find git files" })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search open buffers' })
-vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
+vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Search Recent (oldfiles) Files ("." for repeat)' })
 vim.keymap.set('n', '<leader>adj', "<cmd>Telescope adjacent<CR>",
   { desc = "Find adjacent files", noremap = true, silent = false })
 
