@@ -198,8 +198,10 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 
 -- CODE NAVIGATION
 
-vim.keymap.set("n", "<C-d>", "<C-d>", { desc = "Scroll page down" }) -- keep cursor in the middle
-vim.keymap.set("n", "<C-u>", "<C-u>", { desc = "Scroll page up" })
+-- vim.keymap.set("n", "<C-d>", "<C-d>", { desc = "Scroll page down" })
+-- vim.keymap.set("n", "<C-u>", "<C-u>", { desc = "Scroll page up" })
+vim.keymap.set("n", "<C-d>", "23j", { desc = "Scroll page down" })
+vim.keymap.set("n", "<C-u>", "23k", { desc = "Scroll page up" })
 
 vim.keymap.set("n", "<C-e>", "11j", { desc = "Scroll down" })
 vim.keymap.set("n", "<C-y>", "11k", { desc = "Scroll up" })
