@@ -108,7 +108,8 @@ vim.keymap.set("n", "<leader>yl", "mo^y$`o", { desc = "Yank Line" })
 vim.keymap.set("n", "<leader>dl", "^d$", { desc = "Delete Line" })
 
 -- --  surroundings
-vim.keymap.set("n", "<leader>ds", "$mo%dd`odd", { desc = "Delete Surroundings" })
+-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
+-- vim.keymap.set("n", "<leader>dsa", "%", { desc = "Delete Surrounding Lines" })
 
 
 --------------------------------------------------------
@@ -264,8 +265,8 @@ vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" })
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
--- vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
---   { desc = "Replace all occurences of word under cursor" })
+vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+  { desc = "Replace all occurences of word under cursor" })
 -- vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git clean -fd", { desc = "Nuke working tree" })
 -- vim.keymap.set("n", "gx", "gx", { desc = "Open link (Netrw)" })
