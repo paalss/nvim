@@ -7,7 +7,7 @@ local telescope = require("telescope")
 
 telescope.setup {
   defaults = {
-    file_ignore_patterns = { ".git/", "node_modules", "dist/" },
+    file_ignore_patterns = { ".git/", "node_modules", "dist/", "index.ts", ".idea" },
     mappings = {
       i = {
         ["<esc>"] = actions.close,
