@@ -33,9 +33,8 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 
 
--- ADD NEW/DELETE LINE
+-- ADD NEW LINE
 
--- vim.keymap.set("n", "<leader>cd", "cc<esc>", { desc = "delete line" })
 vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "add new line below" })
 vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
@@ -65,14 +64,18 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 -- YANKING, DELETING & PASTING
 --------------------------------------------------------
 
+
 -- NAVIGATE YANKED REGION
 
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
 vim.keymap.set("n", "å", "'[", { desc = "Go to start of yanked selection" })
 vim.keymap.set("n", "æ", "']", { desc = "Go to end of yanked selection" })
 
+
+-- SET PASTE
+
 vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
--- vim.keymap.set("n", "<leader>sto", ":set paste!<CR>", { desc = "Set toggle paste" })
+-- vim.keymap.set("n", "<leader>set", ":set paste!<CR>", { desc = "Set toggle paste" })
 vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
 vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
   { desc = "Paste from OS registry (\"+p is slow)" })
@@ -84,6 +87,7 @@ vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
 vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+Y", { desc = "Yank to OS registry (Y)" })
 -- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
+vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
 -- -- s
 vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
@@ -104,10 +108,17 @@ vim.keymap.set("n", "<leader><A-d>", ":%d+<CR>", { desc = "delete all to OS regi
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- line
+-- vim.keymap.set("n", "-y", "mo^y$`o", { desc = "Line (-) yank" })
+-- vim.keymap.set("n", "-d", "^d$", { desc = "Line (-) delete" })
+-- vim.keymap.set("n", "-v", "0v$", { desc = "Line (-) mark (for surround you can always use yss from vim-surround)" })
 vim.keymap.set("n", "<leader>yl", "mo^y$`o", { desc = "Yank Line" })
+vim.keymap.set("n", "<leader><leader>yl", "mo^\"+y$`o", { desc = "Yank Line" })
 vim.keymap.set("n", "<leader>dl", "^d$", { desc = "Delete Line" })
+vim.keymap.set("n", "<leader>vl", "0v$", { desc = "Visual mark Line (you can use yss from vim surround)" })
 
 -- --  surroundings
+-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(((-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
+-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
 -- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
 -- vim.keymap.set("n", "<leader>dsa", "%", { desc = "Delete Surrounding Lines" })
 
@@ -120,6 +131,7 @@ vim.keymap.set("n", "<leader>dl", "^d$", { desc = "Delete Line" })
 vim.keymap.set("n", "<leader>ci", "g~i", { desc = "Toggle Case Inside ..." })
 vim.keymap.set("n", "<leader>ca", "g~a", { desc = "Toggle Case Around ..." })
 vim.keymap.set("n", "<leader>cl", "V~", { desc = "Toggle Case Line" })
+-- vim.keymap.set("n", "-c", "V~", { desc = "Line (-) toggle case" })
 
 
 --------------------------------------------------------
@@ -253,17 +265,18 @@ vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Populate nex
 vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"_ci\"", { desc = "Populate next translation (from insert mode)" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
--- vim.keymap.set("n", "<leader>vil", "mm0v$`m", { desc = "Visual mark line" })
--- vim.keymap.set("n", "<leader>vil", "0v$", { desc = "Visual mark line (you can use yss from vim surround)" })
-
 -- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 -- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
--- vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" }) -- keep cursor at the same place
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
   { desc = "Yank path to current file", noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" })
+vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
+
+vim.keymap.set("n", "<leader>vf", "%", { desc = "matchit %", noremap = true })
+
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
   { desc = "Replace all occurences of word under cursor" })
