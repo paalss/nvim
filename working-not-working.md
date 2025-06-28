@@ -1,3 +1,9 @@
+# 25-06-28 foidsafjdasofdijiofjaiffaofjdiojfojfojfapfjpofjifpoajfdopfjaofjdofjosafjjfoajfaoja
+
+**funker**
+
+- Fugitive commit
+
 # 24-08-15 fdsiofjsfjsfjsofdjsfjsofjufioufshroseijrsefueifjdfksaljfldjettererejrfljlafiidetew
 
 **funker ikke**
