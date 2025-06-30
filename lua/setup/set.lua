@@ -45,5 +45,9 @@ au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=2
 augroup END
 ]]
 
+vim.cmd [[
+autocmd FileType astro setlocal commentstring=//\ %s
+]]
+
 -- share neovim clipboard with OS system (works for windows 11 & Ubuntu in Terminal)
 -- vim.o.clipboard = 'unnamedplus'
