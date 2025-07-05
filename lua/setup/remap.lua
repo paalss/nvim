@@ -1,7 +1,6 @@
 -- shortcuts/typing
 
 -- https://neovim.io/doc/user/options.html#%27langmap%27
--- TODO: satt opp langmap? Vurder om du fortsatt bør ha 'å' og 'æ' keymapsene
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At" })
 vim.keymap.set({ "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n" }, "<A-3>", "~", { desc = "Tilde" })
@@ -12,8 +11,6 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Ba
 -- vim.keymap.set({ "n", "v", "x" }, "ø", ":", { desc = "Colon" })
 -- vim.keymap.set({ "n", "v", "x" }, "åå", "[[", { desc = "Double opening square brackets" })
 -- vim.keymap.set({ "n", "v", "x" }, "¨¨¨¨", "]]", { desc = "Double closing square brackets" })
-vim.keymap.set({ "n", "v", "x" }, "Å", "{", { desc = "Opening curly bracket / move to previous paragraph" })
-vim.keymap.set({ "n", "v", "x" }, "Æ", "}", { desc = "Closing curly bracket / move to next paragraph" })
 
 
 --------------------------------------------------------
@@ -68,8 +65,6 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 -- NAVIGATE YANKED REGION
 
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
-vim.keymap.set("n", "å", "'[", { desc = "Go to start of yanked selection" })
-vim.keymap.set("n", "æ", "']", { desc = "Go to end of yanked selection" })
 
 
 -- SET PASTE
@@ -142,7 +137,6 @@ vim.keymap.set("n", "<leader>corr", ":%s/├Ñ/å/g<CR>:%s/├╕/ø/g<CR>:%s/�
 vim.keymap.set("n", "<leader>cæ", ":%s/├ª/æ/g<CR>", { desc = "Correct æ" })
 vim.keymap.set("n", "<leader>cø", ":%s/├╕/ø/g<CR>", { desc = "Correct ø" })
 vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" })
-
 
 --------------------------------------------------------
 -- SNIPPETS
