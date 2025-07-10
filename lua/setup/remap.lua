@@ -98,7 +98,7 @@ vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 -- vim.keymap.set("n", "-d", "^d$", { desc = "Line (-) delete" })
 -- vim.keymap.set("n", "-v", "0v$", { desc = "Line (-) mark (for surround you can always use yss from vim-surround)" })
 vim.keymap.set("n", "<leader>yl", "mo^y$`o", { desc = "Yank Line" })
-vim.keymap.set("n", "<leader><leader>yl", "mo^\"+y$`o", { desc = "Yank Line" })
+vim.keymap.set("n", "<leader><leader>yl", "mo^\"+y$`o", { desc = "Yank Line to OS registry" })
 vim.keymap.set("n", "<leader>dl", "^d$", { desc = "Delete Line" })
 vim.keymap.set("n", "<leader>vl", "0v$", { desc = "Visual mark Line (you can use yss from vim surround)" })
 
@@ -239,6 +239,13 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     end)
   end,
 })
+
+
+--------------------------------------------------------
+-- CUSTOM MOTIONS
+--------------------------------------------------------
+
+vim.keymap.set("n", "<leader>vat", "lF<v/\\/><CR>", { desc = "Visual mark self closing tag" })
 
 
 --------------------------------------------------------
