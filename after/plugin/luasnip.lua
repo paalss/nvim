@@ -4,8 +4,14 @@ local t = ls.text_node
 local i = ls.insert_node
 
 -- :set filetype
+
+ls.add_snippets("lua", {
+  s("keymap", {
+    t('vim.keymap.set("n", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
+
 ls.add_snippets("javascriptreact", {
-  -- ls.add_snippets("lua", {
   s("useEffect", {
     t('useEffect(() => {'),
     i(1),
@@ -23,6 +29,14 @@ ls.add_snippets("javascriptreact", {
 -- ```bash
 --
 -- ```
+
+ls.add_snippets("markdown", {
+  s("title", {
+    t("--------------------------------------------------------"),
+    t({"", ""}), i(1),
+    t({"", "--------------------------------------------------------"})
+  })
+})
 
 ls.add_snippets("markdown", {
   s("sh", {
