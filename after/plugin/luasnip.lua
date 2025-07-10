@@ -13,6 +13,42 @@ ls.add_snippets("javascriptreact", {
   })
 })
 
+
+ls.add_snippets("javascriptreact", {
+  s("tt", {
+    t("t('"), i(1), t("')")
+  })
+})
+
+-- ```bash
+--
+-- ```
+
+ls.add_snippets("markdown", {
+  s("sh", {
+    t("```sh"),
+    t({"", ""}), i(1),
+    t({"", "```"})
+  })
+})
+
+ls.add_snippets("markdown", {
+  s("bash", {
+    t("```bash"),
+    t({"", ""}), i(1),
+    t({"", "```"})
+  })
+})
+
+ls.add_snippets("markdown", {
+  s("tsx", {
+    t("```tsx"),
+    t({"", ""}), i(1),
+    t({"", "```"})
+  })
+})
+
+
 ls.add_snippets("markdown", {
   s("book", {
     t("---"),
@@ -32,3 +68,45 @@ ls.add_snippets("markdown", {
   })
 })
     -- t({ "", "originalTitle: " }), i(5),
+
+ls.add_snippets("javascript", {
+  s("log", {
+    t("console.log("), i(1), t(")")
+  })
+})
+
+ls.add_snippets("javascript", {
+  s("warn", {
+    t("console.warn("), i(1), t(")")
+  })
+})
+
+ls.add_snippets("javascript", {
+  s("error", {
+    t("console.error("), i(1), t(")")
+  })
+})
+
+ls.add_snippets("javascriptreact", {
+  s("log", {
+    t("console.log("), i(1), t(")")
+  })
+})
+
+ls.add_snippets("javascriptreact", {
+  s("warn", {
+    t("console.warn("), i(1), t(")")
+  })
+})
+
+ls.add_snippets("javascriptreact", {
+  s("error", {
+    t("console.error("), i(1), t(")")
+  })
+})
+
+ls.add_snippets("javascript", {
+  s("logvar", {
+    t("console.log('"), i(1), t("': "), i(2), t(")")
+  })
+})
