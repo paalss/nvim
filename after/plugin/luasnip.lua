@@ -6,8 +6,14 @@ local i = ls.insert_node
 -- :set filetype
 
 ls.add_snippets("lua", {
-  s("keymap", {
+  s("nmap", {
     t('vim.keymap.set("n", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
+
+ls.add_snippets("lua", {
+  s("imap", {
+    t('vim.keymap.set("i", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
   })
 })
 
