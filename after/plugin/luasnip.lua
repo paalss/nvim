@@ -3,6 +3,66 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
+-- norwegian book
+
+ls.add_snippets("markdown", {
+  s("nobook", {
+    t("---"),
+    t({ "", "lang: no" }),
+    t({ "", "title: " }), i(1),
+    t({ "", "series: " }), i(2),
+    t({ "", "placeInSeries: " }), i(3),
+    t({ "", "author: " }), i(4),
+    t({ "", "rating: " }), i(5),
+    t({ "", "readOrder: " }), i(6),
+    t({ "", "tags: ['" }), i(7), t("']"),
+    t({ "", "cover: ../../assets/" }), i(8),
+    t({ "", "layout: ../../layouts/PostLayout.astro" }),
+    t({ "", "---" }),
+  })
+})
+
+    -- t({ "", "slug: " }), i(3),
+
+-- norwegian book but it's translated
+
+ls.add_snippets("markdown", {
+  s("notransbook", {
+    t("---"),
+    t({ "", "lang: no" }),
+    t({ "", "title: " }), i(1),
+    t({ "", "series: " }), i(2),
+    t({ "", "placeInSeries: " }), i(3),
+    t({ "", "author: " }), i(4),
+    t({ "", "rating: " }), i(5),
+    t({ "", "readOrder: " }), i(6),
+    t({ "", "tags: ['" }), i(7), t("']"),
+    t({ "", "cover: ../../assets/" }), i(8),
+    t({ "", "layout: ../../layouts/PostLayout.astro" }),
+    t({ "", "---" }),
+  })
+})
+
+
+-- english book
+
+ls.add_snippets("markdown", {
+  s("enbook", {
+    t("---"),
+    t({ "", "lang: en" }),
+    t({ "", "title: " }), i(1),
+    t({ "", "series: " }), i(2),
+    t({ "", "placeInSeries: " }), i(3),
+    t({ "", "author: " }), i(4),
+    t({ "", "rating: " }), i(5),
+    t({ "", "readOrder: " }), i(6),
+    t({ "", "tags: ['" }), i(7), t("']"),
+    t({ "", "cover: ../../assets/" }), i(8),
+    t({ "", "layout: ../../layouts/PostLayout.astro" }),
+    t({ "", "---" }),
+  })
+})
+
 -- :set filetype
 
 ls.add_snippets("lua", {
@@ -68,26 +128,6 @@ ls.add_snippets("markdown", {
   })
 })
 
-
-ls.add_snippets("markdown", {
-  s("book", {
-    t("---"),
-    t({ "", "lang: " }), i(1),
-    t({ "", "title: " }), i(2),
-    t({ "", "altTitle: " }), i(3),
-    t({ "", "series: " }), i(4),
-    t({ "", "readOrder: " }), i(5),
-    t({ "", "originalSeries: " }), i(6),
-    t({ "", "placeInSeries: " }), i(7),
-    t({ "", "author: " }), i(8),
-    t({ "", "rating: " }), i(9),
-    t({ "", "tags: ['" }), i(10), t("']"),
-    t({ "", "cover: ../../assets/" }), i(11),
-    t({ "", "layout: ../../layouts/PostLayout.astro" }),
-    t({ "", "---" }),
-  })
-})
-    -- t({ "", "originalTitle: " }), i(5),
 
 ls.add_snippets("javascript", {
   s("log", {
