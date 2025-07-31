@@ -53,7 +53,7 @@ cmp.setup {
     -- navigate to next, text previewed in file
     -- Enter will create full snippet
     -- Any other than Tab or Enter will leave preview as is
-    ['j'] = cmp.mapping(function(fallback)
+    ['<C-e>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expand_or_locally_jumpable() then
@@ -63,11 +63,11 @@ cmp.setup {
       end
     end
     ),
-    ['k'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.expand_or_locally_jumpable(-1) then
-        luasnip.expand_or_jump(-1)
+    ['<C-y>'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+        -- elseif cmp.visible() then
+        --   cmp.select_prev_item()
       else
         fallback()
       end
