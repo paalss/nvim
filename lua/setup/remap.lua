@@ -256,6 +256,7 @@ vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Populate next Translation" })
 vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"_ci\"", { desc = "Populate next translation (from insert mode)" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
+-- vim.keymap.set("v", "<leader>t5", "ysa'bit~~", { desc = "Turn regular string into t('TRANSLATION_KEY')" })
 
 -- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 -- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
