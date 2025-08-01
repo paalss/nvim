@@ -44,11 +44,11 @@ local plugins = {
   --   -- or
   --   config = true
   -- },
-  { 'echasnovski/mini.nvim',                  version = '*' },
+  -- { 'echasnovski/mini.nvim',                  version = '*' },
   { 'TamaMcGlinn/quickfixdd' },
   { 'sbdchd/neoformat' },
-  { 'shortcuts/no-neck-pain.nvim',            version = "*" },
-  { 'RRethy/vim-illuminate' },
+  -- { 'shortcuts/no-neck-pain.nvim',            version = "*" },
+  -- { 'RRethy/vim-illuminate' },
   { 'farmergreg/vim-lastplace' },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -155,7 +155,7 @@ local plugins = {
       indent = { char = '┊' }
     },
   },
-  { 'HiPhish/rainbow-delimiters.nvim', pin = true },
+  -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
   {
     "windwp/nvim-autopairs",
     pin = true,
@@ -207,7 +207,7 @@ local plugins = {
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
   -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
   -- { 'martinsione/darkplus.nvim',   pin = true },
-  { 'bignimbus/pop-punk.vim',      pin = true },
+  -- { 'bignimbus/pop-punk.vim',      pin = true },
   -- { "EdenEast/nightfox.nvim" },
   -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
   {
