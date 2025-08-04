@@ -149,12 +149,13 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 --------------------------------------------------------
 
 -- -- translation files
+vim.keymap.set("n", "<leader>t6", "/__STRING<CR>:nohlsearch<CR>", { desc = "Key-populate next Translation" }) -- "TRANSLATION_KEY_HERE": "Translation key here"
 vim.keymap.set("n", "<leader>t5", "/__STRING<CR>BByi\"Wvi\"pgvu~gv:s/\\%V_/ /g<CR>", { desc = "Key-populate next Translation" }) -- "TRANSLATION_KEY_HERE": "Translation key here"
 vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Translation" }) -- "TRANSLATION_KEY_HERE": ""
 vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"_ci\"", { desc = "Populate next translation (from insert mode)" }) -- "TRANSLATION_KEY_HERE": ""
 
 -- -- translation
-vim.keymap.set("v", "<leader>t6", ":s/\\%V /_/g<CR>gvUit('<esc>ea')<esc>:nohlsearch<CR>", { desc = "Turn regular string into t('TRANSLATION_KEY')" })
+vim.keymap.set("v", "<leader>t5", ":s/\\%V /_/g<CR>gvUit('<esc>ea')<esc>:nohlsearch<CR>", { desc = "Turn regular string into t('TRANSLATION_KEY')" })
 
 
 --------------------------------------------------------
