@@ -136,11 +136,21 @@ vim.keymap.set("n", "<leader>cæ", ":%s/├ª/æ/g<CR>", { desc = "Correct æ" }
 vim.keymap.set("n", "<leader>cø", ":%s/├╕/ø/g<CR>", { desc = "Correct ø" })
 vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" })
 
+
 --------------------------------------------------------
 -- SNIPPETS
 --------------------------------------------------------
 
 -- vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
+
+
+--------------------------------------------------------
+-- TRANSLATION FILES
+--------------------------------------------------------
+
+vim.keymap.set("n", "<leader>t5", "/__STRING<CR>BByi\"Wvi\"pvi\"~~vi\":s/\\%V_/ /g<CR>", { desc = "Key-populate next Translation" })
+vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Translation" })
+vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"_ci\"", { desc = "Populate next translation (from insert mode)" })
 
 
 --------------------------------------------------------
@@ -251,10 +261,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 --------------------------------------------------------
 -- OTHER
 --------------------------------------------------------
-
+vim.keymap.set("n", "<leader>e3", "a<C-w><esc>", { desc = "Backspace word" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
-vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Populate next Translation" })
-vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"_ci\"", { desc = "Populate next translation (from insert mode)" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 -- vim.keymap.set("v", "<leader>t5", "ysa'bit~~", { desc = "Turn regular string into t('TRANSLATION_KEY')" })
 
