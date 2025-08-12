@@ -226,7 +226,13 @@ vim.keymap.set("n", "<C-u>", "23k", { desc = "Scroll page up" })
 vim.keymap.set("n", "<C-e>", "8j", { desc = "Scroll down" })
 vim.keymap.set("n", "<C-y>", "8k", { desc = "Scroll up" })
 
+vim.keymap.set("n", "<leader>vaB", "vaBV", { desc = "Select lines around B" })
+vim.keymap.set("n", "<leader>yaB", "vaBVy", { desc = "Yank lines around B" })
+vim.keymap.set("n", "<leader>daB", "vaBVd", { desc = "Delete lines around B" })
 
+vim.keymap.set("n", "<leader>vab", "vabV", { desc = "Select lines around b" })
+vim.keymap.set("n", "<leader>yab", "vabVy", { desc = "Yank lines around b" })
+vim.keymap.set("n", "<leader>dab", "vabVd", { desc = "Delete lines around b" })
 -- GIT NAVIGATION
 
 -- see gitsigns.lua
