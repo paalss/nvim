@@ -233,6 +233,28 @@ vim.keymap.set("n", "<leader>daB", "vaBVd", { desc = "Delete lines around B" })
 vim.keymap.set("n", "<leader>vab", "vabV", { desc = "Select lines around b" })
 vim.keymap.set("n", "<leader>yab", "vabVy", { desc = "Yank lines around b" })
 vim.keymap.set("n", "<leader>dab", "vabVd", { desc = "Delete lines around b" })
+
+vim.keymap.set("n", "<leader>vat", "vatV", { desc = "Select lines around t" })
+vim.keymap.set("n", "<leader>yat", "vatVy", { desc = "Yank lines around t" })
+vim.keymap.set("n", "<leader>dat", "vatVd", { desc = "Delete lines around t" })
+
+vim.keymap.set("n", "<leader>viB", "viBV", { desc = "Select lines inside B" })
+vim.keymap.set("n", "<leader>yiB", "viBVy", { desc = "Yank lines inside B" })
+vim.keymap.set("n", "<leader>diB", "viBVd", { desc = "Delete lines inside B" })
+
+vim.keymap.set("n", "<leader>vib", "vibV", { desc = "Select lines inside b" })
+vim.keymap.set("n", "<leader>yib", "vibVy", { desc = "Yank lines inside b" })
+vim.keymap.set("n", "<leader>dib", "vibVd", { desc = "Delete lines inside b" })
+
+-- vim.keymap.set("o", "ar", "a]")
+-- vim.keymap.set("o", "ir", "i]")
+
+
+-- vim.keymap.set("n", "<leader>var", "varV", { desc = "Select lines around r" })
+-- vim.keymap.set("n", "<leader>yar", "varVy", { desc = "Yank lines around r" })
+-- vim.keymap.set("n", "<leader>dar", "varVd", { desc = "Delete lines around r" })
+
+
 -- GIT NAVIGATION
 
 -- see gitsigns.lua
