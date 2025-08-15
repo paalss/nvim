@@ -49,6 +49,20 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 
 --------------------------------------------------------
+-- OPERATOR PENDING
+--------------------------------------------------------
+
+vim.keymap.set("o", "ig", "i\"", { desc = "Inside \"" })
+vim.keymap.set("o", "ag", "a\"", { desc = "Around \"" })
+
+vim.keymap.set("o", "aG", "a\'", { desc = "Inside \'" })
+vim.keymap.set("o", "iG", "i\'", { desc = "Around \'" })
+
+vim.keymap.set("o", "iv", "i[", { desc = "Inside [" })
+vim.keymap.set("o", "av", "a[", { desc = "Around [" })
+
+
+--------------------------------------------------------
 -- YANKING, DELETING & PASTING
 --------------------------------------------------------
 
@@ -248,7 +262,6 @@ vim.keymap.set("n", "<leader>dib", "vibVd", { desc = "Delete lines inside b" })
 
 -- vim.keymap.set("o", "ar", "a]")
 -- vim.keymap.set("o", "ir", "i]")
-
 
 -- vim.keymap.set("n", "<leader>var", "varV", { desc = "Select lines around r" })
 -- vim.keymap.set("n", "<leader>yar", "varVy", { desc = "Yank lines around r" })
