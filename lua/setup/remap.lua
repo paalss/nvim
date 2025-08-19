@@ -61,6 +61,15 @@ vim.keymap.set("o", "iG", "i\'", { desc = "Around \'" })
 vim.keymap.set("o", "iv", "i[", { desc = "Inside [" })
 vim.keymap.set("o", "av", "a[", { desc = "Around [" })
 
+vim.keymap.set("v", "ig", "i\"", { desc = "Inside \"" })
+vim.keymap.set("v", "ag", "a\"", { desc = "Around \"" })
+
+vim.keymap.set("v", "aG", "a\'", { desc = "Inside \'" })
+vim.keymap.set("v", "iG", "i\'", { desc = "Around \'" })
+
+vim.keymap.set("v", "iv", "i[", { desc = "Inside [" })
+vim.keymap.set("v", "av", "a[", { desc = "Around [" })
+
 
 --------------------------------------------------------
 -- YANKING, DELETING & PASTING
