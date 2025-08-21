@@ -52,7 +52,7 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 -- OPERATOR PENDING
 --------------------------------------------------------
 
-vim.keymap.set("o", "ig", "i\"", { desc = "Inside \"" })
+vim.keymap.set("o", "ig", "i\"", { desc = "Inside \"" }) -- targets.vim: iq = inside any quote (single, double, backtick...)
 vim.keymap.set("o", "ag", "a\"", { desc = "Around \"" })
 
 vim.keymap.set("o", "aG", "a\'", { desc = "Inside \'" })

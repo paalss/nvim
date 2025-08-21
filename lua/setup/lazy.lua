@@ -27,6 +27,7 @@ local plugins = {
   -- {
   --   'ThePrimeagen/vim-be-good'
   -- },
+  { 'wellle/targets.vim' },
   { 'https://github.com/adelarsq/vim-matchit' },
   -- {
   --   'stevearc/conform.nvim',
