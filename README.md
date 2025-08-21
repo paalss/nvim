@@ -91,6 +91,14 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_
 sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
 ```
 
+or...
+
+> If you're an Ubuntu Cosmic (18.10) (or newer) user, ripgrep is available using the same packaging as Debian:
+>
+>```sh
+>sudo apt-get install ripgrep
+>```
+
 Other installation methods: <https://github.com/BurntSushi/ripgrep>
 
 ---
