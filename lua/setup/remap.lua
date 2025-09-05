@@ -325,7 +325,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 --------------------------------------------------------
 -- OTHER
 --------------------------------------------------------
-vim.keymap.set("n", "<leader>e3", "a<C-w><esc>", { desc = "Backspace word" })
+
+vim.keymap.set("n", "<leader>e3", "dge", { desc = "Backspace word (Ctrl w in insert mode)" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
