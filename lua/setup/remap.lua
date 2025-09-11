@@ -171,13 +171,26 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 -- TRANSLATION
 --------------------------------------------------------
 
--- -- translation files
-vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next translation" })                             
-vim.keymap.set("v", "<C-x>", "<esc>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/ /g<CR>", { desc = "Populate translation with key" }) -- "TRANSLATION_KEY_HERE": "Translation key here"
-vim.keymap.set("n", "<leader>tx", "/__STRING<CR>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/ /g<CR>", { desc = "Select next translation and populate with key" })                             
-vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"vi\"", { desc = "Select next translation (from insert mode)" })     
 
-vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Translation" })                            -- "TRANSLATION_KEY_HERE": ""
+-- SELECT NEXT TRANSLATION
+
+vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next translation" })
+vim.keymap.set("v", "<leader>tt", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
+vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>\"vi\"", { desc = "Select next translation (from visual mode)" })
+vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"vi\"", { desc = "Select next translation (from insert mode)" })
+
+
+-- POPULATE TRANSLATION WITH KEY
+
+vim.keymap.set("v", "<C-x>", "<esc>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/ /g<CR>", { desc = "Populate translation with key" }) -- "TRANSLATION_KEY_HERE": "Translation key here"
+
+
+-- SELECT NEXT TRANSLATION AND ACTION
+
+vim.keymap.set("n", "<leader>tx", "/__STRING<CR>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/ /g<CR>",
+  { desc = "Select next translation and populate with key" })
+vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Translation" }) -- "TRANSLATION_KEY_HERE": ""
+
 
 -- vim.keymap.set("n", "<leader>t5", "/__STRING<CR>BByi\"Wvi\"pgvu~gv:s/\\%V_/ /g<CR>",
 --   { desc = "Key-populate next Translation" })
