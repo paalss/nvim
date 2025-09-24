@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>cw", ":G commit --reword<CR>", { desc = "Git commit
 
 -- -- status
 vim.keymap.set("n", "\\glo", ":G log<CR>", { desc = "Show commit history (Fugitive)" })
-vim.keymap.set("n", "\\lgp", ":G log %<CR>", { desc = "Show commit history current file (Fugitive)" })
+vim.keymap.set("n", "\\lgp", ":G log %<CR>", { desc = "Show commit history for current file (Fugitive)" })
 vim.keymap.set("n", "\\gb", ":G branch<CR>", { desc = "Show git branches (Fugitive)" })
 vim.keymap.set("n", "\\tb", ":G blame<CR>", { desc = "Show git blame for all lines (Fugitive)" })
 
