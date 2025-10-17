@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>mark", ":MarkdownPreviewToggle<CR>", { desc = "Preview markdown file in browser" })
+-- vim.keymap.set("n", "<leader>mark", ":MarkdownPreviewToggle<CR>", { desc = "Preview markdown file in browser" })

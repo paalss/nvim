@@ -165,13 +165,13 @@ local plugins = {
     end
   },
   { 'djoshea/vim-autoread',            pin = true },
-  {
-    'nvim-telescope/telescope.nvim',
-    version = '0.1.1',
-    -- or                            , branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } },
-    pin = true,
-  },
+  -- {
+  --   'nvim-telescope/telescope.nvim',
+  --   version = '0.1.1',
+  --   -- or                            , branch = '0.1.x',
+  --   dependencies = { { 'nvim-lua/plenary.nvim' } },
+  --   pin = true,
+  -- },
   { "MaximilianLloyd/adjacent.nvim", pin = true },
   {
     "jasonpanosso/harpoon-tabline.nvim",
@@ -241,12 +241,12 @@ local plugins = {
     dependencies = { "nvim-lua/plenary.nvim" }
   },
   { 'tpope/vim-commentary', pin = true },
-  {
-    "iamcco/markdown-preview.nvim",
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end
-  },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   build = function()
+  --     vim.fn["mkdp#util#install"]()
+  --   end
+  -- },
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
