@@ -1,9 +1,9 @@
 -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
--- local builtin = require('telescope.builtin')
--- local actions = require('telescope.actions')
+local builtin = require('telescope.builtin')
+local actions = require('telescope.actions')
 -- require('telescope').load_extension("adjacent")
 --
--- local telescope = require("telescope")
+local telescope = require("telescope")
 --
 -- telescope.setup {
 --   defaults = {

@@ -165,13 +165,13 @@ local plugins = {
     end
   },
   { 'djoshea/vim-autoread',            pin = true },
-  -- {
-  --   'nvim-telescope/telescope.nvim',
-  --   version = '0.1.1',
-  --   -- or                            , branch = '0.1.x',
-  --   dependencies = { { 'nvim-lua/plenary.nvim' } },
-  --   pin = true,
-  -- },
+  {
+    'nvim-telescope/telescope.nvim',
+    version = '0.1.1',
+    -- or                            , branch = '0.1.x',
+    dependencies = { { 'nvim-lua/plenary.nvim' } },
+    pin = true,
+  },
   { "MaximilianLloyd/adjacent.nvim", pin = true },
   {
     "jasonpanosso/harpoon-tabline.nvim",
