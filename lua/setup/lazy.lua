@@ -28,7 +28,7 @@ local plugins = {
   --   'ThePrimeagen/vim-be-good'
   -- },
   { 'wellle/targets.vim' },
-  { 'https://github.com/adelarsq/vim-matchit' },
+  { 'adelarsq/vim-matchit' },
   -- {
   --   'stevearc/conform.nvim',
   --   branch = "nvim-0.9",
@@ -165,7 +165,7 @@ local plugins = {
     end
   },
   { 'djoshea/vim-autoread',            pin = true },
-  { 'nvim-mini/mini.files', version = '*' },
+  -- { 'nvim-mini/mini.files', version = '*' },
   -- { 'junegunn/fzf.vim' },
   {
     'nvim-telescope/telescope.nvim',
