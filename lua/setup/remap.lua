@@ -17,11 +17,14 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Ba
 -- LINE MANAGEMENT
 --------------------------------------------------------
 
+-- enum neovim mac
+-- -- insert mode -> option + j = √
+-- -- insert mode -> option + k = ª
 
 -- MOVE LINE
 
-vim.keymap.set("n", "<A-k>", ":m-2<CR>", { desc = "Move line up" })
-vim.keymap.set("n", "<A-j>", ":m+<CR>", { desc = "Move line down" })
+vim.keymap.set("n", "ª", ":m-2<CR>", { desc = "Move line up" })
+vim.keymap.set("n", "√", ":m+<CR>", { desc = "Move line down" })
 
 
 -- MOVE LINES
@@ -108,12 +111,12 @@ vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
 -- AFFECTED AREA
 
 -- -- all text
-vim.keymap.set("n", "<A-v>", "ggVG", { desc = "Mark all" })
-vim.keymap.set("n", "<A-c>", "ggVGc", { desc = "Change all" })
-vim.keymap.set("n", "<A-y>", ":%y<CR>", { desc = "Yank all" })
-vim.keymap.set("n", "<leader><A-y>", ":%y+<CR>", { desc = "yank all to OS registry" })
-vim.keymap.set("n", "<A-d>", ":%d<CR>", { desc = "delete all" })
-vim.keymap.set("n", "<leader><A-d>", ":%d+<CR>", { desc = "delete all to OS registry" })
+vim.keymap.set("n", "‹", "ggVG", { desc = "Mark all" })
+vim.keymap.set("n", "ç", "ggVGc", { desc = "Change all" })
+vim.keymap.set("n", "µ", ":%y<CR>", { desc = "Yank all" })
+vim.keymap.set("n", "<leader>µ", ":%y+<CR>", { desc = "yank all to OS registry" })
+vim.keymap.set("n", "∂", ":%d<CR>", { desc = "delete all" })
+vim.keymap.set("n", "<leader>∂", ":%d+<CR>", { desc = "delete all to OS registry" })
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- line
