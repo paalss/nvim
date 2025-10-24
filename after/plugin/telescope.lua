@@ -45,6 +45,7 @@ local telescope = require("telescope")
 --
 -- -- file search
 -- vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Find files' })
+vim.keymap.set("n", "<C-p>", ":find **/", { desc = "Find files" })
 -- vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files (for neovim-in-IDE-terminal' })
 -- -- vim.keymap.set('n', '<leader><C-p>', [[<cmd>Telescope find_files hidden=true<CR>]],
 -- -- { desc = "Find hidden files", noremap = true })
