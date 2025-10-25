@@ -165,8 +165,6 @@ local plugins = {
     end
   },
   { 'djoshea/vim-autoread',            pin = true },
-  -- { 'nvim-mini/mini.files', version = '*' },
-  -- { 'junegunn/fzf.vim' },
   {
     'nvim-telescope/telescope.nvim',
     version = '0.1.1',
