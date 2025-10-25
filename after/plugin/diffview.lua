@@ -56,6 +56,8 @@ vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen origin/master<CR>", { 
 vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
 vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen origin/develop<CR>",
   { desc = "Compare with develop (Diffview)" })
+vim.keymap.set("n", "<leader><leader>mac", ":DiffviewOpen origin/develop<CR>",
+  { desc = "Compare with develop (Diffview)" })
 
 -- -- word under cursor
 vim.keymap.set("n", "<leader>dcc", ":DiffviewOpen <C-r><C-w><CR>",
