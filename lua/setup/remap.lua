@@ -29,8 +29,8 @@ vim.keymap.set("n", "√", ":m+<CR>", { desc = "Move line down" })
 
 -- MOVE LINES
 
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
+vim.keymap.set("v", "ª", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
+vim.keymap.set("v", "√", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
 
 
 -- ADD NEW LINE
