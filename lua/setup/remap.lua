@@ -97,7 +97,7 @@ vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
 
 -- -- unnamed plus / OS registry
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
-vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+Y", { desc = "Yank to OS registry (Y)" })
+vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry (Y)" })
 -- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
 vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
