@@ -202,7 +202,7 @@ local plugins = {
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
   -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
   -- { 'martinsione/darkplus.nvim',   pin = true },
-  -- { 'bignimbus/pop-punk.vim',      pin = true },
+  { 'bignimbus/pop-punk.vim',      pin = true },
   -- { "EdenEast/nightfox.nvim" },
   -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
   {
