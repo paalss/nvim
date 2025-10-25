@@ -8,19 +8,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
--- vim.g.clipboard = {
---   name = 'WslClipboard',
---   copy = {
---     ['+'] = 'clip.exe',
---     ['*'] = 'clip.exe',
---   },
---   paste = {
---     ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---     ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---   },
---   cache_enabled = 0,
--- }
-
 vim.g.mapleader = " "
 
 local plugins = {
@@ -83,12 +70,6 @@ local plugins = {
   -- 'stevearc/dressing.nvim',
   -- opts = {},
   -- pin = true
-  -- },
-  -- {
-  --   "folke/trouble.nvim",
-  --   pin = true,
-  --   dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   opts = {},
   -- },
   -- {
   --   'smjonas/live-command.nvim',
@@ -208,7 +189,7 @@ local plugins = {
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
   -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
   -- { 'martinsione/darkplus.nvim',   pin = true },
-  -- { 'bignimbus/pop-punk.vim',      pin = true },
+  { 'bignimbus/pop-punk.vim',      pin = true },
   -- { "EdenEast/nightfox.nvim" },
   -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
   {
