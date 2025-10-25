@@ -48,7 +48,7 @@ require('gitsigns').setup {
     map('n', '<leader>hp', gs.preview_hunk, { desc = "Preview hunk" })
     map('n', '<leader>hb', function() gs.blame_line { full = true } end)
     map('n', '<leader>tb', ':Gitsigns blame_line<CR>', { desc = "Show git blame popup (Gitsigns)" })
-    -- map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
+    -- map('n', '<leader>tbb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
     map('n', '<leader>hd', gs.diffthis)
     map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "Diffthis 2" })
     map('n', '<leader>td', gs.toggle_deleted, { desc = "Show deleted" })
