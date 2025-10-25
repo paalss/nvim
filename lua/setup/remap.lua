@@ -262,11 +262,11 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 
 -- vim.keymap.set("n", "<C-d>", "<C-d>", { desc = "Scroll page down" })
 -- vim.keymap.set("n", "<C-u>", "<C-u>", { desc = "Scroll page up" })
-vim.keymap.set("n", "<C-d>", "23j", { desc = "Scroll page down" })
-vim.keymap.set("n", "<C-u>", "23k", { desc = "Scroll page up" })
+vim.keymap.set({ "n", "v" }, "<C-d>", "23j", { desc = "Scroll page down" })
+vim.keymap.set({ "n", "v" }, "<C-u>", "23k", { desc = "Scroll page up" })
 
-vim.keymap.set("n", "<C-e>", "8j", { desc = "Scroll down" })
-vim.keymap.set("n", "<C-y>", "8k", { desc = "Scroll up" })
+vim.keymap.set({ "n", "v" }, "<C-e>", "8j", { desc = "Scroll down" })
+vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
 vim.keymap.set("n", "<leader>vaB", "vaBV", { desc = "Select lines around B" })
 vim.keymap.set("n", "<leader>yaB", "vaBVy", { desc = "Yank lines around B" })
