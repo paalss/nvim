@@ -40,8 +40,8 @@ require('gitsigns').setup {
     -- map('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Stage hunk" })
     map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Reset hunk" })
 
-    -- map('n', '<leader>hS', gs.stage_buffer, { desc = "Stage buffer" })
-    -- map('n', '<leader>hR', gs.reset_buffer, { desc = "Reset buffer" })
+    -- map('n', '<leader>bS', gs.stage_buffer, { desc = "Stage buffer" }) -- Commented out: More or less same as Fugitive's :Gwrite
+    -- map('n', '<leader>bR', gs.reset_buffer, { desc = "Reset buffer" })
 
     -- -- view
     -- map('n', '<leader>hp', gs.preview_hunk_inline, { desc = "Preview hunk" })
