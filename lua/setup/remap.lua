@@ -96,7 +96,7 @@ vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
 vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry (Y)" })
 -- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
-vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
+-- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
 -- -- s
 vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
@@ -345,7 +345,7 @@ vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search hig
 
 -- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 -- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" })
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
   { desc = "Yank path to current file", noremap = true, silent = true })
