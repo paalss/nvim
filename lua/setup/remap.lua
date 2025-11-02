@@ -309,7 +309,7 @@ vim.keymap.set("n", "<leader>dib", "vibVd", { desc = "Delete lines inside b" })
 
 -- FILE NAVIGATION
 
--- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 
 --------------------------------------------------------
