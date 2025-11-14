@@ -55,8 +55,8 @@ function ColorMyPencils(color)
 	-- set the color scheme
 
 	-- color = color or "darkplus"
-	color = color or "pop-punk"
-	-- color = color or "tokyonight-night"
+	-- color = color or "pop-punk"
+	color = color or "tokyonight-night"
 	-- color = color or "nightfox"
 	-- color = color or "github_dark_high_contrast"
 	-- color = color or "github_dark"
