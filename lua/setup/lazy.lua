@@ -145,7 +145,9 @@ local plugins = {
       require("nvim-autopairs").setup {}
     end
   },
-  { 'djoshea/vim-autoread',            pin = true },
+  { 'djoshea/vim-autoread', pin = true },
+  { "junegunn/fzf", build = "./install --bin"  },
+  { "junegunn/fzf.vim" },
   {
     'nvim-telescope/telescope.nvim',
     version = '0.1.1',
@@ -214,7 +216,7 @@ local plugins = {
   -- 	opts = {},
   -- },
   -- { 'mbbill/undotree',    pin = true },
-  { 'tpope/vim-fugitive', pin = true },
+  { 'tpope/vim-fugitive',   pin = true },
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
