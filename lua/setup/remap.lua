@@ -342,18 +342,16 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>e3", "dge", { desc = "Backspace word (Ctrl w in insert mode)" })
-vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
+vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
--- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
--- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
-vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
+vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
   { desc = "Yank path to current file", noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
-vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" })
+vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
 vim.keymap.set("n", "<leader>vf", "%", { desc = "matchit %", noremap = true })
