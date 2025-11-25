@@ -342,6 +342,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
+vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
+vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
