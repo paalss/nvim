@@ -113,7 +113,7 @@ lsp.on_attach(function(client, bufnr)
     })
 
   -- diagnostics
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end,
+  vim.keymap.set("n", "<leader>es", function() vim.diagnostic.open_float() end,
     {
       desc = "open diagnostic, language errors",
       buffer = bufnr,
