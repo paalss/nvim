@@ -235,8 +235,10 @@ vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 
 -- QUICK FIX LIST NAVIGATION
 
-vim.keymap.set("n", "<A-a>", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<down>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<up>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<leader><down>", "<cmd>cnfile<CR>", { desc = "Next file"})
+vim.keymap.set("n", "<leader><up>", "<cmd>cpfile<CR>", { desc = "Prev file"})
 -- vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
