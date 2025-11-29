@@ -1,6 +1,6 @@
 -- vim.keymap.set("n", "<leader>gt", ":Git<CR>", { desc = "Open Git – Fugitive" }) -- TODO: disable if it's unnecessary
 vim.keymap.set("n", "<leader>fs", ":Gwrite<CR>", { desc = "Save and stage file (write and add buffer)" }) -- same (almost?) as gitsign's stage_buffer
--- vim.keymap.set("n", "<leader>fr", ":Gwread<CR>", { desc = "Revert uncommited changes" })
+-- vim.keymap.set("n", "<leader>gx", ":Gwread<CR>", { desc = "Revert uncommited changes" })
 
 
 -- oh-my-bash style shortcuts

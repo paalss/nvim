@@ -26,8 +26,8 @@ vim.keymap.set("n", "<A-j>", ":m+<CR>", { desc = "Move line down" })
 
 -- MOVE LINES
 
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 
 
 -- ADD NEW LINE
@@ -268,25 +268,25 @@ vim.keymap.set({ "n", "v" }, "<C-u>", "23k", { desc = "Scroll page up" })
 vim.keymap.set({ "n", "v" }, "<C-e>", "8j", { desc = "Scroll down" })
 vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
-vim.keymap.set("n", "<leader>vaB", "vaBV", { desc = "Select lines around B" })
-vim.keymap.set("n", "<leader>yaB", "vaBVy", { desc = "Yank lines around B" })
-vim.keymap.set("n", "<leader>daB", "vaBVd", { desc = "Delete lines around B" })
+vim.keymap.set("n", "-vaB", "vaBV", { desc = "Select lines around B" })
+vim.keymap.set("n", "-yaB", "vaBVy", { desc = "Yank lines around B" })
+vim.keymap.set("n", "-daB", "vaBVd", { desc = "Delete lines around B" })
 
-vim.keymap.set("n", "<leader>vab", "vabV", { desc = "Select lines around b" })
-vim.keymap.set("n", "<leader>yab", "vabVy", { desc = "Yank lines around b" })
-vim.keymap.set("n", "<leader>dab", "vabVd", { desc = "Delete lines around b" })
+vim.keymap.set("n", "-vab", "vabV", { desc = "Select lines around b" })
+vim.keymap.set("n", "-yab", "vabVy", { desc = "Yank lines around b" })
+vim.keymap.set("n", "-dab", "vabVd", { desc = "Delete lines around b" })
 
-vim.keymap.set("n", "<leader>vat", "vatV", { desc = "Select lines around t" })
-vim.keymap.set("n", "<leader>yat", "vatVy", { desc = "Yank lines around t" })
-vim.keymap.set("n", "<leader>dat", "vatVd", { desc = "Delete lines around t" })
+vim.keymap.set("n", "-vat", "vatV", { desc = "Select lines around t" })
+vim.keymap.set("n", "-yat", "vatVy", { desc = "Yank lines around t" })
+vim.keymap.set("n", "-dat", "vatVd", { desc = "Delete lines around t" })
 
-vim.keymap.set("n", "<leader>viB", "viBV", { desc = "Select lines inside B" })
-vim.keymap.set("n", "<leader>yiB", "viBVy", { desc = "Yank lines inside B" })
-vim.keymap.set("n", "<leader>diB", "viBVd", { desc = "Delete lines inside B" })
+vim.keymap.set("n", "-viB", "viBV", { desc = "Select lines inside B" })
+vim.keymap.set("n", "-yiB", "viBVy", { desc = "Yank lines inside B" })
+vim.keymap.set("n", "-diB", "viBVd", { desc = "Delete lines inside B" })
 
-vim.keymap.set("n", "<leader>vib", "vibV", { desc = "Select lines inside b" })
-vim.keymap.set("n", "<leader>yib", "vibVy", { desc = "Yank lines inside b" })
-vim.keymap.set("n", "<leader>dib", "vibVd", { desc = "Delete lines inside b" })
+vim.keymap.set("n", "-vib", "vibV", { desc = "Select lines inside b" })
+vim.keymap.set("n", "-yib", "vibVy", { desc = "Yank lines inside b" })
+vim.keymap.set("n", "-dib", "vibVd", { desc = "Delete lines inside b" })
 
 
 
@@ -339,6 +339,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
+vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
+vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<leader>e3", "dge", { desc = "Backspace word (Ctrl w in insert mode)" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
@@ -347,10 +349,10 @@ vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search hig
 -- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
-vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
+vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
   { desc = "Yank path to current file", noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
-vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" })
+vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
 vim.keymap.set("n", "<leader>vf", "%", { desc = "matchit %", noremap = true })
