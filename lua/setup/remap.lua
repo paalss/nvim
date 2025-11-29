@@ -306,7 +306,7 @@ vim.keymap.set("n", "-dib", "vibVd", { desc = "Delete lines inside b" })
 
 -- FILE NAVIGATION
 
--- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 
 --------------------------------------------------------
@@ -339,11 +339,13 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
+vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
+vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<leader>e3", "dge", { desc = "Backspace word (Ctrl w in insert mode)" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
-vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
+vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
 -- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
 -- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
