@@ -203,8 +203,8 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 
 vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next translation" })
 vim.keymap.set("v", "<leader>tt", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
-vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>\"vi\"", { desc = "Select next translation (from visual mode)" })
-vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"vi\"", { desc = "Select next translation (from insert mode)" })
+vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
+vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from insert mode)" })
 
 
 -- POPULATE TRANSLATION WITH KEY
