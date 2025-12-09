@@ -120,6 +120,31 @@ vim.keymap.set("n", "<leader>∂", ":%d+<CR>", { desc = "delete all to OS regist
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- line
+vim.keymap.set("n", "-vaB", "vaBV", { desc = "Select lines around B" })
+vim.keymap.set("n", "-yaB", "vaBVy", { desc = "Yank lines around B" })
+vim.keymap.set("n", "-daB", "vaBVd", { desc = "Delete lines around B" })
+vim.keymap.set("n", "-gcaB", "vaBVgc", { desc = "Comment lines around B" })
+
+vim.keymap.set("n", "-vab", "vabV", { desc = "Select lines around b" })
+vim.keymap.set("n", "-yab", "vabVy", { desc = "Yank lines around b" })
+vim.keymap.set("n", "-dab", "vabVd", { desc = "Delete lines around b" })
+vim.keymap.set("n", "-gcab", "vabVgc", { desc = "Comment lines around b" })
+
+vim.keymap.set("n", "-vat", "vatV", { desc = "Select lines around t" })
+vim.keymap.set("n", "-yat", "vatVy", { desc = "Yank lines around t" })
+vim.keymap.set("n", "-dat", "vatVd", { desc = "Delete lines around t" })
+vim.keymap.set("n", "-gcat", "vatVgc", { desc = "Comment lines around t" })
+
+vim.keymap.set("n", "-viB", "viBV", { desc = "Select lines inside B" })
+vim.keymap.set("n", "-yiB", "viBVy", { desc = "Yank lines inside B" })
+vim.keymap.set("n", "-diB", "viBVd", { desc = "Delete lines inside B" })
+vim.keymap.set("n", "-gciB", "viBVgc", { desc = "Comment lines inside B" })
+
+vim.keymap.set("n", "-vib", "vibV", { desc = "Select lines inside b" })
+vim.keymap.set("n", "-yib", "vibVy", { desc = "Yank lines inside b" })
+vim.keymap.set("n", "-dib", "vibVd", { desc = "Delete lines inside b" })
+vim.keymap.set("n", "-gcib", "vibVgc", { desc = "Comment lines inside b" })
+
 -- vim.keymap.set("n", "-y", "mo^y$`o", { desc = "Line (-) yank" })
 -- vim.keymap.set("n", "-d", "^d$", { desc = "Line (-) delete" })
 -- vim.keymap.set("n", "-v", "0v$", { desc = "Line (-) mark (for surround you can always use yss from vim-surround)" })
@@ -273,26 +298,6 @@ vim.keymap.set({ "n", "v" }, "<C-u>", "23k", { desc = "Scroll page up" })
 vim.keymap.set({ "n", "v" }, "<C-e>", "8j", { desc = "Scroll down" })
 vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
-vim.keymap.set("n", "-vaB", "vaBV", { desc = "Select lines around B" })
-vim.keymap.set("n", "-yaB", "vaBVy", { desc = "Yank lines around B" })
-vim.keymap.set("n", "-daB", "vaBVd", { desc = "Delete lines around B" })
-
-vim.keymap.set("n", "-vab", "vabV", { desc = "Select lines around b" })
-vim.keymap.set("n", "-yab", "vabVy", { desc = "Yank lines around b" })
-vim.keymap.set("n", "-dab", "vabVd", { desc = "Delete lines around b" })
-
-vim.keymap.set("n", "-vat", "vatV", { desc = "Select lines around t" })
-vim.keymap.set("n", "-yat", "vatVy", { desc = "Yank lines around t" })
-vim.keymap.set("n", "-dat", "vatVd", { desc = "Delete lines around t" })
-
-vim.keymap.set("n", "-viB", "viBV", { desc = "Select lines inside B" })
-vim.keymap.set("n", "-yiB", "viBVy", { desc = "Yank lines inside B" })
-vim.keymap.set("n", "-diB", "viBVd", { desc = "Delete lines inside B" })
-
-vim.keymap.set("n", "-vib", "vibV", { desc = "Select lines inside b" })
-vim.keymap.set("n", "-yib", "vibVy", { desc = "Yank lines inside b" })
-vim.keymap.set("n", "-dib", "vibVd", { desc = "Delete lines inside b" })
-
 
 
 
@@ -348,6 +353,7 @@ vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
+
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
