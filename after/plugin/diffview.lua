@@ -17,10 +17,10 @@ diffview.setup {
     },
     file_panel = {
       { "n", "•",     ":DiffviewClose<CR>",                { desc = "Close Diffview" } },
+      { "n", "q",     "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
       { "n", "cc",    ":Git commit<CR>",                   { desc = "Commit" } },
       { "n", "ca",    ":Git commit --amend<CR>",           { desc = "Commit amend" } },
       { "n", "ce",    ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
-      { "n", "q",     "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
     },
     file_history_panel = {
       { "n", "•",            ":DiffviewClose<CR>",                         { desc = "Close Diffview" } },
