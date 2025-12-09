@@ -16,7 +16,7 @@ require('harpoon-tabline').setup()
 -- end, { desc = "Delete all Harpoon marks"})
 
 vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = "Add to Harpoon" })
-vim.keymap.set("n", "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "View Harpoon" })
+vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "View Harpoon" })
 
 vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end, { desc = "Open Harpoon file #1" })
 vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end, { desc = "Open Harpoon file #2" })
@@ -29,8 +29,9 @@ vim.keymap.set("n", "<leader>8", function() harpoon:list():select(8) end, { desc
 vim.keymap.set("n", "<leader>9", function() harpoon:list():select(9) end, { desc = "Open Harpoon file #9" })
 
 -- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<M-,>", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<M-.>", function() harpoon:list():next() end)
+vim.keymap.set("n", "‚", function() harpoon:list():prev() end, { desc = "Go to previous tab" }) -- alt ,
+vim.keymap.set("n", "…", function() harpoon:list():next() end, { desc = "Go to next tab" }) -- alt .
+-- vim.keymap.set("n", "Ω", ":tabc<CR>", { desc = "Close tab" }) -- alt w
 
 vim.api.nvim_set_hl(0, 'HarpoonActive', { foreground = 'white', background = 'NONE' })
 vim.api.nvim_set_hl(0, 'HarpoonInactive', { foreground = '#63698c', background = 'NONE' })
