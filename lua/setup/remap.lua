@@ -346,9 +346,11 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 
 vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
+vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
+vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
-vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
+vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
