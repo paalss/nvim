@@ -268,8 +268,8 @@ vim.keymap.set("n", "<leader><up>", "<cmd>cpfile<CR>", { desc = "Prev file" })
 
 
 -- -- indenting
-vim.keymap.set("v", ">", ">gv", { desc = "add indent" })
-vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
+vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
+vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
 
 --------------------------------------------------------

@@ -36,7 +36,7 @@ local plugins = {
   { 'TamaMcGlinn/quickfixdd' },
   { 'sbdchd/neoformat' },
   -- { 'shortcuts/no-neck-pain.nvim',            version = "*" },
-  { 'RRethy/vim-illuminate' },
+  { 'RRethy/vim-illuminate', enabled = false },
   { 'farmergreg/vim-lastplace' },
   {
     "nvim-neo-tree/neo-tree.nvim",
