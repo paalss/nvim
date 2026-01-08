@@ -1,3 +1,16 @@
+-- colors reference https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
+-- github examples https://github.com/search?q=on_colors+%3D+function%28colors%29+path%3A*.lua&type=code&ref=advsearch
+-- require("tokyonight").setup({
+--   on_colors = function(colors)
+--     colors.hint = colors.orange
+--     colors.error = "red"
+--   end
+-- })
+
+
+
+
+
 -- Set background color for added lines
 -- vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#A6E22E", fg = "NONE", ctermfg = "NONE", ctermbg = "Green" })
 
@@ -44,35 +57,32 @@
 -- })
 
 -- from tokyonight help configuration:
-    -- local colors = require("tokyonight.colors").setup() -- pass in any of the config options as explained above
-    -- local util = require("tokyonight.util")
-    
-    -- aplugin.background = colors.bg_dark
-    -- aplugin.my_error = util.lighten(colors.red1, 0.3) -- number between 0 and 1. 0 results in white, 1 results in red1
+-- local colors = require("tokyonight.colors").setup() -- pass in any of the config options as explained above
+-- local util = require("tokyonight.util")
+
+-- aplugin.background = colors.bg_dark
+-- aplugin.my_error = util.lighten(colors.red1, 0.3) -- number between 0 and 1. 0 results in white, 1 results in red1
 
 
 function ColorMyPencils(color)
-	-- set the color scheme
+  -- set the color scheme
 
-	-- color = color or "darkplus"
-	color = color or "pop-punk"
-	-- color = color or "tokyonight-night"
-	-- color = color or "nightfox"
-	-- color = color or "github_dark_high_contrast"
-	-- color = color or "github_dark"
-	vim.cmd.colorscheme(color)
+  -- color = color or "darkplus"
+  -- color = color or "pop-punk"
+  color = color or "tokyonight-night"
+  -- color = color or "nightfox"
+  -- color = color or "github_dark_high_contrast"
+  -- color = color or "github_dark"
+  vim.cmd.colorscheme(color)
 
-	-- set transparent background
-	-- 
-	-- kommenterte følgende ut, pga at det ikke funker helt.
-	-- du kan uansett justere gjennomsiktighet i Ubuntu terminalen
-	-- i 'egenskaper'
-	--
-	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
+  -- set transparent background
+  --
+  -- kommenterte følgende ut, pga at det ikke funker helt.
+  -- du kan uansett justere gjennomsiktighet i Ubuntu terminalen
+  -- i 'egenskaper'
+  --
+  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 ColorMyPencils()
-
-
