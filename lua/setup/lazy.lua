@@ -158,7 +158,7 @@ local plugins = {
       require("nvim-autopairs").setup {}
     end
   },
-  { 'djoshea/vim-autoread',            pin = true },
+  { 'djoshea/vim-autoread',          pin = true },
   {
     'nvim-telescope/telescope.nvim',
     version = '0.1.1',
@@ -171,8 +171,8 @@ local plugins = {
     "jasonpanosso/harpoon-tabline.nvim",
     dependencies = { "ThePrimeagen/harpoon" }
   },
-  { 'ThePrimeagen/harpoon',          pin = true },
-  { 'tpope/vim-surround',            pin = true },
+  { 'ThePrimeagen/harpoon',   pin = true },
+  { 'tpope/vim-surround',     pin = true },
   -- {
   --   "kylechui/nvim-surround",
   --   version = "*", -- Use for stability; omit to  `main` branch for the latest features
@@ -183,7 +183,7 @@ local plugins = {
   --     })
   --   end
   -- },
-  { 'sindrets/diffview.nvim',        pin = true },
+  { 'sindrets/diffview.nvim', pin = true },
   -- {
   --   "mg979/vim-visual-multi",
   --   pin = true,
@@ -213,11 +213,11 @@ local plugins = {
     opts = {},
     config = function()
       -- colors reference https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
-    -- nyttig referanse
-    -- https://github.com/imvasen/dotfiles-nvim/blob/267bfa7a3d04ee8da8f0dc9a42310ae0768e5674/lua/plugins/tokyonight.lua#L14
--- https://github.com/greganswer/.config/blob/b25d4b306413eac8f47b16e377f98d655314ea54/nvim/lua/config/lazy.lua#L30
--- https://github.com/MrQuatrelle/nvim/blob/38658cd598f8e7cdd358708cfd48e1456c5bc219/lua/mrquatrelle/lazy/tokyonight.lua#L30
--- https://github.com/curtbushko/nvim/blob/3dcc4392ec06ce9b2b27fc66029db256311b4118/lua/plugins/tokyonight.lua#L20
+      -- nyttig referanse
+      -- https://github.com/imvasen/dotfiles-nvim/blob/267bfa7a3d04ee8da8f0dc9a42310ae0768e5674/lua/plugins/tokyonight.lua#L14
+      -- https://github.com/greganswer/.config/blob/b25d4b306413eac8f47b16e377f98d655314ea54/nvim/lua/config/lazy.lua#L30
+      -- https://github.com/MrQuatrelle/nvim/blob/38658cd598f8e7cdd358708cfd48e1456c5bc219/lua/mrquatrelle/lazy/tokyonight.lua#L30
+      -- https://github.com/curtbushko/nvim/blob/3dcc4392ec06ce9b2b27fc66029db256311b4118/lua/plugins/tokyonight.lua#L20
       require("tokyonight").setup({
         style = "night",
         styles = {
@@ -226,29 +226,29 @@ local plugins = {
         on_colors = function(colors)
           colors.hint = colors.orange
           colors.diff = {
-              add = "#243e4a",
-              change = "#1f2231",
-              delete = "#4a272f",
-              text = "#394b70"
+            add = "#243e4a",
+            change = "#1f2231",
+            delete = "#4a272f",
+            text = "#394b70"
           }
           colors.git = {
             add = "#449dab",
             change = "#6183bb",
             delete = "#914c54",
             ignore = "#545c7e"
-           }
-           colors.bg_highlight = colors.green
-           colors.comment = colors.yellow
-           CursorColumn = { bg = "#2a2b3d" }
-           ColorColumn = {
-             bg = "#ffae00"
-           }
+          }
+          colors.bg_highlight = colors.green
+          colors.comment = colors.yellow
+          CursorColumn = { bg = "#2a2b3d" }
+          ColorColumn = {
+            bg = "#ffae00"
+          }
           -- colors.Comment = { fg = colors.purple, italic = true }
           -- colors["@comment"] = { fg = colors.brown, italic = true }
           -- colors.ColorColumn = { bg = colors.yellow }
         end,
         on_highlights = function(hl, colors)
-          hl.ColorColumn = {bg = colors.green}
+          hl.ColorColumn = { bg = colors.green }
         end,
       })
     end
@@ -268,7 +268,7 @@ local plugins = {
   -- 	opts = {},
   -- },
   -- { 'mbbill/undotree',    pin = true },
-  { 'tpope/vim-fugitive', pin = true },
+  { 'tpope/vim-fugitive',   pin = true },
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
