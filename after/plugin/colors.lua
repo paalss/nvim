@@ -1,9 +1,3 @@
--- require("tokyonight").setup({
---   on_colors = function(colors)
---     colors.hint = colors.orange
---     colors.error = "red"
---   end
--- })
 
 
 

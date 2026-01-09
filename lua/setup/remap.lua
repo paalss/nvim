@@ -332,17 +332,15 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize
 
 vim.keymap.set("n", "<A-w>", "<C-w>w", { desc = "Go to next split" })
 
-vim.o.colorcolumn = "73"
-
 -- add colorcolumn only for commit messages
--- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
---   pattern = "COMMIT_EDITMSG",
---   callback = function()
---     vim.schedule(function()
---       vim.opt_local.colorcolumn = "73" -- indicating where text needs to wrap
---     end)
---   end,
--- })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "COMMIT_EDITMSG",
+  callback = function()
+    vim.schedule(function()
+      vim.opt_local.colorcolumn = "73" -- indicating where text needs to wrap
+    end)
+  end,
+})
 
 
 --------------------------------------------------------
