@@ -1,5 +1,6 @@
 -- colors reference https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 -- github examples https://github.com/search?q=on_colors+%3D+function%28colors%29+path%3A*.lua&type=code&ref=advsearch
+-- https://github.com/greganswer/.config/blob/b25d4b306413eac8f47b16e377f98d655314ea54/nvim/lua/config/lazy.lua#L30
 -- require("tokyonight").setup({
 --   on_colors = function(colors)
 --     colors.hint = colors.orange

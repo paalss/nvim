@@ -231,7 +231,19 @@ local plugins = {
             delete = "#914c54",
             ignore = "#545c7e"
            }
-        end
+           colors.bg_highlight = colors.green
+           colors.comment = colors.yellow
+           CursorColumn = { bg = "#2a2b3d" }
+           ColorColumn = {
+             bg = "#ffae00"
+           }
+          -- colors.Comment = { fg = colors.purple, italic = true }
+          -- colors["@comment"] = { fg = colors.brown, italic = true }
+          -- colors.ColorColumn = { bg = colors.yellow }
+        end,
+        on_highlights = function(hl, colors)
+          hl.ColorColumn = {bg = colors.green}
+        end,
       })
     end
   },
