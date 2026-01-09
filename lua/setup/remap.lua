@@ -259,8 +259,8 @@ vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>")
 
 
 -- -- indenting
-vim.keymap.set("v", ">", ">gv", { desc = "add indent" })
-vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
+vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
+vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
 
 --------------------------------------------------------

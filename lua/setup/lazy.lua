@@ -211,6 +211,17 @@ local plugins = {
     lazy = false,
     priority = 1000,
     opts = {},
+    config = function()
+      require("tokyonight").setup({
+        style = "night",
+        styles = {
+          functions = {}
+        },
+        on_colors = function(colors)
+          colors.hint = colors.orange
+        end
+      })
+    end
   },
   {
     'nvim-treesitter/nvim-treesitter',
