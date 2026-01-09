@@ -219,6 +219,12 @@ local plugins = {
         },
         on_colors = function(colors)
           colors.hint = colors.orange
+          colors.diff = {
+              add = "#243e4a",
+              change = "#1f2231",
+              delete = "#4a272f",
+              text = "#394b70"
+          }
           colors.git = {
             add = "#449dab",
             change = "#6183bb",
