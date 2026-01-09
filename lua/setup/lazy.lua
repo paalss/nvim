@@ -224,7 +224,7 @@ local plugins = {
           functions = {}
         },
         on_colors = function(colors)
-          colors.hint = colors.orange
+          -- colors.hint = colors.orange
           colors.diff = {
             add = "#243e4a",
             change = "#1f2231",
@@ -237,15 +237,8 @@ local plugins = {
             delete = "#914c54",
             ignore = "#545c7e"
           }
-          colors.bg_highlight = colors.green
-          colors.comment = colors.yellow
-          CursorColumn = { bg = "#2a2b3d" }
-          ColorColumn = {
-            bg = "#ffae00"
-          }
-          -- colors.Comment = { fg = colors.purple, italic = true }
-          -- colors["@comment"] = { fg = colors.brown, italic = true }
-          -- colors.ColorColumn = { bg = colors.yellow }
+          -- colors.bg_highlight = colors.green
+          -- colors.comment = colors.yellow
         end,
         on_highlights = function(hl, colors)
           hl.ColorColumn = { bg = colors.green }
