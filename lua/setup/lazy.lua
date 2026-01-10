@@ -224,21 +224,20 @@ local plugins = {
           functions = {}
         },
         on_colors = function(colors)
-          -- colors.hint = colors.orange
           colors.diff = {
-            add = "#243e4a",
-            change = "#1f2231",
-            delete = "#4a272f",
-            text = "#394b70"
+            add = "#194a0e",
+            change = "#523a0a",
+            delete = "#58171d",
+            text = "#564343"
           }
           colors.git = {
-            add = "#449dab",
-            change = "#6183bb",
-            delete = "#914c54",
-            ignore = "#545c7e"
+            add = "#12dd00",
+            change = "#32290f",
+            delete = "#ff001e",
+            ignore = "#71737b"
           }
-          -- colors.bg_highlight = colors.green
-          -- colors.comment = colors.yellow
+          -- colors.bg_highlight = "#353b4e"
+          colors.comment = "#869b84"
         end,
         on_highlights = function(hl, colors)
           hl.ColorColumn = { bg = colors.green }
