@@ -147,10 +147,34 @@ vim.keymap.set("n", "<leader>vl", "0v$", { desc = "Visual mark Line (you can use
 
 -- -- self closing tag: <input onClick={() => something()} />
 --                        |-cursor here
-vim.keymap.set("n", "<leader>vat", "lF<v/\\/><CR>", { desc = "Visual mark aroud self closing tag" })
-vim.keymap.set("n", "<leader>yat", "lF<v/\\/><CR>y", { desc = "Yank around self closing tag" })
-vim.keymap.set("n", "<leader><leader>yat", "lF<v/\\/><CR>\"+y", { desc = "Yank around self closing tag to OS registry" })
-vim.keymap.set("n", "<leader>dat", "lF<v/\\/><CR>d", { desc = "Delete around self closing tag" })
+
+vim.cmd [[
+function! JSXIsSelfCloseTag()
+  let l:line_number = line(".")
+  let l:line = getline(".")
+  let l:tag_name = matchstr(matchstr(line, "<\\w\\+"), "\\w\\+")
+
+  exec "normal! 0f<vat\<esc>"
+
+  cal cursor(line_number, 1)
+
+  let l:selected_text = join(getline(getpos("'<")[1], getpos("'>")[1]))
+
+  let l:match_tag = matchstr(matchstr(selected_text, "</\\w\\+>*$"), "\\w\\+")
+
+  return tag_name != match_tag
+endfunction
+
+function! JSXSelectTag()
+  if JSXIsSelfCloseTag()
+    exec "normal! \<esc>0f<v/\\/>$\<cr>l"
+  else
+    exec "normal! \<esc>0f<vat"
+  end
+endfunction
+
+nnoremap vat :call JSXSelectTag()<CR>
+]]
 
 -- --  surroundings
 -- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(((-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
