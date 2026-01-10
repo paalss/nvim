@@ -170,18 +170,10 @@ function! JSXSelectTag(mode)
     if a:mode == "v"
       exec "normal! \<esc>0f<v/\\/>$\<cr>l"
     else
-      if a:mode == "c"
-        exec "normal! \<esc>0f<v/\\/>$\c"
-      else
-        exec "normal! \<esc>0f<v/\\/>$\<cr>l" . a:mode
-      endif
+      exec "normal! \<esc>0f<v/\\/>$\<cr>l" . a:mode
     endif
   else
-    if a:mode == "c"
-      exec "normal! \<esc>0f<vat"
-    else
-      exec "normal! \<esc>0f<" . a:mode . "at"
-    endif
+    exec "normal! \<esc>0f<" . a:mode . "at"
   end
 endfunction
 
