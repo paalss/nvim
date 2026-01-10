@@ -120,22 +120,27 @@ vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 vim.keymap.set("n", "-vaB", "vaBV", { desc = "Select lines around B" })
 vim.keymap.set("n", "-yaB", "vaBVy", { desc = "Yank lines around B" })
 vim.keymap.set("n", "-daB", "vaBVd", { desc = "Delete lines around B" })
+vim.keymap.set("n", "-gcaB", "vaBVgc", { desc = "Comment lines around B" })
 
 vim.keymap.set("n", "-vab", "vabV", { desc = "Select lines around b" })
 vim.keymap.set("n", "-yab", "vabVy", { desc = "Yank lines around b" })
 vim.keymap.set("n", "-dab", "vabVd", { desc = "Delete lines around b" })
+vim.keymap.set("n", "-gcab", "vabVgc", { desc = "Comment lines around b" })
 
 vim.keymap.set("n", "-vat", "vatV", { desc = "Select lines around t" })
 vim.keymap.set("n", "-yat", "vatVy", { desc = "Yank lines around t" })
 vim.keymap.set("n", "-dat", "vatVd", { desc = "Delete lines around t" })
+vim.keymap.set("n", "-gcat", "vatVgc", { desc = "Comment lines around t" })
 
 vim.keymap.set("n", "-viB", "viBV", { desc = "Select lines inside B" })
 vim.keymap.set("n", "-yiB", "viBVy", { desc = "Yank lines inside B" })
 vim.keymap.set("n", "-diB", "viBVd", { desc = "Delete lines inside B" })
+vim.keymap.set("n", "-gciB", "viBVgc", { desc = "Comment lines inside B" })
 
 vim.keymap.set("n", "-vib", "vibV", { desc = "Select lines inside b" })
 vim.keymap.set("n", "-yib", "vibVy", { desc = "Yank lines inside b" })
 vim.keymap.set("n", "-dib", "vibVd", { desc = "Delete lines inside b" })
+vim.keymap.set("n", "-gcib", "vibVgc", { desc = "Comment lines inside b" })
 
 -- vim.keymap.set("n", "-y", "mo^y$`o", { desc = "Line (-) yank" })
 -- vim.keymap.set("n", "-d", "^d$", { desc = "Line (-) delete" })
@@ -283,8 +288,10 @@ vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 
 -- QUICK FIX LIST NAVIGATION
 
-vim.keymap.set("n", "<A-a>", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<down>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<up>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<leader><down>", "<cmd>cnfile<CR>", { desc = "Next file" })
+vim.keymap.set("n", "<leader><up>", "<cmd>cpfile<CR>", { desc = "Prev file" })
 -- vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -306,18 +313,21 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 
 
 --------------------------------------------------------
--- CODE NAVIGATION
+-- NAVIGATION
 --------------------------------------------------------
 
--- PAGE UP/DOWN
+-- CODE NAVIGATION
 
+-- vim.keymap.set("n", "<C-d>", "<C-d>", { desc = "Scroll page down" })
+-- vim.keymap.set("n", "<C-u>", "<C-u>", { desc = "Scroll page up" })
 vim.keymap.set({ "n", "v" }, "<C-d>", "23j", { desc = "Scroll page down" })
 vim.keymap.set({ "n", "v" }, "<C-u>", "23k", { desc = "Scroll page up" })
 
 vim.keymap.set({ "n", "v" }, "<C-e>", "8j", { desc = "Scroll down" })
 vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
---- SEARCH
+
+-- SEARCH & JUMP-TO
 
 vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
@@ -325,8 +335,6 @@ vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<leader>in", "gg/interface .*Props {<CR>:nohlsearch<CR>", { desc = "Go to props" })
 vim.keymap.set("n", "<leader>ex", "gg/export<CR>:nohlsearch<CR>", { desc = "Go to component definition" })
-
-
 
 
 
@@ -378,12 +386,9 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
--- vim.keymap.set("n", "<leader>e3", "dge", { desc = "Backspace word (Ctrl w in insert mode)" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
--- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
--- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],

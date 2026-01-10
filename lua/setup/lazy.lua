@@ -49,7 +49,7 @@ local plugins = {
   { 'TamaMcGlinn/quickfixdd' },
   { 'sbdchd/neoformat' },
   -- { 'shortcuts/no-neck-pain.nvim',            version = "*" },
-  -- { 'RRethy/vim-illuminate' },
+  { 'RRethy/vim-illuminate', enabled = false },
   { 'farmergreg/vim-lastplace' },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -158,7 +158,7 @@ local plugins = {
       require("nvim-autopairs").setup {}
     end
   },
-  { 'djoshea/vim-autoread',          pin = true },
+  { 'djoshea/vim-autoread', pin = true },
   {
     'nvim-telescope/telescope.nvim',
     version = '0.1.1',

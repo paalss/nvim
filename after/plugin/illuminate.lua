@@ -1,2 +1,2 @@
-vim.keymap.set("n", "<leader>ill", ":IlluminateToggle<CR>", { desc = "Toggle highlight all word occurences" })
+-- vim.keymap.set("n", "<leader><leader>ill", ":IlluminateToggle<CR>", { desc = "Toggle highlight all word occurences" })
 
