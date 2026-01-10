@@ -79,6 +79,11 @@ ls.add_snippets("lua", {
   })
 })
 
+ls.add_snippets("lua", {
+  s("omap", {
+    t('vim.keymap.set("o", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
 ls.add_snippets("javascriptreact", {
   s("useEffect", {
     t('useEffect(() => {'),

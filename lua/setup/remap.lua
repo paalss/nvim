@@ -26,8 +26,8 @@ vim.keymap.set("n", "<A-j>", ":m+<CR>", { desc = "Move line down" })
 
 -- MOVE LINES
 
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
 
 
 -- ADD NEW LINE
@@ -46,6 +46,29 @@ vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
+
+
+--------------------------------------------------------
+-- OPERATOR PENDING
+--------------------------------------------------------
+
+vim.keymap.set("o", "ig", "i\"", { desc = "Inside \"" }) -- targets.vim: iq = inside any quote (single, double, backtick...)
+vim.keymap.set("o", "ag", "a\"", { desc = "Around \"" })
+
+vim.keymap.set("o", "aG", "a\'", { desc = "Inside \'" })
+vim.keymap.set("o", "iG", "i\'", { desc = "Around \'" })
+
+vim.keymap.set("o", "iv", "i[", { desc = "Inside [" })
+vim.keymap.set("o", "av", "a[", { desc = "Around [" })
+
+vim.keymap.set("v", "ig", "i\"", { desc = "Inside \"" })
+vim.keymap.set("v", "ag", "a\"", { desc = "Around \"" })
+
+vim.keymap.set("v", "aG", "a\'", { desc = "Inside \'" })
+vim.keymap.set("v", "iG", "i\'", { desc = "Around \'" })
+
+vim.keymap.set("v", "iv", "i[", { desc = "Inside [" })
+vim.keymap.set("v", "av", "a[", { desc = "Around [" })
 
 
 --------------------------------------------------------
@@ -71,9 +94,9 @@ vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
 
 -- -- unnamed plus / OS registry
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
-vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+Y", { desc = "Yank to OS registry (Y)" })
+vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry (Y)" })
 -- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
-vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
+-- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
 -- -- s
 vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
@@ -94,6 +117,31 @@ vim.keymap.set("n", "<leader><A-d>", ":%d+<CR>", { desc = "delete all to OS regi
 vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
 
 -- -- line
+vim.keymap.set("n", "-vaB", "vaBV", { desc = "Select lines around B" })
+vim.keymap.set("n", "-yaB", "vaBVy", { desc = "Yank lines around B" })
+vim.keymap.set("n", "-daB", "vaBVd", { desc = "Delete lines around B" })
+vim.keymap.set("n", "-gcaB", "vaBVgc", { desc = "Comment lines around B" })
+
+vim.keymap.set("n", "-vab", "vabV", { desc = "Select lines around b" })
+vim.keymap.set("n", "-yab", "vabVy", { desc = "Yank lines around b" })
+vim.keymap.set("n", "-dab", "vabVd", { desc = "Delete lines around b" })
+vim.keymap.set("n", "-gcab", "vabVgc", { desc = "Comment lines around b" })
+
+vim.keymap.set("n", "-vat", "vatV", { desc = "Select lines around t" })
+vim.keymap.set("n", "-yat", "vatVy", { desc = "Yank lines around t" })
+vim.keymap.set("n", "-dat", "vatVd", { desc = "Delete lines around t" })
+vim.keymap.set("n", "-gcat", "vatVgc", { desc = "Comment lines around t" })
+
+vim.keymap.set("n", "-viB", "viBV", { desc = "Select lines inside B" })
+vim.keymap.set("n", "-yiB", "viBVy", { desc = "Yank lines inside B" })
+vim.keymap.set("n", "-diB", "viBVd", { desc = "Delete lines inside B" })
+vim.keymap.set("n", "-gciB", "viBVgc", { desc = "Comment lines inside B" })
+
+vim.keymap.set("n", "-vib", "vibV", { desc = "Select lines inside b" })
+vim.keymap.set("n", "-yib", "vibVy", { desc = "Yank lines inside b" })
+vim.keymap.set("n", "-dib", "vibVd", { desc = "Delete lines inside b" })
+vim.keymap.set("n", "-gcib", "vibVgc", { desc = "Comment lines inside b" })
+
 -- vim.keymap.set("n", "-y", "mo^y$`o", { desc = "Line (-) yank" })
 -- vim.keymap.set("n", "-d", "^d$", { desc = "Line (-) delete" })
 -- vim.keymap.set("n", "-v", "0v$", { desc = "Line (-) mark (for surround you can always use yss from vim-surround)" })
@@ -104,10 +152,41 @@ vim.keymap.set("n", "<leader>vl", "0v$", { desc = "Visual mark Line (you can use
 
 -- -- self closing tag: <input onClick={() => something()} />
 --                        |-cursor here
-vim.keymap.set("n", "<leader>vat", "lF<v/\\/><CR>", { desc = "Visual mark aroud self closing tag" })
-vim.keymap.set("n", "<leader>yat", "lF<v/\\/><CR>y", { desc = "Yank around self closing tag" })
-vim.keymap.set("n", "<leader><leader>yat", "lF<v/\\/><CR>\"+y", { desc = "Yank around self closing tag to OS registry" })
-vim.keymap.set("n", "<leader>dat", "lF<v/\\/><CR>d", { desc = "Delete around self closing tag" })
+
+vim.cmd [[
+function! JSXIsSelfCloseTag(mode)
+  let l:line_number = line(".")
+  let l:line = getline(".")
+  let l:tag_name = matchstr(matchstr(line, "<\\w\\+"), "\\w\\+")
+
+  exec "normal! 0f<vat\<esc>"
+
+  cal cursor(line_number, 1)
+
+  let l:selected_text = join(getline(getpos("'<")[1], getpos("'>")[1]))
+
+  let l:match_tag = matchstr(matchstr(selected_text, "</\\w\\+>*$"), "\\w\\+")
+
+  return tag_name != match_tag
+endfunction
+
+function! JSXSelectTag(mode)
+  if JSXIsSelfCloseTag(a:mode)
+    if a:mode == "v"
+      exec "normal! \<esc>0f<v/\\/>$\<cr>l"
+    else
+      exec "normal! \<esc>0f<v/\\/>$\<cr>l" . a:mode
+    endif
+  else
+    exec "normal! \<esc>0f<" . a:mode . "at"
+  end
+endfunction
+
+nnoremap vat :call JSXSelectTag("v")<CR>
+nnoremap yat :call JSXSelectTag("y")<CR>
+nnoremap dat :call JSXSelectTag("d")<CR>
+nnoremap cat :call JSXSelectTag("v")<CR>c
+]]
 
 -- --  surroundings
 -- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(((-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
@@ -136,11 +215,45 @@ vim.keymap.set("n", "<leader>cæ", ":%s/├ª/æ/g<CR>", { desc = "Correct æ" }
 vim.keymap.set("n", "<leader>cø", ":%s/├╕/ø/g<CR>", { desc = "Correct ø" })
 vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" })
 
+
 --------------------------------------------------------
 -- SNIPPETS
 --------------------------------------------------------
 
 -- vim.keymap.set("n", "<leader>colu", ":read ~/.config/nvim/snippets/columns.html<CR>", { desc = " Add HTML columns" })
+
+
+--------------------------------------------------------
+-- TRANSLATION
+--------------------------------------------------------
+
+
+-- SELECT NEXT TRANSLATION
+
+vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next translation" })
+vim.keymap.set("v", "<leader>tt", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
+vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>\"vi\"", { desc = "Select next translation (from visual mode)" })
+vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"vi\"", { desc = "Select next translation (from insert mode)" })
+
+
+-- POPULATE TRANSLATION WITH KEY
+
+vim.keymap.set("v", "<C-x>", "<esc>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/ /g<CR>", { desc = "Populate translation with key" }) -- "TRANSLATION_KEY_HERE": "Translation key here"
+
+
+-- SELECT NEXT TRANSLATION AND ACTION
+
+vim.keymap.set("n", "<leader>tx", "/__STRING<CR>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/ /g<CR>",
+  { desc = "Select next translation and populate with key" })
+vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Translation" }) -- "TRANSLATION_KEY_HERE": ""
+
+
+-- vim.keymap.set("n", "<leader>t5", "/__STRING<CR>BByi\"Wvi\"pgvu~gv:s/\\%V_/ /g<CR>",
+--   { desc = "Key-populate next Translation" })
+
+-- -- -- translation
+-- vim.keymap.set("v", "<leader>t5", ":s/\\%V /_/g<CR>gvUit('<esc>ea')<esc>:nohlsearch<CR>",
+--   { desc = "Turn regular string into t('TRANSLATION_KEY')" })
 
 
 --------------------------------------------------------
@@ -175,15 +288,17 @@ vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 
 -- QUICK FIX LIST NAVIGATION
 
-vim.keymap.set("n", "<A-a>", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<A-q>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<down>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<up>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<leader><down>", "<cmd>cnfile<CR>", { desc = "Next file" })
+vim.keymap.set("n", "<leader><up>", "<cmd>cpfile<CR>", { desc = "Prev file" })
 -- vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 
 -- -- indenting
-vim.keymap.set("v", ">", ">gv", { desc = "add indent" })
-vim.keymap.set("v", "<", "<gv", { desc = "remove indent" })
+vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
+vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
 
 --------------------------------------------------------
@@ -205,11 +320,30 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 
 -- vim.keymap.set("n", "<C-d>", "<C-d>", { desc = "Scroll page down" })
 -- vim.keymap.set("n", "<C-u>", "<C-u>", { desc = "Scroll page up" })
-vim.keymap.set("n", "<C-d>", "23j", { desc = "Scroll page down" })
-vim.keymap.set("n", "<C-u>", "23k", { desc = "Scroll page up" })
+vim.keymap.set({ "n", "v" }, "<C-d>", "23j", { desc = "Scroll page down" })
+vim.keymap.set({ "n", "v" }, "<C-u>", "23k", { desc = "Scroll page up" })
 
-vim.keymap.set("n", "<C-e>", "11j", { desc = "Scroll down" })
-vim.keymap.set("n", "<C-y>", "11k", { desc = "Scroll up" })
+vim.keymap.set({ "n", "v" }, "<C-e>", "8j", { desc = "Scroll down" })
+vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
+
+
+-- SEARCH & JUMP-TO
+
+vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
+vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
+vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
+vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
+vim.keymap.set("n", "<leader>in", "gg/interface .*Props {<CR>:nohlsearch<CR>", { desc = "Go to props" })
+vim.keymap.set("n", "<leader>ex", "gg/export<CR>:nohlsearch<CR>", { desc = "Go to component definition" })
+
+
+
+-- vim.keymap.set("o", "ar", "a]")
+-- vim.keymap.set("o", "ir", "i]")
+
+-- vim.keymap.set("n", "<leader>var", "varV", { desc = "Select lines around r" })
+-- vim.keymap.set("n", "<leader>yar", "varVy", { desc = "Yank lines around r" })
+-- vim.keymap.set("n", "<leader>dar", "varVd", { desc = "Delete lines around r" })
 
 
 -- GIT NAVIGATION
@@ -219,7 +353,7 @@ vim.keymap.set("n", "<C-y>", "11k", { desc = "Scroll up" })
 
 -- FILE NAVIGATION
 
--- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 
 --------------------------------------------------------
@@ -253,19 +387,14 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 --------------------------------------------------------
 
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
-vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Populate next Translation" })
-vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>\"_ci\"", { desc = "Populate next translation (from insert mode)" })
-vim.keymap.set("n", "<leader>no", ":nohlsearch<CR>", { desc = "Remove search highlights" })
--- vim.keymap.set("v", "<leader>t5", "ysa'bit~~", { desc = "Turn regular string into t('TRANSLATION_KEY')" })
+vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
--- vim.keymap.set("n", "<leader>classt", "f{a`${<esc>f}i}`<esc>B", { desc = "{classes.___} -> {`${classes.___} `}" })
--- vim.keymap.set("n", "<leader>classu", "f`xxxf}xxB", { desc = "{`${classes.___}`} -> {classes.___}" })
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" })
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
-vim.keymap.set('n', '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
+vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
   { desc = "Yank path to current file", noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
-vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!", { desc = "available shortcut" })
+vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
 vim.keymap.set("n", "<leader>vf", "%", { desc = "matchit %", noremap = true })

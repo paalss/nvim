@@ -1,5 +1,5 @@
 -- vim.keymap.set("n", "<leader>gt", ":Git<CR>", { desc = "Open Git – Fugitive" }) -- TODO: disable if it's unnecessary
--- vim.keymap.set("n", "<leader>gf", ":Gwrite<CR>", { desc = "Write and stage buffer" }) -- TODO: disable if superseded by gitsign's stage_buffer
+-- vim.keymap.set("n", "<leader>fs", ":Gwrite<CR>", { desc = "Save and stage file (write and add buffer)" }) -- same (almost?) as gitsign's stage_buffer
 -- vim.keymap.set("n", "<leader>gx", ":Gwread<CR>", { desc = "Revert uncommited changes" })
 
 
@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>cw", ":G commit --reword<CR>", { desc = "Git commit
 
 -- -- status
 vim.keymap.set("n", "\\glo", ":G log<CR>", { desc = "Show commit history (Fugitive)" })
-vim.keymap.set("n", "\\lgp", ":G log %<CR>", { desc = "Show commit history current file (Fugitive)" })
+vim.keymap.set("n", "\\lgp", ":G log %<CR>", { desc = "Show commit history for current file (Fugitive)" })
 vim.keymap.set("n", "\\gb", ":G branch<CR>", { desc = "Show git branches (Fugitive)" })
 vim.keymap.set("n", "\\tb", ":G blame<CR>", { desc = "Show git blame for all lines (Fugitive)" })
 

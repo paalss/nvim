@@ -40,14 +40,14 @@ require('gitsigns').setup {
     -- map('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Stage hunk" })
     map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Reset hunk" })
 
-    -- map('n', '<leader>hS', gs.stage_buffer, { desc = "Stage buffer" })
-    -- map('n', '<leader>hR', gs.reset_buffer, { desc = "Reset buffer" })
+    -- map('n', '<leader>bS', gs.stage_buffer, { desc = "Stage buffer" }) -- Commented out: More or less same as Fugitive's :Gwrite
+    -- map('n', '<leader>bR', gs.reset_buffer, { desc = "Reset buffer" })
 
     -- -- view
     -- map('n', '<leader>hp', gs.preview_hunk_inline, { desc = "Preview hunk" })
     map('n', '<leader>hp', gs.preview_hunk, { desc = "Preview hunk" })
     map('n', '<leader>hb', function() gs.blame_line { full = true } end)
-    map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
+    map('n', '<leader>tb', ':Gitsigns blame_line<CR>', { desc = "Show git blame popup (Gitsigns)" })
     -- map('n', '<leader>tbb', gs.toggle_current_line_blame, { desc = "Show git blame on line (Gitsigns)" })
     map('n', '<leader>hd', gs.diffthis)
     map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "Diffthis 2" })

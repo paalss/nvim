@@ -27,7 +27,8 @@ local plugins = {
   -- {
   --   'ThePrimeagen/vim-be-good'
   -- },
-  { 'https://github.com/adelarsq/vim-matchit' },
+  { 'wellle/targets.vim' },
+  { 'adelarsq/vim-matchit' },
   -- {
   --   'stevearc/conform.nvim',
   --   branch = "nvim-0.9",
@@ -48,7 +49,7 @@ local plugins = {
   { 'TamaMcGlinn/quickfixdd' },
   { 'sbdchd/neoformat' },
   -- { 'shortcuts/no-neck-pain.nvim',            version = "*" },
-  -- { 'RRethy/vim-illuminate' },
+  { 'RRethy/vim-illuminate', enabled = false },
   { 'farmergreg/vim-lastplace' },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -82,12 +83,6 @@ local plugins = {
   -- 'stevearc/dressing.nvim',
   -- opts = {},
   -- pin = true
-  -- },
-  -- {
-  --   "folke/trouble.nvim",
-  --   pin = true,
-  --   dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   opts = {},
   -- },
   -- {
   --   'smjonas/live-command.nvim',
@@ -163,7 +158,7 @@ local plugins = {
       require("nvim-autopairs").setup {}
     end
   },
-  { 'djoshea/vim-autoread',            pin = true },
+  { 'djoshea/vim-autoread', pin = true },
   {
     'nvim-telescope/telescope.nvim',
     version = '0.1.1',
@@ -176,8 +171,8 @@ local plugins = {
     "jasonpanosso/harpoon-tabline.nvim",
     dependencies = { "ThePrimeagen/harpoon" }
   },
-  { 'ThePrimeagen/harpoon',          pin = true },
-  { 'tpope/vim-surround',            pin = true },
+  { 'ThePrimeagen/harpoon',   pin = true },
+  { 'tpope/vim-surround',     pin = true },
   -- {
   --   "kylechui/nvim-surround",
   --   version = "*", -- Use for stability; omit to  `main` branch for the latest features
@@ -188,7 +183,7 @@ local plugins = {
   --     })
   --   end
   -- },
-  { 'sindrets/diffview.nvim',        pin = true },
+  { 'sindrets/diffview.nvim', pin = true },
   -- {
   --   "mg979/vim-visual-multi",
   --   pin = true,
@@ -207,7 +202,7 @@ local plugins = {
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
   -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
   -- { 'martinsione/darkplus.nvim',   pin = true },
-  -- { 'bignimbus/pop-punk.vim',      pin = true },
+  { 'bignimbus/pop-punk.vim',      pin = true },
   -- { "EdenEast/nightfox.nvim" },
   -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
   {
@@ -232,7 +227,7 @@ local plugins = {
   -- 	opts = {},
   -- },
   -- { 'mbbill/undotree',    pin = true },
-  { 'tpope/vim-fugitive', pin = true },
+  { 'tpope/vim-fugitive',   pin = true },
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
