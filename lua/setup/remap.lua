@@ -149,7 +149,7 @@ vim.keymap.set("n", "<leader>vl", "0v$", { desc = "Visual mark Line (you can use
 --                        |-cursor here
 
 vim.cmd [[
-function! JSXIsSelfCloseTag()
+function! JSXIsSelfCloseTag(mode)
   let l:line_number = line(".")
   let l:line = getline(".")
   let l:tag_name = matchstr(matchstr(line, "<\\w\\+"), "\\w\\+")
@@ -165,15 +165,30 @@ function! JSXIsSelfCloseTag()
   return tag_name != match_tag
 endfunction
 
-function! JSXSelectTag()
-  if JSXIsSelfCloseTag()
-    exec "normal! \<esc>0f<v/\\/>$\<cr>l"
+function! JSXSelectTag(mode)
+  if JSXIsSelfCloseTag(a:mode)
+    if a:mode == "v"
+      exec "normal! \<esc>0f<v/\\/>$\<cr>l"
+    else
+      if a:mode == "c"
+        exec "normal! \<esc>0f<v/\\/>$\c"
+      else
+        exec "normal! \<esc>0f<v/\\/>$\<cr>l" . a:mode
+      endif
+    endif
   else
-    exec "normal! \<esc>0f<vat"
+    if a:mode == "c"
+      exec "normal! \<esc>0f<vat"
+    else
+      exec "normal! \<esc>0f<" . a:mode . "at"
+    endif
   end
 endfunction
 
-nnoremap vat :call JSXSelectTag()<CR>
+nnoremap vat :call JSXSelectTag("v")<CR>
+nnoremap yat :call JSXSelectTag("y")<CR>
+nnoremap dat :call JSXSelectTag("d")<CR>
+nnoremap cat :call JSXSelectTag("v")<CR>c
 ]]
 
 -- --  surroundings
