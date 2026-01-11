@@ -160,6 +160,41 @@ vim.keymap.set("n", "<leader>yat", "lF<v/\\/><CR>y", { desc = "Yank around self 
 vim.keymap.set("n", "<leader><leader>yat", "lF<v/\\/><CR>\"+y", { desc = "Yank around self closing tag to OS registry" })
 vim.keymap.set("n", "<leader>dat", "lF<v/\\/><CR>d", { desc = "Delete around self closing tag" })
 
+vim.cmd [[
+function! JSXIsSelfCloseTag(mode)
+  let l:line_number = line(".")
+  let l:line = getline(".")
+  let l:tag_name = matchstr(matchstr(line, "<\\w\\+"), "\\w\\+")
+
+  exec "normal! 0f<vat\<esc>"
+
+  cal cursor(line_number, 1)
+
+  let l:selected_text = join(getline(getpos("'<")[1], getpos("'>")[1]))
+
+  let l:match_tag = matchstr(matchstr(selected_text, "</\\w\\+>*$"), "\\w\\+")
+
+  return tag_name != match_tag
+endfunction
+
+function! JSXSelectTag(mode)
+  if JSXIsSelfCloseTag(a:mode)
+    if a:mode == "v"
+      exec "normal! \<esc>0f<v/\\/>$\<cr>l"
+    else
+      exec "normal! \<esc>0f<v/\\/>$\<cr>l" . a:mode
+    endif
+  else
+    exec "normal! \<esc>0f<" . a:mode . "at"
+  end
+endfunction
+
+nnoremap vat :call JSXSelectTag("v")<CR>
+nnoremap yat :call JSXSelectTag("y")<CR>
+nnoremap dat :call JSXSelectTag("d")<CR>
+nnoremap cat :call JSXSelectTag("v")<CR>c
+]]
+
 -- --  surroundings
 -- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(((-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
 -- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
@@ -298,6 +333,13 @@ vim.keymap.set({ "n", "v" }, "<C-e>", "8j", { desc = "Scroll down" })
 vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
 
+-- SEARCH & JUMP-TO
+
+vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
+vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
+vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
+vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
+
 
 
 -- vim.keymap.set("o", "ar", "a]")
@@ -334,6 +376,7 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split dow
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
 
+vim.keymap.set("n", "<A-w>", "<C-w>w", { desc = "Go to next split" })
 
 -- add colorcolumn only for commit messages
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
@@ -350,16 +393,11 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
-vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
-vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
-vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
-vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
-
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below" })
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
   { desc = "Yank path to current file", noremap = true, silent = true })
