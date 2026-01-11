@@ -160,6 +160,8 @@ vim.keymap.set("n", "<leader>yat", "lF<v/\\/><CR>y", { desc = "Yank around self 
 vim.keymap.set("n", "<leader><leader>yat", "lF<v/\\/><CR>\"+y", { desc = "Yank around self closing tag to OS registry" })
 vim.keymap.set("n", "<leader>dat", "lF<v/\\/><CR>d", { desc = "Delete around self closing tag" })
 
+-- mac: self closing functionality fungerer bare når nvim er i tmux?? Det samme gjelder vanlig vim. Dette skjønner jeg ikke
+-- men på WSL fungerer det
 vim.cmd [[
 function! JSXIsSelfCloseTag(mode)
   let l:line_number = line(".")
