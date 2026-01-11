@@ -227,7 +227,6 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 -- TRANSLATION
 --------------------------------------------------------
 
-
 -- SELECT NEXT TRANSLATION
 
 vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next translation" })
@@ -333,7 +332,6 @@ vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
-vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<leader>C", ":let @a = expand('%:t:r')<CR> :execute '/const ' . @a<CR>:nohlsearch<CR>",
   { desc = "Jump to main component" })
 
@@ -357,13 +355,16 @@ vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 
 --------------------------------------------------------
--- SPLIT MANAGEMENT
+-- PANE MANAGEMENT
 --------------------------------------------------------
 
+-- navigate panes
 -- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 -- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below split" })
 -- vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to above split" })
 -- vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
+
+-- resize panes
 vim.keymap.set("n", "<C-Up>", "<cmd>resize -4<CR>", { desc = "Resize split up" })
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split down" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
