@@ -43,6 +43,7 @@ call quickui#menu#install('&Commit', [
 
 call quickui#menu#install('C&ompare', [
       \ [ "Compare with", "" ],
+			\ ["Ma&c\tSPC SPC mac", "DiffviewOpen develop", "Compare with wsl develop"],
 			\ ["Ma&ster\tSPC SPC mas", "DiffviewOpen master", "Compare with master"],
 			\ ["Ma&in\tSPC SPC mai", "DiffviewOpen main", "Compare with main"],
 			\ ["&Develop\tSPC SPC dev", "DiffviewOpen develop", "Compare with develop"],
