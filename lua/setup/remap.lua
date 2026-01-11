@@ -340,6 +340,8 @@ vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
 
+vim.keymap.set("n", "<leader>C", ":let @a = expand('%:t:r')<CR> :execute '/const ' . @a<CR>:nohlsearch<CR>",
+  { desc = "Jump to main component" })
 
 
 -- vim.keymap.set("o", "ar", "a]")
