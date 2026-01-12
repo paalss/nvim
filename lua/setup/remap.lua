@@ -326,8 +326,6 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 
 -- CODE NAVIGATION
 
--- vim.keymap.set("n", "<C-d>", "<C-d>", { desc = "Scroll page down" })
--- vim.keymap.set("n", "<C-u>", "<C-u>", { desc = "Scroll page up" })
 vim.keymap.set({ "n", "v" }, "<C-d>", "23j", { desc = "Scroll page down" })
 vim.keymap.set({ "n", "v" }, "<C-u>", "23k", { desc = "Scroll page up" })
 
@@ -403,8 +401,10 @@ vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highligh
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
-vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
-  { desc = "Yank path to current file", noremap = true, silent = true })
+
+-- vim.keymap.set("n", "<leader>pt", ":echo expand('%:t')<CR>", { desc = "Print path to current file" })
+-- vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
+--   { desc = "Yank path to current file", noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
