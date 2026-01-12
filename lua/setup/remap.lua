@@ -43,12 +43,16 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- BASIC ACTIONS
 --------------------------------------------------------
 
+vim.keymap.set("i", "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
+vim.keymap.set({"n", "v"}, "˛", "0", { desc = "Go to beginning of line" }) -- <A-h>
+vim.keymap.set({"n", "v"}, "ﬁ", "$", { desc = "Go to end of line" }) -- <A-l>
+
 
 
 --------------------------------------------------------
