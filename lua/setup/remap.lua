@@ -40,6 +40,8 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- BASIC ACTIONS
 --------------------------------------------------------
 
+vim.keymap.set("i", "jk", "<esc>", { desc = "Go to insert mode" })
+vim.keymap.set("i", "<esc>", "<nop>", { desc = "Disable esc" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
@@ -217,6 +219,13 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 
 
 --------------------------------------------------------
+-- AUTOCORRECT
+--------------------------------------------------------
+
+vim.cmd[[iabbrev locaing loading]]
+
+
+--------------------------------------------------------
 -- SNIPPETS
 --------------------------------------------------------
 
@@ -382,6 +391,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
+
+-----
 
 --------------------------------------------------------
 -- OTHER
