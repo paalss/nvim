@@ -12,7 +12,7 @@ diffview.setup {
       { "n", "dp",           "dp",                 { desc = "Stage hunk" } },   -- add desc to existing map
       { "n", "do",           "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
       { "n", "<F7>",         "]c",                 { desc = "Go to next hunk" } },
-      { "n", "<leader><F7>", "[c",                 { desc = "Go to prev hunk" } },
+      { "n", "<leader><F7>", "]c",                 { desc = "Go to next hunk (backup incase <F7> doesnt work)" } },
       { "n", "<S-F7>",       "[c",                 { desc = "Go to prev hunk" } },
     },
     file_panel = {
@@ -41,7 +41,7 @@ diffview.setup {
 vim.api.nvim_create_user_command("Glo", "DiffviewFileHistory", {})
 
 -- Git status and close
-vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
+vim.keymap.set("n", "<leader><leader>d", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
 -- vim.keymap.set("n", "<leader>dq", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- Git history
