@@ -399,6 +399,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
+vim.keymap.set("n", "<leader><leader>te", ":terminal", { desc = "open terminal" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character " })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
