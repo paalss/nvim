@@ -119,10 +119,8 @@ lsp.on_attach(function(client, bufnr)
       buffer = bufnr,
       remap = false
     })
-  vim.keymap.set("n", "<C-i>l", function() vim.diagnostic.goto_next() end, { buffer = bufnr, remap = false, desc = "Go to next error" })
-  vim.keymap.set("n", "<C-i>h", function() vim.diagnostic.goto_prev() end, { buffer = bufnr, remap = false, desc = "Go to previous error" })
-  vim.keymap.set("n", "<A-l>", function() vim.diagnostic.goto_next() end, { buffer = bufnr, remap = false, desc = "Go to next error" })
-  vim.keymap.set("n", "<A-h>", function() vim.diagnostic.goto_prev() end, { buffer = bufnr, remap = false, desc = "Go to previous error" })
+  vim.keymap.set("n", "<l", function() vim.diagnostic.goto_next() end, { buffer = bufnr, remap = false, desc = "Go to next error" })
+  vim.keymap.set("n", "<h", function() vim.diagnostic.goto_prev() end, { buffer = bufnr, remap = false, desc = "Go to previous error" })
 
   -- do something
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,

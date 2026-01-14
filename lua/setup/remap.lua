@@ -43,11 +43,11 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 vim.keymap.set("i", "jk", "<esc>", { desc = "Go to insert mode" })
 vim.keymap.set("i", "<esc>", "<nop>", { desc = "Disable esc" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Write/save" })
-vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
-vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
-vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
+vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
+vim.keymap.set({"n", "v"}, "<A-h>", "0", { desc = "Go to beginning of line" }) -- <A-h>
+vim.keymap.set({"n", "v"}, "<A-l>", "$", { desc = "Go to end of line" }) -- <A-l>
 
 
 --------------------------------------------------------
@@ -326,8 +326,6 @@ vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
 
 -- CODE NAVIGATION
 
--- vim.keymap.set("n", "<C-d>", "<C-d>", { desc = "Scroll page down" })
--- vim.keymap.set("n", "<C-u>", "<C-u>", { desc = "Scroll page up" })
 vim.keymap.set({ "n", "v" }, "<C-d>", "23j", { desc = "Scroll page down" })
 vim.keymap.set({ "n", "v" }, "<C-u>", "23k", { desc = "Scroll page up" })
 
@@ -341,8 +339,13 @@ vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
-vim.keymap.set("n", "<leader>C", ":let @a = expand('%:t:r')<CR> :execute '/const ' . @a<CR>:nohlsearch<CR>",
-  { desc = "Jump to main component" })
+vim.keymap.set("n", "<leader>N", "#*", { desc = "search current word (without jumping)" })
+
+-- COMPONENT
+
+-- TODO: prettify commands below. Multilines. Maybe use 'function' and 'end' (lua funciton)
+vim.keymap.set("n", "<leader>I", ":let @a = expand('%:t:r')<CR> :execute '/interface ' . @a<CR>:nohlsearch<CR>", { desc = "Jump to main component's interface" })
+vim.keymap.set("n", "<leader>C", ":let @a = expand('%:t:r')<CR> :execute '/const ' . @a<CR>WW:nohlsearch<CR>", { desc = "Jump to main component" })
 
 
 -- vim.keymap.set("o", "ar", "a]")
@@ -392,13 +395,11 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 
------
-
 --------------------------------------------------------
 -- OTHER
 --------------------------------------------------------
 
-vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character " })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
