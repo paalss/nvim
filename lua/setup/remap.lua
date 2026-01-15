@@ -321,8 +321,8 @@ vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
 vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
 vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
-vim.keymap.set("n", "<<", "<nop>", { desc = "Disable indent" })
-vim.keymap.set("n", ">>", "<nop>", { desc = "Disable indent" })
+vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
+vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
 
 
 --------------------------------------------------------
