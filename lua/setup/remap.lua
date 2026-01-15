@@ -46,8 +46,8 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 vim.keymap.set("i", "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set("i", "<esc>", "<nop>", { desc = "Disable escape button" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Write/save" })
-vim.keymap.set("n", "<leader>wa", ":wa<CR>", { desc = "Write all files" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
+vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
@@ -317,8 +317,12 @@ vim.keymap.set("n", "<leader><up>", "<cmd>cpfile<CR>", { desc = "Prev file" })
 
 
 -- -- indenting
+vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
+vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
 vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
+vim.keymap.set("n", "<<", "<nop>", { desc = "Disable indent" })
+vim.keymap.set("n", ">>", "<nop>", { desc = "Disable indent" })
 
 
 --------------------------------------------------------
