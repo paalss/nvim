@@ -41,7 +41,7 @@ diffview.setup {
 vim.api.nvim_create_user_command("Glo", "DiffviewFileHistory", {})
 
 -- Git status and close
-vim.keymap.set("n", "<leader><leader>d", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
+vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
 -- vim.keymap.set("n", "<leader>dq", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- Git history
