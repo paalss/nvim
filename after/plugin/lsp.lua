@@ -45,32 +45,27 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-u>'] = cmp.mapping.scroll_docs(4),
     ['<C-s>'] = cmp.mapping.abort(),
-    ['<C-Space>'] = cmp.mapping.complete {},
+    -- ['<C-Space>'] = cmp.mapping.complete {},
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false
     },
-    -- navigate to next, text previewed in file
-    -- Enter will create full snippet
-    -- Any other than Tab or Enter will leave preview as is
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
+    ['<A-l>'] = cmp.mapping(function()
+      luasnip.jump(1)
     end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
+    ['<A-h>'] = cmp.mapping(function()
+      luasnip.jump(-1)
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
       end
-    end, { 'i', 's' })
+    end, { 'i', 's' }),
+    ['<Tab>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_next_item()
+      end
+    end, { 'i' })
   },
   sources = { {
     name = 'nvim_lsp'
@@ -80,6 +75,13 @@ cmp.setup {
     name = 'path'
   } }
 }
+
+
+
+
+
+
+
 
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
@@ -119,8 +121,10 @@ lsp.on_attach(function(client, bufnr)
       buffer = bufnr,
       remap = false
     })
-  vim.keymap.set("n", "<l", function() vim.diagnostic.goto_next() end, { buffer = bufnr, remap = false, desc = "Go to next error" })
-  vim.keymap.set("n", "<h", function() vim.diagnostic.goto_prev() end, { buffer = bufnr, remap = false, desc = "Go to previous error" })
+  vim.keymap.set("n", "<l", function() vim.diagnostic.goto_next() end,
+    { buffer = bufnr, remap = false, desc = "Go to next error" })
+  vim.keymap.set("n", "<h", function() vim.diagnostic.goto_prev() end,
+    { buffer = bufnr, remap = false, desc = "Go to previous error" })
 
   -- do something
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
