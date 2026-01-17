@@ -344,8 +344,8 @@ vim.keymap.set("n", "<leader>N", "#*", { desc = "search current word (without ju
 -- COMPONENT
 
 -- TODO: prettify commands below. Multilines. Maybe use 'function' and 'end' (lua funciton)
-vim.keymap.set("n", "<leader>I", ":let @a = expand('%:t:r')<CR> :execute '/interface ' . @a<CR>:nohlsearch<CR>", { desc = "Jump to main component's interface" })
-vim.keymap.set("n", "<leader>C", ":let @a = expand('%:t:r')<CR> :execute '/const ' . @a<CR>WW:nohlsearch<CR>", { desc = "Jump to main component" })
+vim.keymap.set("n", "<leader>I", ":let @a = @/<CR>:execute '/interface ' . expand('%:t:r')<CR>:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component's interface" })
+vim.keymap.set("n", "<leader>C", ":let @a = @/<CR>:execute '/const ' . expand('%:t:r')<CR>0WW:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component" })
 
 
 -- vim.keymap.set("o", "ar", "a]")
