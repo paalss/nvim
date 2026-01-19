@@ -123,7 +123,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<l", function() vim.diagnostic.goto_next() end, { buffer = bufnr, remap = false, desc = "Go to next error" })
   vim.keymap.set("n", "<h", function() vim.diagnostic.goto_prev() end, { buffer = bufnr, remap = false, desc = "Go to previous error" })
 
-  vim.keymap.set("n", "<leader>vas", function() vim.lsp.buf.references() end, { desc = "" })
+  -- vim.keymap.set("n", "<leader>vas", function() vim.lsp.buf.references() end, { desc = "" })
 
   -- vim.keymap.set("n", "<leader><leader>*", function() vim.diagnostic.goto_prev() end, { buffer = bufnr, remap = false, desc = "Go to previous error" })
 
