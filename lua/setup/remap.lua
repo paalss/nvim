@@ -48,8 +48,7 @@ vim.keymap.set("i", "<esc>", "<nop>", { desc = "Disable escape button" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
-vim.keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Write and quit" })
-vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
+-- vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 vim.keymap.set({"n", "v"}, "˛", "0", { desc = "Go to beginning of line" }) -- <A-h>
 vim.keymap.set({"n", "v"}, "ﬁ", "$", { desc = "Go to end of line" }) -- <A-l>
@@ -104,7 +103,7 @@ vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
 vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry (Y)" })
 -- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
-vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
+-- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
 -- -- s
 vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
