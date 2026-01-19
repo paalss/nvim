@@ -50,16 +50,17 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false
     },
-    -- navigate to next, text previewed in file
-    -- Enter will create full snippet
-    -- Any other than Tab or Enter will leave preview as is
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    -- ﬁ: <A-l>
+    ['ﬁ'] = cmp.mapping(function()
+      luasnip.jump(1)
+    end, { 'i', 's' }),
+    -- ˛: <A-h>
+    ['˛'] = cmp.mapping(function()
+      luasnip.jump(-1)
+    end, { 'i', 's' }),
+    ['<Tab>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
       end
     end, { 'i', 's' }),
     ['<S-Tab>'] = cmp.mapping(function(fallback)
@@ -70,7 +71,7 @@ cmp.setup {
       else
         fallback()
       end
-    end, { 'i', 's' })
+    end, { 'i', 's' }),
   },
   sources = { {
     name = 'nvim_lsp'
