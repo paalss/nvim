@@ -14,13 +14,13 @@ require("tokyonight").setup({
     colors.bg_highlight="#12151e"
     colors.diff = {
       add = "#194a0e",
-      change = "#523a0a",
+      change = "#684e00",
       delete = "#58171d",
       text = "#564343"
     }
     colors.git = {
       add = "#12dd00",
-      change = "#32290f",
+      change = "#f7a502",
       delete = "#ff001e",
       ignore = "#71737b"
     }
