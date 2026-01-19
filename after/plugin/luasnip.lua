@@ -68,19 +68,19 @@ ls.add_snippets("markdown", {
 -- :set filetype
 
 ls.add_snippets("lua", {
-  s("nmap", {
+  s("nnoremap", {
     t('vim.keymap.set("n", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
   })
 })
 
 ls.add_snippets("lua", {
-  s("imap", {
+  s("inoremap", {
     t('vim.keymap.set("i", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
   })
 })
 
 ls.add_snippets("lua", {
-  s("omap", {
+  s("onoremap", {
     t('vim.keymap.set("o", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
   })
 })
