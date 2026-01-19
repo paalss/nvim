@@ -359,9 +359,9 @@ vim.keymap.set("n", "<leader>N", "#*", { desc = "search current word (without ju
 --- COMPONENT
 
 -- TODO: prettify commands below. Multilines. Maybe use 'function' and 'end' (lua funciton)
-vim.keymap.set("n", "<leader>I", ":let @f = expand('%:t:r')<CR>:execute '/interface ' . @f<CR>:nohlsearch<CR>", { desc = "Jump to component interface named after this file" })
-vim.keymap.set("n", "<leader>C", ":let @f = expand('%:t:r')<CR>:execute '/const ' . @f<CR>0WW:nohlsearch<CR>", { desc = "Jump to component named after this file" })
-vim.keymap.set("n", "<leader>R", "/ classes.root", { desc = "Jump to returns" })
+vim.keymap.set("n", "<leader>I", ":let @a = @/<CR>:execute '/interface ' . expand('%:t:r')<CR>:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component's interface" })
+vim.keymap.set("n", "<leader>C", ":let @a = @/<CR>:execute '/const ' . expand('%:t:r')<CR>0WW:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component" })
+vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:let @/ = @a<CR>", { desc = "Jump to main return" })
 
 -- vim.keymap.set("o", "ar", "a]")
 -- vim.keymap.set("o", "ir", "i]")
