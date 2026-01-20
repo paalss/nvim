@@ -217,13 +217,13 @@ local plugins = {
   -- 	opts = {},
   -- },
   -- { 'mbbill/undotree',    pin = true },
-  { 'tpope/vim-fugitive',   pin = true },
-  {
-    "kdheepak/lazygit.nvim",
-    -- optional for floating window border decoration
-    pin = true,
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
+  -- { 'tpope/vim-fugitive',   pin = true },
+  -- {
+  --   "kdheepak/lazygit.nvim",
+  --   -- optional for floating window border decoration
+  --   pin = true,
+  --   dependencies = { "nvim-lua/plenary.nvim" }
+  -- },
   { 'tpope/vim-commentary', pin = true },
   {
     "iamcco/markdown-preview.nvim",

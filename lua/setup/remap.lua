@@ -55,29 +55,31 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 vim.keymap.set({"n", "v"}, "˛", "0", { desc = "Go to beginning of line" }) -- <A-h>
 vim.keymap.set({"n", "v"}, "ﬁ", "$", { desc = "Go to end of line" }) -- <A-l>
 
+vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
+vim.keymap.set("n", "<leader>v", "\"", { desc = "double quote" })
 
 
 --------------------------------------------------------
 -- OPERATOR PENDING
 --------------------------------------------------------
 
-vim.keymap.set("o", "ig", "i\"", { desc = "Inside \"" }) -- targets.vim: iq = inside any quote (single, double, backtick...)
-vim.keymap.set("o", "ag", "a\"", { desc = "Around \"" })
+vim.keymap.set("o", "iv", "i\"", { desc = "Inside \"" }) -- targets.vim: iq = inside any quote (single, double, backtick...)
+vim.keymap.set("o", "av", "a\"", { desc = "Around \"" })
 
-vim.keymap.set("o", "aG", "a\'", { desc = "Inside \'" })
-vim.keymap.set("o", "iG", "i\'", { desc = "Around \'" })
+vim.keymap.set("o", "aV", "a\'", { desc = "Inside \'" })
+vim.keymap.set("o", "iV", "i\'", { desc = "Around \'" })
 
-vim.keymap.set("o", "iv", "i[", { desc = "Inside [" })
-vim.keymap.set("o", "av", "a[", { desc = "Around [" })
+vim.keymap.set("o", "ic", "i[", { desc = "Inside [" })
+vim.keymap.set("o", "ac", "a[", { desc = "Around [" })
 
-vim.keymap.set("v", "ig", "i\"", { desc = "Inside \"" })
-vim.keymap.set("v", "ag", "a\"", { desc = "Around \"" })
+vim.keymap.set("v", "iv", "i\"", { desc = "Inside \"" })
+vim.keymap.set("v", "av", "a\"", { desc = "Around \"" })
 
-vim.keymap.set("v", "aG", "a\'", { desc = "Inside \'" })
-vim.keymap.set("v", "iG", "i\'", { desc = "Around \'" })
+vim.keymap.set("v", "aV", "a\'", { desc = "Inside \'" })
+vim.keymap.set("v", "iV", "i\'", { desc = "Around \'" })
 
-vim.keymap.set("v", "iv", "i[", { desc = "Inside [" })
-vim.keymap.set("v", "av", "a[", { desc = "Around [" })
+vim.keymap.set("v", "ic", "i[", { desc = "Inside [" })
+vim.keymap.set("v", "ac", "a[", { desc = "Around [" })
 
 
 --------------------------------------------------------
@@ -429,8 +431,6 @@ vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print pat
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
-
-vim.keymap.set("n", "<leader>vf", "%", { desc = "matchit %", noremap = true })
 
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
