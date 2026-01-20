@@ -45,6 +45,8 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
 vim.keymap.set("i", "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set("i", "<esc>", "<nop>", { desc = "Disable escape button" })
+vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
+
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
