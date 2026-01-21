@@ -81,6 +81,8 @@ vim.keymap.set("v", "iV", "i\'", { desc = "Around \'" })
 vim.keymap.set("v", "ic", "i[", { desc = "Inside [" })
 vim.keymap.set("v", "ac", "a[", { desc = "Around [" })
 
+-- vim.keymap.set("o", "et", ":<c-u>:normal! ?<<CR>v/\\/><CR>", { desc = "Select self closing tag" })
+
 
 --------------------------------------------------------
 -- YANKING, DELETING & PASTING
