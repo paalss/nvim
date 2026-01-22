@@ -1,3 +1,8 @@
+-- wrong neotree colors startup. background text is invisible
+-- se om det er noe github issue på tokyonight ang. neotree
+
+
+
 -- colors reference https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua
 -- nyttig referanse
 -- https://github.com/imvasen/dotfiles-nvim/blob/267bfa7a3d04ee8da8f0dc9a42310ae0768e5674/lua/plugins/tokyonight.lua#L14
@@ -12,6 +17,15 @@ require("tokyonight").setup({
   on_colors = function(colors)
     colors.bg ="#0d0e14"
     colors.bg_highlight="#12151e"
+    -- colors.border = colors.red
+    -- colors.terminal_black = colors.red
+    -- colors.fg = colors.red
+    -- colors.fg_dark = colors.red
+    -- colors.fg_float = colors.red
+    -- colors.fg_gutter = colors.red
+    -- colors.fg_sidebar = colors.red
+    -- colors.bg =colors.red
+    -- colors.bg_highlight=colors.red
     colors.diff = {
       add = "#194a0e",
       change = "#684e00",
