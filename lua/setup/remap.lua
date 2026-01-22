@@ -81,94 +81,24 @@ vim.keymap.set("v", "iV", "i\'", { desc = "Around \'" })
 vim.keymap.set("v", "ic", "i[", { desc = "Inside [" })
 vim.keymap.set("v", "ac", "a[", { desc = "Around [" })
 
+-- Make `y`, `d` and `c` affect...
+
+-- -- entire file
+-- -- -- example: yo, do, co
+vim.keymap.set("o", "o", ":normal! mjgg0VG<CR><esc>`j", { desc = "All" })
+
+-- -- entire line
+-- -- -- example: ylb, dlb
+vim.keymap.set("o", "lb", ":normal! vabV<CR>", { desc = "Line related to `(`" })
+vim.keymap.set("o", "lB", ":normal! vaBV<CR>", { desc = "Line related to `{`" })
+vim.keymap.set("o", "lc", ":normal! va[V<CR>", { desc = "Line related to `[`" })
+vim.keymap.set("o", "lt", ":normal! vatV<CR>", { desc = "Line related to `<tag></tag>`" })
+-- vim.keymap.set("o", "lv", ":normal! va\"V<CR>", { desc = "Line related to `\"`" })
+-- vim.keymap.set("o", "lV", ":normal! va\'V<CR>", { desc = "Line related to `\'`" })
+
+-- self closing tag
 -- vim.keymap.set("o", "et", ":<c-u>:normal! ?<<CR>v/\\/><CR>", { desc = "Select self closing tag" })
-
-
---------------------------------------------------------
--- YANKING, DELETING & PASTING
---------------------------------------------------------
-
-
--- NAVIGATE YANKED REGION
-
-vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
-
-
--- SET PASTE
-
-vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
--- vim.keymap.set("n", "<leader>set", ":set paste!<CR>", { desc = "Set toggle paste" })
-vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
-vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
-  { desc = "Paste from OS registry (\"+p is slow)" })
-
-
--- REGISTERS
-
--- -- unnamed plus / OS registry
-vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
-vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry (Y)" })
--- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
--- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
-
--- -- s
-vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
-
--- -- black hole
-vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
-
-
--- AFFECTED AREA
-
--- -- all text
-vim.keymap.set("n", "‹", "ggVG", { desc = "Mark all" })
-vim.keymap.set("n", "ç", "ggVGc", { desc = "Change all" })
-vim.keymap.set("n", "µ", ":%y<CR>", { desc = "Yank all" })
-vim.keymap.set("n", "<leader>µ", ":%y+<CR>", { desc = "yank all to OS registry" })
-vim.keymap.set("n", "∂", ":%d<CR>", { desc = "delete all" })
-vim.keymap.set("n", "<leader>∂", ":%d+<CR>", { desc = "delete all to OS registry" })
-vim.keymap.set("n", "<leader>pal", "ggVGp", { desc = "paste all" })
-
--- -- line
-vim.keymap.set("n", "-vaB", "vaBV", { desc = "Select lines around B" })
-vim.keymap.set("n", "-yaB", "vaBVy", { desc = "Yank lines around B" })
-vim.keymap.set("n", "-daB", "vaBVd", { desc = "Delete lines around B" })
-vim.keymap.set("n", "-gcaB", "vaBVgc", { desc = "Comment lines around B" })
-
-vim.keymap.set("n", "-vab", "vabV", { desc = "Select lines around b" })
-vim.keymap.set("n", "-yab", "vabVy", { desc = "Yank lines around b" })
-vim.keymap.set("n", "-dab", "vabVd", { desc = "Delete lines around b" })
-vim.keymap.set("n", "-gcab", "vabVgc", { desc = "Comment lines around b" })
-
-vim.keymap.set("n", "-vat", "vatV", { desc = "Select lines around t" })
-vim.keymap.set("n", "-yat", "vatVy", { desc = "Yank lines around t" })
-vim.keymap.set("n", "-dat", "vatVd", { desc = "Delete lines around t" })
-vim.keymap.set("n", "-gcat", "vatVgc", { desc = "Comment lines around t" })
-
-vim.keymap.set("n", "-viB", "viBV", { desc = "Select lines inside B" })
-vim.keymap.set("n", "-yiB", "viBVy", { desc = "Yank lines inside B" })
-vim.keymap.set("n", "-diB", "viBVd", { desc = "Delete lines inside B" })
-vim.keymap.set("n", "-gciB", "viBVgc", { desc = "Comment lines inside B" })
-
-vim.keymap.set("n", "-vib", "vibV", { desc = "Select lines inside b" })
-vim.keymap.set("n", "-yib", "vibVy", { desc = "Yank lines inside b" })
-vim.keymap.set("n", "-dib", "vibVd", { desc = "Delete lines inside b" })
-vim.keymap.set("n", "-gcib", "vibVgc", { desc = "Comment lines inside b" })
-
--- vim.keymap.set("n", "-y", "mo^y$`o", { desc = "Line (-) yank" })
--- vim.keymap.set("n", "-d", "^d$", { desc = "Line (-) delete" })
--- vim.keymap.set("n", "-v", "0v$", { desc = "Line (-) mark (for surround you can always use yss from vim-surround)" })
-vim.keymap.set("n", "<leader>yl", "mo^y$`o", { desc = "Yank Line" })
-vim.keymap.set("n", "<leader><leader>yl", "mo^\"+y$`o", { desc = "Yank Line to OS registry" })
-vim.keymap.set("n", "<leader>dl", "^d$", { desc = "Delete Line" })
-vim.keymap.set("n", "<leader>vl", "0v$", { desc = "Visual mark Line (you can use yss from vim surround)" })
-
--- -- self closing tag: <input onClick={() => something()} />
---                        |-cursor here
-vim.keymap.set("n", "<leader>vat", "lF<v/\\/><CR>", { desc = "Visual mark aroud self closing tag" })
-vim.keymap.set("n", "<leader>yat", "lF<v/\\/><CR>y", { desc = "Yank around self closing tag" })
-vim.keymap.set("n", "<leader><leader>yat", "lF<v/\\/><CR>\"+y", { desc = "Yank around self closing tag to OS registry" })
-vim.keymap.set("n", "<leader>dat", "lF<v/\\/><CR>d", { desc = "Delete around self closing tag" })
+-- vim.keymap.set("o", "st", "", { desc = "selfclosingtag" })
 
 -- mac: self closing functionality fungerer bare når nvim er i tmux?? Det samme gjelder vanlig vim. Dette skjønner jeg ikke
 -- men på WSL fungerer det
@@ -207,11 +137,40 @@ nnoremap dat :call JSXSelectTag("d")<CR>
 nnoremap cat :call JSXSelectTag("v")<CR>c
 ]]
 
--- --  surroundings
--- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(((-- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
--- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
--- vim.keymap.set("n", "<leader>dsl", "mo%dd`odd", { desc = "Delete Surrounding Lines" }) -- det funker ikke å bruke matchit-% i remaps :(
--- vim.keymap.set("n", "<leader>dsa", "%", { desc = "Delete Surrounding Lines" })
+
+
+--------------------------------------------------------
+-- YANKING, DELETING & PASTING
+--------------------------------------------------------
+
+
+-- NAVIGATE YANKED REGION
+
+vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
+
+
+-- SET PASTE
+
+vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
+-- vim.keymap.set("n", "<leader>set", ":set paste!<CR>", { desc = "Set toggle paste" })
+vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
+vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
+  { desc = "Paste from OS registry (\"+p is slow)" })
+
+
+-- REGISTERS
+
+-- -- unnamed plus / OS registry
+vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
+vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry (Y)" })
+-- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
+-- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
+
+-- -- s
+vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
+
+-- -- black hole
+vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
 
 
 --------------------------------------------------------
