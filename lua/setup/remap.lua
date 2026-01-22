@@ -174,17 +174,6 @@ vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
 
 
 --------------------------------------------------------
--- CASING
---------------------------------------------------------
-
--- vim.keymap.set("n", "<leader>snakam", "f_x~", { desc = "snake_case -> camelCase" })
-vim.keymap.set("n", "<leader>ci", "g~i", { desc = "Toggle Case Inside ..." })
-vim.keymap.set("n", "<leader>ca", "g~a", { desc = "Toggle Case Around ..." })
-vim.keymap.set("n", "<leader>cl", "V~", { desc = "Toggle Case Line" })
--- vim.keymap.set("n", "-c", "V~", { desc = "Line (-) toggle case" })
-
-
---------------------------------------------------------
 -- CORRECT NORWEGIAN CHARACTERS
 --------------------------------------------------------
 
@@ -327,13 +316,6 @@ vim.keymap.set("n", "<leader>N", "#*", { desc = "search current word (without ju
 vim.keymap.set("n", "<leader>I", ":let @a = @/<CR>:execute '/interface ' . expand('%:t:r')<CR>:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component's interface" })
 vim.keymap.set("n", "<leader>C", ":let @a = @/<CR>:execute '/const ' . expand('%:t:r')<CR>0WW:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component" })
 vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:let @/ = @a<CR>", { desc = "Jump to main return" })
-
--- vim.keymap.set("o", "ar", "a]")
--- vim.keymap.set("o", "ir", "i]")
-
--- vim.keymap.set("n", "<leader>var", "varV", { desc = "Select lines around r" })
--- vim.keymap.set("n", "<leader>yar", "varVy", { desc = "Yank lines around r" })
--- vim.keymap.set("n", "<leader>dar", "varVd", { desc = "Delete lines around r" })
 
 
 -- GIT NAVIGATION
