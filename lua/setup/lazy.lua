@@ -24,7 +24,7 @@ vim.g.clipboard = {
 vim.g.mapleader = " "
 
 local plugins = {
-  { 'wellle/targets.vim' },
+  -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter hvilken som helst bracket - (, { og [
   { 'adelarsq/vim-matchit' },
   { 'skywind3000/vim-quickui' },
   { 'TamaMcGlinn/quickfixdd' },
