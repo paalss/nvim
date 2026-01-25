@@ -66,8 +66,8 @@ vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 vim.keymap.set("o", "iv", "i\"", { desc = "Inside \"" }) -- targets.vim: iq = inside any quote (single, double, backtick...)
 vim.keymap.set("o", "av", "a\"", { desc = "Around \"" })
 
-vim.keymap.set("o", "aV", "a\'", { desc = "Inside \'" })
-vim.keymap.set("o", "iV", "i\'", { desc = "Around \'" })
+vim.keymap.set("o", "iV", "i\'", { desc = "Inside \'" })
+vim.keymap.set("o", "aV", "a\'", { desc = "Around \'" })
 
 vim.keymap.set("o", "ic", "i[", { desc = "Inside [" })
 vim.keymap.set("o", "ac", "a[", { desc = "Around [" })
@@ -75,8 +75,8 @@ vim.keymap.set("o", "ac", "a[", { desc = "Around [" })
 vim.keymap.set("v", "iv", "i\"", { desc = "Inside \"" })
 vim.keymap.set("v", "av", "a\"", { desc = "Around \"" })
 
-vim.keymap.set("v", "aV", "a\'", { desc = "Inside \'" })
-vim.keymap.set("v", "iV", "i\'", { desc = "Around \'" })
+vim.keymap.set("v", "iV", "i\'", { desc = "Inside \'" })
+vim.keymap.set("v", "aV", "a\'", { desc = "Around \'" })
 
 vim.keymap.set("v", "ic", "i[", { desc = "Inside [" })
 vim.keymap.set("v", "ac", "a[", { desc = "Around [" })
