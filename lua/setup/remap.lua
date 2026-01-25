@@ -78,11 +78,18 @@ vim.keymap.set("v", "iV", "i\'", { desc = "Around \'" })
 vim.keymap.set("v", "ic", "i[", { desc = "Inside [" })
 vim.keymap.set("v", "ac", "a[", { desc = "Around [" })
 
--- Make `y`, `d` and `c` affect...
+-- "operator pending ish"
 
 -- -- entire file
--- -- -- example: yo, do, co
-vim.keymap.set("o", ",", ":normal! mjgg0VG<CR><esc>`j", { desc = "All" })
+-- -- -- example: d, c, y, v,
+vim.keymap.set("o", ",", ":normal! gg0VG<CR>", { desc = "Entire buffer" })
+vim.keymap.set("n", "y,", ":%y<CR>", { desc = "yank entire buffer" })
+vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
+
+-- vim.keymap.set("o", ",", function()
+  -- vim.cmd.normal("gg0VG")
+  -- if vim.fn.mode() == 'd' then
+-- end, { desc = "Entire buffer" })
 
 -- -- entire line
 -- -- -- example: ylb, dlb
