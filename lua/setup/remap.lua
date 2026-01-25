@@ -17,20 +17,17 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Ba
 -- LINE MANAGEMENT
 --------------------------------------------------------
 
--- enum neovim mac
--- -- insert mode -> option + j = √
--- -- insert mode -> option + k = ª
 
 -- MOVE LINE
 
-vim.keymap.set("n", "ª", ":m-2<CR>", { desc = "Move line up" })
-vim.keymap.set("n", "√", ":m+<CR>", { desc = "Move line down" })
+vim.keymap.set("n", "ª", ":m-2<CR>", { desc = "A-k: Move line up" })
+vim.keymap.set("n", "√", ":m+<CR>", { desc = "A-j: Move line down" })
 
 
 -- MOVE LINES
 
-vim.keymap.set("v", "ª", ":m '<-2<CR>gv=gv", { desc = "Move line(s) up" })
-vim.keymap.set("v", "√", ":m '>+1<CR>gv=gv", { desc = "Move line(s) down" })
+vim.keymap.set("v", "ª", ":m '<-2<CR>gv=gv", { desc = "A-k: Move line(s) up" })
+vim.keymap.set("v", "√", ":m '>+1<CR>gv=gv", { desc = "A-j: Move line(s) down" })
 
 
 -- ADD NEW LINE
@@ -52,11 +49,14 @@ vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 -- vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
-vim.keymap.set({"n", "v"}, "˛", "0", { desc = "Go to beginning of line" }) -- <A-h>
-vim.keymap.set({"n", "v"}, "ﬁ", "$", { desc = "Go to end of line" }) -- <A-l>
+vim.keymap.set({"n", "v"}, "˛", "0", { desc = "A-h: Go to beginning of line" }) -- <A-h>
+vim.keymap.set({"n", "v"}, "ﬁ", "$", { desc = "A-l: Go to end of line" }) -- <A-l>
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>v", "\"", { desc = "double quote" })
+vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
+vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
+vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 
 
 --------------------------------------------------------
@@ -81,18 +81,34 @@ vim.keymap.set("v", "iV", "i\'", { desc = "Around \'" })
 vim.keymap.set("v", "ic", "i[", { desc = "Inside [" })
 vim.keymap.set("v", "ac", "a[", { desc = "Around [" })
 
--- Make `y`, `d` and `c` affect...
+-- "operator pending ish"
 
 -- -- entire file
--- -- -- example: yo, do, co
-vim.keymap.set("o", "o", ":normal! mjgg0VG<CR><esc>`j", { desc = "All" })
+-- -- -- example: d, c, y, v,
+vim.keymap.set("o", ",", ":normal! gg0VG<CR>", { desc = "Entire buffer" })
+vim.keymap.set("n", "y,", ":%y<CR>", { desc = "yank entire buffer" })
+vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
+
+-- vim.keymap.set("o", ",", function()
+  -- vim.cmd.normal("gg0VG")
+  -- if vim.fn.mode() == 'd' then
+-- end, { desc = "Entire buffer" })
 
 -- -- entire line
--- -- -- example: ylb, dlb
-vim.keymap.set("o", "lb", ":normal! vabV<CR>", { desc = "Line related to `(`" })
-vim.keymap.set("o", "lB", ":normal! vaBV<CR>", { desc = "Line related to `{`" })
-vim.keymap.set("o", "lc", ":normal! va[V<CR>", { desc = "Line related to `[`" })
-vim.keymap.set("o", "lt", ":normal! vatV<CR>", { desc = "Line related to `<tag></tag>`" })
+-- -- -- example: yaab, daab, vaab
+-- vim.keymap.set("o", "aab", ":normal! vabV<CR>", { desc = "Line related to `(`" })
+vim.keymap.set("o", "aab", ":normal! vabV<CR>", { desc = "Line related to `(`" })
+vim.keymap.set("v", "aab", ":normal! vabV<CR>", { desc = "Select line related to `(`" })
+
+vim.keymap.set("o", "aaB", ":normal! vaBV<CR>", { desc = "Line related to `{`" })
+vim.keymap.set("v", "aaB", ":normal! vaBV<CR>", { desc = "Select line related to `{`" })
+
+vim.keymap.set("o", "aac", ":normal! va[V<CR>", { desc = "Line related to `[`" })
+vim.keymap.set("v", "aac", ":normal! va[V<CR>", { desc = "Select line related to `[`" })
+
+vim.keymap.set("o", "aat", ":normal! vatV<CR>", { desc = "Line related to `<tag></tag>`" })
+vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to `<tag></tag>`" })
+
 -- vim.keymap.set("o", "lv", ":normal! va\"V<CR>", { desc = "Line related to `\"`" })
 -- vim.keymap.set("o", "lV", ":normal! va\'V<CR>", { desc = "Line related to `\'`" })
 
@@ -154,8 +170,8 @@ vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
 vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
 -- vim.keymap.set("n", "<leader>set", ":set paste!<CR>", { desc = "Set toggle paste" })
 vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
-vim.keymap.set("n", "<leader>po", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
-  { desc = "Paste from OS registry (\"+p is slow)" })
+-- vim.keymap.set("n", "<leader>p", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
+  -- { desc = "Paste from OS registry (\"+p is slow)" })
 
 
 -- REGISTERS
@@ -167,7 +183,7 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry
 -- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
 -- -- s
-vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
+-- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
 vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
@@ -276,6 +292,8 @@ vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
 vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
+vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
+vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
 
 --------------------------------------------------------
@@ -310,7 +328,7 @@ vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
 vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
 vim.keymap.set("n", "<leader>N", "#*", { desc = "search current word (without jumping)" })
 
---- COMPONENT
+-- COMPONENT
 
 -- TODO: prettify commands below. Multilines. Maybe use 'function' and 'end' (lua funciton)
 vim.keymap.set("n", "<leader>I", ":let @a = @/<CR>:execute '/interface ' . expand('%:t:r')<CR>:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component's interface" })
@@ -325,7 +343,7 @@ vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:l
 
 -- FILE NAVIGATION
 
-vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
 
 
 --------------------------------------------------------
@@ -361,6 +379,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
+vim.keymap.set("n", "<C-s>", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
@@ -368,13 +387,13 @@ vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highligh
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
 vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 
--- vim.keymap.set("n", "<leader>pt", ":echo expand('%:t')<CR>", { desc = "Print path to current file" })
 -- vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
 --   { desc = "Yank path to current file", noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
+vim.keymap.set("n", "<leader><leader>te", ":terminal", { desc = "open terminal" })
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
   { desc = "Replace all occurences of word under cursor" })

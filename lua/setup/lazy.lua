@@ -11,32 +11,10 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
-  -- {
-  --   'ThePrimeagen/vim-be-good'
-  -- },
-  { 'wellle/targets.vim' },
+  -- { 'wellle/targets.vim' }, -- har en bug
   { 'adelarsq/vim-matchit' },
-  -- {
-  --   'stevearc/conform.nvim',
-  --   branch = "nvim-0.9",
-  --   opts = {},
-  -- },
   { 'skywind3000/vim-quickui' },
-  -- {
-  --   "ribelo/taskwarrior.nvim",
-  --   opts = {
-  --     -- your configuration comes here
-  --     -- or leave it empty to use the default settings
-  --     -- refer to the configuration section below
-  --   },
-  --   -- or
-  --   config = true
-  -- },
-  -- { 'echasnovski/mini.nvim',                  version = '*' },
   { 'TamaMcGlinn/quickfixdd' },
-  { 'sbdchd/neoformat' },
-  -- { 'shortcuts/no-neck-pain.nvim',            version = "*" },
-  { 'RRethy/vim-illuminate', enabled = false },
   { 'farmergreg/vim-lastplace' },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -62,34 +40,6 @@ local plugins = {
     "christoomey/vim-tmux-navigator",
     pin = true
   },
-  -- {
-  -- 	"mrjones2014/smart-splits.nvim",
-  -- 	pin = true
-  -- },
-  -- {
-  -- 'stevearc/dressing.nvim',
-  -- opts = {},
-  -- pin = true
-  -- },
-  -- {
-  --   'smjonas/live-command.nvim',
-  --   pin = true,
-  --   config = function()
-  --     require("live-command").setup {
-  --       commands = {
-  --         Norm = { cmd = "norm" },
-  --         Reg = {
-  --           cmd = "norm",
-  --           -- This will transform ":5Reg a" into ":norm 5@a"
-  --           args = function(opts)
-  --             return (opts.count == -1 and "" or opts.count) .. "@" .. opts.args
-  --           end,
-  --           range = "",
-  --         },
-  --       }
-  --     }
-  --   end
-  -- },
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -156,29 +106,13 @@ local plugins = {
     dependencies = { { 'nvim-lua/plenary.nvim' } },
     pin = true,
   },
-  { "MaximilianLloyd/adjacent.nvim", pin = true },
   {
     "jasonpanosso/harpoon-tabline.nvim",
     dependencies = { "ThePrimeagen/harpoon" }
   },
   { 'ThePrimeagen/harpoon',          pin = true },
   { 'tpope/vim-surround',            pin = true },
-  -- {
-  --   "kylechui/nvim-surround",
-  --   version = "*", -- Use for stability; omit to  `main` branch for the latest features
-  --   pin = true,
-  --   config = function()
-  --     require("nvim-surround").setup({
-  --       --  Configuration here, or leave empty to  defaults
-  --     })
-  --   end
-  -- },
   { 'sindrets/diffview.nvim',        pin = true },
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   pin = true,
-  --   branch = "master"
-  -- },
   {
     'nvim-lualine/lualine.nvim',
     pin = true,
@@ -190,11 +124,7 @@ local plugins = {
   -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
   { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
-  -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
-  -- { 'martinsione/darkplus.nvim',   pin = true },
   { 'bignimbus/pop-punk.vim',      pin = true },
-  -- { "EdenEast/nightfox.nvim" },
-  -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
   {
     "folke/tokyonight.nvim",
     pin = true,
@@ -207,23 +137,6 @@ local plugins = {
     run = ':TSUpdate',
     pin = true
   },
-  -- {
-  -- 	'mawkler/jsx-element.nvim',
-  -- 	dependencies = {
-  -- 		'nvim-treesitter/nvim-treesitter',
-  -- 		'nvim-treesitter/nvim-treesitter-textobjects',
-  -- 	},
-  -- 	ft = { 'typescriptreact', 'javascriptreact', 'javascript' },
-  -- 	opts = {},
-  -- },
-  -- { 'mbbill/undotree',    pin = true },
-  -- { 'tpope/vim-fugitive',   pin = true },
-  -- {
-  --   "kdheepak/lazygit.nvim",
-  --   -- optional for floating window border decoration
-  --   pin = true,
-  --   dependencies = { "nvim-lua/plenary.nvim" }
-  -- },
   { 'tpope/vim-commentary', pin = true },
   {
     "iamcco/markdown-preview.nvim",

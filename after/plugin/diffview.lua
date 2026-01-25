@@ -11,9 +11,10 @@ diffview.setup {
       { "v", "<S-u>",        ":diffget<CR>",       { desc = "Unstage selection" } },
       { "n", "dp",           "dp",                 { desc = "Stage hunk" } },   -- add desc to existing map
       { "n", "do",           "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
-      { "n", "<F7>",         "]c",                 { desc = "Go to next hunk" } },
-      { "n", "<leader><F7>", "[c",                 { desc = "Go to prev hunk" } },
-      { "n", "<S-F7>",       "[c",                 { desc = "Go to prev hunk" } },
+      { "n", "<F7>",          "]c",                 { desc = "Go to next hunk" } },
+      { "n", "<S-F7>",        "[c",                 { desc = "Go to prev hunk" } },
+      { "n", "<C-c>",         "]c",                 { desc = "Go to next hunk" } },
+      { "n", "<C-d>",         "[c",                 { desc = "Go to prev hunk" } },
     },
     file_panel = {
       { "n", "•",     ":DiffviewClose<CR>",                { desc = "Close Diffview" } },
