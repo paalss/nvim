@@ -54,6 +54,9 @@ vim.keymap.set({"n", "v"}, "<A-l>", "$", { desc = "Go to end of line" }) -- <A-l
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>v", "\"", { desc = "double quote" })
+vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
+vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
+vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 
 
 --------------------------------------------------------
