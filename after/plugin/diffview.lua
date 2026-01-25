@@ -4,16 +4,17 @@ diffview.setup {
   watch_index = true,
   keymaps = {
     view = {
-      { "n", "<A-q>",        ":DiffviewClose<CR>", { desc = "Close Diffview" } },
-      { "n", "<S-s>",        "V:diffput<CR>",      { desc = "Stage line" } },
-      { "n", "<S-u>",        "V:diffget<CR>",      { desc = "Unstage line" } },
-      { "v", "<S-s>",        ":diffput<CR>",       { desc = "Stage selection" } },
-      { "v", "<S-u>",        ":diffget<CR>",       { desc = "Unstage selection" } },
-      { "n", "dp",           "dp",                 { desc = "Stage hunk" } },   -- add desc to existing map
-      { "n", "do",           "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
-      { "n", "<F7>",         "]c",                 { desc = "Go to next hunk" } },
-      { "n", "<leader><F7>", "]c",                 { desc = "Go to next hunk (backup incase <F7> doesnt work)" } },
-      { "n", "<S-F7>",       "[c",                 { desc = "Go to prev hunk" } },
+      { "n", "<A-q>",  ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "<S-s>",  "V:diffput<CR>",      { desc = "Stage line" } },
+      { "n", "<S-u>",  "V:diffget<CR>",      { desc = "Unstage line" } },
+      { "v", "<S-s>",  ":diffput<CR>",       { desc = "Stage selection" } },
+      { "v", "<S-u>",  ":diffget<CR>",       { desc = "Unstage selection" } },
+      { "n", "dp",     "dp",                 { desc = "Stage hunk" } },  -- add desc to existing map
+      { "n", "do",     "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
+      { "n", "<F7>",   "]c",                 { desc = "Go to next hunk" } },
+      { "n", "<S-F7>", "[c",                 { desc = "Go to prev hunk" } },
+      { "n", "<C-c>",  "]c",                 { desc = "Go to next hunk" } },
+      { "n", "<C-d>",  "[c",                 { desc = "Go to prev hunk" } },
     },
     file_panel = {
       { "n", "<A-q>", ":DiffviewClose<CR>",                { desc = "Close Diffview" } },

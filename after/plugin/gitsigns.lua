@@ -26,6 +26,16 @@ require('gitsigns').setup {
       return '<Ignore>'
     end, { desc = "go to prev diff hunk", expr = true })
 
+    map('n', '<A-c>', function()
+      go_to_next_hunk()
+    end, { desc = "go to next diff hunk", expr = true })
+
+    map('n', '<A-d>', function()
+      if vim.wo.diff then return '[c' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '<Ignore>'
+    end, { desc = "go to prev diff hunk", expr = true })
+
     -- Actions
 
     -- -- stage, unstage, reset
