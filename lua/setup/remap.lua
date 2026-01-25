@@ -92,11 +92,20 @@ vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 -- end, { desc = "Entire buffer" })
 
 -- -- entire line
--- -- -- example: ylb, dlb
-vim.keymap.set("o", "lb", ":normal! vabV<CR>", { desc = "Line related to `(`" })
-vim.keymap.set("o", "lB", ":normal! vaBV<CR>", { desc = "Line related to `{`" })
-vim.keymap.set("o", "lc", ":normal! va[V<CR>", { desc = "Line related to `[`" })
-vim.keymap.set("o", "lt", ":normal! vatV<CR>", { desc = "Line related to `<tag></tag>`" })
+-- -- -- example: yaab, daab, vaab
+-- vim.keymap.set("o", "aab", ":normal! vabV<CR>", { desc = "Line related to `(`" })
+vim.keymap.set("o", "aab", ":normal! vabV<CR>", { desc = "Line related to `(`" })
+vim.keymap.set("v", "aab", ":normal! vabV<CR>", { desc = "Select line related to `(`" })
+
+vim.keymap.set("o", "aaB", ":normal! vaBV<CR>", { desc = "Line related to `{`" })
+vim.keymap.set("v", "aaB", ":normal! vaBV<CR>", { desc = "Select line related to `{`" })
+
+vim.keymap.set("o", "aac", ":normal! va[V<CR>", { desc = "Line related to `[`" })
+vim.keymap.set("v", "aac", ":normal! va[V<CR>", { desc = "Select line related to `[`" })
+
+vim.keymap.set("o", "aat", ":normal! vatV<CR>", { desc = "Line related to `<tag></tag>`" })
+vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to `<tag></tag>`" })
+
 -- vim.keymap.set("o", "lv", ":normal! va\"V<CR>", { desc = "Line related to `\"`" })
 -- vim.keymap.set("o", "lV", ":normal! va\'V<CR>", { desc = "Line related to `\'`" })
 
