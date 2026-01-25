@@ -180,7 +180,7 @@ vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry
 -- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
 -- -- s
-vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
+-- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
 vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
@@ -376,6 +376,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
+vim.keymap.set("n", "<C-s>", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
