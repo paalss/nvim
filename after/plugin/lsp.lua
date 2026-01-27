@@ -29,3 +29,27 @@ vim.lsp.enable('ts_ls')
 
 -- vim.lsp.enable('tsserver')
 -- vim.lsp.enable('js')
+
+
+
+vim.lsp.config('html', {
+  cmd = { "vscode-html-language-server", "--stdio" }
+  filetypes = { "html" }
+  init_options = {
+    configurationSection = {
+      "html",
+      "css",
+      "javascript"
+    },
+    embeddedLanguages = {
+      css = true,
+      javascript = true
+    }
+  }
+  root_dir = function(fname)
+    return root_pattern(fname) or vim.loop.os_homedir()
+  end,
+  settings = {}
+})
+
+-- vim.lsp.enable('html')
