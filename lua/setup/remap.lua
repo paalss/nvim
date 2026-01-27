@@ -49,11 +49,14 @@ vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 -- vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
+
 vim.keymap.set({"n", "v"}, "˛", "0", { desc = "A-h: Go to beginning of line" }) -- <A-h>
 vim.keymap.set({"n", "v"}, "ﬁ", "$", { desc = "A-l: Go to end of line" }) -- <A-l>
 
+vim.keymap.set({"n", "v"}, "gh", "0", { desc = "A-h: Go to beginning of line" })
+vim.keymap.set({"n", "v"}, "gl", "$", { desc = "A-l: Go to end of line" })
+
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
-vim.keymap.set("n", "<leader>v", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
@@ -63,23 +66,23 @@ vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 -- OPERATOR PENDING
 --------------------------------------------------------
 
-vim.keymap.set("o", "iv", "i\"", { desc = "Inside \"" }) -- targets.vim: iq = inside any quote (single, double, backtick...)
-vim.keymap.set("o", "av", "a\"", { desc = "Around \"" })
+-- c -> "
+vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
+vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
+vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
+vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
 
-vim.keymap.set("o", "iV", "i\'", { desc = "Inside \'" })
-vim.keymap.set("o", "aV", "a\'", { desc = "Around \'" })
+-- C -> '
+vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
+vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
+vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
+vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
 
-vim.keymap.set("o", "ic", "i[", { desc = "Inside [" })
-vim.keymap.set("o", "ac", "a[", { desc = "Around [" })
-
-vim.keymap.set("v", "iv", "i\"", { desc = "Inside \"" })
-vim.keymap.set("v", "av", "a\"", { desc = "Around \"" })
-
-vim.keymap.set("v", "iV", "i\'", { desc = "Inside \'" })
-vim.keymap.set("v", "aV", "a\'", { desc = "Around \'" })
-
-vim.keymap.set("v", "ic", "i[", { desc = "Inside [" })
-vim.keymap.set("v", "ac", "a[", { desc = "Around [" })
+-- x -> [
+vim.keymap.set("o", "ix", "i[", { desc = "Inside [" })
+vim.keymap.set("o", "ax", "a[", { desc = "Around [" })
+vim.keymap.set("v", "ix", "i[", { desc = "Inside [" })
+vim.keymap.set("v", "ax", "a[", { desc = "Around [" })
 
 -- "operator pending ish"
 
