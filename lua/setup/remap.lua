@@ -62,6 +62,8 @@ vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste i
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 
 
+vim.keymap.set("n", "<leader>G", ":!git add %<CR>", { desc = "Stage current file" })
+
 --------------------------------------------------------
 -- OPERATOR PENDING
 --------------------------------------------------------
@@ -207,6 +209,7 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 --------------------------------------------------------
 
 vim.cmd[[iabbrev locaing loading]]
+vim.cmd[[iabbrev timezpne timezone]]
 
 
 --------------------------------------------------------
