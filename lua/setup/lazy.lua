@@ -43,7 +43,6 @@ local plugins = {
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
-    pin = true,
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
