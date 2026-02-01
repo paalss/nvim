@@ -52,10 +52,10 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 vim.keymap.set({"n", "v"}, "<A-h>", "0", { desc = "Go to beginning of line" }) -- <A-h>
 vim.keymap.set({"n", "v"}, "<A-l>", "$", { desc = "Go to end of line" }) -- <A-l>
 vim.keymap.set({"n", "v"}, "gh", "0", { desc = "Go to beginning of line" })
-vim.keymap.set({"n", "v"}, "gl", "$", { desc = "Go to end of line" })
+-- vim.keymap.set({"n", "v"}, "gl", "$", { desc = "Go to end of line" }) -- funker ikke i WSL
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
-vim.keymap.set("n", "<leader>G", ":! git add %", { desc = "Stage current file" })
+vim.keymap.set("n", "<leader>G", ":! git add %<CR>", { desc = "Stage current file" })
 vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
