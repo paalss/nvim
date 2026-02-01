@@ -50,11 +50,19 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false
     },
-    ['<A-l>'] = cmp.mapping(function()
-      luasnip.jump(1)
+    ['n'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
     end, { 'i', 's' }),
-    ['<A-h>'] = cmp.mapping(function()
-      luasnip.jump(-1)
+    ['p'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
     end, { 'i', 's' }),
     ['<S-Tab>'] = cmp.mapping(function()
       if cmp.visible() then
