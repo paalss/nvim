@@ -40,24 +40,24 @@ cmp.setup {
     end
   },
   mapping = cmp.mapping.preset.insert {
-    -- ['<C-n>'] = cmp.mapping.select_next_item(),
-    -- ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-u>'] = cmp.mapping.scroll_docs(4),
+    ['<C-e>'] = cmp.mapping.scroll_docs(-2),
+    ['<C-y>'] = cmp.mapping.scroll_docs(2),
     ['<C-s>'] = cmp.mapping.abort(),
     -- ['<C-Space>'] = cmp.mapping.complete {},
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false
     },
-    ['n'] = cmp.mapping(function(fallback)
+    ['<C-n>'] = cmp.mapping(function(fallback)
       if luasnip.locally_jumpable(1) then
         luasnip.jump(1)
       else
         fallback()
       end
     end, { 'i', 's' }),
-    ['N'] = cmp.mapping(function(fallback)
+    ['<C-p>'] = cmp.mapping(function(fallback)
       if luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
       else
