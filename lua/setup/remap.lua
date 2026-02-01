@@ -51,6 +51,8 @@ vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 vim.keymap.set({"n", "v"}, "<A-h>", "0", { desc = "Go to beginning of line" }) -- <A-h>
 vim.keymap.set({"n", "v"}, "<A-l>", "$", { desc = "Go to end of line" }) -- <A-l>
+vim.keymap.set({"n", "v"}, "gh", "0", { desc = "Go to beginning of line" }) -- <A-h>
+vim.keymap.set({"n", "v"}, "gl", "$", { desc = "Go to end of line" }) -- <A-l>
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>v", "\"", { desc = "double quote" })
