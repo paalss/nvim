@@ -25,34 +25,8 @@ vim.g.mapleader = " "
 
 local plugins = {
   -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter hvilken som helst bracket - (, { og [
-  { 'adelarsq/vim-matchit' },
-  { 'skywind3000/vim-quickui' },
-  { 'TamaMcGlinn/quickfixdd' },
-  { 'farmergreg/vim-lastplace' },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    enabled = true,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-  },
-  {
-    'goolord/alpha-nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    pin = true
-  },
-  {
-    'alvan/vim-closetag',
-    pin = true
-  },
-  {
-    "christoomey/vim-tmux-navigator",
-    pin = true
-  },
+
+  --** LSP/autocompletion **--
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -90,72 +64,6 @@ local plugins = {
     },
   },
   {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    main = "ibl",
-    pin = true,
-    opts = {
-      indent = { char = '┊' }
-    },
-  },
-  -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
-  {
-    "windwp/nvim-autopairs",
-    pin = true,
-    config = function()
-      require("nvim-autopairs").setup {}
-    end
-  },
-  { 'djoshea/vim-autoread', pin = true },
-  {
-    'nvim-telescope/telescope.nvim',
-    version = '0.1.1',
-    -- or                            , branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } },
-    pin = true,
-  },
-  { "MaximilianLloyd/adjacent.nvim", pin = true },
-  {
-    "jasonpanosso/harpoon-tabline.nvim",
-    dependencies = { "ThePrimeagen/harpoon" }
-  },
-  { 'ThePrimeagen/harpoon',   pin = true },
-  { 'tpope/vim-surround',     pin = true },
-  { 'sindrets/diffview.nvim', pin = true },
-  {
-    'nvim-lualine/lualine.nvim',
-    pin = true,
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-      lazy = true
-    }
-  },
-  -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-  { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
-  { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
-  { 'bignimbus/pop-punk.vim',      pin = true },
-  {
-    "folke/tokyonight.nvim",
-    pin = true,
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    pin = true
-  },
-  { 'tpope/vim-commentary', pin = true },
-  {
-    "iamcco/markdown-preview.nvim",
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end
-  },
-  {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     pin = true,
@@ -173,6 +81,110 @@ local plugins = {
       { 'hrsh7th/cmp-nvim-lsp' },                 -- Required
       { 'L3MON4D3/LuaSnip' }                      -- Required
     }
+  },
+
+  --** Autopairs/surround **--
+  { 'tpope/vim-surround',     pin = true },
+  {
+    'alvan/vim-closetag',
+    pin = true
+  },
+  { 'adelarsq/vim-matchit' },
+  {
+    "windwp/nvim-autopairs",
+    pin = true,
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  },
+
+  --** Colorschemes **--
+  { 'bignimbus/pop-punk.vim',      pin = true },
+  {
+    "folke/tokyonight.nvim",
+    pin = true,
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
+  --** Fuzzy finder **--
+  {
+    'nvim-telescope/telescope.nvim',
+    version = '0.1.1',
+    -- or                            , branch = '0.1.x',
+    dependencies = { { 'nvim-lua/plenary.nvim' } },
+    pin = true,
+  },
+
+  --** File navigation **--
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    enabled = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
+  { "MaximilianLloyd/adjacent.nvim", pin = true },
+  {
+    "jasonpanosso/harpoon-tabline.nvim",
+    dependencies = { "ThePrimeagen/harpoon" }
+  },
+  { 'ThePrimeagen/harpoon',   pin = true },
+  { 'sindrets/diffview.nvim', pin = true },
+
+  --** Other **--
+  { 'skywind3000/vim-quickui' },
+  { 'TamaMcGlinn/quickfixdd' },
+  { 'farmergreg/vim-lastplace' },
+  {
+    'goolord/alpha-nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    pin = true
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    pin = true
+  },
+  {
+    -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help indent_blankline.txt`
+    main = "ibl",
+    pin = true,
+    opts = {
+      indent = { char = '┊' }
+    },
+  },
+  -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
+  { 'djoshea/vim-autoread', pin = true },
+  {
+    'nvim-lualine/lualine.nvim',
+    pin = true,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      lazy = true
+    }
+  },
+  -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+  { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
+  { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
+  {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    pin = true
+  },
+  { 'tpope/vim-commentary', pin = true },
+  {
+    "iamcco/markdown-preview.nvim",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end
   },
 }
 
