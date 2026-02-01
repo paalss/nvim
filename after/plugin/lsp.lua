@@ -50,9 +50,23 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false
     },
+    ['nj'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
     ['<C-n>'] = cmp.mapping(function(fallback)
       if luasnip.locally_jumpable(1) then
         luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['jn'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
