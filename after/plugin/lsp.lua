@@ -57,7 +57,7 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
-    ['p'] = cmp.mapping(function(fallback)
+    ['N'] = cmp.mapping(function(fallback)
       if luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
       else
