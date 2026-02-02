@@ -135,21 +135,43 @@ cmp.setup {
     end
   },
   mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-u>'] = cmp.mapping.scroll_docs(4),
+    ['<C-e>'] = cmp.mapping.scroll_docs(-2),
+    ['<C-y>'] = cmp.mapping.scroll_docs(2),
     ['<C-s>'] = cmp.mapping.abort(),
     -- ['<C-Space>'] = cmp.mapping.complete {},
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false
     },
-    ['ﬁ'] = cmp.mapping(function()
-      luasnip.jump(1)
+    -- ['nj'] = cmp.mapping(function(fallback)
+    --   if luasnip.locally_jumpable(1) then
+    --     luasnip.jump(1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
+    ['<C-n>'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
     end, { 'i', 's' }),
-    ['˛'] = cmp.mapping(function()
-      luasnip.jump(-1)
+    -- ['jn'] = cmp.mapping(function(fallback)
+    --   if luasnip.locally_jumpable(-1) then
+    --     luasnip.jump(-1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
+    ['<C-p>'] = cmp.mapping(function(fallback)
+      if luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
     end, { 'i', 's' }),
     ['<S-Tab>'] = cmp.mapping(function()
       if cmp.visible() then
@@ -163,7 +185,7 @@ cmp.setup {
     end, { 'i' })
   },
   sources = { {
-    -- name = 'nvim_lsp'
+    -- name = 'nvim_lsp': forårsaker error (insert mode skriving)
   }, {
     name = 'luasnip'
   }, {
