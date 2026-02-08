@@ -45,6 +45,7 @@ vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
+vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
@@ -178,17 +179,9 @@ vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
 vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
 -- vim.keymap.set("n", "<leader>set", ":set paste!<CR>", { desc = "Set toggle paste" })
 vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
--- vim.keymap.set("n", "<leader>p", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
-  -- { desc = "Paste from OS registry (\"+p is slow)" })
 
 
 -- REGISTERS
-
--- -- unnamed plus / OS registry
-vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
-vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry (Y)" })
--- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
--- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
 -- -- s
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
@@ -331,12 +324,9 @@ vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
 -- SEARCH & JUMP-TO
 
-vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
-vim.keymap.set("v", "<leader>n", "/", { desc = "Search forward" })
-vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
-vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
-vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
-vim.keymap.set("n", "<leader>N", "#*", { desc = "search current word (without jumping)" })
+vim.keymap.set({ "n", "v" }, "<leader>n", "/", { desc = "Search forward" })
+vim.keymap.set({ "n", "v" }, "<leader><leader>n", "?", { desc = "Search backward" })
+vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (without jumping)" })
 
 -- COMPONENT
 
