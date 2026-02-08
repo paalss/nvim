@@ -84,13 +84,11 @@ vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
 vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
 vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
 
--- x -> [
-vim.keymap.set("o", "ix", "i[", { desc = "Inside [" })
-vim.keymap.set("o", "ax", "a[", { desc = "Around [" })
-vim.keymap.set("v", "ix", "i[", { desc = "Inside [" })
-vim.keymap.set("v", "ax", "a[", { desc = "Around [" })
-
--- "operator pending ish"
+-- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>" 
+vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
+vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
+vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
+vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
 
 -- -- entire file
 -- -- -- example: d, c, y, v,
