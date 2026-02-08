@@ -239,14 +239,6 @@ vim.keymap.set("n", "<leader>tx", "/__STRING<CR>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/
 vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Translation" }) -- "TRANSLATION_KEY_HERE": ""
 
 
--- vim.keymap.set("n", "<leader>t5", "/__STRING<CR>BByi\"Wvi\"pgvu~gv:s/\\%V_/ /g<CR>",
---   { desc = "Key-populate next Translation" })
-
--- -- -- translation
--- vim.keymap.set("v", "<leader>t5", ":s/\\%V /_/g<CR>gvUit('<esc>ea')<esc>:nohlsearch<CR>",
---   { desc = "Turn regular string into t('TRANSLATION_KEY')" })
-
-
 --------------------------------------------------------
 -- FORMATTING
 --------------------------------------------------------
@@ -256,17 +248,6 @@ vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Tr
 vim.keymap.set("n", "<leader>fo", function()
   vim.lsp.buf.format()
 end, { desc = "lsp format" })
-
--- -- -- -- For React files (JavaScript and TypeScript)
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
---   callback = function()
---     -- vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
---     -- { desc = "Format with Neoformat", noremap = true, silent = true })
---     vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
---     vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
---   end,
--- })
 
 
 --------------------------------------------------------
@@ -306,7 +287,6 @@ vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
--- TODO keymap for loading in preious deleted commit message?
 
 
 --------------------------------------------------------
