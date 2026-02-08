@@ -43,6 +43,7 @@ require("tokyonight").setup({
   end,
   on_highlights = function(hl, colors)
     hl.ColorColumn = { bg = colors.green }
+    hl.YankHighlight = { bg = "#eaf0f2", fg = "#333333" }
   end,
 })
 
