@@ -39,12 +39,22 @@ vim.opt.updatetime = 50
 
 -- colorcolumn: see remap.lua
 
-vim.cmd [[
-augroup highlight_yank
-autocmd!
-au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
-augroup END
-]]
+-- vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#f2e602", fg = "#f27e02" })
+vim.api.nvim_create_autocmd("TextYankPost", {
+   callback = function()
+      vim.highlight.on_yank({
+         higroup = "YankHighlight",
+         timeout = 200,
+      })
+   end,
+})
+
+-- vim.cmd [[
+-- augroup highlight_yank
+-- autocmd!
+-- au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
+-- augroup END
+-- ]]
 
 vim.cmd [[
 autocmd FileType astro setlocal commentstring=//\ %s
