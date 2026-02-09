@@ -34,12 +34,10 @@ require('gitsigns').setup {
       return '<Ignore>'
     end, { desc = "go to prev diff hunk", expr = true })
 
-    -- A-c
     map('n', 'ç', function()
       go_to_next_hunk()
     end, { desc = "A-c: go to next diff hunk", expr = true })
 
-    -- A-d
     map('n', '∂', function()
       if vim.wo.diff then return '[c' end
       vim.schedule(function() gs.prev_hunk() end)

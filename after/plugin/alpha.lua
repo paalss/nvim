@@ -36,7 +36,7 @@ local block1 = {
   val = {
     [[––––––––––––––––––– Help ––––––––––––––––––––––––]],
     [[SPC sk           Search keymaps]],
-    [[Alt s            Open menu]],
+    [[Alt s            Main menu]],
     [[SPC sh           Search Help]],
     [[]],
     [[]],
