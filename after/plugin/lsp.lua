@@ -244,13 +244,13 @@ cmp.setup {
 --     { buffer = bufnr, remap = false, desc = "Go to previous error" })
 --
 --   -- do something
---   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end,
+--   vim.keymap.set("n", "<leader><leader>vrn", function() vim.lsp.buf.rename() end,
 --     {
 --       desc = "rename",
 --       buffer = bufnr,
 --       remap = false
 --     })
---   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
+--   vim.keymap.set("n", "<leader><leader>vca", function() vim.lsp.buf.code_action() end,
 --     {
 --       desc = "code action",
 --       buffer = bufnr,

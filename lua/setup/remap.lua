@@ -40,14 +40,16 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- BASIC ACTIONS
 --------------------------------------------------------
 
-vim.keymap.set("i", "jk", "<esc>", { desc = "Escape" })
-vim.keymap.set("i", "<esc>", "<nop>", { desc = "Disable escape button" })
+-- escape
+vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
+vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
+vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
+vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
--- vim.keymap.set("n", "<leader>x", ":x<CR>", { desc = "Write and quit" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
 vim.keymap.set({"n", "v"}, "˛", "0", { desc = "A-h: Go to beginning of line" }) -- <A-h>
@@ -57,12 +59,13 @@ vim.keymap.set({"n", "v"}, "gh", "0", { desc = "A-h: Go to beginning of line" })
 vim.keymap.set({"n", "v"}, "gl", "$", { desc = "A-l: Go to end of line" })
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
+vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 
 
-vim.keymap.set("n", "<leader>G", ":!git add %<CR>", { desc = "Stage current file" })
+vim.keymap.set("n", "<leader>G", ":! git add %<CR>", { desc = "Stage current file" })
 
 --------------------------------------------------------
 -- OPERATOR PENDING
@@ -80,17 +83,17 @@ vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
 vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
 vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
 
--- x -> [
-vim.keymap.set("o", "ix", "i[", { desc = "Inside [" })
-vim.keymap.set("o", "ax", "a[", { desc = "Around [" })
-vim.keymap.set("v", "ix", "i[", { desc = "Inside [" })
-vim.keymap.set("v", "ax", "a[", { desc = "Around [" })
+-- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>" 
+vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
+vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
+vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
+vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
 
 -- "operator pending ish"
 
 -- -- entire file
 -- -- -- example: d, c, y, v,
-vim.keymap.set("o", ",", ":normal! gg0VG<CR>", { desc = "Entire buffer" })
+vim.keymap.set("o", ",", ":normal! ggVG<CR>", { desc = "Entire buffer" })
 vim.keymap.set("n", "y,", ":%y<CR>", { desc = "yank entire buffer" })
 vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 
@@ -175,17 +178,9 @@ vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
 vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
 -- vim.keymap.set("n", "<leader>set", ":set paste!<CR>", { desc = "Set toggle paste" })
 vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
--- vim.keymap.set("n", "<leader>p", ":set paste<CR>\"+p<esc>:set nopaste<CR>",
-  -- { desc = "Paste from OS registry (\"+p is slow)" })
 
 
 -- REGISTERS
-
--- -- unnamed plus / OS registry
-vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "Yank to OS registry (y)" })
-vim.keymap.set({ "n", "v" }, "<leader>Y", "\"+y$", { desc = "Yank to OS registry (Y)" })
--- vim.keymap.set("n", "<C-i>p", "\"+p", { desc = "Paste from OS registry" })
--- vim.keymap.set({ "n", "v" }, "+", "\"+", { desc = "Use OS register" })
 
 -- -- s
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
@@ -243,14 +238,6 @@ vim.keymap.set("n", "<leader>tx", "/__STRING<CR>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/
 vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Translation" }) -- "TRANSLATION_KEY_HERE": ""
 
 
--- vim.keymap.set("n", "<leader>t5", "/__STRING<CR>BByi\"Wvi\"pgvu~gv:s/\\%V_/ /g<CR>",
---   { desc = "Key-populate next Translation" })
-
--- -- -- translation
--- vim.keymap.set("v", "<leader>t5", ":s/\\%V /_/g<CR>gvUit('<esc>ea')<esc>:nohlsearch<CR>",
---   { desc = "Turn regular string into t('TRANSLATION_KEY')" })
-
-
 --------------------------------------------------------
 -- FORMATTING
 --------------------------------------------------------
@@ -260,17 +247,6 @@ vim.keymap.set("n", "<leader>tr", "/__STRING<CR>\"_ci\"", { desc = "Type next Tr
 vim.keymap.set("n", "<leader>fo", function()
   vim.lsp.buf.format()
 end, { desc = "lsp format" })
-
--- -- -- -- For React files (JavaScript and TypeScript)
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
---   callback = function()
---     -- vim.api.nvim_buf_set_keymap(0, "n", "<leader>f", ":Neoformat<CR>",
---     -- { desc = "Format with Neoformat", noremap = true, silent = true })
---     vim.api.nvim_buf_set_keymap(0, "n", "<leader>start", ":!npm start<CR>", { noremap = true, silent = true })
---     vim.api.nvim_buf_set_keymap(0, "n", "<leader>dev", ":!npm dev<CR>", { noremap = true, silent = true })
---   end,
--- })
 
 
 --------------------------------------------------------
@@ -310,7 +286,6 @@ vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
--- TODO keymap for loading in preious deleted commit message?
 
 
 --------------------------------------------------------
@@ -328,11 +303,9 @@ vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
 -- SEARCH & JUMP-TO
 
-vim.keymap.set("n", "<leader>n", "/", { desc = "Search forward" })
-vim.keymap.set("n", "<leader><leader>n", "?", { desc = "Search backward" })
-vim.keymap.set("n", "<C-f>", "/", { desc = "Search forward" })
-vim.keymap.set("n", "<leader><C-f>", "?", { desc = "Search backward" })
-vim.keymap.set("n", "<leader>N", "#*", { desc = "search current word (without jumping)" })
+vim.keymap.set({ "n", "v" }, "<leader>n", "/", { desc = "Search forward" })
+vim.keymap.set({ "n", "v" }, "<leader><leader>n", "?", { desc = "Search backward" })
+vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (without jumping)" })
 
 -- COMPONENT
 
@@ -349,7 +322,7 @@ vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:l
 
 -- FILE NAVIGATION
 
--- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader><leader>vv", vim.cmd.Ex)
 
 
 --------------------------------------------------------
