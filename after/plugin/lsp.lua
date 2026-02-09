@@ -151,28 +151,28 @@ cmp.setup {
     --   else
     --     fallback()
     --   end
-    -- end, { 'i', 's' }),
+    -- end, { 's' }),
     ['<C-n>'] = cmp.mapping(function(fallback)
       if luasnip.locally_jumpable(1) then
         luasnip.jump(1)
       else
         fallback()
       end
-    end, { 'i', 's' }),
+    end, { 's' }),
     -- ['jn'] = cmp.mapping(function(fallback)
     --   if luasnip.locally_jumpable(-1) then
     --     luasnip.jump(-1)
     --   else
     --     fallback()
     --   end
-    -- end, { 'i', 's' }),
+    -- end, { 's' }),
     ['<C-p>'] = cmp.mapping(function(fallback)
       if luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
       else
         fallback()
       end
-    end, { 'i', 's' }),
+    end, { 's' }),
     ['<S-Tab>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
@@ -198,9 +198,9 @@ cmp.setup {
 
 
 
+-- https://vi.stackexchange.com/questions/46749/correct-way-to-utilize-on-attach-in-the-new-vim-lsp-config-setup-in-neovim-v0-11
 
-
--- lsp.on_attach(function(client, bufnr)
+-- vim.lsp.on_attach(function(client, bufnr)
 --   local opts = { buffer = bufnr, remap = false }
 --
 --   -- go somewhere
