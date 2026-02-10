@@ -90,6 +90,8 @@ vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
 vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
 vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
 
+-- "operator pending ish"
+
 -- -- entire file
 -- -- -- example: d, c, y, v,
 vim.keymap.set("o", ",", ":normal! ggVG<CR>", { desc = "Entire buffer" })
@@ -321,7 +323,7 @@ vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:l
 
 -- FILE NAVIGATION
 
--- vim.keymap.set("n", "<leader>vv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader><leader>vv", vim.cmd.Ex)
 
 
 --------------------------------------------------------
@@ -357,7 +359,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
-vim.keymap.set("n", "<C-s>", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "<leader>m", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
