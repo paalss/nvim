@@ -64,8 +64,16 @@ vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 
+-- -- indenting
+vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
+vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
+vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
+vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
+vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
+vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
+vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
+vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
-vim.keymap.set("n", "<leader>G", ":! git add %<CR>", { desc = "Stage current file" })
 
 --------------------------------------------------------
 -- OPERATOR PENDING
@@ -267,17 +275,6 @@ vim.keymap.set("n", "<leader><up>", "<cmd>cpfile<CR>", { desc = "Prev file" })
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 
--- -- indenting
-vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
-vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
-vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
-vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
-vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
-vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
-vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
-vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
-
-
 --------------------------------------------------------
 -- GIT
 --------------------------------------------------------
@@ -286,6 +283,7 @@ vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
+vim.keymap.set("n", "<leader>G", ":! git add %<CR>", { desc = "Stage current file" })
 
 
 --------------------------------------------------------
