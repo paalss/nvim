@@ -84,7 +84,7 @@ local plugins = {
   },
 
   --** Autopairs/surround **--
-  { 'tpope/vim-surround',     pin = true },
+  { 'tpope/vim-surround',  pin = true },
   {
     'alvan/vim-closetag',
     pin = true
@@ -99,7 +99,7 @@ local plugins = {
   },
 
   --** Colorschemes **--
-  { 'bignimbus/pop-punk.vim',      pin = true },
+  { 'bignimbus/pop-punk.vim',        pin = true },
   {
     "folke/tokyonight.nvim",
     pin = true,
@@ -130,6 +130,7 @@ local plugins = {
     }
   },
   { "MaximilianLloyd/adjacent.nvim", pin = true },
+  { 'sindrets/diffview.nvim',        pin = true },
   {
     'romgrk/barbar.nvim',
     dependencies = {
@@ -171,7 +172,7 @@ local plugins = {
     },
   },
   -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
-  { 'djoshea/vim-autoread', pin = true },
+  { 'djoshea/vim-autoread',        pin = true },
   {
     'nvim-lualine/lualine.nvim',
     pin = true,
