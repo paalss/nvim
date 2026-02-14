@@ -2,9 +2,8 @@
 --
 -- cons:
 -- litt treg
--- pinned tabs overlever ikke Neovim exit
-
-
+-- -- navigasjon
+-- -- før file finder
 
 
 local map = vim.api.nvim_set_keymap
