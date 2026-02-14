@@ -1,0 +1,15 @@
+-- require("bufferline").setup{}
+-- vim.keymap.set("n", "<leader>1", "<cmd>lua require('bufferline').go_to(1, true)<CR>")
+-- vim.keymap.set("n", "<leader>2", "<cmd>lua require('bufferline').go_to(2, true)<CR>")
+-- vim.keymap.set("n", "<leader>3", "<cmd>lua require('bufferline').go_to(3, true)<CR>")
+-- vim.keymap.set("n", "<leader>4", "<cmd>lua require('bufferline').go_to(4, true)<CR>")
+-- vim.keymap.set("n", "<leader>5", "<cmd>lua require('bufferline').go_to(5, true)<CR>")
+-- vim.keymap.set("n", "<leader>6", "<cmd>lua require('bufferline').go_to(6, true)<CR>")
+-- vim.keymap.set("n", "<leader>7", "<cmd>lua require('bufferline').go_to(7, true)<CR>")
+-- vim.keymap.set("n", "<leader>8", "<cmd>lua require('bufferline').go_to(8, true)<CR>")
+-- vim.keymap.set("n", "<leader>9", "<cmd>lua require('bufferline').go_to(9, true)<CR>")
+-- vim.keymap.set("n", "<leader>$", "<cmd>lua require('bufferline').go_to(-1, true)<CR>")
+
+-- vim.keymap.set("n", "<A-.>", ":BufferLineCycleNext<CR>", { desc = "" })
+-- vim.keymap.set("n", "<A-,>", ":BufferLineCyclePrev<CR>", { desc = "" })
+-- -- require('mini.tabline').setup()
