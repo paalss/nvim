@@ -27,7 +27,7 @@ Følg denne tutorialen, den er steinbra :+1: https://www.youtube.com/watch?v=2wa
 
 ### Med Apt (Enklest installasjon, men gir bare v0.4.3 Neovim)
 
-[Skaffe neovim for ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
+[Skaffe neovim for ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim/921fe8c40c34dd1f3fb35d5b48c484db1b8ae94b#ubuntu)
 
 ```bash
 sudo apt install neovim
