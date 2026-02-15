@@ -1,7 +1,7 @@
 -- pros/cons
 --
 -- cons:
--- litt treg
+-- litt treg når treesitter er skrudd på
 -- -- navigasjon
 -- -- før file finder
 
