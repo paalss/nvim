@@ -16,6 +16,14 @@ require('gitsigns').setup {
       return '<Ignore>'
     end
 
+    -- error:
+    -- map('n', '<A-y>', gs.nav_hunk("next"), {
+    --   desc = "go to next"
+    -- })
+    -- map('n', '<A-d>', gs.nav_hunk("prev"), {
+    --   desc = "go to prev"
+    -- })
+
     map('n', '<F7>', function()
       go_to_next_hunk()
     end, { desc = "go to next diff hunk", expr = true })
