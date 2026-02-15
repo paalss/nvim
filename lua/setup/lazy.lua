@@ -27,23 +27,23 @@ local plugins = {
   -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter hvilken som helst bracket - (, { og [
 
   --** LSP/autocompletion **--
-  {
-    -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
-    pin = true,
-    dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
-      { 'williamboman/mason.nvim', config = true },
-      'williamboman/mason-lspconfig.nvim',
+  -- {
+  --   -- LSP Configuration & Plugins
+  --   'neovim/nvim-lspconfig',
+  --   pin = true,
+  --   dependencies = {
+  --     -- Automatically install LSPs to stdpath for neovim
+  --     { 'williamboman/mason.nvim', config = true },
+  --     'williamboman/mason-lspconfig.nvim',
 
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+  --     -- Useful status updates for LSP
+  --     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+  --     { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
-      -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
-    },
-  },
+  --     -- Additional lua configuration, makes nvim stuff amazing!
+  --     'folke/neodev.nvim',
+  --   },
+  -- },
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -63,25 +63,25 @@ local plugins = {
       'paalss/friendly-snippets',
     },
   },
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    pin = true,
-    dependencies = {               -- LSP Support
-      { 'neovim/nvim-lspconfig' }, -- Required
-      {
-        -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end
-      }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },                     -- Required
-      { 'hrsh7th/cmp-nvim-lsp' },                 -- Required
-      { 'L3MON4D3/LuaSnip' }                      -- Required
-    }
-  },
+  -- {
+  --   'VonHeikemen/lsp-zero.nvim',
+  --   branch = 'v2.x',
+  --   pin = true,
+  --   dependencies = {               -- LSP Support
+  --     { 'neovim/nvim-lspconfig' }, -- Required
+  --     {
+  --       -- Optional
+  --       'williamboman/mason.nvim',
+  --       build = function()
+  --         pcall(vim.cmd, 'MasonUpdate')
+  --       end
+  --     }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+  --     -- Autocompletion
+  --     { 'hrsh7th/nvim-cmp' },                     -- Required
+  --     { 'hrsh7th/cmp-nvim-lsp' },                 -- Required
+  --     { 'L3MON4D3/LuaSnip' }                      -- Required
+  --   }
+  -- },
 
   --** Autopairs/surround **--
   { 'tpope/vim-surround',  pin = true },

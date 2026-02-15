@@ -1,148 +1,148 @@
--- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
-local lsp = require('lsp-zero')
+-- -- https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+-- local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
-lsp.ensure_installed({
-  'ts_ls',
-  'eslint',
-  'lua_ls',
-  'rust_analyzer',
-  'html',
-})
-
-
--- [[ Configure nvim-cmp ]]
--- See `:help cmp`
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
-luasnip.config.setup {}
-
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-u>'] = cmp.mapping.scroll_docs(4),
-    ['<C-e>'] = cmp.mapping.scroll_docs(-2),
-    ['<C-y>'] = cmp.mapping.scroll_docs(2),
-    ['<C-s>'] = cmp.mapping.abort(),
-    -- ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = false
-    },
-    -- ['nj'] = cmp.mapping(function(fallback)
-    --   if luasnip.locally_jumpable(1) then
-    --     luasnip.jump(1)
-    --   else
-    --     fallback()
-    --   end
-    -- end, { 's' }),
-    ['<C-n>'] = cmp.mapping(function(fallback)
-      if luasnip.locally_jumpable(1) then
-        luasnip.jump(1)
-      else
-        fallback()
-      end
-    end, { 's' }),
-    -- ['jn'] = cmp.mapping(function(fallback)
-    --   if luasnip.locally_jumpable(-1) then
-    --     luasnip.jump(-1)
-    --   else
-    --     fallback()
-    --   end
-    -- end, { 's' }),
-    ['<C-p>'] = cmp.mapping(function(fallback)
-      if luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 's' }),
-    ['<S-Tab>'] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item()
-      end
-    end, { 'i', 's' }),
-    ['<Tab>'] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_next_item()
-      end
-    end, { 'i' })
-  },
-  sources = { {
-    name = 'nvim_lsp'
-  }, {
-    name = 'luasnip'
-  }, {
-    name = 'path'
-  } }
-}
-
-lsp.on_attach(function(client, bufnr)
-  local opts = { buffer = bufnr, remap = false }
-
-  -- go somewhere
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {
-    desc = "Go to definition",
-    buffer = bufnr,
-    remap = false
-  })
-  vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
-    {
-      desc = "Find usages of word/variable",
-      buffer = bufnr,
-      remap = false
-    })
-  -- vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, 'Go to definition')
-  -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, 'Find usages of word/variable')
-
-  -- show information
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {
-    desc = "Show definition",
-    buffer = bufnr,
-    remap = false
-  })
-  vim.keymap.set("n", "<leader>help", function() vim.lsp.buf.signature_help() end,
-    {
-      desc = "Signature help current word",
-      buffer = bufnr,
-      remap = false
-    })
-
-  -- diagnostics
-  vim.keymap.set("n", "<leader>es", function() vim.diagnostic.open_float() end,
-    {
-      desc = "open diagnostic, language errors",
-      buffer = bufnr,
-      remap = false
-    })
-  vim.keymap.set("n", "<l", function() vim.diagnostic.goto_next() end,
-    { buffer = bufnr, remap = false, desc = "Go to next error" })
-  vim.keymap.set("n", "<h", function() vim.diagnostic.goto_prev() end,
-    { buffer = bufnr, remap = false, desc = "Go to previous error" })
-
-  -- do something
-  vim.keymap.set("n", "<leader><leader>vrn", function() vim.lsp.buf.rename() end,
-    {
-      desc = "rename",
-      buffer = bufnr,
-      remap = false
-    })
-  vim.keymap.set("n", "<leader><leader>vca", function() vim.lsp.buf.code_action() end,
-    {
-      desc = "code action",
-      buffer = bufnr,
-      remap = false
-    })
+-- lsp.preset('recommended')
+-- lsp.ensure_installed({
+--   'ts_ls',
+--   'eslint',
+--   'lua_ls',
+--   'rust_analyzer',
+--   'html',
+-- })
 
 
-  -- other
-  -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-end)
+-- -- [[ Configure nvim-cmp ]]
+-- -- See `:help cmp`
+-- local cmp = require 'cmp'
+-- local luasnip = require 'luasnip'
+-- require('luasnip.loaders.from_vscode').lazy_load()
+-- luasnip.config.setup {}
 
-lsp.setup()
+-- cmp.setup {
+--   snippet = {
+--     expand = function(args)
+--       luasnip.lsp_expand(args.body)
+--     end
+--   },
+--   mapping = cmp.mapping.preset.insert {
+--     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+--     ['<C-u>'] = cmp.mapping.scroll_docs(4),
+--     ['<C-e>'] = cmp.mapping.scroll_docs(-2),
+--     ['<C-y>'] = cmp.mapping.scroll_docs(2),
+--     ['<C-s>'] = cmp.mapping.abort(),
+--     -- ['<C-Space>'] = cmp.mapping.complete {},
+--     ['<CR>'] = cmp.mapping.confirm {
+--       behavior = cmp.ConfirmBehavior.Replace,
+--       select = false
+--     },
+--     -- ['nj'] = cmp.mapping(function(fallback)
+--     --   if luasnip.locally_jumpable(1) then
+--     --     luasnip.jump(1)
+--     --   else
+--     --     fallback()
+--     --   end
+--     -- end, { 's' }),
+--     ['<C-n>'] = cmp.mapping(function(fallback)
+--       if luasnip.locally_jumpable(1) then
+--         luasnip.jump(1)
+--       else
+--         fallback()
+--       end
+--     end, { 's' }),
+--     -- ['jn'] = cmp.mapping(function(fallback)
+--     --   if luasnip.locally_jumpable(-1) then
+--     --     luasnip.jump(-1)
+--     --   else
+--     --     fallback()
+--     --   end
+--     -- end, { 's' }),
+--     ['<C-p>'] = cmp.mapping(function(fallback)
+--       if luasnip.locally_jumpable(-1) then
+--         luasnip.jump(-1)
+--       else
+--         fallback()
+--       end
+--     end, { 's' }),
+--     ['<S-Tab>'] = cmp.mapping(function()
+--       if cmp.visible() then
+--         cmp.select_prev_item()
+--       end
+--     end, { 'i', 's' }),
+--     ['<Tab>'] = cmp.mapping(function()
+--       if cmp.visible() then
+--         cmp.select_next_item()
+--       end
+--     end, { 'i' })
+--   },
+--   sources = { {
+--     name = 'nvim_lsp'
+--   }, {
+--     name = 'luasnip'
+--   }, {
+--     name = 'path'
+--   } }
+-- }
+
+-- lsp.on_attach(function(client, bufnr)
+--   local opts = { buffer = bufnr, remap = false }
+
+--   -- go somewhere
+--   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, {
+--     desc = "Go to definition",
+--     buffer = bufnr,
+--     remap = false
+--   })
+--   vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
+--     {
+--       desc = "Find usages of word/variable",
+--       buffer = bufnr,
+--       remap = false
+--     })
+--   -- vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, 'Go to definition')
+--   -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, 'Find usages of word/variable')
+
+--   -- show information
+--   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {
+--     desc = "Show definition",
+--     buffer = bufnr,
+--     remap = false
+--   })
+--   vim.keymap.set("n", "<leader>help", function() vim.lsp.buf.signature_help() end,
+--     {
+--       desc = "Signature help current word",
+--       buffer = bufnr,
+--       remap = false
+--     })
+
+--   -- diagnostics
+--   vim.keymap.set("n", "<leader>es", function() vim.diagnostic.open_float() end,
+--     {
+--       desc = "open diagnostic, language errors",
+--       buffer = bufnr,
+--       remap = false
+--     })
+--   vim.keymap.set("n", "<l", function() vim.diagnostic.goto_next() end,
+--     { buffer = bufnr, remap = false, desc = "Go to next error" })
+--   vim.keymap.set("n", "<h", function() vim.diagnostic.goto_prev() end,
+--     { buffer = bufnr, remap = false, desc = "Go to previous error" })
+
+--   -- do something
+--   vim.keymap.set("n", "<leader><leader>vrn", function() vim.lsp.buf.rename() end,
+--     {
+--       desc = "rename",
+--       buffer = bufnr,
+--       remap = false
+--     })
+--   vim.keymap.set("n", "<leader><leader>vca", function() vim.lsp.buf.code_action() end,
+--     {
+--       desc = "code action",
+--       buffer = bufnr,
+--       remap = false
+--     })
+
+
+--   -- other
+--   -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+-- end)
+
+-- lsp.setup()
