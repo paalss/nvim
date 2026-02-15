@@ -10,7 +10,7 @@ Ikke installer nvim v0.10.0. Telescope og harpoon vil ikke funke. Og rare bugs d
 
 Versjon 0.9.0 er ikke tilgjengelig med Apt, så må bruke Tarball metoden for å få 0.9.0. For å installere nyere versjon på linux kan du kjøre tarball metoden.
 
-Last ned tarball, se https://github.com/neovim/neovim/releases/tag/v0.9.0
+Last ned tarball, se https://github.com/neovim/neovim/releases/tag/v0.11.6
 
 Scroll helt ned til bunnen og la assets loade først
 

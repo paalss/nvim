@@ -109,12 +109,15 @@ local plugins = {
   },
 
   --** Fuzzy finder **--
+  { "junegunn/fzf", build = "./install --bin"  },
+  { "junegunn/fzf.vim" },
   {
-    'nvim-telescope/telescope.nvim',
-    version = '0.1.1',
-    -- or                            , branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } },
-    pin = true,
+    'nvim-telescope/telescope.nvim', version = '*',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    }
   },
 
   --** File navigation **--
@@ -131,12 +134,12 @@ local plugins = {
   },
   { "MaximilianLloyd/adjacent.nvim", pin = true },
   { 'sindrets/diffview.nvim',        pin = true },
-  {
-    "ThePrimeagen/harpoon",
-    commit = "c1aebba",
-    pin = true,
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
+  -- {
+  --   "ThePrimeagen/harpoon",
+  --   commit = "c1aebba",
+  --   pin = true,
+  --   dependencies = { "nvim-lua/plenary.nvim" }
+  -- },
   -- {
   --   'romgrk/barbar.nvim',
   --   dependencies = {

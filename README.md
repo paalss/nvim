@@ -31,11 +31,7 @@
 <details>
     <summary><b>WSL</b></summary>
 
-I'm using Ubuntu through WSL on Windows 10 & 11
-
-Yanking to OS clipboard registry is currently customized for WSL specifically (`let g:clipboard = {` from `lazy.lua`). Aside: `:h clipboard-wsl`
-
----
+This config has been customized for Neovim v0.11.6 on Ubuntu (through WSL on Windows 11)
 
 A note on Windows 11 & its Terminal app:
 
@@ -48,7 +44,7 @@ If you want to use the latter, you'll have to delete the former. You can open up
 </details>
 
 <details>
-    <summary><b>Neovim version 0.9.0</b></summary>
+    <summary><b>Neovim version 0.11.6</b></summary>
 
 **My Neovim info**
 ````
@@ -57,7 +53,7 @@ Build type: Release
 LuaJIT 2.1.0-beta3
 ``````
 
-[How to install Neovim 0.9 in Ubuntu in WSL](docs/neovim-install.md)
+[How to install Neovim 0.11.6 in Ubuntu in WSL](docs/neovim-install.md)
 
 ---
 </details>
