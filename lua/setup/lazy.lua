@@ -133,7 +133,8 @@ local plugins = {
   { 'sindrets/diffview.nvim',        pin = true },
   {
     "ThePrimeagen/harpoon",
-    branch = "master",
+    commit = "c1aebba",
+    pin = true,
     dependencies = { "nvim-lua/plenary.nvim" }
   },
   -- {
