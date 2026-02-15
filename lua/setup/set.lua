@@ -1,4 +1,8 @@
 -- vim.opt.guicursor = "" -- tykk cursor i insert mde
+
+-- auto-session github
+-- vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 vim.opt.langmap="å[,æ],Å{,Æ}"
 vim.opt.path = "**"
 vim.o.mouse = ""  -- disable mouse interaction (useful for copy-pasting with mouse)
