@@ -156,18 +156,19 @@ local plugins = {
     version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
   -- {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
-  --{
-  --  "rmagatti/auto-session",
-  --  lazy = false,
+  {
+   "rmagatti/auto-session",
+   lazy = false,
+   enabled = false,
 
-  --  ---enables autocomplete for opts
-  --  ---@module "auto-session"
-  --  ---@type AutoSession.Config
-  --  opts = {
-  --    suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-  --    -- log_level = 'debug',
-  --  },
-  --},
+   ---enables autocomplete for opts
+   ---@module "auto-session"
+   ---@type AutoSession.Config
+   opts = {
+     suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+     -- log_level = 'debug',
+   },
+  },
 
   --** Other **--
   { 'skywind3000/vim-quickui' },
