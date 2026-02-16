@@ -1,7 +1,7 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system(
-    { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",    -- latest stable release
+    { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
       lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
@@ -55,7 +55,7 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
   ----------------------------
   --** Autopairs/surround **--
   ----------------------------
-  { 'tpope/vim-surround', pin = true },
+  { 'tpope/vim-surround',  pin = true },
   {
     'alvan/vim-closetag',
     pin = true
@@ -83,7 +83,7 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
   ----------------------------
   --** Fuzzy finder **--
   ----------------------------
-  { "junegunn/fzf", build = "./install --bin" },
+  { "junegunn/fzf",    build = "./install --bin" },
   { "junegunn/fzf.vim" },
   {
     'nvim-telescope/telescope.nvim',
@@ -91,13 +91,13 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     version = '*',
     -- or                            , branch = '0.1.x',
     dependencies = {
-      'nvim-lua/plenary.nvim',  -- optional but recommended
+      'nvim-lua/plenary.nvim', -- optional but recommended
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make'
       }
     }
-},
+  },
 
   ----------------------------
   --** File navigation **--
@@ -107,7 +107,7 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     branch = "v3.x",
     enabled = true,
     dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim"                                                -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+      "MunifTanjim/nui.nvim"                                                 -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   }, {
   'sindrets/diffview.nvim',
@@ -121,7 +121,7 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
   {
     'romgrk/barbar.nvim',
     dependencies = { 'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons'            -- OPTIONAL: for file icons
+      'nvim-tree/nvim-web-devicons'             -- OPTIONAL: for file icons
     },
     init = function()
       vim.g.barbar_auto_setup = false
@@ -178,7 +178,7 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     },
   },
   -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
-  { 'djoshea/vim-autoread', pin = true },
+  { 'djoshea/vim-autoread',        pin = true },
   {
     'nvim-lualine/lualine.nvim',
     pin = true,
@@ -188,8 +188,8 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     }
   },
   -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-  { 'nvim-tree/nvim-web-devicons', pin = true },   -- OPTIONAL: for file icons
-  { 'lewis6991/gitsigns.nvim', pin = true },   -- OPTIONAL: for git status
+  { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
+  { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
   {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -203,6 +203,6 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
       vim.fn["mkdp#util#install"]()
     end
   },
- }
+}
 
 require("lazy").setup(plugins, {})
