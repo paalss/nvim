@@ -12,7 +12,10 @@ vim.g.mapleader = " "
 
 local plugins = {
   -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter hvilken som helst bracket - (, { og [
+
+  ----------------------------
   --** LSP/autocompletion **--
+  ----------------------------
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -49,7 +52,9 @@ local plugins = {
     },
   },
 
+  ----------------------------
   --** Autopairs/surround **--
+  ----------------------------
   { 'tpope/vim-surround',  pin = true },
   {
     'alvan/vim-closetag',
@@ -64,8 +69,9 @@ local plugins = {
     end
   },
 
+  ----------------------------
   --** Colorschemes **--
-  -- { 'bignimbus/pop-punk.vim',      pin = true },
+  ----------------------------
   {
     "folke/tokyonight.nvim",
     pin = true,
@@ -74,7 +80,9 @@ local plugins = {
     opts = {},
   },
 
+  ----------------------------
   --** Fuzzy finder **--
+  ----------------------------
   { "junegunn/fzf",    build = "./install --bin" },
   { "junegunn/fzf.vim" },
   {
@@ -86,7 +94,9 @@ local plugins = {
     pin = true,
   },
 
+  ----------------------------
   --** File navigation **--
+  ----------------------------
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -120,7 +130,10 @@ local plugins = {
     },
     version = '^1.0.0' -- optional: only update when a new 1.x version is released
   },                   -- {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+
+  ----------------------------
   -- ** Back on track **--
+  ----------------------------
   {
     "rmagatti/auto-session",
     lazy = false,
@@ -135,7 +148,9 @@ local plugins = {
     }
   }, { 'farmergreg/vim-lastplace' },
 
+  ----------------------------
   --** Other **--
+  ----------------------------
   { 'skywind3000/vim-quickui' },
   { 'TamaMcGlinn/quickfixdd' },
   {
