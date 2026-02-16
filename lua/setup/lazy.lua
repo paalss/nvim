@@ -11,7 +11,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
-  -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter hvilken som helst bracket - (, { og [
 
   ----------------------------
   --** LSP/autocompletion **--
@@ -109,11 +108,6 @@ local plugins = {
     }
   },
   { 'sindrets/diffview.nvim',  pin = true },
-  -- {
-  --   "jasonpanosso/harpoon-tabline.nvim",
-  --   dependencies = { "ThePrimeagen/harpoon" }
-  -- },
-  -- { 'ThePrimeagen/harpoon',   pin = true },
   {
     'romgrk/barbar.nvim',
     dependencies = { 'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
