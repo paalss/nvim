@@ -50,7 +50,7 @@ local plugins = {
   },
 
   --** Autopairs/surround **--
-  { 'tpope/vim-surround',     pin = true },
+  { 'tpope/vim-surround',  pin = true },
   {
     'alvan/vim-closetag',
     pin = true
@@ -75,7 +75,7 @@ local plugins = {
   },
 
   --** Fuzzy finder **--
-  { "junegunn/fzf", build = "./install --bin"  },
+  { "junegunn/fzf",    build = "./install --bin" },
   { "junegunn/fzf.vim" },
   {
     'nvim-telescope/telescope.nvim',
@@ -98,7 +98,7 @@ local plugins = {
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },
-  { 'sindrets/diffview.nvim', pin = true },
+  { 'sindrets/diffview.nvim',  pin = true },
   -- {
   --   "jasonpanosso/harpoon-tabline.nvim",
   --   dependencies = { "ThePrimeagen/harpoon" }
@@ -107,7 +107,7 @@ local plugins = {
   {
     'romgrk/barbar.nvim',
     dependencies = { 'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-      'nvim-tree/nvim-web-devicons'            -- OPTIONAL: for file icons
+      'nvim-tree/nvim-web-devicons'             -- OPTIONAL: for file icons
     },
     init = function()
       vim.g.barbar_auto_setup = false
@@ -133,7 +133,7 @@ local plugins = {
       suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" }
       -- log_level = 'debug',
     }
-  },{ 'farmergreg/vim-lastplace' },
+  }, { 'farmergreg/vim-lastplace' },
 
   --** Other **--
   { 'skywind3000/vim-quickui' },
@@ -159,7 +159,7 @@ local plugins = {
     },
   },
   -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
-  { 'djoshea/vim-autoread', pin = true },
+  { 'djoshea/vim-autoread',        pin = true },
   {
     'nvim-lualine/lualine.nvim',
     pin = true,
