@@ -3,7 +3,6 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
-
 vim.lsp.config('luals', {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },

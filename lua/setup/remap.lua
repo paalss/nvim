@@ -413,6 +413,8 @@ vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "av
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
 vim.keymap.set("n", "<leader><leader>te", ":terminal", { desc = "open terminal" })
+-- vim.keymap.set("n", "<leader><leader>trm", ":terminal<CR>:startinsert<CR>", { desc = "Open terminal" })
+
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
   { desc = "Replace all occurences of word under cursor" })

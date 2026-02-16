@@ -10,7 +10,7 @@ Ikke installer nvim v0.10.0. Telescope og harpoon vil ikke funke. Og rare bugs d
 
 Versjon 0.9.0 er ikke tilgjengelig med Apt, så må bruke Tarball metoden for å få 0.9.0. For å installere nyere versjon på linux kan du kjøre tarball metoden.
 
-Last ned tarball, se https://github.com/neovim/neovim/releases/tag/v0.9.0
+Last ned tarball, se https://github.com/neovim/neovim/releases/tag/v0.11.6
 
 Scroll helt ned til bunnen og la assets loade først
 
@@ -27,7 +27,7 @@ Følg denne tutorialen, den er steinbra :+1: https://www.youtube.com/watch?v=2wa
 
 ### Med Apt (Enklest installasjon, men gir bare v0.4.3 Neovim)
 
-[Skaffe neovim for ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
+[Skaffe neovim for ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim/921fe8c40c34dd1f3fb35d5b48c484db1b8ae94b#ubuntu)
 
 ```bash
 sudo apt install neovim

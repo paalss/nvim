@@ -11,8 +11,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
-  -- { 'wellle/targets.vim' }, -- har en bug
-
+  -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter hvilken som helst bracket - (, { og [
   --** LSP/autocompletion **--
   {
     -- LSP Configuration & Plugins
@@ -66,7 +65,7 @@ local plugins = {
   },
 
   --** Colorschemes **--
-  { 'bignimbus/pop-punk.vim',      pin = true },
+  -- { 'bignimbus/pop-punk.vim',      pin = true },
   {
     "folke/tokyonight.nvim",
     pin = true,
@@ -99,17 +98,46 @@ local plugins = {
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },
-  {
-    "jasonpanosso/harpoon-tabline.nvim",
-    dependencies = { "ThePrimeagen/harpoon" }
-  },
-  { 'ThePrimeagen/harpoon',   pin = true },
   { 'sindrets/diffview.nvim', pin = true },
+  -- {
+  --   "jasonpanosso/harpoon-tabline.nvim",
+  --   dependencies = { "ThePrimeagen/harpoon" }
+  -- },
+  -- { 'ThePrimeagen/harpoon',   pin = true },
+  {
+    'romgrk/barbar.nvim',
+    dependencies = { 'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons'            -- OPTIONAL: for file icons
+    },
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
+    version = '^1.0.0' -- optional: only update when a new 1.x version is released
+  },                   -- {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+  -- ** Back on track **--
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    enabled = false,
+
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" }
+      -- log_level = 'debug',
+    }
+  },{ 'farmergreg/vim-lastplace' },
 
   --** Other **--
   { 'skywind3000/vim-quickui' },
   { 'TamaMcGlinn/quickfixdd' },
-  { 'farmergreg/vim-lastplace' },
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
