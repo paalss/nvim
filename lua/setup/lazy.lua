@@ -22,7 +22,10 @@ vim.g.clipboard = {
 vim.g.mapleader = " "
 
 local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter hvilken som helst bracket - (, { og [
-  -- ** LSP/autocompletion **--
+
+  ----------------------------
+  --** LSP/autocompletion **--
+  ----------------------------
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -47,44 +50,58 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     'hrsh7th/cmp-nvim-lsp',                         -- Path
     'hrsh7th/cmp-path',                             -- Adds a number of user-friendly snippets
     'paalss/friendly-snippets' }
-},                                                  -- ** Autopairs/surround **--
+},
+
+  ----------------------------
+  --** Autopairs/surround **--
+  ----------------------------
+  { 'tpope/vim-surround', pin = true },
   {
-    'tpope/vim-surround',
+    'alvan/vim-closetag',
     pin = true
-  }, {
-  'alvan/vim-closetag',
-  pin = true
-}, { 'adelarsq/vim-matchit' }, {
-  "windwp/nvim-autopairs",
-  pin = true,
-  config = function()
-    require("nvim-autopairs").setup {}
-  end
-}, -- ** Colorschemes **--
+  },
+  { 'adelarsq/vim-matchit' },
   {
-    'bignimbus/pop-punk.vim',
-    pin = true
-  }, {
-  "folke/tokyonight.nvim",
-  pin = true,
-  lazy = false,
-  priority = 1000,
-  opts = {}
-}, -- ** Fuzzy finder **--
+    "windwp/nvim-autopairs",
+    pin = true,
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  },
+
+  ----------------------------
+  --** Colorschemes **--
+  ----------------------------
   {
-    "junegunn/fzf",
-    build = "./install --bin"
-  }, { "junegunn/fzf.vim" }, {
-  'nvim-telescope/telescope.nvim',
-  enabled = true,
-  version = '*',
-  dependencies = { 'nvim-lua/plenary.nvim',  -- optional but recommended
-    {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make'
-    } }
-}, -- { "MaximilianLloyd/adjacent.nvim", pin = true },
-  -- ** File navigation **--
+    "folke/tokyonight.nvim",
+    pin = true,
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
+  ----------------------------
+  --** Fuzzy finder **--
+  ----------------------------
+  { "junegunn/fzf", build = "./install --bin" },
+  { "junegunn/fzf.vim" },
+  {
+    'nvim-telescope/telescope.nvim',
+    enabled = true,
+    version = '*',
+    -- or                            , branch = '0.1.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',  -- optional but recommended
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make'
+      }
+    }
+},
+
+  ----------------------------
+  --** File navigation **--
+  ----------------------------
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -117,7 +134,10 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     },
     version = '^1.0.0' -- optional: only update when a new 1.x version is released
   },                   -- {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+
+  ----------------------------
   -- ** Back on track **--
+  ----------------------------
   {
     "rmagatti/auto-session",
     lazy = false,
@@ -130,31 +150,35 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
       suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" }
       -- log_level = 'debug',
     }
-  }, { 'farmergreg/vim-lastplace' }, -- ** Other **--
-  { 'skywind3000/vim-quickui' }, { 'TamaMcGlinn/quickfixdd' }, {
-  'goolord/alpha-nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  pin = true
-}, {
-  "christoomey/vim-tmux-navigator",
-  pin = true
-}, {
-  -- Add indentation guides even on blank lines
-  'lukas-reineke/indent-blankline.nvim',
-  -- Enable `lukas-reineke/indent-blankline.nvim`
-  -- See `:help indent_blankline.txt`
-  main = "ibl",
-  pin = true,
-  opts = {
-    indent = {
-      char = '┊'
-    }
-  },
-  -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
+  }, { 'farmergreg/vim-lastplace' },
+
+  ----------------------------
+  --** Other **--
+  ----------------------------
+  { 'skywind3000/vim-quickui' },
+  { 'TamaMcGlinn/quickfixdd' },
   {
-    'djoshea/vim-autoread',
+    'goolord/alpha-nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     pin = true
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    pin = true
+  },
+  {
+    -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help indent_blankline.txt`
+    main = "ibl",
+    pin = true,
+    opts = {
+      indent = { char = '┊' }
+    },
+  },
+  -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
+  { 'djoshea/vim-autoread', pin = true },
   {
     'nvim-lualine/lualine.nvim',
     pin = true,
@@ -164,30 +188,21 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     }
   },
   -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-  {
-    'nvim-tree/nvim-web-devicons',
-    pin = true
-  },   -- OPTIONAL: for file icons
-  {
-    'lewis6991/gitsigns.nvim',
-    pin = true
-  },   -- OPTIONAL: for git status
+  { 'nvim-tree/nvim-web-devicons', pin = true },   -- OPTIONAL: for file icons
+  { 'lewis6991/gitsigns.nvim', pin = true },   -- OPTIONAL: for git status
   {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     pin = true
   },
-  {
-    'tpope/vim-commentary',
-    pin = true
-  },
+  { 'tpope/vim-commentary', pin = true },
   {
     "iamcco/markdown-preview.nvim",
     enabled = true,
     build = function()
       vim.fn["mkdp#util#install"]()
     end
-  }
-} }
+  },
+ }
 
 require("lazy").setup(plugins, {})
