@@ -64,6 +64,30 @@ vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 
+-- Remove global default key mapping
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "gra")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "gO")
+
+-- Create new keymapping for lsps
+-- LspAttach: After an LSP Client performs "initialize" and attaches to a buffer.
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to definition" })
+vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to definition" })
+vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to definition" })
+-- lsp features
+-- vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+-- vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to definition" })
+-- vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to definition" })
+-- vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to definition" })
+-- vim.keymap.del("n", "grr")
+
+-- vim.keymap.set("n", "gd", "gri", { desc = "Go to definition" })
+-- vim.keymap.set("n", "gr", "grr", { desc = "See references/usages", remap = false })
+-- vim.keymap.set("n", "gri", "<nop>", { desc = "", remap = false })
+
 -- -- indenting
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
 vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
