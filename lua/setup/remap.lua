@@ -8,9 +8,44 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Do
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
 
--- vim.keymap.set({ "n", "v", "x" }, "ø", ":", { desc = "Colon" })
--- vim.keymap.set({ "n", "v", "x" }, "åå", "[[", { desc = "Double opening square brackets" })
--- vim.keymap.set({ "n", "v", "x" }, "¨¨¨¨", "]]", { desc = "Double closing square brackets" })
+
+--------------------------------------------------------
+-- BASIC ACTIONS
+--------------------------------------------------------
+
+-- escape
+vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
+vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
+vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
+vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
+vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
+
+vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
+vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
+vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
+
+vim.keymap.set({ "n", "v" }, "˛", "0", { desc = "A-h: Go to beginning of line" }) -- <A-h>
+vim.keymap.set({ "n", "v" }, "ﬁ", "$", { desc = "A-l: Go to end of line" }) -- <A-l>
+
+vim.keymap.set({ "n", "v" }, "gh", "0", { desc = "A-h: Go to beginning of line" })
+vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "A-l: Go to end of line" })
+
+vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
+vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
+vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
+vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
+vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
+
+-- -- indenting
+vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
+vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
+vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
+vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
+vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
+vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
+vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
+vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
 
 --------------------------------------------------------
@@ -37,32 +72,8 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
 
 --------------------------------------------------------
--- BASIC ACTIONS
+-- LSP
 --------------------------------------------------------
-
--- escape
-vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
-vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
-vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
-vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
-vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
-
-vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
-vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
-vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
-
-vim.keymap.set({"n", "v"}, "˛", "0", { desc = "A-h: Go to beginning of line" }) -- <A-h>
-vim.keymap.set({"n", "v"}, "ﬁ", "$", { desc = "A-l: Go to end of line" }) -- <A-l>
-
-vim.keymap.set({"n", "v"}, "gh", "0", { desc = "A-h: Go to beginning of line" })
-vim.keymap.set({"n", "v"}, "gl", "$", { desc = "A-l: Go to end of line" })
-
-vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
-vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
-vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
-vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
-vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
 
 -- Remove global default key mapping
 vim.keymap.del("n", "grn")
@@ -87,22 +98,6 @@ vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go 
 -- vim.keymap.set("n", "gd", "gri", { desc = "Go to definition" })
 -- vim.keymap.set("n", "gr", "grr", { desc = "See references/usages", remap = false })
 -- vim.keymap.set("n", "gri", "<nop>", { desc = "", remap = false })
-
--- -- indenting
-vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
-vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
-vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
-vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
-vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
-vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
-vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
-vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
-
-
---------------------------------------------------------
--- LSP
---------------------------------------------------------
-
 -- vim.keymap.del("n", "gra")
 -- vim.keymap.del("n", "gri")
 -- vim.keymap.del("n", "grn")
@@ -131,7 +126,7 @@ vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
 vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
 vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
 
--- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>" 
+-- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
 vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
 vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
 vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
@@ -147,8 +142,8 @@ vim.keymap.set("n", "<leader>vy,", ":\"+%y<CR>", { desc = "yank entire buffer to
 vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 
 -- vim.keymap.set("o", ",", function()
-  -- vim.cmd.normal("gg0VG")
-  -- if vim.fn.mode() == 'd' then
+-- vim.cmd.normal("gg0VG")
+-- if vim.fn.mode() == 'd' then
 -- end, { desc = "Entire buffer" })
 
 -- -- entire line
@@ -252,8 +247,8 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 -- AUTOCORRECT
 --------------------------------------------------------
 
-vim.cmd[[iabbrev locaing loading]]
-vim.cmd[[iabbrev timezpne timezone]]
+vim.cmd [[iabbrev locaing loading]]
+vim.cmd [[iabbrev timezpne timezone]]
 
 
 --------------------------------------------------------
@@ -349,9 +344,14 @@ vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (w
 -- COMPONENT
 
 -- TODO: prettify commands below. Multilines. Maybe use 'function' and 'end' (lua funciton)
-vim.keymap.set("n", "<leader>I", ":let @a = @/<CR>:execute '/interface ' . expand('%:t:r')<CR>:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component's interface" })
-vim.keymap.set("n", "<leader>C", ":let @a = @/<CR>:execute '/const ' . expand('%:t:r')<CR>0WW:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component" })
-vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:let @/ = @a<CR>", { desc = "Jump to main return" })
+vim.keymap.set("n", "<leader>I",
+  ":let @a = @/<CR>:execute '/interface ' . expand('%:t:r')<CR>:nohlsearch<CR>:let @/ = @a<CR>",
+  { desc = "Jump to main component's interface" })
+vim.keymap.set("n", "<leader>C",
+  ":let @a = @/<CR>:execute '/const ' . expand('%:t:r')<CR>0WW:nohlsearch<CR>:let @/ = @a<CR>",
+  { desc = "Jump to main component" })
+vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:let @/ = @a<CR>",
+  { desc = "Jump to main return" })
 
 
 -- GIT NAVIGATION
