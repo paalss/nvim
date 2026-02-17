@@ -18,7 +18,7 @@ vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
-vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
+-- vim.keymap.set({ "n", "v" }, "p", "\"_dp", { desc = "Paste" }) -- funker ikke
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
@@ -227,6 +227,7 @@ vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
 -- REGISTERS
 
 -- -- s
+vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
