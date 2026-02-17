@@ -75,7 +75,7 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- LSP
 --------------------------------------------------------
 
--- Remove global default key mapping
+-- Remove global default key mapping -- error on `:so`?
 vim.keymap.del("n", "grn")
 vim.keymap.del("n", "gra")
 vim.keymap.del("n", "grr")
