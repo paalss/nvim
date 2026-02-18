@@ -3,6 +3,39 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
+-- noremap
+
+ls.add_snippets("lua", {
+  s("nnoremap", {
+    t('vim.keymap.set("n", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
+
+ls.add_snippets("lua", {
+  s("vnoremap", {
+    t('vim.keymap.set("v", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
+
+ls.add_snippets("lua", {
+  s("inoremap", {
+    t('vim.keymap.set("i", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
+
+ls.add_snippets("lua", {
+  s("onoremap", {
+    t('vim.keymap.set("o", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
+
+ls.add_snippets("lua", {
+  s("snoremap", {
+    t('vim.keymap.set("s", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
+
+
 -- norwegian book
 
 ls.add_snippets("markdown", {
@@ -67,23 +100,6 @@ ls.add_snippets("markdown", {
 
 -- :set filetype
 
-ls.add_snippets("lua", {
-  s("nnoremap", {
-    t('vim.keymap.set("n", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
-  })
-})
-
-ls.add_snippets("lua", {
-  s("inoremap", {
-    t('vim.keymap.set("i", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
-  })
-})
-
-ls.add_snippets("lua", {
-  s("onoremap", {
-    t('vim.keymap.set("o", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
-  })
-})
 ls.add_snippets("javascriptreact", {
   s("useEffect", {
     t('useEffect(() => {'),
