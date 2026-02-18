@@ -215,7 +215,7 @@ cmp.setup {
 --       remap = false
 --     })
 --   -- vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions, 'Go to definition')
---   -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, 'Find usages of word/variable')
+--   -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, 'Find references')
 --
 --   -- show information
 --   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, {
