@@ -85,9 +85,10 @@ vim.keymap.del("n", "gO")
 -- Create new keymapping for lsps
 -- LspAttach: After an LSP Client performs "initialize" and attaches to a buffer.
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
-vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to definition" })
-vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to definition" })
-vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to definition" })
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
+vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to implementation" })
+vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Find references" })
+
 -- lsp features
 -- vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
 -- vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to definition" })
@@ -211,10 +212,11 @@ nnoremap cat :call JSXSelectTag("v")<CR>c
 -- YANKING, DELETING & PASTING
 --------------------------------------------------------
 
-
 -- NAVIGATE YANKED REGION
 
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
+vim.keymap.set("v", "p", "\"_P", { desc = "Paste without losing copied text" })
+vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied text" })
 
 
 -- SET PASTE
