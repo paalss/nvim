@@ -18,24 +18,23 @@ vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
-vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
-vim.keymap.set({"n", "v"}, "<A-h>", "0", { desc = "Go to beginning of line" }) -- <A-h>
-vim.keymap.set({"n", "v"}, "<A-l>", "$", { desc = "Go to end of line" }) -- <A-l>
+-- vim.keymap.set({"n", "v"}, "<A-h>", "0", { desc = "Go to beginning of line" }) -- <A-h>
+-- vim.keymap.set({"n", "v"}, "<A-l>", "$", { desc = "Go to end of line" }) -- <A-l>
 
-vim.keymap.set({"n", "v"}, "gh", "0", { desc = "Go to beginning of line" })
-vim.keymap.set({"n", "v"}, "gl", "$", { desc = "Go to end of line" })
+vim.keymap.set({ "n", "v" }, "gh", "0", { desc = "Go to beginning of line" })
+vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
-vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry "})
-vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry"})
+vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
+vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
 
 -- -- indenting
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
@@ -81,12 +80,14 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- vim.keymap.del("n", "grr")
 -- vim.keymap.del("n", "gri")
 -- vim.keymap.del("n", "gO")
+
 -- vim.keymap.del("n", "grt")
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to implementation" })
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
 vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to implementation" })
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Find references" })
+
 -- lsp features
 -- vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
 -- vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to definition" })
@@ -105,7 +106,6 @@ vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Fin
 -- vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to implementation" })
 -- vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
 -- vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
-
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to references" })
 vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
 
@@ -126,7 +126,7 @@ vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
 vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
 vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
 
--- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>" 
+-- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
 vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
 vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
 vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
@@ -229,6 +229,7 @@ vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
 -- REGISTERS
 
 -- -- s
+vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
@@ -249,8 +250,8 @@ vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" }
 -- AUTOCORRECT
 --------------------------------------------------------
 
-vim.cmd[[iabbrev locaing loading]]
-vim.cmd[[iabbrev timezpne timezone]]
+vim.cmd [[iabbrev locaing loading]]
+vim.cmd [[iabbrev timezpne timezone]]
 
 
 --------------------------------------------------------
@@ -346,7 +347,8 @@ vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (w
 
 -- SEARCH-REPLACE
 
-vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc ="Replace all occurences of word under cursor"})
+vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+  { desc = "Replace all occurences of word under cursor" })
 -- vim.keymap.set("c", "<C-n>", "<CR>:s#<C-r>/##g<left><Left>", { desc = "Turn search to search-replace" })
 -- vim.keymap.set("n", "<leader><C-n>", ":s#<C-r>/#", { desc = "Turn search to search-replace" })
 -- vim.keymap.set("n", "<leader>M", ":s/", { desc = "Search replace mode" })
@@ -355,9 +357,14 @@ vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>
 -- COMPONENT
 
 -- TODO: prettify commands below. Multilines. Maybe use 'function' and 'end' (lua funciton)
-vim.keymap.set("n", "<leader>I", ":let @a = @/<CR>:execute '/interface ' . expand('%:t:r')<CR>:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component's interface" })
-vim.keymap.set("n", "<leader>C", ":let @a = @/<CR>:execute '/const ' . expand('%:t:r')<CR>0WW:nohlsearch<CR>:let @/ = @a<CR>", { desc = "Jump to main component" })
-vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:let @/ = @a<CR>", { desc = "Jump to main return" })
+vim.keymap.set("n", "<leader>I",
+  ":let @a = @/<CR>:execute '/interface ' . expand('%:t:r')<CR>:nohlsearch<CR>:let @/ = @a<CR>",
+  { desc = "Jump to main component's interface" })
+vim.keymap.set("n", "<leader>C",
+  ":let @a = @/<CR>:execute '/const ' . expand('%:t:r')<CR>0WW:nohlsearch<CR>:let @/ = @a<CR>",
+  { desc = "Jump to main component" })
+vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:let @/ = @a<CR>",
+  { desc = "Jump to main return" })
 
 
 -- GIT NAVIGATION
