@@ -1,10 +1,16 @@
 -- vim.opt.guicursor = "" -- tykk cursor i insert mde
+
+-- auto-session github
+-- vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 vim.opt.langmap="å[,æ],Å{,Æ}"
 vim.opt.path = "**"
 vim.o.mouse = ""  -- disable mouse interaction (useful for copy-pasting with mouse)
 vim.opt.relativenumber = true
 vim.opt.nu = true -- on relativenumber, overwrite 0 with current line number
 vim.o.cursorline = true
+vim.o.undofile = true
+-- vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 -- vim.o.cursorcolumn = true
 -- vim.o.wildmenu = true
 vim.opt.tabstop = 2
@@ -59,6 +65,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.cmd [[
 autocmd FileType astro setlocal commentstring=//\ %s
 ]]
-
--- share neovim clipboard with OS system (works for windows 11 & Ubuntu in Terminal)
--- vim.o.clipboard = 'unnamedplus'

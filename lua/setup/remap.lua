@@ -18,15 +18,14 @@ vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
--- vim.keymap.set({ "n", "v" }, "p", "\"_dp", { desc = "Paste" }) -- funker ikke
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
-vim.keymap.set({ "n", "v" }, "˛", "0", { desc = "A-h: Go to beginning of line" }) -- <A-h>
-vim.keymap.set({ "n", "v" }, "ﬁ", "$", { desc = "A-l: Go to end of line" }) -- <A-l>
+-- vim.keymap.set({ "n", "v" }, "˛", "0", { desc = "A-h: Go to beginning of line" }) -- <A-h>
+-- vim.keymap.set({ "n", "v" }, "ﬁ", "$", { desc = "A-l: Go to end of line" }) -- <A-l>
 
 vim.keymap.set({ "n", "v" }, "gh", "0", { desc = "A-h: Go to beginning of line" })
 vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "A-l: Go to end of line" })
@@ -344,6 +343,15 @@ vim.keymap.set({ "n", "v" }, "<leader>n", "/", { desc = "Search forward" })
 vim.keymap.set({ "n", "v" }, "<leader><leader>n", "?", { desc = "Search backward" })
 vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (without jumping)" })
 
+
+-- SEARCH-REPLACE
+
+vim.keymap.set("c", "<C-n>", "<CR>:s#<C-r>/##g<left><Left>", { desc = "Convert current inc search to search-replace" })
+vim.keymap.set({ "n", "v" }, "<leader><C-n>", ":s#<C-r>/#", { desc = "Convert last <CR> search to search-replace" })
+vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Replace all occurences of word under cursor" })
+-- vim.keymap.set("n", "<leader>M", ":s/", { desc = "Search replace mode" })
+
+
 -- COMPONENT
 
 -- TODO: prettify commands below. Multilines. Maybe use 'function' and 'end' (lua funciton)
@@ -417,15 +425,10 @@ vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
 vim.keymap.set("n", "<leader><leader>te", ":terminal", { desc = "open terminal" })
 -- vim.keymap.set("n", "<leader><leader>trm", ":terminal<CR>:startinsert<CR>", { desc = "Open terminal" })
-
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
-vim.keymap.set("n", "<leader>rep", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-  { desc = "Replace all occurences of word under cursor" })
 -- vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git clean -fd", { desc = "Nuke working tree" })
 -- vim.keymap.set("n", "gx", "gx", { desc = "Open link (Netrw)" })
--- vim.keymap.set("n", "<leader>sco", ":set colorcolumn=80<CR>", { desc = "set colorcolumn" })
--- vim.keymap.set("n", "<leader>sclo", ":set colorcolumn=<CR>", { desc = "remove colorcolumn" })
 -- vim.keymap.set("n", "n", "nzzzv", { desc = "Go to next occurence" }) -- keep search terms in the middle
 -- vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous occurence" })
 -- vim.keymap.set("n", "<leader>map", ":tab help index<CR>/normal mode<CR>nn28j", { desc = "Find Neovim's default keymaps" })
