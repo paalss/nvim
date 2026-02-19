@@ -138,7 +138,6 @@ vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
 -- -- -- example: d, c, y, v,
 vim.keymap.set("o", ",", ":normal! ggVG<CR>", { desc = "Entire buffer" })
 vim.keymap.set("n", "y,", ":%y<CR>", { desc = "yank entire buffer" })
--- MAC: trenger denne ! :%y+<CR>
 vim.keymap.set("n", "<leader>vy,", ":%y+<CR>", { desc = "yank entire buffer to OS registry" })
 vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 
@@ -347,10 +346,11 @@ vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (w
 
 -- SEARCH-REPLACE
 
-vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-  { desc = "Replace all occurences of word under cursor" })
--- vim.keymap.set("c", "<C-n>", "<CR>:s#<C-r>/##g<left><Left>", { desc = "Turn search to search-replace" })
--- vim.keymap.set("n", "<leader><C-n>", ":s#<C-r>/#", { desc = "Turn search to search-replace" })
+-- ikke perfekt, men det er en start
+vim.keymap.set("c", "<C-n>", "<CR>:s/<C-r>///g<left><Left>", { desc = "Convert first incsearch match to 'Search-replace'" })
+vim.keymap.set("n", "<leader><C-n>", ":s/<C-r>//g<Left><Left>", { desc = "Turn last search to search-replace (only this line)" })
+vim.keymap.set("v", "<leader><C-n>", ":s/<C-r>///g<Left><Left>", { desc = "" })
+vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Replace all occurences of word under cursor" })
 -- vim.keymap.set("n", "<leader>M", ":s/", { desc = "Search replace mode" })
 
 
