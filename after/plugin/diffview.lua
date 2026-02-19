@@ -40,6 +40,7 @@ diffview.setup {
 }
 
 vim.api.nvim_create_user_command("Glo", "DiffviewFileHistory", {})
+vim.api.nvim_create_user_command("Glgp", "DiffviewFileHistory %", { desc = "Current file's history"})
 
 -- Git status and close
 vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
