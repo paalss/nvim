@@ -139,7 +139,7 @@ vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
 -- -- -- example: d, c, y, v,
 vim.keymap.set("o", ",", ":normal! ggVG<CR>", { desc = "Entire buffer" })
 vim.keymap.set("n", "y,", ":%y<CR>", { desc = "yank entire buffer" })
-vim.keymap.set("n", "<leader>vy,", ":\"+%y<CR>", { desc = "yank entire buffer to OS registry" })
+vim.keymap.set("n", "<leader>vy,", ":%y+<CR>", { desc = "yank entire buffer to OS registry" })
 vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 
 -- vim.keymap.set("o", ",", function()
