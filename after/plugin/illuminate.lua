@@ -6,4 +6,3 @@
 -- se lsp.lua
 -- vim.keymap.set("n", "<leader>*", function() illuminate.goto_next_reference() end, { desc = "" })
 -- vim.keymap.set("n", "<leader>#", function() illuminate.goto_prev_reference() end, { desc = "" })
- 

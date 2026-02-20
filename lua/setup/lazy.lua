@@ -109,15 +109,8 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim"                                                 -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
-  }, {
-  'sindrets/diffview.nvim',
-  pin = true
-}, -- {
-  --   "ThePrimeagen/harpoon",
-  --   commit = "c1aebba",
-  --   pin = true,
-  --   dependencies = { "nvim-lua/plenary.nvim" }
-  -- },
+  },
+  { 'sindrets/diffview.nvim',  pin = true },
   {
     'romgrk/barbar.nvim',
     dependencies = { 'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
