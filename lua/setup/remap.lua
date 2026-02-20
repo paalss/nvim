@@ -7,6 +7,7 @@ vim.keymap.set({ "n" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
+vim.keymap.set("x", "|", "'", { desc = "single quote" })
 
 
 --------------------------------------------------------
@@ -33,6 +34,7 @@ vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "Go to end of line" })
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
+-- Mac TODO: flytt S og L ned til registry section
 
 -- -- indenting
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
@@ -72,6 +74,9 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- LSP
 --------------------------------------------------------
 
+-- TODO: move to lsp.lua & add LspAttach stuff
+-- allow vim to make its own best effort at "go to definition"
+-- when there is no LSP for that file
 -- Remove global default key mapping -- error on `:so`?
 -- vim.keymap.del("n", "grn")
 -- vim.keymap.del("n", "gra")
@@ -218,6 +223,7 @@ vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied tex
 
 -- SET PASTE
 
+-- Mac TODO:
 vim.keymap.set("n", "<leader>u", ":set paste! paste?<CR>", { desc = "Toggle set paste" })
 
 
@@ -417,7 +423,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 
 vim.keymap.set("n", "<leader>m", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
-vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
@@ -431,6 +436,7 @@ vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "av
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
 vim.keymap.set("n", "<leader><leader>te", ":terminal", { desc = "open terminal" })
+-- vim.keymap.set("n", "<leader><leader>trm", ":terminal<CR>:startinsert<CR>", { desc = "Open terminal" })
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
 -- vim.keymap.set("n", "<leader>cm", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>nuke", ":! git reset --hard HEAD && git clean -fd", { desc = "Nuke working tree" })
