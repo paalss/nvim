@@ -51,6 +51,7 @@ call quickui#menu#install('C&ompare', [
       \ [ "History", "" ],
       \ [ "&Repo history\tSPC dlo", "DiffviewFileHistory", "Show commit history for entire repository" ],
       \ [ "&File history\tSPC dlgp", "DiffviewFileHistory %", "Show commit history for current file"],
+			"\ ["Show history", "Dh", "Show commit history for visual selection"], funker ikke for visual selection: går automatisk til normal mode når man prøver dette virker det som
 			\ ], 10000)
 
 call quickui#menu#install("E&dit", [
@@ -81,4 +82,4 @@ let g:quickui_show_tip = 1
 ]]
 
 
-vim.keymap.set("n", "<A-s>", ":call quickui#menu#open()<CR>", { desc = "Open menu (Quickui)" })
+vim.keymap.set({"n", "v"}, "<A-s>", ":call quickui#menu#open()<CR>", { desc = "Open menu (Quickui)" })
