@@ -218,9 +218,7 @@ vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied tex
 
 -- SET PASTE
 
-vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
--- vim.keymap.set("n", "<leader>set", ":set paste!<CR>", { desc = "Set toggle paste" })
-vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
+vim.keymap.set("n", "<leader>u", ":set paste! paste?<CR>", { desc = "Toggle set paste" })
 
 
 -- REGISTERS
