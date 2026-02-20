@@ -223,8 +223,15 @@ vim.keymap.set("n", "<leader>u", ":set paste! paste?<CR>", { desc = "Toggle set 
 
 -- REGISTERS
 
+vim.keymap.set("n", "c", "\"_c", { desc = "Change without saving deleted text" })
+vim.keymap.set("n", "C", "\"_C", { desc = "Change without saving deleted text" })
+vim.keymap.set("n", "x", "\"_x", { desc = "Change without saving deleted text" })
+vim.keymap.set("n", "p", "\"_dP", { desc = "Paste without saving deleted text" })
+vim.keymap.set("n", "P", "\"_dp", { desc = "Paste without saving deleted text" })
+
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
+
 -- -- s
 vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
