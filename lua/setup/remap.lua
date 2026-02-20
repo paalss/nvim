@@ -33,8 +33,6 @@ vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "Go to end of line" })
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
-vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
-vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
 
 -- -- indenting
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
@@ -227,6 +225,8 @@ vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
 
 -- REGISTERS
 
+vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
+vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
 -- -- s
 vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
