@@ -46,13 +46,18 @@ vim.api.nvim_create_user_command("Dhg", "DiffviewFileHistory %", { desc = "Show 
 vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
 -- vim.keymap.set("n", "<leader>dq", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }) -- TODO: disable if it's unnecessary
 
--- Git history
+-- -- commits
 vim.keymap.set({ "n", "v" }, "<leader>dh", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
 vim.keymap.set({ "n", "v" }, "<leader>dj", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file (Diffview)" })
 
--- Compare working index with...
+vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges",
+  { desc = "Big PR review: Review individual commits " })
+
+
+-- COMPARE WORKING INDEX WITH...
 
 -- -- branch
+vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>", { desc = "Compare with develop (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
 vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen origin/develop<CR>",
@@ -64,7 +69,7 @@ vim.keymap.set("n", "<leader><leader>mac", ":DiffviewOpen origin/mac-develop<CR>
 vim.keymap.set("n", "<leader>dcc", ":DiffviewOpen <C-r><C-w><CR>",
   { desc = "Compare with commit-hash/branch under cursor (Diffview)" })
 
--- -- Prompt-value branch
+-- -- specified branch
 local function open_diffview()
   local branch = vim.fn.input("Enter the branch/commit to compare with: ")
   vim.cmd("DiffviewOpen " .. branch)
