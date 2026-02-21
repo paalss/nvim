@@ -9,7 +9,7 @@ diffview.setup {
       { "n", "<S-u>",  "V:diffget<CR>",      { desc = "Unstage line" } },
       { "v", "<S-s>",  ":diffput<CR>",       { desc = "Stage selection" } },
       { "v", "<S-u>",  ":diffget<CR>",       { desc = "Unstage selection" } },
-      { "n", "dp",     "dp",                 { desc = "Stage hunk" } },  -- add desc to existing map
+      { "n", "dp",     "dp",                 { desc = "Stage hunk" } },   -- add desc to existing map
       { "n", "do",     "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
       { "n", "<F7>",   "]c",                 { desc = "Go to next hunk" } },
       { "n", "<S-F7>", "[c",                 { desc = "Go to prev hunk" } },
@@ -40,7 +40,7 @@ diffview.setup {
 }
 
 vim.api.nvim_create_user_command("Dh", "DiffviewFileHistory", { desc = "Show commit history" })
-vim.api.nvim_create_user_command("Dhg", "DiffviewFileHistory %", { desc = "Show commit history for current file"})
+vim.api.nvim_create_user_command("Dhg", "DiffviewFileHistory %", { desc = "Show commit history for current file" })
 
 -- Git status and close
 vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
@@ -48,7 +48,8 @@ vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status
 
 -- -- commits
 vim.keymap.set({ "n", "v" }, "<leader>dh", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
-vim.keymap.set({ "n", "v" }, "<leader>dj", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file (Diffview)" })
+vim.keymap.set({ "n", "v" }, "<leader>dj", ":DiffviewFileHistory %<CR>",
+  { desc = "Show commit history for current file (Diffview)" })
 
 vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges",
   { desc = "Big PR review: Review individual commits " })
@@ -57,7 +58,8 @@ vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/
 -- COMPARE WORKING INDEX WITH...
 
 -- -- branch
-vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>", { desc = "Compare with develop (Diffview)" })
+vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>",
+  { desc = "Compare with develop (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
 vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen origin/develop<CR>",

@@ -29,28 +29,31 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
-    dependencies = { -- Automatically install LSPs to stdpath for neovim
-      {
-        'williamboman/mason.nvim',
-        config = true
-      }, 'williamboman/mason-lspconfig.nvim', -- Useful status updates for LSP
+    dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      { 'williamboman/mason.nvim', config = true },
+      'williamboman/mason-lspconfig.nvim',
+
+      -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      {
-        'j-hui/fidget.nvim',
-        tag = 'legacy',
-        opts = {}
-      }, -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim' }
-  }, {
-  -- Autocompletion
-  'hrsh7th/nvim-cmp',
-  pin = true,
-  dependencies = {                                  -- Snippet Engine & its associated nvim-cmp source
-    'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', -- Adds LSP completion capabilities
-    'hrsh7th/cmp-nvim-lsp',                         -- Path
-    'hrsh7th/cmp-path',                             -- Adds a number of user-friendly snippets
-    'paalss/friendly-snippets' }
-},
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+
+      -- Additional lua configuration, makes nvim stuff amazing!
+      'folke/neodev.nvim',
+    },
+  },
+  {
+    -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    pin = true,
+    dependencies = {
+      -- Snippet Engine & its associated nvim-cmp source
+      'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', -- Adds LSP completion capabilities
+      'hrsh7th/cmp-nvim-lsp',                         -- Path
+      'hrsh7th/cmp-path',                             -- Adds a number of user-friendly snippets
+      'paalss/friendly-snippets',
+    },
+  },
 
   ----------------------------
   --** Autopairs/surround **--
@@ -88,10 +91,10 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
   {
     'nvim-telescope/telescope.nvim',
     enabled = true,
-    version = '*',
+    version = '0.1.1',
     -- or                            , branch = '0.1.x',
     dependencies = {
-      'nvim-lua/plenary.nvim', -- optional but recommended
+      'nvim-lua/plenary.nvim', 
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make'
@@ -106,8 +109,11 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     enabled = true,
-    dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim"                                                 -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },
   { 'sindrets/diffview.nvim',  pin = true },
