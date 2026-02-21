@@ -173,6 +173,7 @@ vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to
 
 -- mac: self closing functionality fungerer bare når nvim er i tmux?? Det samme gjelder vanlig vim. Dette skjønner jeg ikke
 -- men på WSL fungerer det
+-- 26-02-21: WSL: ok det fungerer ikke helt i WSL heller
 vim.cmd [[
 function! JSXIsSelfCloseTag(mode)
   let l:line_number = line(".")
@@ -202,10 +203,10 @@ function! JSXSelectTag(mode)
   end
 endfunction
 
-nnoremap vat :call JSXSelectTag("v")<CR>
-nnoremap yat :call JSXSelectTag("y")<CR>
-nnoremap dat :call JSXSelectTag("d")<CR>
-nnoremap cat :call JSXSelectTag("v")<CR>c
+nnoremap <leader><leader>vat :call JSXSelectTag("v")<CR>
+nnoremap <leader><leader>yat :call JSXSelectTag("y")<CR>
+nnoremap <leader><leader>dat :call JSXSelectTag("d")<CR>
+nnoremap <leader><leader>cat :call JSXSelectTag("v")<CR>c
 ]]
 
 
@@ -217,8 +218,6 @@ nnoremap cat :call JSXSelectTag("v")<CR>c
 -- NAVIGATE YANKED REGION
 
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
-vim.keymap.set("v", "p", "\"_P", { desc = "Paste without losing copied text" })
-vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied text" })
 
 
 -- SET PASTE

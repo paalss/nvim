@@ -202,38 +202,6 @@ see more
 ---
 </details>
 
-<details>
-    <summary><b>Tmux (for terminal window management)</b></summary>
-
-Ubuntu or Debian
-
-```bash
-apt install tmux
-```
-
-Other installation methods: <https://github.com/tmux/tmux/wiki/Installing>
-
-If you want to use this repo's `.tmux.conf`-file as your tmux config
-
-> [!WARNING]
-> This Neovim will OVERWRITE your ~/.tmux.conf if you have one
-
-`[space] [space] tmux`
-
-**Install plugin manager**
-
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-**Install plugins**
-
-Open tmux, and run:
-
-`[tmux prefix], I`
-
----
-</details>
 
 <details>
     <summary><b>Emmet-ls (node)</b></summary>
@@ -250,7 +218,7 @@ Open tmux, and run:
 **Clone config**
 
 > [!WARNING]
-> If you already have a `.config/nvim`-directory with important files, make sure to create a backup of them first!
+> If you have something in your ~/.config/nvim folder, create a backup of them first!
 
 ```sh
 git clone git@github.com:paalss/nvim.git ~/.config/nvim
@@ -265,88 +233,5 @@ In WSL, navigate to the files you want to edit and run:
 ```bash
 nvim
 ```
-
-If you get errors, try `:Lazy restore` to use the package versions specified in lazy-lock.json
-
-## Usage & utilities
-
-- View welcome screen and important keybindings: Run `nvim`
-
-### Git
-
-#### Source control 
-
-##### Fugitive
-
-Maps: \
-`:h fugitive-maps`
-
-Commit maps: \
-`:h fugitive_c`
-
-##### Lazygit.nvim
-
-**Commit using git's default configured editor -> (n)vim**
-
-`C` (uppercase)
-
-**Edit file in new modal:**
-
-`e`
-
-**Open file in default code editor:**
-
-`o`
-
-### Terminal
-
-The 'terminal' here is just a tmux pane -- Neovim terminal plugins such as Toggleterm and FTerm crashed a lot and were a pain to use
-
-Start Neovim inside of tmux
-
-eg.
-```
-tmux
-nvim .
-```
-
----
-
-You can also run `:terminal` and `:autoinsert`, but I haven't tested that as much
-
-#### Exit terminal
-
-Close with `exit` (better yet create an alias for "exit" in your `.bashrc` file. I'm using `alias q="exit"`)
-
-#### Temprorarily jump out of Neovim
-
-Suspend Neovim: `[ctrl] z`
-
-Bring back Neovim: `fg`
-
-### Other tools
-
-#### Multiple cursors (Vim visual multi)
-
-1. Visual mode `v`
-2. Enter  visual multi mode `[ctrl] n`
-
-Detailed information on how to use this plugin can be found in :h nvim-surround.usage.
-
-#### Command preview (live command)
-
-<https://github.com/smjonas/live-command.nvim>
-
-Preview norm and macros
-
-- `:Norm` to preview `:norm`
-- `:At a` to preview `:norm @a`
-
-### Neovim
-
-**Return to last opened window (buffer)**
-
-`[ctrl] 6`
-
 
 ![Commiting with convential commits](./docs/ascii-art.png)
