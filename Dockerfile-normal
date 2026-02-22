@@ -2,15 +2,76 @@ FROM ubuntu:26.04
 
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt-get install -y curl
-# RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install git nodejs npm golang python3 python3-pip wget curl unzip chafa -y
 
-WORKDIR /home/ubuntu
 
-RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz
-RUN ls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt-get install -y curl
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz tar xzvf nvim-linux-x86_64.tar.gz ./nvim-linux-x86_64/bin/nvim
+
+
+
+
+
+
+
+
+
+
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux64.tar.gz && \
+#     tar xzvf /nvim-linux64.tar.gz && \
+#     rm nvim-linux64.tar.gz && \
+#     rm /usr/bin/nvim && \
+#     ln -s $HOME/nvim-linux64/bin/nvim /usr/bin/nvim
+
+
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz tar xzvf nvim-linux-x86_64.tar.gz ./nvim-linux-x86_64/bin/nvim
 
 # ---------------------------------------------------
-CMD ["bash"]
+
+# FROM ubuntu:26.04
+#
+# RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt-get install -y curl
+# # RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install git nodejs npm golang python3 python3-pip wget curl unzip chafa -y
+#
+# WORKDIR /home/ubuntu
+#
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz tar xzvf nvim-linux-x86_64.tar.gz ./nvim-linux-x86_64/bin/nvim
+
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz
+# RUN tar xzvf nvim-linux-x86_64.tar.gz # extract
+
+# RUN mkdir /root/.local
+# RUN mkdir /root/.local/bin
+#
+# WORKDIR /root/.local/bin
+
+# RUN mv nvim-linux-x86_64.tar.gz /root/.local/bin/nvim-linux-x86_64.tar.gz
+# RUN mv nvim-linux-x86_64.tar.gz /root/.local/bin/nvim-linux-x86_64.tar.gz
+
+# CMD ["bash"]
+
+
+# RUN rm nvim-linux-x86_64.tar.gz  
+# RUN ln -s ./nvim-linux-x86_64/bin/nvim ./nvim # create symbolic link
+
+# ---------------------------------------------------
+# CMD ["nvim"]
 
 # RUN mv nvim-linux-x86_64.tar.gz ~/.local/bin/nvim-linux-x86_64
 # RUN cd ~/.local/bin/

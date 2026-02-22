@@ -1,0 +1,11 @@
+FROM anatolelucet/neovim:latest
+
+# copy your personal neovim config
+# COPY init.lua /root/.config/nvim/init.lua
+# COPY lua/ /root/.config/nvim/lua/
+
+# install your favorite tools!
+RUN apk add git ripgrep
+
+CMD ["/usr/bin/nvim"]
+
