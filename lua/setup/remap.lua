@@ -237,8 +237,9 @@ vim.keymap.set("v", "P", "\"_dp", { desc = "Paste without saving deleted text" }
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
 
--- -- s
 vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
+vim.keymap.set("v", "<leader>vp", "\"+p", { desc = "Paste from OS registry" })
+vim.keymap.set("v", "<leader>vP", "\"+P", { desc = "Paste from OS registry" })
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
