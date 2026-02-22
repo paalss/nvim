@@ -5,7 +5,19 @@ FROM anatolelucet/neovim:latest
 # COPY lua/ /root/.config/nvim/lua/
 
 # install your favorite tools!
-RUN apk add git ripgrep
+RUN apk add git ripgrep openssh-client
+
+# COPY /home/paalss/.ssh/id_rsa.pub id_rsa.pub
+
+RUN mkdir user
+RUN mkdir user/.config
+
+# COPY /home/paalss/.config/nvim/ user/.config/nvim
+COPY . /root/.config/nvim
+
+# Dette funker --->  COPY init.lua init.lua
+
+# RUN git clone git@github.com:paalss/nvim.git ~/.config/nvim 
 
 CMD ["/usr/bin/nvim"]
 
