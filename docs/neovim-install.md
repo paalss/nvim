@@ -20,7 +20,7 @@ Flytt downloaded tar til `~/.local/bin/`
 cd ~/.local/bin
 tar xzvf nvim-linux-x86_64.tar.gz # extract
 rm nvim-linux-x86_64.tar.gz  
-ln -s ./nvim-linux-x86-64/bin/nvim ./nvim # create symbolic link
+ln -s ./nvim-linux-x86_64/bin/nvim ./nvim # create symbolic link
 ```
 
 Følg denne tutorialen, den er steinbra :+1: https://www.youtube.com/watch?v=2wapxsfzLho
