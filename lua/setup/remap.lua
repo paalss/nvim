@@ -17,7 +17,7 @@ vim.keymap.set("x", "|", "'", { desc = "single quote" })
 -- escape
 vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
-vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
+vim.keymap.set({ "i", "s" }, "<esc>", "<esc>:echo 'You can also type \"jk\" quickly to return to normal mode!'<CR>", { desc = "Semi-disable esc-button" })
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
