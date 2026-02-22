@@ -17,7 +17,8 @@ vim.keymap.set("x", "|", "'", { desc = "single quote" })
 -- escape
 vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
-vim.keymap.set({ "i", "s" }, "<esc>", "<esc>:echo 'You can also type \"jk\" quickly to return to normal mode!'<CR>", { desc = "Semi-disable esc-button" })
+vim.keymap.set({ "i", "s" }, "<esc>", "<esc>:echo 'You can also type \"jk\" quickly to return to normal mode!'<CR>",
+  { desc = "Semi-disable esc-button" })
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
@@ -358,10 +359,13 @@ vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (w
 -- SEARCH-REPLACE
 
 -- ikke perfekt, men det er en start
-vim.keymap.set("c", "<C-n>", "<CR>:s/<C-r>///g<left><Left>", { desc = "Convert first incsearch match to 'Search-replace'" })
-vim.keymap.set("n", "<leader><C-n>", ":s/<C-r>//g<Left><Left>", { desc = "Turn last search to search-replace (only this line)" })
+vim.keymap.set("c", "<C-n>", "<CR>:s/<C-r>///g<left><Left>",
+  { desc = "Convert first incsearch match to 'Search-replace'" })
+vim.keymap.set("n", "<leader><C-n>", ":s/<C-r>//g<Left><Left>",
+  { desc = "Turn last search to search-replace (only this line)" })
 vim.keymap.set("v", "<leader><C-n>", ":s/<C-r>///g<Left><Left>", { desc = "" })
-vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Replace all occurences of word under cursor" })
+vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+  { desc = "Replace all occurences of word under cursor" })
 -- vim.keymap.set("n", "<leader>M", ":s/", { desc = "Search replace mode" })
 
 
