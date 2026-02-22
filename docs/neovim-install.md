@@ -4,23 +4,23 @@
 
 ### Ubuntu/WSL
 
-Ikke installer nvim v0.10.0. Telescope og harpoon vil ikke funke. Og rare bugs dukker opp ved `ce` av og til og jeg gidder ikke bruke tid på det.
+#### Med Tarball (v0.11.6 Neovim)
 
-#### Med Tarball (v0.9.0 Neovim)
-
-Versjon 0.9.0 er ikke tilgjengelig med Apt, så må bruke Tarball metoden for å få 0.9.0. For å installere nyere versjon på linux kan du kjøre tarball metoden.
+Versjon 0.11.6 er ikke tilgjengelig med Apt, så må bruke Tarball metoden for å få 0.11.6. For å installere nyere versjon på linux kan du kjøre tarball metoden.
 
 Last ned tarball, se https://github.com/neovim/neovim/releases/tag/v0.11.6
 
 Scroll helt ned til bunnen og la assets loade først
 
-Flytt til `~/.local/bin/`
+Installer nvim-linux-x86_64.tar.gz 
+
+Flytt downloaded tar til `~/.local/bin/`
 
 ```bash
 cd ~/.local/bin
-tar xzvf nvim-linux64.tar.gz # extract
-rm nvim-linux64.tar.gz
-ln -s ./nvim-linux64/bin/nvim ./nvim # create symbolic link
+tar xzvf nvim-linux-x86_64.tar.gz # extract
+rm nvim-linux-x86_64.tar.gz  
+ln -s ./nvim-linux-x86-64/bin/nvim ./nvim # create symbolic link
 ```
 
 Følg denne tutorialen, den er steinbra :+1: https://www.youtube.com/watch?v=2wapxsfzLho

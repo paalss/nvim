@@ -1,42 +1,46 @@
-
-
-
-WIP Dockerfile 
-
-
 FROM ubuntu:26.04
-FROM dockurr/macos:2.29
+
+RUN apt update && apt upgrade
+RUN apt install curl
+
+RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz tar xzvf nvim-linux-x86_64.tar.gz ./nvim-linux-x86_64/bin/nvim
 
 
-Apt install neovim? 
-Brew install neovim? 
+
+
+# ---------------------------------------------------------------------
+
+
+
+
+
+# FROM dockurr/macos:2.29
+# Apt install neovim? 
+# Brew install neovim? 
 
 # Legit måte å laste ned en tarball fra github på
 
-curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz tar xzf nvim-macos-x86_64.tar.gz ./nvim-macos-x86_64/bin/nvim
+# curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz tar xzf nvim-macos-x86_64.tar.gz ./nvim-macos-x86_64/bin/nvim
 
 
 # riktig path. Antar det skal være mulig å interpolate disse verdiene til snippeten over.
 
-https://github.com/neovim/neovim/releases/tag/stable
-tar xzvf nvim-linux-x86_64.tar.gz
-
+# curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
+# sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
 
 # https://github.com/MashMB/nvim-ide/blob/master/nvim%2FDockerfile
 
 # Lazygit variables
-ARG LG='lazygit'
-ARG LG_GITHUB='https://github.com/jesseduffield/lazygit/releases/download/v0.31.4/lazygit_0.31.4_Linux_x86_64.tar.gz'
-ARG LG_ARCHIVE='lazygit.tar.gz'
+# ARG LG='lazygit'
+# ARG LG_GITHUB='https://github.com/jesseduffield/lazygit/releases/download/v0.31.4/lazygit_0.31.4_Linux_x86_64.tar.gz'
+# ARG LG_ARCHIVE='lazygit.tar.gz'
 
 
-RUN apt-get update && apt-get -y install curl fzf ripgrep tree git xclip python3 python3-pip nodejs npm tzdata ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config zip unzip
-
-
-CMD ["nvim"]
+# RUN apt-get update && apt-get -y install curl fzf ripgrep tree git xclip python3 python3-pip nodejs npm tzdata ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config zip unzip
 
 
 
-#alpine
-
-https://github.com/spywhere/session-vim/blob/master/Dockerfile.nvim
+# https://github.com/spywhere/session-vim/blob/master/Dockerfile.nvim
+# CMD ["nvim"]
+# Lazygit variables# Lazygit variables# ENTRYPOINT nvim
+# CMD nvim
