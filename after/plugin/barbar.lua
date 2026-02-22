@@ -37,7 +37,9 @@ map('n', '<leader>ha', '<Cmd>BufferPin<CR>', opts)
 --                 :BufferGotoUnpinned
 
 -- Close buffer
-map('n', '<A-w>', ':BufferClose<CR>', opts)
+map('n', '<A-w>', ':echo "AAAA"<CR>', opts)
+map('n', '<leader><A-w>', ':BufferClose<CR>', opts)
+map('n', '<A-t>', ':BufferRestore<CR>', opts)
 
 -- Wipeout buffer
 --                 :BufferWipeout
@@ -50,16 +52,12 @@ map('n', '<A-w>', ':BufferClose<CR>', opts)
 --                 :BufferCloseBuffersRight
 
 -- Magic buffer-picking mode
-map('n', '<C-p>',   '<Cmd>BufferPick<CR>', opts)
-map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
+-- map('n', '<C-p>',   '<Cmd>BufferPick<CR>', opts)
+-- map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
 
 -- Sort automatically by...
-map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-map('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', opts)
-map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
-map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
-
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used
+-- map('n', '<leader><leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+map('n', '<leader><leader>bn', '<Cmd>BufferOrderByName<CR>', opts)
+map('n', '<leader><leader>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
+map('n', '<leader><leader>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
+map('n', '<leader><leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
