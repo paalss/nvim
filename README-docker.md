@@ -1,6 +1,11 @@
+Clone this repo somewhere
+
+`cd` to the repo
+
 Build
 
 ```sh
+cd ~/.config/nvim/
 sudo docker build . -f Dockerfile.neovim -t dockerhub-neovim
 ```
 
