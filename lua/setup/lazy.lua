@@ -140,7 +140,7 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
   {
     "rmagatti/auto-session",
     lazy = false,
-    enabled = false,
+    enabled = true,
 
     ---enables autocomplete for opts
     ---@module "auto-session"
