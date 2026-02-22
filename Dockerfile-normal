@@ -7,11 +7,16 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt-g
 WORKDIR /home/ubuntu
 
 RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz
-RUN mv nvim-linux-x86_64.tar.gz ~/.local/bin/nvim-linux-x86_64
-RUN cd ~/.local/bin/
-RUN tar xzvf nvim-linux-x86_64.tar.gz
-RUN rm nvim-linux-x86_64.tar.gz  
-RUN ln -s ./nvim-linux-x86_64/bin/nvim ./nvim # create symbolic link
+RUN ls
+
+# ---------------------------------------------------
+CMD ["bash"]
+
+# RUN mv nvim-linux-x86_64.tar.gz ~/.local/bin/nvim-linux-x86_64
+# RUN cd ~/.local/bin/
+# RUN tar xzvf nvim-linux-x86_64.tar.gz
+# RUN rm nvim-linux-x86_64.tar.gz  
+# RUN ln -s ./nvim-linux-x86_64/bin/nvim ./nvim # create symbolic link
 
 # RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 # RUN chmod u+x nvim.appimage
