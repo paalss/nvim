@@ -16,7 +16,8 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Ba
 -- escape
 vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
-vim.keymap.set({ "i", "s" }, "<esc>", "<nop>", { desc = "Disable escape button" })
+vim.keymap.set({ "i", "s" }, "<esc>", "<esc>:echo 'You can also type \"jk\" quickly to return to normal mode!'<CR>",
+  { desc = "Semi-disable esc-button" })
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
@@ -33,8 +34,6 @@ vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "A-l: Go to end of line" })
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
-vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
-vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
 
 -- -- indenting
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
@@ -227,8 +226,18 @@ vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
 
 -- REGISTERS
 
--- -- s
+vim.keymap.set("n", "c", "\"_c", { desc = "Change without saving deleted text" })
+vim.keymap.set("n", "C", "\"_C", { desc = "Change without saving deleted text" })
+vim.keymap.set("n", "x", "\"_x", { desc = "Change without saving deleted text" })
+vim.keymap.set("v", "p", "\"_dP", { desc = "Paste without saving deleted text" })
+vim.keymap.set("v", "P", "\"_dp", { desc = "Paste without saving deleted text" })
+
+vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
+vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
+
 vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
+vim.keymap.set("v", "<leader>vp", "\"+p", { desc = "Paste from OS registry" })
+vim.keymap.set("v", "<leader>vP", "\"+P", { desc = "Paste from OS registry" })
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
@@ -346,9 +355,14 @@ vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (w
 
 -- SEARCH-REPLACE
 
-vim.keymap.set("c", "<C-n>", "<CR>:s#<C-r>/##g<left><Left>", { desc = "Convert current inc search to search-replace" })
-vim.keymap.set({ "n", "v" }, "<leader><C-n>", ":s#<C-r>/#", { desc = "Convert last <CR> search to search-replace" })
-vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Replace all occurences of word under cursor" })
+-- ikke perfekt, men det er en start
+vim.keymap.set("c", "<C-n>", "<CR>:s/<C-r>///g<left><Left>",
+  { desc = "Convert first incsearch match to 'Search-replace'" })
+vim.keymap.set("n", "<leader><C-n>", ":s/<C-r>//g<Left><Left>",
+  { desc = "Turn last search to search-replace (only this line)" })
+vim.keymap.set("v", "<leader><C-n>", ":s/<C-r>///g<Left><Left>", { desc = "" })
+vim.keymap.set("n", "<leader>,", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+  { desc = "Replace all occurences of word under cursor" })
 -- vim.keymap.set("n", "<leader>M", ":s/", { desc = "Search replace mode" })
 
 
@@ -410,7 +424,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 
 vim.keymap.set("n", "<leader>m", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
-vim.keymap.set("n", "|", "@w", { desc = "Replay 'w'-macro with pipe character" })
 vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
