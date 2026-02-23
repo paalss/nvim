@@ -317,7 +317,7 @@ vim.keymap.set("n", "<leader><up>", "<cmd>cpfile<CR>", { desc = "Prev file" })
 -- GIT
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
+vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:w<CR>:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
