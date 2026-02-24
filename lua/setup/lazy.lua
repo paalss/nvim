@@ -146,6 +146,7 @@ local plugins = {
   --** Other **--
   ----------------------------
   { 'skywind3000/vim-quickui' },
+  { 'RRethy/vim-illuminate', enabled = false },
   { 'TamaMcGlinn/quickfixdd' },
   {
     'goolord/alpha-nvim',
