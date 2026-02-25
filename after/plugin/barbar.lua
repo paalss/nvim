@@ -38,7 +38,6 @@ map('n', '<leader>ha', '<Cmd>BufferPin<CR>', opts)
 
 -- Close buffer
 map('n', '<A-w>', ':BufferClose<CR>', opts)
-map('n', '<leader><A-w>', ':BufferClose<CR>', opts) -- because the above keymap rarely works (why??)
 map('n', '<A-t>', ':BufferRestore<CR>', opts)
 
 -- Wipeout buffer
