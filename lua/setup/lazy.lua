@@ -155,6 +155,7 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
   --** Other **--
   ----------------------------
   { 'skywind3000/vim-quickui' },
+  { 'RRethy/vim-illuminate', enabled = false },
   { 'TamaMcGlinn/quickfixdd' },
   {
     'goolord/alpha-nvim',

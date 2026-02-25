@@ -262,3 +262,62 @@ cmp.setup {
 -- end)
 
 -- vim.lsp.setup()
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+-- LSP same stuff from remap.lua in LspAttach - Attempt
+--------------------------------------------------------
+
+-- This runs on LSP attach per buffer (see main LSP attach function in 'neovim/nvim-lspconfig' config for more info,
+-- it is better explained there). This allows easily switching between pickers if you prefer using something else!
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   group = vim.api.nvim_create_augroup('telescope-lsp-attach', { clear = true }),
+--   callback = function(event)
+--     local buf = event.buf
+--
+--
+--     -- Remove global default key mapping -- error on `:so`?
+--     vim.keymap.del("n", "grn")
+--     vim.keymap.del("n", "gra")
+--     vim.keymap.del("n", "grr")
+--     vim.keymap.del("n", "gri")
+--     vim.keymap.del("n", "gO")
+--
+--     -- Create new keymapping for lsps
+--     -- LspAttach: After an LSP Client performs "initialize" and attaches to a buffer.
+--     vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+--     vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
+--     vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to implementation" })
+--     vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Find references" })
+--
+--     -- lsp features
+--     -- vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+--     -- vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to definition" })
+--     -- vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to definition" })
+--     -- vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to definition" })
+--     -- vim.keymap.del("n", "grr")
+--
+--     -- vim.keymap.set("n", "gd", "gri", { desc = "Go to definition" })
+--     -- vim.keymap.set("n", "gr", "grr", { desc = "See references/usages", remap = false })
+--     -- vim.keymap.set("n", "gri", "<nop>", { desc = "", remap = false })
+--     -- vim.keymap.del("n", "gra")
+--     -- vim.keymap.del("n", "gri")
+--     -- vim.keymap.del("n", "grn")
+--     -- vim.keymap.del("n", "grr")
+--     -- vim.keymap.del("n", "grt")
+--     -- vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Go to implementation" })
+--     -- vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+--     -- vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
+--     -- vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to references" })
+--     -- vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
+--   end,
+-- })

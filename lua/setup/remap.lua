@@ -7,7 +7,7 @@ vim.keymap.set({ "n" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
-vim.keymap.set("x", "|", "'", { desc = "single quote" })
+-- vim.keymap.set("x", "|", "'", { desc = "single quote" }) -- funker ikke. i hvert fall ikke i insert mode
 
 
 --------------------------------------------------------
@@ -35,7 +35,6 @@ vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "Go to end of line" })
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
--- Mac TODO: flytt S og L ned til registry section
 
 -- -- indenting
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
@@ -75,9 +74,6 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- LSP
 --------------------------------------------------------
 
--- TODO: move to lsp.lua & add LspAttach stuff
--- allow vim to make its own best effort at "go to definition"
--- when there is no LSP for that file
 -- Remove global default key mapping -- error on `:so`?
 -- vim.keymap.del("n", "grn")
 -- vim.keymap.del("n", "gra")
@@ -219,6 +215,8 @@ nnoremap <leader><leader>cat :call JSXSelectTag("v")<CR>c
 -- NAVIGATE YANKED REGION
 
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
+vim.keymap.set("v", "p", "\"_P", { desc = "Paste without losing copied text" })
+vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied text" })
 
 
 -- SET PASTE
@@ -329,7 +327,7 @@ vim.keymap.set("n", "<leader><up>", "<cmd>cpfile<CR>", { desc = "Prev file" })
 -- GIT
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:q!<CR>",
+vim.keymap.set("n", "<leader>dca", "gg/#<CR>kdgg:w<CR>:q!<CR>",
   { desc = "Abort git commit (does not work with amended commits, they will still commit for some reason)" })
 vim.keymap.set("n", "<leader><leader>dca", "gg/#<CR>Vggy:cq<CR>",
   { desc = "Abort everything (amend commits, merge commits etc.)" })
@@ -408,6 +406,7 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split dow
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
 
+-- TODO: mac fjern
 -- add colorcolumn only for commit messages
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "COMMIT_EDITMSG",
