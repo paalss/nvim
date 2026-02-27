@@ -44,7 +44,7 @@ map('n', '†', ':BufferRestore<CR>', opts) -- <A-t>
 --                 :BufferWipeout
 
 -- Close commands
---                 :BufferCloseAllButCurrent
+map('n', '<leader>Ω', ':BufferCloseAllButCurrent<CR>', opts) -- <leader><A-w>
 --                 :BufferCloseAllButPinned
 --                 :BufferCloseAllButCurrentOrPinned
 --                 :BufferCloseBuffersLeft

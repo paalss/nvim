@@ -198,10 +198,10 @@ function! JSXSelectTag(mode)
   end
 endfunction
 
-nnoremap vat :call JSXSelectTag("v")<CR>
-nnoremap yat :call JSXSelectTag("y")<CR>
-nnoremap dat :call JSXSelectTag("d")<CR>
-nnoremap cat :call JSXSelectTag("v")<CR>c
+nnoremap <leader><leader>vat :call JSXSelectTag("v")<CR>
+nnoremap <leader><leader>yat :call JSXSelectTag("y")<CR>
+nnoremap <leader><leader>dat :call JSXSelectTag("d")<CR>
+nnoremap <leader><leader>cat :call JSXSelectTag("v")<CR>c
 ]]
 
 
@@ -219,9 +219,7 @@ vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied tex
 
 -- SET PASTE
 
-vim.keymap.set("n", "<leader>sep", ":set paste<CR>", { desc = "Set paste" })
--- vim.keymap.set("n", "<leader>set", ":set paste!<CR>", { desc = "Set toggle paste" })
-vim.keymap.set("n", "<leader>sen", ":set nopaste<CR>", { desc = "Set nopaste" })
+vim.keymap.set("n", "<leader>u", ":set paste! paste?<CR>", { desc = "Toggle set paste" })
 
 
 -- REGISTERS
@@ -404,8 +402,6 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize -4<CR>", { desc = "Resize split up" }
 vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split down" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
-
-vim.keymap.set("n", "<A-w>", "<C-w>w", { desc = "Go to next split" })
 
 -- add colorcolumn only for commit messages
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
