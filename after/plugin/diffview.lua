@@ -4,27 +4,27 @@ diffview.setup {
   watch_index = true,
   keymaps = {
     view = {
-      { "n", "•",           ":DiffviewClose<CR>",  { desc = "Close Diffview" } },
-      { "n", "<S-s>",        "V:diffput<CR>",      { desc = "Stage line" } },
-      { "n", "<S-u>",        "V:diffget<CR>",      { desc = "Unstage line" } },
-      { "v", "<S-s>",        ":diffput<CR>",       { desc = "Stage selection" } },
-      { "v", "<S-u>",        ":diffget<CR>",       { desc = "Unstage selection" } },
-      { "n", "dp",           "dp",                 { desc = "Stage hunk" } },   -- add desc to existing map
-      { "n", "do",           "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
-      { "n", "<F7>",          "]c",                 { desc = "Go to next hunk" } },
-      { "n", "<S-F7>",        "[c",                 { desc = "Go to prev hunk" } },
-      { "n", "ç",             "]c",                 { desc = "A-c: Go to next hunk" } },
-      { "n", "∂",             "[c",                 { desc = "A-d: Go to prev hunk" } },
+      { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "<S-s>", "V:diffput<CR>", { desc = "Stage line" } },
+      { "n", "<S-u>", "V:diffget<CR>", { desc = "Unstage line" } },
+      { "v", "<S-s>", ":diffput<CR>", { desc = "Stage selection" } },
+      { "v", "<S-u>", ":diffget<CR>", { desc = "Unstage selection" } },
+      { "n", "dp", "dp", { desc = "Stage hunk" } },   -- add desc to existing map
+      { "n", "do", "do", { desc = "Unstage hunk" } }, -- add desc to existing map
+      { "n", "<F7>", "]c", { desc = "Go to next hunk" } },
+      { "n", "<S-F7>", "[c", { desc = "Go to prev hunk" } },
+      { "n", "ç", "]c", { desc = "A-c: Go to next hunk" } },
+      { "n", "∂", "[c", { desc = "A-d: Go to prev hunk" } },
     },
     file_panel = {
-      { "n", "•",     ":DiffviewClose<CR>",                { desc = "Close Diffview" } },
-      { "n", "q",     "<C-w>l:DiffviewClose<CR>",          { desc = "Close Diffview" } },
-      { "n", "cc",    ":Git commit<CR>",                   { desc = "Commit" } },
-      { "n", "ca",    ":Git commit --amend<CR>",           { desc = "Commit amend" } },
-      { "n", "ce",    ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
+      { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "q", "<C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "cc", ":Git commit<CR>", { desc = "Commit" } },
+      { "n", "ca", ":Git commit --amend<CR>", { desc = "Commit amend" } },
+      { "n", "ce", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
     },
     file_history_panel = {
-      { "n", "•",            ":DiffviewClose<CR>",                         { desc = "Close Diffview" } },
+      { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- find commit hash regardless of cursor positioning setup:
 
       -- $file<CR>f|;w ____ breakdown
@@ -33,8 +33,8 @@ diffview.setup {
       -- ?file<CR> backwards search for 'file'
       -- f1;w walk to <commit hash>
       -- :DiffviewOpen<CR> Open Diffview <commit hash>
-      { "n", "<leader>c",        "$?file<CR>f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } }, -- similar: Diffview builtin functionality: CTRL ALT d
-      { "n", "<leader><leader>", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>",   { desc = "Checkout to commit (Diffview)" } }
+      { "n", "<leader>c", "$?file<CR>f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } }, -- similar: Diffview builtin functionality: CTRL ALT d
+      { "n", "<leader><leader>", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>", { desc = "Checkout to commit (Diffview)" } }
     }
   }
 }
