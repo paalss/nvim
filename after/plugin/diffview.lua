@@ -59,10 +59,9 @@ vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/
 -- -- branch
 vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>",
   { desc = "Compare with develop (Diffview)" })
-vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
-vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
-vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen origin/develop<CR>",
-  { desc = "Compare with develop (Diffview)" })
+vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen master<CR>", { desc = "Compare with master (Diffview)" })
+vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen main<CR>", { desc = "Compare with main (Diffview)" })
+vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen develop<CR>", { desc = "Compare with develop (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mac", ":DiffviewOpen origin/develop<CR>",
   { desc = "Compare with develop (Diffview)" })
 
