@@ -38,14 +38,13 @@ map('n', '<leader>ha', '<Cmd>BufferPin<CR>', opts)
 
 -- Close buffer
 map('n', '<A-w>', ':BufferClose<CR>', opts)
-map('n', '<leader><A-w>', ':BufferCloseAllButCurrent<CR>', opts)
 map('n', '<A-t>', ':BufferRestore<CR>', opts)
 
 -- Wipeout buffer
 --                 :BufferWipeout
 
 -- Close commands
---                 :BufferCloseAllButCurrent
+map('n', '<leader><A-w>', ':BufferCloseAllButCurrent<CR>', opts)
 --                 :BufferCloseAllButPinned
 --                 :BufferCloseAllButCurrentOrPinned
 --                 :BufferCloseBuffersLeft

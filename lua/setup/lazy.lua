@@ -94,12 +94,13 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     version = '0.1.1',
     -- or                            , branch = '0.1.x',
     dependencies = {
-      'nvim-lua/plenary.nvim', 
+      'nvim-lua/plenary.nvim',
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make'
       }
-    }
+    },
+    pin = true,
   },
 
   ----------------------------

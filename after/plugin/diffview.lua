@@ -47,9 +47,8 @@ vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status
 -- vim.keymap.set("n", "<leader>dq", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- -- commits
-vim.keymap.set({ "n", "v" }, "<leader>dh", ":DiffviewFileHistory<CR>", { desc = "Show commit history (Diffview)" })
-vim.keymap.set({ "n", "v" }, "<leader>dj", ":DiffviewFileHistory %<CR>",
-  { desc = "Show commit history for current file (Diffview)" })
+vim.keymap.set("v", "<leader>dh", ":DiffviewFileHistory<CR>", { desc = "Show commit history for current selection" })
+vim.keymap.set("n", "<leader>dh", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
 
 vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges",
   { desc = "Big PR review: Review individual commits " })
@@ -60,10 +59,9 @@ vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/
 -- -- branch
 vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>",
   { desc = "Compare with develop (Diffview)" })
-vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen origin/master<CR>", { desc = "Compare with master (Diffview)" })
-vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen origin/main<CR>", { desc = "Compare with main (Diffview)" })
-vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen origin/develop<CR>",
-  { desc = "Compare with develop (Diffview)" })
+vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen master<CR>", { desc = "Compare with master (Diffview)" })
+vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen main<CR>", { desc = "Compare with main (Diffview)" })
+vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen develop<CR>", { desc = "Compare with develop (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mac", ":DiffviewOpen origin/mac-develop<CR>",
   { desc = "Compare with mac-develop (Diffview)" })
 
