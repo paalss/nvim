@@ -421,8 +421,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 --------------------------------------------------------
 
 vim.keymap.set("n", "<leader>m", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
-vim.keymap.set("n", "§", "@w", { desc = "Replay 'w'-macro with § character" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
