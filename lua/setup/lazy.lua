@@ -21,7 +21,7 @@ vim.g.clipboard = {
 
 vim.g.mapleader = " "
 
-local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter hvilken som helst bracket - (, { og [
+local plugins = {
 
   ----------------------------
   --** LSP/autocompletion **--
@@ -48,9 +48,16 @@ local plugins = { -- { 'wellle/targets.vim' }, -- har en bug hvor "b" targeter h
     pin = true,
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
-      'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', -- Adds LSP completion capabilities
-      'hrsh7th/cmp-nvim-lsp',                         -- Path
-      'hrsh7th/cmp-path',                             -- Adds a number of user-friendly snippets
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
+
+      -- Adds LSP completion capabilities
+      'hrsh7th/cmp-nvim-lsp',
+
+      -- Path
+      'hrsh7th/cmp-path',
+
+      -- Adds a number of user-friendly snippets
       'paalss/friendly-snippets',
     },
   },

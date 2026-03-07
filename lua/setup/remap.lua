@@ -7,7 +7,6 @@ vim.keymap.set({ "n" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
--- vim.keymap.set("x", "|", "'", { desc = "single quote" }) -- funker ikke. i hvert fall ikke i insert mode
 
 
 --------------------------------------------------------
@@ -41,6 +40,9 @@ vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
 vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
 vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
+
+-- vim.keymap.set("i", "<tab>", "<esc>:echo 'HELLOOOOOO????'<CR>", { desc = "add indent" }) -- funker ikke på mac
+
 vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
 vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
 vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
