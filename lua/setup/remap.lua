@@ -48,9 +48,20 @@ vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
 
 --------------------------------------------------------
--- LINE MANAGEMENT
+-- OPEN CONFIG FILE IN A SPLIT
 --------------------------------------------------------
 
+vim.keymap.set("n", "<leader><leader>vim", ":vsplit ~/.vimrc<CR>", { desc = "Open .vimrc in a new split" })
+vim.keymap.set("n", "<leader><leader>idea", ":vsplit ~/.ideavimrc<CR>", { desc = "Open .ideavimrc in a new split" })
+vim.keymap.set("n", "<leader><leader>nrem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>",
+  { desc = "Open Neovim remap.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>nset", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>",
+  { desc = "Open Neovim set.lua in a new split" })
+
+
+--------------------------------------------------------
+-- LINE MANAGEMENT
+--------------------------------------------------------
 
 -- MOVE LINE
 
@@ -249,10 +260,10 @@ vim.keymap.set({ "n", "v" }, "_", "\"_", { desc = "Use black hole register" })
 -- CORRECT NORWEGIAN CHARACTERS
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>corr", ":%s/├Ñ/å/g<CR>:%s/├╕/ø/g<CR>:%s/├ª/æ/g<CR>", { desc = "Correct æøå" })
-vim.keymap.set("n", "<leader>cæ", ":%s/├ª/æ/g<CR>", { desc = "Correct æ" })
-vim.keymap.set("n", "<leader>cø", ":%s/├╕/ø/g<CR>", { desc = "Correct ø" })
-vim.keymap.set("n", "<leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" })
+vim.keymap.set("n", "<leader><leader>corr", ":%s/├Ñ/å/g<CR>:%s/├╕/ø/g<CR>:%s/├ª/æ/g<CR>", { desc = "Correct æøå" })
+vim.keymap.set("n", "<leader><leader>cæ", ":%s/├ª/æ/g<CR>", { desc = "Correct æ" })
+vim.keymap.set("n", "<leader><leader>cø", ":%s/├╕/ø/g<CR>", { desc = "Correct ø" })
+vim.keymap.set("n", "<leader><leader>cå", ":%s/├Ñ/å/g<CR>", { desc = "Correct å" })
 
 
 --------------------------------------------------------
