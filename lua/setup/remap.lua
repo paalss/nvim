@@ -219,9 +219,10 @@ vim.keymap.set("v", "p", "\"_P", { desc = "Paste without losing copied text" })
 vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied text" })
 
 
--- SET PASTE
+-- TOGGLE
 
 vim.keymap.set("n", "<leader>u", ":set paste! paste?<CR>", { desc = "Toggle set paste" })
+vim.keymap.set("n", "<leader>y", ":set swapfile! swapfile?<CR>", { desc = "Toggle set swapfile" })
 
 
 -- REGISTERS
