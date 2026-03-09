@@ -61,7 +61,7 @@ vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...
   { desc = "Compare with develop (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen master<CR>", { desc = "Compare with master (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen main<CR>", { desc = "Compare with main (Diffview)" })
-vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen develop<CR>", { desc = "Compare with develop (Diffview)" })
+vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen develop<CR>", { desc = "Compare with develop (Diffview). NOTE: STAGE ANY UNCOMMITTED CHANGES YOU WANT TO SEE IN COMPARISON" })
 vim.keymap.set("n", "<leader><leader>mac", ":DiffviewOpen origin/develop<CR>",
   { desc = "Compare with develop (Diffview)" })
 
