@@ -89,7 +89,11 @@ local plugins = {
     enabled = true,
     version = '0.1.1',
     -- or                            , branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } },
+    dependencies = {
+      {
+        'nvim-lua/plenary.nvim'
+      }
+    },
     pin = true,
   },
 
