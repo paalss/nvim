@@ -58,6 +58,7 @@ vim.keymap.set("n", "<leader><leader>idea", ":vsplit ~/.ideavimrc<CR>", { desc =
 vim.keymap.set("n", "<leader><leader>nrem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>", { desc = "Open Neovim remap.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>nset", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>", { desc = "Open Neovim set.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.zshrc<CR>", { desc = "Open .zshrc a new split" })
+vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
 -- vim.keymap.set("n", "<leader><leader>po", ":vsplit ~/.zshrc<CR>", { desc = "Open pre-push a new split" })
 
 -- oversett dette fra bash til lua:
