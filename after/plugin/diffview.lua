@@ -34,7 +34,7 @@ diffview.setup {
       -- f1;w walk to <commit hash>
       -- :DiffviewOpen<CR> Open Diffview <commit hash>
       { "n", "<leader>c", "$?file<CR>f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } }, -- similar: Diffview builtin functionality: CTRL ALT d
-      { "n", "<leader><leader>", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>", { desc = "Checkout to commit (Diffview)" } }
+      { "n", "<leader><leader>c", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>", { desc = "Checkout to commit (Diffview)" } }
     }
   }
 }
