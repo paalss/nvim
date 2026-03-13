@@ -10,6 +10,7 @@ vim.opt.relativenumber = true
 vim.opt.nu = true -- on relativenumber, overwrite 0 with current line number
 vim.o.cursorline = true
 vim.o.undofile = true
+vim.o.clipboard = 'unnamedplus'
 -- vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)
 -- vim.o.cursorcolumn = true
 -- vim.o.wildmenu = true
