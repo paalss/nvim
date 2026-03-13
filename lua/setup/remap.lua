@@ -413,10 +413,10 @@ vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:l
 -- vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
 
 -- resize panes
-vim.keymap.set("n", "<C-Up>", "<cmd>resize -4<CR>", { desc = "Resize split up" })
-vim.keymap.set("n", "<C-Down>", "<cmd>resize +4<CR>", { desc = "Resize split down" })
-vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
-vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
+vim.keymap.set("n", "<leader><Up>", "<cmd>resize -4<CR>", { desc = "Resize split up" })
+vim.keymap.set("n", "<leader><Down>", "<cmd>resize +4<CR>", { desc = "Resize split down" })
+vim.keymap.set("n", "<leader><Left>", "<cmd>vertical resize -4<CR>", { desc = "Resize split left" })
+vim.keymap.set("n", "<leader><Right>", "<cmd>vertical resize +4<CR>", { desc = "Resize split right" })
 
 -- add colorcolumn only for commit messages
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
