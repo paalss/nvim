@@ -48,6 +48,10 @@ vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
 vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
 vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
+-- TODO eieiopop
+-- vim.keymap.set("n", "<leader><leader>new", "", { desc = "Create new file" })
+-- neotree?
+-- vanilla måte å gjøre det på?
 
 --------------------------------------------------------
 -- OPEN CONFIG FILE IN A SPLIT
@@ -55,8 +59,9 @@ vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
 vim.keymap.set("n", "<leader><leader>vim", ":vsplit ~/.vimrc<CR>", { desc = "Open .vimrc in a new split" })
 vim.keymap.set("n", "<leader><leader>idea", ":vsplit ~/.ideavimrc<CR>", { desc = "Open .ideavimrc in a new split" })
-vim.keymap.set("n", "<leader><leader>nrem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>", { desc = "Open Neovim remap.lua in a new split" })
-vim.keymap.set("n", "<leader><leader>nset", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>", { desc = "Open Neovim set.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>rem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>", { desc = "Open Neovim remap.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>set", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>", { desc = "Open Neovim set.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>", { desc = "Open Neovim set.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.zshrc<CR>", { desc = "Open .zshrc a new split" })
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
 -- vim.keymap.set("n", "<leader><leader>po", ":vsplit ~/.zshrc<CR>", { desc = "Open pre-push a new split" })
@@ -358,8 +363,7 @@ vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 -- SEARCH & JUMP-TO
 
 vim.keymap.set({ "n", "v" }, "<leader>n", "/", { desc = "Search forward" })
-vim.keymap.set({ "n", "v" }, "<leader><leader>n", "?", { desc = "Search backward" })
-vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (without jumping)" })
+vim.keymap.set({ "n", "v" }, "<leader>N", "?", { desc = "Search backward" })
 
 
 -- SEARCH-REPLACE
