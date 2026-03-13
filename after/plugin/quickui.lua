@@ -34,7 +34,7 @@ call quickui#menu#install('C&ompare', [
 			\ ["Ma&ster\tSPC SPC mas", "DiffviewOpen origin/master", "Compare with master"],
 			\ ["Ma&in\tSPC SPC mai", "DiffviewOpen origin/main", "Compare with main"],
 			\ ["&Develop\tSPC SPC dev", "DiffviewOpen origin/develop", "Compare with develop"],
-			\ ["D&evelop\tSPC SPC SPC dev", "DiffviewOpen origin/HEAD...HEAD --imply-local", "Compare with origin"],
+			"\ ["D&evelop\tSPC SPC SPC dev", "DiffviewOpen origin/HEAD...HEAD --imply-local", "Compare with origin"],
       \ [ "--", "" ],
       \ [ "History", "" ],
       \ [ "&File history\tSPC dh", "DiffviewFileHistory %", "Show commit history for current file (normal mode, if you do SPC dh in visual mode it checks only for that selection)"],

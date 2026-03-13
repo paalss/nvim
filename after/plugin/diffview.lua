@@ -34,6 +34,7 @@ diffview.setup {
       -- f1;w walk to <commit hash>
       -- :DiffviewOpen<CR> Open Diffview <commit hash>
       { "n", "<leader>c", "$?file<CR>f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } }, -- similar: Diffview builtin functionality: CTRL ALT d
+      -- TODO: DU HAR AVINSTALLERT VIM-FUGITIVE DIN IDIOT!!! SELVØFLGELIG FUNKER IKKE DETTE DA!!! ÅH!
       { "n", "<leader><leader>c", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>", { desc = "Checkout to commit (Diffview)" } }
     }
   }
@@ -57,8 +58,8 @@ vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/
 -- COMPARE WORKING INDEX WITH...
 
 -- -- branch
-vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>",
-  { desc = "Compare with develop (Diffview)" })
+-- vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>",
+--   { desc = "Compare with develop (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen master<CR>", { desc = "Compare with master (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen main<CR>", { desc = "Compare with main (Diffview)" })
 vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen develop<CR>", { desc = "Compare with develop (Diffview). NOTE: STAGE ANY UNCOMMITTED CHANGES YOU WANT TO SEE IN COMPARISON" })
