@@ -141,9 +141,7 @@ vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to
 -- vim.keymap.set("o", "et", ":<c-u>:normal! ?<<CR>v/\\/><CR>", { desc = "Select self closing tag" })
 -- vim.keymap.set("o", "st", "", { desc = "selfclosingtag" })
 
--- mac: self closing functionality fungerer bare når nvim er i tmux?? Det samme gjelder vanlig vim. Dette skjønner jeg ikke
--- men på WSL fungerer det
--- 26-02-21: WSL: ok det fungerer ikke helt i WSL heller
+-- self closing functionality fungerer bare når nvim er i tmux?? Det samme gjelder vanlig vim. Dette skjønner jeg ikke
 vim.cmd [[
 function! JSXIsSelfCloseTag(mode)
   let l:line_number = line(".")
@@ -323,8 +321,7 @@ vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 -- SEARCH & JUMP-TO
 
 vim.keymap.set({ "n", "v" }, "<leader>n", "/", { desc = "Search forward" })
-vim.keymap.set({ "n", "v" }, "<leader><leader>n", "?", { desc = "Search backward" })
-vim.keymap.set({ "n", "v" }, "<leader>N", "#*", { desc = "search current word (without jumping)" })
+vim.keymap.set({ "n", "v" }, "<leader>N", "?", { desc = "Search backward" })
 
 
 -- SEARCH-REPLACE

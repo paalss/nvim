@@ -34,7 +34,9 @@ diffview.setup {
       -- f1;w walk to <commit hash>
       -- :DiffviewOpen<CR> Open Diffview <commit hash>
       { "n", "<leader>c",        "$?file<CR>f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } }, -- similar: Diffview builtin functionality: CTRL ALT d
-      { "n", "<leader><leader>", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>",   { desc = "Checkout to commit (Diffview/Fugitive)" } }
+
+      -- TODO: DU HAR AVINSTALLERT VIM-FUGITIVE DIN IDIOT!!! SELVØFLGELIG FUNKER IKKE DETTE DA!!! ÅH!
+      { "n", "<leader><leader>c", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>",   { desc = "Checkout to commit (Diffview/Fugitive)" } }
     }
   }
 }
@@ -57,6 +59,8 @@ vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/
 -- COMPARE WORKING INDEX WITH...
 
 -- -- branch
+-- vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>",
+--   { desc = "Compare with develop (Diffview)" })
 vim.keymap.set("n", "<leader><leader><leader>dev", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>",
   { desc = "Compare with develop (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen master<CR>", { desc = "Compare with master (Diffview)" })
@@ -75,3 +79,31 @@ local function open_diffview()
   vim.cmd("DiffviewOpen " .. branch)
 end
 vim.keymap.set("n", "<leader>df", open_diffview, { desc = "Compare with specified branch (Diffview)" })
+
+-- -- -- specified branch
+-- local function open_diffview()
+--   local branch = vim.fn.input("Enter the branch/commit to compare with: ")
+--   vim.cmd("DiffviewOpen " .. branch)
+-- end
+
+-- -- funker ikke
+-- -- -- kode tatt fra: https://github.com/sindrets/diffview.nvim/issues/11#issuecomment-1520296361
+-- toggle_diffview = function()
+--   local lib = require("diffview.lib")
+--   local view = lib.get_current_view()
+--   if view then
+--     vim.cmd.DiffviewClose()
+--   else
+--     require("fzf-lua").fzf_exec("git branch -a", {
+--       prompt = "diff:",
+--       actions = {
+--         ["default"] = function(selected)
+--           vim.cmd.DiffviewOpen({ args = { selected[1] } })
+--         end,
+--       },
+--     })
+--   end
+-- end
+
+-- vim.keymap.set("n", "<leader>df", toggle_diffview, { desc = "Compare with specified branch (Diffview)" })
+

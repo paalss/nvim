@@ -34,12 +34,10 @@ call quickui#menu#install('C&ompare', [
 			\ ["Ma&ster\tSPC SPC mas", "DiffviewOpen origin/master", "Compare with master"],
 			\ ["Ma&in\tSPC SPC mai", "DiffviewOpen origin/main", "Compare with main"],
 			\ ["&Develop\tSPC SPC dev", "DiffviewOpen origin/develop", "Compare with develop"],
-			\ ["D&evelop\tSPC SPC SPC dev", "DiffviewOpen origin/HEAD...HEAD --imply-local", "Compare with origin"],
+			"\ ["D&evelop\tSPC SPC SPC dev", "DiffviewOpen origin/HEAD...HEAD --imply-local", "Compare with origin"],
       \ [ "--", "" ],
       \ [ "History", "" ],
-      \ [ "&Repo history\tSPC dlo", "DiffviewFileHistory", "Show commit history for entire repository" ],
-      \ [ "&File history\tSPC dlgp", "DiffviewFileHistory %", "Show commit history for current file"],
-			"\ ["Show history", "Dh", "Show commit history for visual selection"], funker ikke for visual selection: går automatisk til normal mode når man prøver dette virker det som
+      \ [ "&File history\tSPC dh", "DiffviewFileHistory %", "Show commit history for current file (normal mode, if you do SPC dh in visual mode it checks only for that selection)"],
 			\ ], 10000)
 
 call quickui#menu#install('E&xplore', [
