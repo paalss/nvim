@@ -1,8 +1,3 @@
-
-
-
-
-
 -- Set background color for added lines
 -- vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#A6E22E", fg = "NONE", ctermfg = "NONE", ctermbg = "Green" })
 
@@ -33,5 +28,4 @@
 -- vim.cmd([[autocmd BufEnter * lua ConflictsHighlight()]])
 -- vim.cmd([[augroup END]])
 
--- aplugin.background = colors.bg_dark
--- aplugin.my_error = util.lighten(colors.red1, 0.3) -- number between 0 and 1. 0 results in white, 1 results in red1
+

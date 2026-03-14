@@ -16,11 +16,29 @@ require('gitsigns').setup {
       return '<Ignore>'
     end
 
+    -- error:
+    -- map('n', '<A-y>', gs.nav_hunk("next"), {
+    --   desc = "go to next"
+    -- })
+    -- map('n', '<A-d>', gs.nav_hunk("prev"), {
+    --   desc = "go to prev"
+    -- })
+
     map('n', '<F7>', function()
       go_to_next_hunk()
     end, { desc = "go to next diff hunk", expr = true })
 
     map('n', '<S-F7>', function()
+      if vim.wo.diff then return '[c' end
+      vim.schedule(function() gs.prev_hunk() end)
+      return '<Ignore>'
+    end, { desc = "go to prev diff hunk", expr = true })
+
+    map('n', '<A-c>', function()
+      go_to_next_hunk()
+    end, { desc = "go to next diff hunk", expr = true })
+
+    map('n', '<A-d>', function()
       if vim.wo.diff then return '[c' end
       vim.schedule(function() gs.prev_hunk() end)
       return '<Ignore>'

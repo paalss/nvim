@@ -1,112 +1,34 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system(
-    { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git",
-      "--branch=stable", -- latest stable release
+    { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
       lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
-
 
 vim.g.clipboard = {
   name = 'WslClipboard',
   copy = {
     ['+'] = 'clip.exe',
-    ['*'] = 'clip.exe',
+    ['*'] = 'clip.exe'
   },
   paste = {
     ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'
   },
-  cache_enabled = 0,
+  cache_enabled = 0
 }
 
 vim.g.mapleader = " "
 
 local plugins = {
-  -- {
-  --   'ThePrimeagen/vim-be-good'
-  -- },
-  { 'wellle/targets.vim' },
-  { 'adelarsq/vim-matchit' },
-  -- {
-  --   'stevearc/conform.nvim',
-  --   branch = "nvim-0.9",
-  --   opts = {},
-  -- },
-  { 'skywind3000/vim-quickui' },
-  -- {
-  --   "ribelo/taskwarrior.nvim",
-  --   opts = {
-  --     -- your configuration comes here
-  --     -- or leave it empty to use the default settings
-  --     -- refer to the configuration section below
-  --   },
-  --   -- or
-  --   config = true
-  -- },
-  -- { 'echasnovski/mini.nvim',                  version = '*' },
-  { 'TamaMcGlinn/quickfixdd' },
-  { 'sbdchd/neoformat' },
-  -- { 'shortcuts/no-neck-pain.nvim',            version = "*" },
-  { 'RRethy/vim-illuminate', enabled = false },
-  { 'farmergreg/vim-lastplace' },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    enabled = true,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-  },
-  {
-    'goolord/alpha-nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    pin = true
-  },
-  {
-    'alvan/vim-closetag',
-    pin = true
-  },
-  {
-    "christoomey/vim-tmux-navigator",
-    pin = true
-  },
-  -- {
-  -- 	"mrjones2014/smart-splits.nvim",
-  -- 	pin = true
-  -- },
-  -- {
-  -- 'stevearc/dressing.nvim',
-  -- opts = {},
-  -- pin = true
-  -- },
-  -- {
-  --   'smjonas/live-command.nvim',
-  --   pin = true,
-  --   config = function()
-  --     require("live-command").setup {
-  --       commands = {
-  --         Norm = { cmd = "norm" },
-  --         Reg = {
-  --           cmd = "norm",
-  --           -- This will transform ":5Reg a" into ":norm 5@a"
-  --           args = function(opts)
-  --             return (opts.count == -1 and "" or opts.count) .. "@" .. opts.args
-  --           end,
-  --           range = "",
-  --         },
-  --       }
-  --     }
-  --   end
-  -- },
+
+  ----------------------------
+  --** LSP/autocompletion **--
+  ----------------------------
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
-    pin = true,
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
@@ -139,6 +61,119 @@ local plugins = {
       'paalss/friendly-snippets',
     },
   },
+
+  ----------------------------
+  --** Autopairs/surround **--
+  ----------------------------
+  { 'tpope/vim-surround',  pin = true },
+  {
+    'alvan/vim-closetag',
+    pin = true
+  },
+  { 'adelarsq/vim-matchit' },
+  {
+    "windwp/nvim-autopairs",
+    pin = true,
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  },
+
+  ----------------------------
+  --** Colorschemes **--
+  ----------------------------
+  {
+    "folke/tokyonight.nvim",
+    pin = true,
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
+  ----------------------------
+  --** Fuzzy finder **--
+  ----------------------------
+  { "junegunn/fzf",    build = "./install --bin" },
+  { "junegunn/fzf.vim" },
+  {
+    'nvim-telescope/telescope.nvim',
+    enabled = true,
+    version = '0.1.1',
+    -- or                            , branch = '0.1.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make'
+      }
+    },
+    pin = true,
+  },
+
+  ----------------------------
+  --** File navigation **--
+  ----------------------------
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    enabled = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
+  { 'sindrets/diffview.nvim',  pin = true },
+  {
+    'romgrk/barbar.nvim',
+    dependencies = { 'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons'             -- OPTIONAL: for file icons
+    },
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
+    version = '^1.0.0' -- optional: only update when a new 1.x version is released
+  },                   -- {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+
+  ----------------------------
+  -- ** Back on track **--
+  ----------------------------
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    enabled = true,
+
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" }
+      -- log_level = 'debug',
+    }
+  }, { 'farmergreg/vim-lastplace' },
+
+  ----------------------------
+  --** Other **--
+  ----------------------------
+  { 'skywind3000/vim-quickui' },
+  { 'RRethy/vim-illuminate', enabled = false },
+  { 'TamaMcGlinn/quickfixdd' },
+  {
+    'goolord/alpha-nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    pin = true
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    pin = true
+  },
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -151,44 +186,7 @@ local plugins = {
     },
   },
   -- { 'HiPhish/rainbow-delimiters.nvim', pin = true },
-  {
-    "windwp/nvim-autopairs",
-    pin = true,
-    config = function()
-      require("nvim-autopairs").setup {}
-    end
-  },
-  { 'djoshea/vim-autoread', pin = true },
-  {
-    'nvim-telescope/telescope.nvim',
-    version = '0.1.1',
-    -- or                            , branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } },
-    pin = true,
-  },
-  { "MaximilianLloyd/adjacent.nvim", pin = true },
-  {
-    "jasonpanosso/harpoon-tabline.nvim",
-    dependencies = { "ThePrimeagen/harpoon" }
-  },
-  { 'ThePrimeagen/harpoon',   pin = true },
-  { 'tpope/vim-surround',     pin = true },
-  -- {
-  --   "kylechui/nvim-surround",
-  --   version = "*", -- Use for stability; omit to  `main` branch for the latest features
-  --   pin = true,
-  --   config = function()
-  --     require("nvim-surround").setup({
-  --       --  Configuration here, or leave empty to  defaults
-  --     })
-  --   end
-  -- },
-  { 'sindrets/diffview.nvim', pin = true },
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   pin = true,
-  --   branch = "master"
-  -- },
+  { 'djoshea/vim-autoread',        pin = true },
   {
     'nvim-lualine/lualine.nvim',
     pin = true,
@@ -200,65 +198,18 @@ local plugins = {
   -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
   { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
-  -- {'akinsho/git-conflict.nvim', version = "*", config = true}, -- ikke bra nok: farge fjernes når lazygit nvim åpnes og man må :lua colorMyPencils() / :colorcheme tokyonight-night
-  -- { 'martinsione/darkplus.nvim',   pin = true },
-  { 'bignimbus/pop-punk.vim',      pin = true },
-  -- { "EdenEast/nightfox.nvim" },
-  -- { 'projekt0n/github-nvim-theme', name = 'github-theme' },
-  {
-    "folke/tokyonight.nvim",
-    pin = true,
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
   {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     pin = true
   },
-  -- {
-  -- 	'mawkler/jsx-element.nvim',
-  -- 	dependencies = {
-  -- 		'nvim-treesitter/nvim-treesitter',
-  -- 		'nvim-treesitter/nvim-treesitter-textobjects',
-  -- 	},
-  -- 	ft = { 'typescriptreact', 'javascriptreact', 'javascript' },
-  -- 	opts = {},
-  -- },
-  -- { 'mbbill/undotree',    pin = true },
-  { 'tpope/vim-fugitive',   pin = true },
-  {
-    "kdheepak/lazygit.nvim",
-    -- optional for floating window border decoration
-    pin = true,
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
   { 'tpope/vim-commentary', pin = true },
   {
     "iamcco/markdown-preview.nvim",
+    enabled = true,
     build = function()
       vim.fn["mkdp#util#install"]()
     end
-  },
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    pin = true,
-    dependencies = {               -- LSP Support
-      { 'neovim/nvim-lspconfig' }, -- Required
-      {
-        -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end
-      }, { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },                     -- Required
-      { 'hrsh7th/cmp-nvim-lsp' },                 -- Required
-      { 'L3MON4D3/LuaSnip' }                      -- Required
-    }
   },
 }
 

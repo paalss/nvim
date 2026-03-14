@@ -1,0 +1,129 @@
+FROM ubuntu:26.04
+
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt-get install -y curl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt-get install -y curl
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz tar xzvf nvim-linux-x86_64.tar.gz ./nvim-linux-x86_64/bin/nvim
+
+
+
+
+
+
+
+
+
+
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux64.tar.gz && \
+#     tar xzvf /nvim-linux64.tar.gz && \
+#     rm nvim-linux64.tar.gz && \
+#     rm /usr/bin/nvim && \
+#     ln -s $HOME/nvim-linux64/bin/nvim /usr/bin/nvim
+
+
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz tar xzvf nvim-linux-x86_64.tar.gz ./nvim-linux-x86_64/bin/nvim
+
+# ---------------------------------------------------
+
+# FROM ubuntu:26.04
+#
+# RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt-get install -y curl
+# # RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install git nodejs npm golang python3 python3-pip wget curl unzip chafa -y
+#
+# WORKDIR /home/ubuntu
+#
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz tar xzvf nvim-linux-x86_64.tar.gz ./nvim-linux-x86_64/bin/nvim
+
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz
+# RUN tar xzvf nvim-linux-x86_64.tar.gz # extract
+
+# RUN mkdir /root/.local
+# RUN mkdir /root/.local/bin
+#
+# WORKDIR /root/.local/bin
+
+# RUN mv nvim-linux-x86_64.tar.gz /root/.local/bin/nvim-linux-x86_64.tar.gz
+# RUN mv nvim-linux-x86_64.tar.gz /root/.local/bin/nvim-linux-x86_64.tar.gz
+
+# CMD ["bash"]
+
+
+# RUN rm nvim-linux-x86_64.tar.gz  
+# RUN ln -s ./nvim-linux-x86_64/bin/nvim ./nvim # create symbolic link
+
+# ---------------------------------------------------
+# CMD ["nvim"]
+
+# RUN mv nvim-linux-x86_64.tar.gz ~/.local/bin/nvim-linux-x86_64
+# RUN cd ~/.local/bin/
+# RUN tar xzvf nvim-linux-x86_64.tar.gz
+# RUN rm nvim-linux-x86_64.tar.gz  
+# RUN ln -s ./nvim-linux-x86_64/bin/nvim ./nvim # create symbolic link
+
+# RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+# RUN chmod u+x nvim.appimage
+# RUN ./nvim.appimage --appimage-extract
+# RUN ./squashfs-root/AppRun --version
+# RUN mv squashfs-root /
+# RUN ln -s /squashfs-root/AppRun /usr/bin/nvim
+
+
+# ---------------------------------------------------------------------
+
+
+
+# RUN apt update && apt upgrade
+# RUN apt install curl
+# 
+# RUN curl -LO https://github.com/neovim/neovim/releases/tag/v0.11.6/nvim-linux-x86_64.tar.gz tar xzvf nvim-linux-x86_64.tar.gz ./nvim-linux-x86_64/bin/nvim
+
+
+# FROM dockurr/macos:2.29
+# Apt install neovim? 
+# Brew install neovim? 
+
+# Legit måte å laste ned en tarball fra github på
+
+# curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz tar xzf nvim-macos-x86_64.tar.gz ./nvim-macos-x86_64/bin/nvim
+
+
+# riktig path. Antar det skal være mulig å interpolate disse verdiene til snippeten over.
+
+# curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
+# sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
+
+# https://github.com/MashMB/nvim-ide/blob/master/nvim%2FDockerfile
+
+# Lazygit variables
+# ARG LG='lazygit'
+# ARG LG_GITHUB='https://github.com/jesseduffield/lazygit/releases/download/v0.31.4/lazygit_0.31.4_Linux_x86_64.tar.gz'
+# ARG LG_ARCHIVE='lazygit.tar.gz'
+
+
+# RUN apt-get update && apt-get -y install curl fzf ripgrep tree git xclip python3 python3-pip nodejs npm tzdata ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config zip unzip
+
+
+
+# https://github.com/spywhere/session-vim/blob/master/Dockerfile.nvim
+# CMD ["nvim"]
+# Lazygit variables# Lazygit variables# ENTRYPOINT nvim
+# CMD nvim

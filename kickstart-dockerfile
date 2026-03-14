@@ -1,0 +1,57 @@
+# Build neovim separately in the first stage
+FROM ubuntu:26.04
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt-get install -y curl cmake git
+
+# Build neovim (and use it as an example codebase
+RUN git clone https://github.com/neovim/neovim.git
+
+ARG VERSION=master
+RUN cd neovim && git checkout ${VERSION} && make CMAKE_BUILD_TYPE=RelWithDebInfo install
+
+# Copy the kickstart.nvim init.lua
+
+WORKDIR /neovim
+
+
+
+
+# ================================================================
+# fra kickstart.nvim commit 32744c3, rett før de fjernet det
+# TODO: customize denne filen for din nvim config
+# ---------------------------------------------------------------
+
+# Build neovim separately in the first stage
+# FROM alpine:latest AS base
+# 
+# RUN apk --no-cache add \
+#     autoconf \
+#     automake \
+#     build-base \
+#     cmake \
+#     ninja \
+#     coreutils \
+#     curl \
+#     gettext-tiny-dev \
+#     git \
+#     libtool \
+#     pkgconf \
+#     unzip
+# 
+# # Build neovim (and use it as an example codebase
+# RUN git clone https://github.com/neovim/neovim.git
+# 
+# ARG VERSION=master
+# RUN cd neovim && git checkout ${VERSION} && make CMAKE_BUILD_TYPE=RelWithDebInfo install
+# 
+# # To support kickstart.nvim
+# RUN apk --no-cache add \
+#     fd  \
+#     ctags \
+#     ripgrep \
+#     git
+# 
+# # Copy the kickstart.nvim init.lua
+# COPY ./init.lua /root/.config/nvim/init.lua
+# 
+# WORKDIR /neovim

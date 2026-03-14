@@ -7,8 +7,12 @@ console.log('hallo på do folkens')
 
 babaganosj()
 
+const array = [1, 2, 3, 4, 5]
+
 const detteErEnLitenSpoek = () => {
-    // som blir ødelagt hvert forsøk
+  array.map(element=>{
+    return element * 2
+  })
 };
 
 const bool = true

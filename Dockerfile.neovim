@@ -1,0 +1,58 @@
+FROM anatolelucet/neovim:latest
+
+# copy your personal neovim config
+# COPY init.lua /root/.config/nvim/init.lua
+# COPY lua/ /root/.config/nvim/lua/
+
+# install your favorite tools!
+RUN apk --no-cache add \
+      git \
+      ripgrep \
+      openssh-client \
+      build-base \
+      fzf \
+      bat \
+      bash
+
+
+# RUN apk --no-cache add \
+#     autoconf \
+#     automake \
+#     build-base \
+#     cmake \
+#     ninja \
+#     coreutils \
+#     curl \
+#     gettext-tiny-dev \
+#     git \
+#     libtool \
+#     pkgconf \
+#     unzip
+# 
+# # Build neovim (and use it as an example codebase
+# RUN git clone https://github.com/neovim/neovim.git
+# 
+# ARG VERSION=master
+# RUN cd neovim && git checkout ${VERSION} && make CMAKE_BUILD_TYPE=RelWithDebInfo install
+# 
+# # To support kickstart.nvim
+# RUN apk --no-cache add \
+#     fd  \
+#     ctags \
+#     ripgrep \
+#     git
+# 
+# # Copy the kickstart.nvim init.lua
+# COPY ./init.lua /root/.config/nvim/init.lua
+# 
+# WORKDIR /neovim
+
+# COPY /home/paalss/.ssh/id_rsa.pub id_rsa.pub
+
+COPY . /root/.config/nvim
+
+
+# RUN git clone git@github.com:paalss/nvim.git ~/.config/nvim 
+
+CMD ["/usr/bin/nvim"]
+
