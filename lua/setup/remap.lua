@@ -48,7 +48,12 @@ vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
 vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
 vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
-vim.keymap.set("n", "<leader><leader>new", ":e %:h/", { desc = "Create new file" })
+local function create_new_file()
+  local filename = vim.fn.input("Enter filename:")
+  vim.cmd("e %:h/" .. filename)
+end
+
+vim.keymap.set("n", "<leader><leader>new", create_new_file, { desc = "Create new file" })
 
 --------------------------------------------------------
 -- OPEN CONFIG FILE IN A SPLIT
