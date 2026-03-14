@@ -66,43 +66,27 @@ vim.keymap.set("n", "<leader><leader>set", ":vsplit ~/.config/nvim/lua/setup/set
 vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>", { desc = "Open Neovim plugins in a new split" })
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.bashrc<CR>", { desc = "Open .bashrc a new split" })
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
--- vim.keymap.set("n", "<leader><leader>po", ":vsplit ~/.zshrc<CR>", { desc = "Open pre-push a new split" })
 
 -- oversett dette fra bash til lua:
 -- lua function for å redirecte til enten pre-push.sample eller pre-push,
 -- avhengig av hva som eksisterer
 
--- po() {
---   if [[ -f ".git/hooks/pre-push" ]]; then
---     echo ".git/hooks/pre-push was found:"
---     nvim .git/hooks/pre-push
---   else
---     if [[ -f ".git/hooks/pre-push.sample" ]]; then
---       echo ".git/hooks/pre-push was not found:"
---       echo "but .git/hooks/pre-push.sample was found:"
---       nvim .git/hooks/pre-push.sample
---     else
---       echo "Hmmmmm"
---     fi
---   fi
--- }
---
--- # "l" as in the "ls -a" alias. "po" as in "posh"
---
--- lpo() {
---   if [[ -f ".git/hooks/pre-push" ]]; then
---     echo ".git/hooks/pre-push was found:"
---     echo "pre-push is activated"
---   else
---     if [[ -f ".git/hooks/pre-push.sample" ]]; then
---       echo ".git/hooks/pre-push was not found:"
---       echo "but .git/hooks/pre-push.sample was found:"
---       echo "pre-push is deactivated"
---     else
---       echo "Hmmmmm"
---     fi
---   fi
+function file_exists(name)
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
 
+function open_prepush()
+  if file_exists(".git/hooks/pre-push") then
+    vim.cmd("vsplit .git/hooks/pre-push")
+  elseif file_exists(".git/hooks/pre-push.sample") then
+    vim.cmd("vsplit .git/hooks/pre-push.sample")
+  else
+    vim.cmd("echo 'Hmmmmm'")
+  end
+end
+
+vim.keymap.set("n", "<leader><leader>po", open_prepush, { desc = "Open pre-push a new split" })
 
 --------------------------------------------------------
 -- LINE MANAGEMENT
