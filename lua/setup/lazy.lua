@@ -65,7 +65,8 @@ local plugins = {
   ----------------------------
   --** Autopairs/surround **--
   ----------------------------
-  { 'tpope/vim-surround',  pin = true },
+  -- { 'tpope/vim-surround',  pin = true },
+  { 'tomtomjhj/vim-surround', branch = "delete-custom" }, -- make custom surround maps (see `vim-surround.lua`) work with "delete surrounding" and "change surrounding"
   {
     'alvan/vim-closetag',
     pin = true
