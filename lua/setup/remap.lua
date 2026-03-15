@@ -114,23 +114,25 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- OPERATOR PENDING
 --------------------------------------------------------
 
--- c -> "
-vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
-vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
-vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
-vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
-
--- C -> '
-vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
-vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
-vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
-vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
-
--- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
-vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
-vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
-vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
-vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
+-- -- c ->'
+-- vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
+-- vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
+-- vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
+-- vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
+--
+-- -- C -> '
+-- vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
+-- vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
+-- vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
+-- vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
+--
+-- -- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
+-- vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
+-- vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
+-- vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
+-- vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
+--
+-- -- a -> <>
 
 -- "operator pending ish"
 
