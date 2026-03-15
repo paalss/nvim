@@ -74,15 +74,14 @@ vim.keymap.set("n", "<leader>dcc", ":DiffviewOpen <C-r><C-w><CR>",
   { desc = "Compare with commit-hash/branch under cursor (Diffview)" })
 
 -- -- -- compare with specified branch (variant without fzf-lua)
--- local function open_diffview()
+-- local function type_branch_to_compare_with()
 --   local branch = vim.fn.input("Enter the branch/commit to compare with: ")
 --   vim.cmd("DiffviewOpen " .. branch)
 -- end
--- vim.keymap.set("n", "<leader>df", open_diffview, { desc = "Compare with specified branch (Diffview)" })
+-- vim.keymap.set("n", "<leader>df", type_branch_to_compare_with, { desc = "Compare with specified branch (Diffview)" })
 
--- -- funker ikke
--- -- -- kode tatt fra: https://github.com/sindrets/diffview.nvim/issues/11#issuecomment-1520296361
-toggle_diffview = function()
+-- kode tatt fra: https://github.com/sindrets/diffview.nvim/issues/11#issuecomment-1520296361
+select_branch_to_compare_with = function()
   local lib = require("diffview.lib")
   local view = lib.get_current_view()
   if view then
@@ -99,5 +98,5 @@ toggle_diffview = function()
   end
 end
 
-vim.keymap.set("n", "<leader>df", toggle_diffview, { desc = "Compare with specified branch (Diffview)" })
+vim.keymap.set("n", "<leader>df", select_branch_to_compare_with, { desc = "Compare with specified branch (Diffview)" })
 
