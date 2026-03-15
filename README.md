@@ -29,7 +29,7 @@
 ## Requirements
 
 <details>
-    <summary><b>WSL</b></summary>
+    <summary>WSL</summary>
 
 This config has been customized for Neovim v0.11.6 on Ubuntu (through WSL on Windows 11)
 
@@ -44,7 +44,7 @@ If you want to use the latter, you'll have to delete the former. You can open up
 </details>
 
 <details>
-    <summary><b>Neovim version 0.11.6</b></summary>
+    <summary>Neovim version 0.11.6</summary>
 
 **My Neovim info**
 ````
@@ -59,7 +59,7 @@ LuaJIT 2.1.0-beta3
 </details>
 
 <details>
-    <summary><b>Git version over 2.31.0 (For Diffview.nvim)</b></summary>
+    <summary>Git > 2.31.0 (For Diffview.nvim)</summary>
 
 **How to update git on Ubuntu**
 
@@ -78,7 +78,21 @@ git --version
 </details>
 
 <details>
-    <summary><b>Install Ripgrep for Telescope</b></summary>
+    <summary>fzf > 0.36 (for fzf-lua)</summary>
+
+If this version is not available in your package manager you can use the "git clone" option
+
+https://github.com/junegunn/fzf?tab=readme-ov-file#installation
+
+https://github.com/ibhagwan/fzf-lua?tab=readme-ov-file#dependencies
+
+---
+</details>
+
+<!--
+
+<details>
+    <summary>Install Ripgrep?</summary>
 
 Ubuntu
 
@@ -100,8 +114,12 @@ Other installation methods: <https://github.com/BurntSushi/ripgrep>
 ---
 </details>
 
+-->
+
+<!--
+
 <details>
-    <summary><b>Install C compiler for Nvim-treesitter</b></summary>
+    <summary>Install C compiler for Nvim-treesitter</summary>
 
 Ubuntu
 
@@ -112,24 +130,15 @@ sudo apt install build-essential
 ---
 </details>
 
-<details>
-    <summary><b>Install nodejs and npm for Lsp-zero (tsserver, html etc.)</b></summary>
+-->
 
-Ubuntu
-
-```bash
-sudo apt install nodejs npm
-```
-
----
-</details>
 
 <br>
 
 ### Semi-requirements / nice to have
 
 <details>
-    <summary><b>Autohotkey (Windows app, for extra keymaps)</b></summary>
+    <summary>Autohotkey (Windows app, for extra keymaps)</summary>
 
 I have made some additional keymaps using Authotkey.
 
@@ -159,7 +168,7 @@ click 'run script' from the right-click menu on the ahk-file
 </details>
 
 <details>
-    <summary><b>LazyGit (UI for version control)</b></summary>
+    <summary>LazyGit (UI for version control)</summary>
 
 Install as explained in <https://github.com/jesseduffield/lazygit#ubuntu>,
 
@@ -182,7 +191,7 @@ lazygit --version
 </details>
 
 <details>
-    <summary><b>Git delta (Better git diff)</b></summary>
+    <summary>Git delta (Better git diff)</summary>
 
 visit: <https://dandavison.github.io/delta/installation.html>
 
@@ -204,7 +213,7 @@ see more
 
 
 <details>
-    <summary><b>Emmet-ls (node)</b></summary>
+    <summary>Emmet-ls (node)</summary>
 
 1. Install node
 2. `npm install -g emmet-ls`
