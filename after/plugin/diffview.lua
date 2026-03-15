@@ -35,8 +35,8 @@ diffview.setup {
       -- :DiffviewOpen<CR> Open Diffview <commit hash>
       { "n", "<leader>c",        "$?file<CR>f|;w:DiffviewOpen <C-r><C-w><CR>", { desc = "Compare with commit" } }, -- similar: Diffview builtin functionality: CTRL ALT d
 
-      -- TODO: DU HAR AVINSTALLERT VIM-FUGITIVE DIN IDIOT!!! SELVØFLGELIG FUNKER IKKE DETTE DA!!! ÅH!
-      { "n", "<leader><leader>c", "$?file<CR>f|;w:G checkout <C-r><C-w><CR>",   { desc = "Checkout to commit (Diffview/Fugitive)" } }
+      { "n", "<leader><leader>c", "y :!git checkout <C-r><C-w><CR>",   { desc = "Checkout to commit" } },
+      -- SILENT VERSION: { "n", "<leader><leader>c", "y :silent exec '!git checkout <C-r><C-w>'<CR>",   { desc = "Checkout to commit (Diffview)" } },
     }
   }
 }
