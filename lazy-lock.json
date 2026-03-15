@@ -38,6 +38,6 @@
   "vim-lastplace": { "branch": "master", "commit": "e58cb0df716d3c88605ae49db5c4741db8b48aa9" },
   "vim-matchit": { "branch": "master", "commit": "f52e59b05a937fe3102d431dd23f8ae4d8752ba3" },
   "vim-quickui": { "branch": "master", "commit": "2336eee7a246f3bce6de5c9c39f87ac90092bd39" },
-  "vim-surround": { "branch": "master", "commit": "320d3203a3f49ef2fe263874153de766b09cdd84" },
+  "vim-surround": { "branch": "delete-custom", "commit": "320d3203a3f49ef2fe263874153de766b09cdd84" },
   "vim-tmux-navigator": { "branch": "master", "commit": "38b1d0402c4600543281dc85b3f51884205674b6" }
 }
