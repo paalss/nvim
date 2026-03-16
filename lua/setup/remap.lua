@@ -48,10 +48,12 @@ vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
 vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
 vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
--- TODO eieiopop
--- vim.keymap.set("n", "<leader><leader>new", "", { desc = "Create new file" })
--- neotree?
--- vanilla måte å gjøre det på?
+local function create_new_file()
+  local filename = vim.fn.input("Enter filename:")
+  vim.cmd("e %:h/" .. filename)
+end
+
+vim.keymap.set("n", "<leader><leader>new", create_new_file, { desc = "Create new file" })
 
 --------------------------------------------------------
 -- OPEN CONFIG FILE IN A SPLIT
@@ -61,7 +63,7 @@ vim.keymap.set("n", "<leader><leader>vim", ":vsplit ~/.vimrc<CR>", { desc = "Ope
 vim.keymap.set("n", "<leader><leader>idea", ":vsplit ~/.ideavimrc<CR>", { desc = "Open .ideavimrc in a new split" })
 vim.keymap.set("n", "<leader><leader>rem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>", { desc = "Open Neovim remap.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>set", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>", { desc = "Open Neovim set.lua in a new split" })
-vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>", { desc = "Open Neovim set.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>", { desc = "Open Neovim plugins in a new split" })
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.zshrc<CR>", { desc = "Open .zshrc a new split" })
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
 -- vim.keymap.set("n", "<leader><leader>po", ":vsplit ~/.zshrc<CR>", { desc = "Open pre-push a new split" })
@@ -70,37 +72,22 @@ vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts
 -- lua function for å redirecte til enten pre-push.sample eller pre-push,
 -- avhengig av hva som eksisterer
 
--- po() {
---   if [[ -f ".git/hooks/pre-push" ]]; then
---     echo ".git/hooks/pre-push was found:"
---     nvim .git/hooks/pre-push
---   else
---     if [[ -f ".git/hooks/pre-push.sample" ]]; then
---       echo ".git/hooks/pre-push was not found:"
---       echo "but .git/hooks/pre-push.sample was found:"
---       nvim .git/hooks/pre-push.sample
---     else
---       echo "Hmmmmm"
---     fi
---   fi
--- }
---
--- # "l" as in the "ls -a" alias. "po" as in "posh"
---
--- lpo() {
---   if [[ -f ".git/hooks/pre-push" ]]; then
---     echo ".git/hooks/pre-push was found:"
---     echo "pre-push is activated"
---   else
---     if [[ -f ".git/hooks/pre-push.sample" ]]; then
---       echo ".git/hooks/pre-push was not found:"
---       echo "but .git/hooks/pre-push.sample was found:"
---       echo "pre-push is deactivated"
---     else
---       echo "Hmmmmm"
---     fi
---   fi
--- }
+function file_exists(name)
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
+function open_prepush()
+  if file_exists(".git/hooks/pre-push") then
+    vim.cmd("vsplit .git/hooks/pre-push")
+  elseif file_exists(".git/hooks/pre-push.sample") then
+    vim.cmd("vsplit .git/hooks/pre-push.sample")
+  else
+    vim.cmd("echo 'Hmmmmm'")
+  end
+end
+
+vim.keymap.set("n", "<leader><leader>po", open_prepush, { desc = "Open pre-push a new split" })
 
 --------------------------------------------------------
 -- LINE MANAGEMENT
@@ -128,23 +115,25 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- OPERATOR PENDING
 --------------------------------------------------------
 
--- c -> "
-vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
-vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
-vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
-vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
-
--- C -> '
-vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
-vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
-vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
-vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
-
--- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
-vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
-vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
-vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
-vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
+-- -- c ->'
+-- vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
+-- vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
+-- vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
+-- vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
+--
+-- -- C -> '
+-- vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
+-- vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
+-- vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
+-- vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
+--
+-- -- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
+-- vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
+-- vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
+-- vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
+-- vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
+--
+-- -- a -> <>
 
 -- "operator pending ish"
 
@@ -182,8 +171,7 @@ vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to
 -- vim.keymap.set("o", "et", ":<c-u>:normal! ?<<CR>v/\\/><CR>", { desc = "Select self closing tag" })
 -- vim.keymap.set("o", "st", "", { desc = "selfclosingtag" })
 
--- mac: self closing functionality fungerer bare når nvim er i tmux?? Det samme gjelder vanlig vim. Dette skjønner jeg ikke
--- men på WSL fungerer det
+-- self closing functionality fungerer bare når nvim er i tmux?? Det samme gjelder vanlig vim. Dette skjønner jeg ikke
 vim.cmd [[
 function! JSXIsSelfCloseTag(mode)
   let l:line_number = line(".")

@@ -54,7 +54,8 @@ local plugins = {
   ----------------------------
   --** Autopairs/surround **--
   ----------------------------
-  { 'tpope/vim-surround',  pin = true },
+  -- { 'tpope/vim-surround',  pin = true },
+  { 'tomtomjhj/vim-surround', branch = "delete-custom" }, -- make custom surround maps (see `vim-surround.lua`) work with "delete surrounding" and "change surrounding"
   {
     'alvan/vim-closetag',
     pin = true
@@ -85,13 +86,27 @@ local plugins = {
   { "junegunn/fzf",    build = "./install --bin" },
   { "junegunn/fzf.vim" },
   {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- or if using mini.icons/mini.nvim
+    -- dependencies = { "nvim-mini/mini.icons" },
+    ---@module "fzf-lua"
+    ---@type fzf-lua.Config|{}
+    ---@diagnostic disable: missing-fields
+    opts = {}
+    ---@diagnostic enable: missing-fields
+  },
+  {
     'nvim-telescope/telescope.nvim',
     enabled = true,
     version = '0.1.1',
     -- or                            , branch = '0.1.x',
     dependencies = {
+      'nvim-lua/plenary.nvim',
       {
-        'nvim-lua/plenary.nvim'
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make'
       }
     },
     pin = true,
