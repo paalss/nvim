@@ -9,7 +9,7 @@ let g:surround_{char2nr("C")} = "'\r'"
 "                                ```
 "                                word
 "                                ```
-autocmd FileType markdown let b:surround_{char2nr("v")} = "```\n \r \n```"
+autocmd FileType markdown let b:surround_{char2nr("v")} = "```sh\n \r \n```"
 
 autocmd FileType markdown let b:surround_{char2nr("i")} = "*\r*"
 autocmd FileType markdown let b:surround_{char2nr("f")} = "**\r**"
