@@ -141,6 +141,7 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- -- -- example: d, c, y, v,
 vim.keymap.set("o", ",", ":normal! ggVG<CR>", { desc = "Entire buffer" })
 vim.keymap.set("n", "y,", ":%y<CR>", { desc = "yank entire buffer" })
+-- vim.keymap.set("n", "d,", ":%d_<CR>", { desc = "delete entire buffer" })
 vim.keymap.set("n", "<leader>vy,", ":%y+<CR>", { desc = "yank entire buffer to OS registry" })
 vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 
