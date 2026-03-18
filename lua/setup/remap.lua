@@ -66,8 +66,11 @@ vim.keymap.set("n", "<leader><leader>idea", ":vsplit ~/.ideavimrc<CR>", { desc =
 vim.keymap.set("n", "<leader><leader>rem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>", { desc = "Open Neovim remap.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>set", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>", { desc = "Open Neovim set.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>/", { desc = "Open Neovim plugins in a new split" })
-vim.keymap.set("n", "<leader><leader>fzf", ":vsplit ~/.config/nvim/after/plugin/fzfvim.lua<CR>", { desc = "Open fzf.lua a new split" })
-vim.keymap.set("n", "<leader><leader>diff", ":vsplit ~/.config/nvim/after/plugin/diffview.lua<CR>", { desc = "Open diffview.lua a new split" })
+------ after plugins -----------
+vim.keymap.set("n", "<leader><leader>fzf", ":vsplit ~/.config/nvim/after/plugin/fzfvim.lua<CR>", { desc = "Open fzf.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>diff", ":vsplit ~/.config/nvim/after/plugin/diffview.lua<CR>", { desc = "Open diffview.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>surr", ":vsplit ~/.config/nvim/after/plugin/vim-surround.lua.lua<CR>", { desc = "Open vim-surround.lua in a new split" })
+--------------------------------
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.zshrc<CR>", { desc = "Open .zshrc a new split" })
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
 -- vim.keymap.set("n", "<leader><leader>po", ":vsplit ~/.zshrc<CR>", { desc = "Open pre-push a new split" })
