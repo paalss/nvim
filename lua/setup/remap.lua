@@ -25,11 +25,11 @@ vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
--- vim.keymap.set({ "n", "v" }, "˛", "0", { desc = "A-h: Go to beginning of line" }) -- <A-h>
--- vim.keymap.set({ "n", "v" }, "ﬁ", "$", { desc = "A-l: Go to end of line" }) -- <A-l>
+vim.keymap.set({ "n", "v", "o" }, "˛", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
+vim.keymap.set({ "n", "v", "o" }, "ﬁ", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 
-vim.keymap.set({ "n", "v" }, "gh", "0", { desc = "A-h: Go to beginning of line" })
-vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "A-l: Go to end of line" })
+vim.keymap.set({ "n", "v", "o" }, "gh", "0", { desc = "Go to beginning of line" })
+vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
