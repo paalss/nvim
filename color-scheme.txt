@@ -1,3 +1,0 @@
-funker bare når nvim er inni tmux??
-
-Dette var kun et problem på MacOS versjonen rett før Tahoe
