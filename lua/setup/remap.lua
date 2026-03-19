@@ -122,7 +122,7 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- OPERATOR PENDING (onoremap)
 --------------------------------------------------------
 
--- c ->' (needed for yic, cic, dic and similar. Surround is handled by tpope/vim-surround config)
+-- c -> ' (needed for yic, cic, dic and similar. Surround is handled by tpope/vim-surround config)
 vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
 vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
 vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
@@ -133,6 +133,12 @@ vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
 vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
 vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
 vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
+
+-- v -> `
+vim.keymap.set("o", "iv", "i`", { desc = "Inside `" })
+vim.keymap.set("o", "av", "a`", { desc = "Around `" })
+vim.keymap.set("v", "iv", "i`", { desc = "Inside `" })
+vim.keymap.set("v", "av", "a`", { desc = "Around `" })
 
 -- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
 vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
