@@ -359,10 +359,10 @@ vim.keymap.set({ "n", "v" }, "<C-e>", "8j", { desc = "Scroll down" })
 vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
 
--- SEARCH & JUMP-TO
+-- SEARCH
 
-vim.keymap.set({ "n", "v" }, "<leader>n", "/", { desc = "Search forward" })
-vim.keymap.set({ "n", "v" }, "<leader>N", "?", { desc = "Search backward" })
+vim.keymap.set({ "n", "v", "o" }, "<leader>n", "/", { desc = "Search forward" })
+vim.keymap.set({ "n", "v", "o" }, "<leader>N", "?", { desc = "Search backward" })
 
 
 -- SEARCH-REPLACE
