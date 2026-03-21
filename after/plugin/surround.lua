@@ -9,10 +9,12 @@ let g:surround_{char2nr("C")} = "'\r'"
 "                                ```
 "                                word
 "                                ```
-autocmd FileType markdown let b:surround_{char2nr("v")} = "```\n \r \n```"
+autocmd FileType markdown let b:surround_{char2nr("v")} = "`\r`"
+autocmd FileType markdown let b:surround_{char2nr("V")} = "```sh\n\r \n```"
 
-autocmd FileType markdown let b:surround_{char2nr("i")} = "*\r*"
-autocmd FileType markdown let b:surround_{char2nr("f")} = "**\r**"
+autocmd FileType markdown let b:surround_{char2nr("i")} = "_\r_"
+autocmd FileType markdown let b:surround_{char2nr("g")} = "**\r**"
+autocmd FileType markdown let b:surround_{char2nr("s")} = "~~\r~~"
 ]]
 
 
