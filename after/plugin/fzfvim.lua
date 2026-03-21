@@ -1,10 +1,10 @@
--- - To learn more about preview window options, see `--preview-window` section of `man fzf`.
---vim.g.fzf_vim = {}
---vim.g.fzf_vim.preview_window = {'right,85%'}
--- vim.cmd[[
---  let g:fzf_vim = {}
---  let g:fzf_vim.preview_window = ['up,80%', 'ctrl-p']
---]]
+-- To learn more about preview window options, see `--preview-window` section of `man fzf`.
+vim.g.fzf_vim = {}
+vim.g.fzf_vim.preview_window = {'right,85%'}
+ vim.cmd[[
+  let g:fzf_vim = {}
+  let g:fzf_vim.preview_window = ['up,80%', 'ctrl-p']
+]]
 
 
 -- https://github.com/junegunn/fzf?tab=readme-ov-file#vimneovim-plugin

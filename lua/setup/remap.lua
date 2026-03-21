@@ -25,11 +25,13 @@ vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 
--- vim.keymap.set({"n", "v"}, "<A-h>", "0", { desc = "Go to beginning of line" }) -- <A-h>
--- vim.keymap.set({"n", "v"}, "<A-l>", "$", { desc = "Go to end of line" }) -- <A-l>
+vim.keymap.set({ "n", "v", "o" }, "˛", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
+vim.keymap.set({ "n", "v", "o" }, "ﬁ", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 
-vim.keymap.set({ "n", "v" }, "gh", "0", { desc = "Go to beginning of line" })
-vim.keymap.set({ "n", "v" }, "gl", "$", { desc = "Go to end of line" })
+vim.keymap.set({ "n", "v", "o" }, "gh", "0", { desc = "Go to beginning of line" })
+vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
+
+vim.keymap.set("n", "<leader><leader>sorth", ":'<,'>!sort -h ", { desc = "Sort lines human readable way" })
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
 vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
@@ -59,17 +61,20 @@ vim.keymap.set("n", "<leader><leader>new", create_new_file, { desc = "Create new
 -- OPEN CONFIG FILE IN A SPLIT
 --------------------------------------------------------
 
+-- ========= VIM CONFIGS =========
 vim.keymap.set("n", "<leader><leader>vim", ":vsplit ~/.vimrc<CR>", { desc = "Open .vimrc in a new split" })
 vim.keymap.set("n", "<leader><leader>idea", ":vsplit ~/.ideavimrc<CR>", { desc = "Open .ideavimrc in a new split" })
 vim.keymap.set("n", "<leader><leader>rem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>", { desc = "Open Neovim remap.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>set", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>", { desc = "Open Neovim set.lua in a new split" })
-vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>", { desc = "Open Neovim plugins in a new split" })
+vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>/", { desc = "Open Neovim plugins in a new split" })
+------------ after plugins -----------
+vim.keymap.set("n", "<leader><leader>fzf", ":vsplit ~/.config/nvim/after/plugin/fzfvim.lua<CR>", { desc = "Open fzf.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>diff", ":vsplit ~/.config/nvim/after/plugin/diffview.lua<CR>", { desc = "Open diffview.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>surr", ":vsplit ~/.config/nvim/after/plugin/vim-surround.lua<CR>", { desc = "Open vim-surround.lua in a new split" })
+-- =========== OTHER ==============
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.bashrc<CR>", { desc = "Open .bashrc a new split" })
+vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = "Open .tmux.conf a new split" })
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
-
--- oversett dette fra bash til lua:
--- lua function for å redirecte til enten pre-push.sample eller pre-push,
--- avhengig av hva som eksisterer
 
 function file_exists(name)
    local f=io.open(name,"r")
@@ -111,27 +116,33 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 
 
 --------------------------------------------------------
--- OPERATOR PENDING
+-- OPERATOR PENDING (onoremap)
 --------------------------------------------------------
 
--- -- c ->'
--- vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
--- vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
--- vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
--- vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
---
--- -- C -> '
--- vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
--- vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
--- vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
--- vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
---
--- -- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
--- vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
--- vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
--- vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
--- vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
---
+-- c -> ' (needed for yic, cic, dic and similar. Surround is handled by tpope/vim-surround config)
+vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
+vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
+vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
+vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
+
+-- C -> '
+vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
+vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
+vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
+vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
+
+-- v -> `
+vim.keymap.set("o", "iv", "i`", { desc = "Inside `" })
+vim.keymap.set("o", "av", "a`", { desc = "Around `" })
+vim.keymap.set("v", "iv", "i`", { desc = "Inside `" })
+vim.keymap.set("v", "av", "a`", { desc = "Around `" })
+
+-- r -> [ ("r" er brukt som surround-shortcut til "[" i tpope/vim-surround) Se github.com/tpope/vim-surround ---> plugin/surround.vim ---> let pairs = "b()B{}r[]a<>"
+vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
+vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
+vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
+vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
+
 -- -- a -> <>
 
 -- "operator pending ish"
@@ -140,6 +151,7 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- -- -- example: d, c, y, v,
 vim.keymap.set("o", ",", ":normal! ggVG<CR>", { desc = "Entire buffer" })
 vim.keymap.set("n", "y,", ":%y<CR>", { desc = "yank entire buffer" })
+-- vim.keymap.set("n", "d,", ":%d_<CR>", { desc = "delete entire buffer" })
 vim.keymap.set("n", "<leader>vy,", ":%y+<CR>", { desc = "yank entire buffer to OS registry" })
 vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 
@@ -347,10 +359,10 @@ vim.keymap.set({ "n", "v" }, "<C-e>", "8j", { desc = "Scroll down" })
 vim.keymap.set({ "n", "v" }, "<C-y>", "8k", { desc = "Scroll up" })
 
 
--- SEARCH & JUMP-TO
+-- SEARCH
 
-vim.keymap.set({ "n", "v" }, "<leader>n", "/", { desc = "Search forward" })
-vim.keymap.set({ "n", "v" }, "<leader>N", "?", { desc = "Search backward" })
+vim.keymap.set({ "n", "v", "o" }, "<leader>n", "/", { desc = "Search forward" })
+vim.keymap.set({ "n", "v", "o" }, "<leader>N", "?", { desc = "Search backward" })
 
 
 -- SEARCH-REPLACE

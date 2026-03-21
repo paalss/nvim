@@ -21,9 +21,7 @@ require("neo-tree").setup({
     hijack_netrw_behavior = "disabled",
   }
 })
--- <A-w> bringer focus til neotree-sidebar?? hvorfor? Trenger den keymappen til barbar bufferclose...
--- vim.keymap.del("n", "<A-w>") mulig?
--- -- TODO: mac: du kan fjerne den kommentaren om WSL
+-- INGENTING ER GALT! FJERN DEN KOMMENTAREN PÅ MAC OG WSL!
 vim.keymap.set("n", "<leader>rr", "<cmd>Neotree toggle left<cr>", { desc = "Toggle file explorer" })
 -- vim.keymap.set("n", "<A-r>h", "<cmd>Neotree toggle reveal left<cr>", { desc = "Toggle file explorer (left sidebar)" })
 -- vim.keymap.set("n", "<A-r>k", "<cmd>Neotree toggle reveal float<cr>", { desc = "Toggle file explorer (float)" })
