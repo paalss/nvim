@@ -70,7 +70,7 @@ vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/
 ------------ after plugins -----------
 vim.keymap.set("n", "<leader><leader>fzf", ":vsplit ~/.config/nvim/after/plugin/fzfvim.lua<CR>", { desc = "Open fzf.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>diff", ":vsplit ~/.config/nvim/after/plugin/diffview.lua<CR>", { desc = "Open diffview.lua in a new split" })
-vim.keymap.set("n", "<leader><leader>surr", ":vsplit ~/.config/nvim/after/plugin/vim-surround.lua<CR>", { desc = "Open vim-surround.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>surr", ":vsplit ~/.config/nvim/after/plugin/surround.lua<CR>", { desc = "Open surround.lua in a new split" })
 -- =========== OTHER ==============
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.bashrc<CR>", { desc = "Open .bashrc a new split" })
 vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = "Open .tmux.conf a new split" })
