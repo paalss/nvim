@@ -219,7 +219,7 @@ local plugins = {
   { 'tpope/vim-commentary', pin = true },
   {
     "iamcco/markdown-preview.nvim",
-    enabled = true,
+    enabled = false,
     build = function()
       vim.fn["mkdp#util#install"]()
     end
