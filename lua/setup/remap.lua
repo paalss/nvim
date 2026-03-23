@@ -398,7 +398,7 @@ vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:l
 
 -- FILE NAVIGATION
 
--- vim.keymap.set("n", "<leader><leader>vv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader><leader>x", vim.cmd.Ex)
 
 
 --------------------------------------------------------
