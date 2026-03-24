@@ -79,8 +79,11 @@ vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = 
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
 
 function file_exists(name)
-   local f=io.open(name,"r")
-   if f~=nil then io.close(f) return true else return false end
+  local f = io.open(name, "r")
+  if f ~= nil then
+    io.close(f)
+    return true
+  else return false end
 end
 
 function open_prepush()
@@ -296,6 +299,7 @@ vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next tra
 vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from insert mode)" })
 
 
+
 -- POPULATE TRANSLATION WITH KEY
 
 vim.keymap.set("v", "<C-x>", "<esc>F\";yi\"f\";vi\"pgvu~gv:s/\\%V_/ /g<CR>", { desc = "Populate translation with key" }) -- "TRANSLATION_KEY_HERE": "Translation key here"
@@ -370,6 +374,7 @@ vim.keymap.set({ "n", "v", "o" }, "<leader>N", "?", { desc = "Search backward" }
 -- SEARCH-REPLACE
 
 -- ikke perfekt, men det er en start
+-- merk: cnoremap <C-n> kjører CR slik at gjeldende søk overskriver "forrige søk" når man trykker "n"
 vim.keymap.set("c", "<C-n>", "<CR>:s/<C-r>///g<left><Left>",
   { desc = "Convert first incsearch match to 'Search-replace'" })
 vim.keymap.set("n", "<leader><C-n>", ":s/<C-r>//g<Left><Left>",
