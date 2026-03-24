@@ -248,6 +248,8 @@ vim.keymap.set("n", "C", "\"_C", { desc = "Change without saving deleted text" }
 vim.keymap.set("n", "x", "\"_x", { desc = "Change without saving deleted text" })
 vim.keymap.set("v", "p", "\"_dP", { desc = "Paste without saving deleted text" })
 vim.keymap.set("v", "P", "\"_dp", { desc = "Paste without saving deleted text" })
+vim.keymap.set("n", "<leader><leader><leader>p", "p", { desc = "Normal p" })
+vim.keymap.set("n", "<leader><leader><leader>P", "P", { desc = "Normal P" })
 
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
