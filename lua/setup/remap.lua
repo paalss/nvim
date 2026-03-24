@@ -232,7 +232,6 @@ nnoremap <leader><leader>cat :call JSXSelectTag("v")<CR>c
 -- NAVIGATE YANKED REGION
 
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
-vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied text" })
 
 
 -- TOGGLE
@@ -406,7 +405,7 @@ vim.keymap.set("n", "<leader>R", ":let @a = @/<CR>:execute '/classes.root'<CR>:l
 
 -- FILE NAVIGATION
 
--- vim.keymap.set("n", "<leader><leader>vv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader><leader>x", vim.cmd.Ex)
 
 
 --------------------------------------------------------
