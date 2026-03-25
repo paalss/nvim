@@ -71,7 +71,7 @@ vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/
 ------------ after plugins -----------
 vim.keymap.set("n", "<leader><leader>fzf", ":vsplit ~/.config/nvim/after/plugin/fzfvim.lua<CR>", { desc = "Open fzf.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>diff", ":vsplit ~/.config/nvim/after/plugin/diffview.lua<CR>", { desc = "Open diffview.lua in a new split" })
-vim.keymap.set("n", "<leader><leader>surr", ":vsplit ~/.config/nvim/after/plugin/vim-surround.lua<CR>", { desc = "Open vim-surround.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>surr", ":vsplit ~/.config/nvim/after/plugin/surround.lua<CR>", { desc = "Open surround.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>lsp", ":vsplit ~/.config/nvim/after/plugin/<CR>/lsp<CR>", { desc = "Open one of the lsp-files in new split" })
 -- =========== OTHER ==============
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.zshrc<CR>", { desc = "Open .zshrc a new split" })
