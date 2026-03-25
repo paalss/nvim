@@ -327,8 +327,8 @@ end, { desc = "lsp format" })
 -- QUICKFIX LIST
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
-vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
+vim.keymap.set("n", "<leader><leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
+vim.keymap.set("n", "<leader><leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 
 
 -- QUICK FIX LIST NAVIGATION
