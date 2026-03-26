@@ -288,6 +288,33 @@ vim.cmd [[iabbrev timezpne timezone]]
 
 
 --------------------------------------------------------
+-- SUMMARIZE
+--------------------------------------------------------
+
+vim.keymap.set("n", "<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
+vim.keymap.set("n", "9<leader>x", "jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
+
+-- TODO: make it work for only one specific buffer type
+-- TODO: test disse keymaps. Fungerer de i praksis?
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.txt",
+  callback = function()
+    -- vim.keymap.set("n", "<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
+    -- vim.keymap.set("n", "9<leader>x", "jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
+  end,
+})
+
+-- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+--   pattern = "*.txt",
+--   callback = function()
+--     vim.schedule(function()
+--       vim.opt_local.colorcolumn = "73" -- indicating where text needs to wrap
+--     end)
+--   end,
+-- })
+--
+
+--------------------------------------------------------
 -- TRANSLATION
 --------------------------------------------------------
 
@@ -297,6 +324,19 @@ vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next tra
 vim.keymap.set("v", "<leader>tt", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
 vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
 vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from insert mode)" })
+
+-- TODO: make it work for only one specific buffer type
+-- TODO: test disse keymaps. Fungerer de i praksis?
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "translation.json",
+  callback = function()
+    -- vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next translation" })
+    -- vim.keymap.set("v", "<leader>tt", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
+    -- vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
+    -- vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from insert mode)" })
+  end,
+})
+
 
 
 
