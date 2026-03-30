@@ -57,6 +57,7 @@ end
 
 vim.keymap.set("n", "<leader><leader>new", create_new_file, { desc = "Create new file" })
 
+
 --------------------------------------------------------
 -- OPEN CONFIG FILE IN A SPLIT
 --------------------------------------------------------
@@ -71,6 +72,7 @@ vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/
 vim.keymap.set("n", "<leader><leader>fzf", ":vsplit ~/.config/nvim/after/plugin/fzfvim.lua<CR>", { desc = "Open fzf.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>diff", ":vsplit ~/.config/nvim/after/plugin/diffview.lua<CR>", { desc = "Open diffview.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>surr", ":vsplit ~/.config/nvim/after/plugin/surround.lua<CR>", { desc = "Open surround.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>lsp", ":vsplit ~/.config/nvim/after/plugin/<CR>/lsp<CR>", { desc = "Open one of the lsp-files in new split" })
 -- =========== OTHER ==============
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.bashrc<CR>", { desc = "Open .bashrc a new split" })
 vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = "Open .tmux.conf a new split" })
@@ -227,8 +229,6 @@ nnoremap <leader><leader>cat :call JSXSelectTag("v")<CR>c
 -- NAVIGATE YANKED REGION
 
 vim.keymap.set("v", "y", "ygv<esc>", { desc = "Yank (keep cursor in place)" })
-vim.keymap.set("v", "p", "\"_P", { desc = "Paste without losing copied text" })
-vim.keymap.set("v", "P", "\"_Po<esc>", { desc = "Paste without losing copied text" })
 
 
 -- TOGGLE
@@ -244,13 +244,15 @@ vim.keymap.set("n", "C", "\"_C", { desc = "Change without saving deleted text" }
 vim.keymap.set("n", "x", "\"_x", { desc = "Change without saving deleted text" })
 vim.keymap.set("v", "p", "\"_dP", { desc = "Paste without saving deleted text" })
 vim.keymap.set("v", "P", "\"_dp", { desc = "Paste without saving deleted text" })
+vim.keymap.set("v", "<leader><leader><leader>p", "p", { desc = "Normal p" })
+vim.keymap.set("v", "<leader><leader><leader>P", "P", { desc = "Normal P" })
 
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
 
-vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
-vim.keymap.set("v", "<leader>vp", "\"+p", { desc = "Paste from OS registry" })
-vim.keymap.set("v", "<leader>vP", "\"+P", { desc = "Paste from OS registry" })
+-- vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
+-- vim.keymap.set("v", "<leader>vp", "\"+p", { desc = "Paste from OS registry" })
+-- vim.keymap.set("v", "<leader>vP", "\"+P", { desc = "Paste from OS registry" })
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
@@ -283,6 +285,33 @@ vim.cmd [[iabbrev timezpne timezone]]
 
 
 --------------------------------------------------------
+-- SUMMARIZE
+--------------------------------------------------------
+
+vim.keymap.set("n", "<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
+vim.keymap.set("n", "9<leader>x", "jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
+
+-- TODO: make it work for only one specific buffer type
+-- TODO: test disse keymaps. Fungerer de i praksis?
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.txt",
+  callback = function()
+    -- vim.keymap.set("n", "<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
+    -- vim.keymap.set("n", "9<leader>x", "jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
+  end,
+})
+
+-- vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+--   pattern = "*.txt",
+--   callback = function()
+--     vim.schedule(function()
+--       vim.opt_local.colorcolumn = "73" -- indicating where text needs to wrap
+--     end)
+--   end,
+-- })
+--
+
+--------------------------------------------------------
 -- TRANSLATION
 --------------------------------------------------------
 
@@ -292,6 +321,20 @@ vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next tra
 vim.keymap.set("v", "<leader>tt", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
 vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
 vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from insert mode)" })
+
+-- TODO: make it work for only one specific buffer type
+-- TODO: test disse keymaps. Fungerer de i praksis?
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "translation.json",
+  callback = function()
+    -- vim.keymap.set("n", "<leader>tt", "/__STRING<CR>vi\"", { desc = "Select next translation" })
+    -- vim.keymap.set("v", "<leader>tt", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
+    -- vim.keymap.set("v", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from visual mode)" })
+    -- vim.keymap.set("i", "<C-a>", "<esc>/__STRING<CR>vi\"", { desc = "Select next translation (from insert mode)" })
+  end,
+})
+
+
 
 
 -- POPULATE TRANSLATION WITH KEY
@@ -321,8 +364,8 @@ end, { desc = "lsp format" })
 -- QUICKFIX LIST
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
-vim.keymap.set("n", "<leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
+vim.keymap.set("n", "<leader><leader>cop", ":botright copen<CR>", { desc = "Open quickfix list" }) --botright: open at the bottom even if noneckpain is on
+vim.keymap.set("n", "<leader><leader>ccl", ":ccl<CR>", { desc = "close quickfix list" })
 
 
 -- QUICK FIX LIST NAVIGATION
@@ -368,6 +411,7 @@ vim.keymap.set({ "n", "v", "o" }, "<leader>N", "?", { desc = "Search backward" }
 -- SEARCH-REPLACE
 
 -- ikke perfekt, men det er en start
+-- merk: cnoremap <C-n> kjører CR slik at gjeldende søk overskriver "forrige søk" når man trykker "n"
 vim.keymap.set("c", "<C-n>", "<CR>:s/<C-r>///g<left><Left>",
   { desc = "Convert first incsearch match to 'Search-replace'" })
 vim.keymap.set("n", "<leader><C-n>", ":s/<C-r>//g<Left><Left>",
@@ -432,8 +476,9 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>m", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "<leader>m", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
 vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 
