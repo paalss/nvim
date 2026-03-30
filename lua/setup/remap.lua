@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 vim.keymap.set({ "n", "v", "o" }, "˛", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 vim.keymap.set({ "n", "v", "o" }, "ﬁ", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 
+-- start/end
 vim.keymap.set({ "n", "v", "o" }, "gh", "0", { desc = "Go to beginning of line" })
 vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
 
