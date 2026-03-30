@@ -51,6 +51,13 @@ vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
 vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
+vim.keymap.set("n", "<leader>m", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
+vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
+vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
+vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
+vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 
 local function create_new_file()
   local filename = vim.fn.input("Enter filename: ")
@@ -477,15 +484,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 --------------------------------------------------------
 -- OTHER
 --------------------------------------------------------
-
-vim.keymap.set("n", "<leader>m", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
-vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
-vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
-vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
-vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
-
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
-vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 
 -- vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
 --   { desc = "Yank path to current file", noremap = true, silent = true })
