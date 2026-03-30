@@ -53,7 +53,7 @@ vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
 
 local function create_new_file()
-  local filename = vim.fn.input("Enter filename:")
+  local filename = vim.fn.input("Enter filename: ")
   vim.cmd("e %:h/" .. filename)
 end
 
