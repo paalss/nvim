@@ -43,9 +43,8 @@ vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 
 vim.keymap.set("n", "<", ">>", { desc = "add indent" })
 vim.keymap.set("n", ">", "<<", { desc = "remove indent" })
-
-vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
-vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
+vim.keymap.set("v", "<", ">gv", { desc = "add indent" })
+vim.keymap.set("v", ">", "<gv", { desc = "remove indent" })
 
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
 vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
