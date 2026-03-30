@@ -38,17 +38,19 @@ vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 
 -- -- indenting
+-- vim.keymap.set("i", "<tab>", "<esc>:echo 'HELLOOOOOO????'<CR>", { desc = "add indent" }) -- funker ikke på mac
+
+vim.keymap.set("n", "<", ">>", { desc = "add indent" })
+vim.keymap.set("n", ">", "<<", { desc = "remove indent" })
+
+vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
+vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
+
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
 vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
 vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
--- vim.keymap.set("i", "<tab>", "<esc>:echo 'HELLOOOOOO????'<CR>", { desc = "add indent" }) -- funker ikke på mac
-
-vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
-vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
-vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
-vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
 
 local function create_new_file()
   local filename = vim.fn.input("Enter filename:")
