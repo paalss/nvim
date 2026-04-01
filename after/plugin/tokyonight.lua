@@ -48,8 +48,8 @@ require("tokyonight").setup({
 })
 
 function ColorMyPencils(color)
-  -- color = color or "pop-punk"
-  color = color or "tokyonight-night"
+  color = color or "pop-punk"
+  -- color = color or "tokyonight-night"
   vim.cmd.colorscheme(color)
 end
 
