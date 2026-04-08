@@ -28,6 +28,7 @@ vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
 vim.keymap.set({ "n", "v", "o" }, "˛", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 vim.keymap.set({ "n", "v", "o" }, "ﬁ", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 
+-- start/end
 vim.keymap.set({ "n", "v", "o" }, "gh", "0", { desc = "Go to beginning of line" })
 vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
 
@@ -38,20 +39,28 @@ vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 
 -- -- indenting
+-- vim.keymap.set("i", "<tab>", "<esc>:echo 'HELLOOOOOO????'<CR>", { desc = "add indent" }) -- funker ikke på mac
+
+vim.keymap.set("n", "<", ">>", { desc = "add indent" })
+vim.keymap.set("n", ">", "<<", { desc = "remove indent" })
+vim.keymap.set("v", "<", ">gv", { desc = "add indent" })
+vim.keymap.set("v", ">", "<gv", { desc = "remove indent" })
+
 vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
 vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
 vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
--- vim.keymap.set("i", "<tab>", "<esc>:echo 'HELLOOOOOO????'<CR>", { desc = "add indent" }) -- funker ikke på mac
-
-vim.keymap.set("n", "<<", "<nop>", { desc = "Disable << indent" })
-vim.keymap.set("n", ">>", "<nop>", { desc = "Disable >> indent" })
-vim.keymap.set("v", "<<", "<nop>", { desc = "Disable << indent" })
-vim.keymap.set("v", ">>", "<nop>", { desc = "Disable >> indent" })
+vim.keymap.set("n", "<leader>m", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
+vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
+vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
+vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
+vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
+vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 
 local function create_new_file()
-  local filename = vim.fn.input("Enter filename:")
+  local filename = vim.fn.input("Enter filename: ")
   vim.cmd("e %:h/" .. filename)
 end
 
@@ -253,9 +262,9 @@ vim.keymap.set("n", "x", "\"_x", { desc = "Change without saving deleted text" }
 vim.keymap.set("n", "<leader>S", ":let @s = @*<CR>", { desc = "Save last paste item to 's'-registry " })
 vim.keymap.set("n", "<leader>L", "\"sp", { desc = "Paste from 's'-registry" })
 
--- vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
--- vim.keymap.set("v", "<leader>vp", "\"+p", { desc = "Paste from OS registry" })
--- vim.keymap.set("v", "<leader>vP", "\"+P", { desc = "Paste from OS registry" })
+vim.keymap.set({ "n", "v" }, "<leader>v", "\"+", { desc = "OS registry" })
+vim.keymap.set("v", "<leader>vp", "\"+p", { desc = "Paste from OS registry" })
+vim.keymap.set("v", "<leader>vP", "\"+P", { desc = "Paste from OS registry" })
 -- vim.keymap.set({ "n", "v" }, "<C-s>", "\"s", { desc = "Use 's' register" })
 
 -- -- black hole
@@ -478,15 +487,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 --------------------------------------------------------
 -- OTHER
 --------------------------------------------------------
-
-vim.keymap.set("n", "<leader>m", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
-vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
-vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
-vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
-vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
-
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
-vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 
 -- vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
 --   { desc = "Yank path to current file", noremap = true, silent = true })

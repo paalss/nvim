@@ -73,6 +73,10 @@ local plugins = {
   --** Colorschemes **--
   ----------------------------
   {
+    'bignimbus/pop-punk.vim',
+    pin = true
+  },
+  {
     "folke/tokyonight.nvim",
     pin = true,
     lazy = false,
