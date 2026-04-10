@@ -3,7 +3,7 @@ vim.g.fzf_vim = {}
 vim.g.fzf_vim.preview_window = {'right,85%'}
  vim.cmd[[
   let g:fzf_vim = {}
-  let g:fzf_vim.preview_window = ['up,80%', 'ctrl-p']
+  let g:fzf_vim.preview_window = ['up,50%', 'ctrl-i']
 ]]
 
 
