@@ -1,12 +1,11 @@
 -- shortcuts/typing
-
 -- https://neovim.io/doc/user/options.html#%27langmap%27
-vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At" })
-vim.keymap.set({ "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Tilde" })
-vim.keymap.set({ "n" }, "<A-3>", "~", { desc = "Tilde" })
-vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
-vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
-vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
+vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "™", "@", { desc = "<A-2>: At" })
+vim.keymap.set({ "i", "v", "x", "o", "t", "!" }, "£", "~", { desc = "<A-3>: Tilde" })
+vim.keymap.set({ "n" }, "£", "~", { desc = "<A-3>: Tilde" })
+vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "€", "$", { desc = "<A-4>: Dollar sign" })
+vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "∞", "%", { desc = "<A-5>: Percent" })
+-- vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "€", "`", { desc = "<A-|>: Bactick" })
 
 
 --------------------------------------------------------
@@ -34,8 +33,15 @@ vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "<leader><leader>sorth", ":'<,'>!sort -h ", { desc = "Sort lines human readable way" })
 
+vim.keymap.set({ "n", "v", "o" }, "gk", "{", { desc = "Go up paragraph" })
+vim.keymap.set({ "n", "v", "o" }, "gj", "}", { desc = "Go down paragraph" })
+vim.keymap.set({ "n", "v", "o" }, "ß", "{", { desc = "<A-s>: Go up paragraph" })
+vim.keymap.set({ "n", "v", "o" }, "≈", "}", { desc = "<A-x>: Go down paragraph" })
+vim.keymap.set({ "n", "v", "o" }, "ƒ", "{", { desc = "<A-f>: Go up paragraph (not working??)" })
+vim.keymap.set({ "n", "v", "o" }, "‹", "}", { desc = "<A-v>: Go down paragraph" })
+
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
-vim.keymap.set("n", "<leader>c", "\"", { desc = "double quote" })
+vim.keymap.set({ "n", "v" }, "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 
 -- -- indenting
@@ -51,9 +57,12 @@ vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
 vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
+-- -- macros
 vim.keymap.set("n", "<leader>m", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
+
+-- -- other
 vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
