@@ -12,7 +12,7 @@ Last ned tarball, se https://github.com/neovim/neovim/releases/tag/v0.11.6
 
 Scroll helt ned til bunnen og la assets loade først
 
-Installer nvim-linux-x86_64.tar.gz 
+Last ned nvim-linux-x86_64.tar.gz 
 
 Flytt downloaded tar til `~/.local/bin/`
 
