@@ -31,6 +31,7 @@ vim.keymap.set({ "n", "v", "o" }, "ﬁ", ":echo 'denne shortcutten er ledig!'<CR
 -- start/end
 vim.keymap.set({ "n", "v", "o" }, "gh", "0", { desc = "Go to beginning of line" })
 vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
+vim.keymap.set({ "n", "v", "o" }, "gy", "^^", { desc = "Go beginning of text" })
 
 vim.keymap.set("n", "<leader><leader>sorth", ":'<,'>!sort -h ", { desc = "Sort lines human readable way" })
 
