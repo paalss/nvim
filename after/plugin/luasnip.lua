@@ -36,6 +36,19 @@ ls.add_snippets("lua", {
 })
 
 
+ls.add_snippets("markdown", {
+  s("---", {
+    t("---"),
+    t({ "", "title: " }), i(1),
+    t({ "", "date: " }), i(2),
+    t({ "", "tags: " }),
+    t({ "", "- " }), i(3),
+    t({ "", "---" }),
+    t({ "", "" }),
+    t({ "", "" }), i(4)
+  })
+})
+
 -- norwegian book
 
 ls.add_snippets("markdown", {
