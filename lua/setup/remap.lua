@@ -512,6 +512,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
+
+vim.keymap.set("n", "<leader><leader>ji", "$%", { desc = "For testing '%' in keymaps: go to end and them matching bracket" })
 vim.keymap.set("n", "<leader><leader>te", ":terminal", { desc = "open terminal" })
 -- vim.keymap.set("n", "<leader><leader>trm", ":terminal<CR>:startinsert<CR>", { desc = "Open terminal" })
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
