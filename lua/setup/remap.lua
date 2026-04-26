@@ -31,6 +31,7 @@ vim.keymap.set({ "n", "v", "o" }, "ﬁ", ":echo 'denne shortcutten er ledig!'<CR
 -- start/end
 vim.keymap.set({ "n", "v", "o" }, "gh", "0", { desc = "Go to beginning of line" })
 vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
+vim.keymap.set({ "n", "v", "o" }, "gy", "^^", { desc = "Go beginning of text" })
 
 -- yanked region start/end
 vim.keymap.set({ "n", "v", "o" }, "<A-s>", "'[", { desc = "Go to yanked region start" })
