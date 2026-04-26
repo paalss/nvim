@@ -10,6 +10,7 @@ vim.opt.relativenumber = true
 vim.opt.nu = true -- on relativenumber, overwrite 0 with current line number
 vim.o.cursorline = true
 vim.o.undofile = true
+-- vim.o.cursorcolumn = true
 -- vim.o.wildmenu = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

@@ -29,9 +29,11 @@
 ## Requirements
 
 <details>
-    <summary><b>WSL</b></summary>
+    <summary>WSL</summary>
 
 This config has been customized for Neovim v0.11.6 on Ubuntu (through WSL on Windows 11)
+
+If you're using Mac then the mac-develop branch
 
 A note on Windows 11 & its Terminal app:
 
@@ -44,7 +46,7 @@ If you want to use the latter, you'll have to delete the former. You can open up
 </details>
 
 <details>
-    <summary><b>Neovim version 0.11.6</b></summary>
+    <summary>Neovim version 0.11.6</summary>
 
 **My Neovim info**
 ````
@@ -59,7 +61,7 @@ LuaJIT 2.1.0-beta3
 </details>
 
 <details>
-    <summary><b>Git version over 2.31.0 (For Diffview.nvim)</b></summary>
+    <summary>Git > 2.31.0 (For Diffview.nvim)</summary>
 
 **How to update git on Ubuntu**
 
@@ -78,58 +80,24 @@ git --version
 </details>
 
 <details>
-    <summary><b>Install Ripgrep for Telescope</b></summary>
+    <summary>fzf > 0.36 (for fzf-lua)</summary>
 
-Ubuntu
+If this version is not available in your package manager you can use the "git clone" option
 
-```bash
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
-sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
-```
+https://github.com/junegunn/fzf?tab=readme-ov-file#installation
 
-or...
-
-> If you're an Ubuntu Cosmic (18.10) (or newer) user, ripgrep is available using the same packaging as Debian:
->
->```sh
->sudo apt-get install ripgrep
->```
-
-Other installation methods: <https://github.com/BurntSushi/ripgrep>
+https://github.com/ibhagwan/fzf-lua?tab=readme-ov-file#dependencies
 
 ---
 </details>
 
-<details>
-    <summary><b>Install C compiler for Nvim-treesitter</b></summary>
-
-Ubuntu
-
-```bash
-sudo apt install build-essential
-```
-
----
-</details>
-
-<details>
-    <summary><b>Install nodejs and npm for Lsp-zero (tsserver, html etc.)</b></summary>
-
-Ubuntu
-
-```bash
-sudo apt install nodejs npm
-```
-
----
-</details>
 
 <br>
 
 ### Semi-requirements / nice to have
 
 <details>
-    <summary><b>Autohotkey (Windows app, for extra keymaps)</b></summary>
+    <summary>Autohotkey (Windows app, for extra keymaps)</summary>
 
 I have made some additional keymaps using Authotkey.
 
@@ -158,67 +126,9 @@ click 'run script' from the right-click menu on the ahk-file
 ---
 </details>
 
-<details>
-    <summary><b>LazyGit (UI for version control)</b></summary>
-
-Install as explained in <https://github.com/jesseduffield/lazygit#ubuntu>,
-
-run
-
-```bash
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar xf lazygit.tar.gz lazygit
-sudo install lazygit /usr/local/bin
-```
-
-Verify installation
-
-```bash
-lazygit --version
-```
-
----
-</details>
-
-<details>
-    <summary><b>Git delta (Better git diff)</b></summary>
-
-visit: <https://dandavison.github.io/delta/installation.html>
-
-Download the deb for Debian / Ubuntu
-
-| Debian / Ubuntu | `sudo dpkg -i git-delta-musl_x.xx.x_amd64.deb` |
-| --------------- | ---------------------------------------------- |
-
-**Usage**
-
-`git diff | delta`
-
-see more
-
-<https://www.youtube.com/watch?v=91p1Fp7Db5c>
-
----
-</details>
-
-
-<details>
-    <summary><b>Emmet-ls (node)</b></summary>
-
-1. Install node
-2. `npm install -g emmet-ls`
-3. for jsx code completion
-
----
-</details>
-
 ## Installation 
 
 **Clone config**
-
-> [!WARNING]
-> If you have something in your ~/.config/nvim folder, create a backup of them first!
 
 ```sh
 git clone git@github.com:paalss/nvim.git ~/.config/nvim
@@ -227,8 +137,6 @@ git clone git@github.com:paalss/nvim.git ~/.config/nvim
 ![Intro page](./docs/stakvim.png)
 
 ### Start Neovim
-
-In WSL, navigate to the files you want to edit and run:
 
 ```bash
 nvim

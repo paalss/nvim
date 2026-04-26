@@ -1,7 +1,8 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system(
-    { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
+    { "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git",
+      "--branch=stable", -- latest stable release
       lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
@@ -65,7 +66,8 @@ local plugins = {
   ----------------------------
   --** Autopairs/surround **--
   ----------------------------
-  { 'tpope/vim-surround',  pin = true },
+  -- { 'tpope/vim-surround',  pin = true },
+  { 'tomtomjhj/vim-surround', branch = "delete-custom" }, -- make custom surround maps (see `vim-surround.lua`) work with "delete surrounding" and "change surrounding"
   {
     'alvan/vim-closetag',
     pin = true
@@ -83,6 +85,10 @@ local plugins = {
   --** Colorschemes **--
   ----------------------------
   {
+    'bignimbus/pop-punk.vim',
+    pin = true
+  },
+  {
     "folke/tokyonight.nvim",
     pin = true,
     lazy = false,
@@ -95,6 +101,18 @@ local plugins = {
   ----------------------------
   { "junegunn/fzf",    build = "./install --bin" },
   { "junegunn/fzf.vim" },
+  {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- or if using mini.icons/mini.nvim
+    -- dependencies = { "nvim-mini/mini.icons" },
+    ---@module "fzf-lua"
+    ---@type fzf-lua.Config|{}
+    ---@diagnostic disable: missing-fields
+    opts = {}
+    ---@diagnostic enable: missing-fields
+  },
   {
     'nvim-telescope/telescope.nvim',
     enabled = true,
@@ -206,7 +224,7 @@ local plugins = {
   { 'tpope/vim-commentary', pin = true },
   {
     "iamcco/markdown-preview.nvim",
-    enabled = true,
+    enabled = false,
     build = function()
       vim.fn["mkdp#util#install"]()
     end
