@@ -32,12 +32,15 @@ vim.keymap.set({ "n", "v", "o" }, "ﬁ", ":echo 'denne shortcutten er ledig!'<CR
 vim.keymap.set({ "n", "v", "o" }, "gh", "0", { desc = "Go to beginning of line" })
 vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
 
+-- yanked region start/end
+vim.keymap.set({ "n", "v", "o" }, "<A-s>", "'[", { desc = "Go to yanked region start" })
+vim.keymap.set({ "n", "v", "o" }, "<A-x>", "']", { desc = "Go to yanked region end" })
+
 vim.keymap.set("n", "<leader><leader>sorth", ":'<,'>!sort -h ", { desc = "Sort lines human readable way" })
 
+-- paragraphs
 vim.keymap.set({ "n", "v", "o" }, "gk", "{", { desc = "Go up paragraph" })
 vim.keymap.set({ "n", "v", "o" }, "gj", "}", { desc = "Go down paragraph" })
-vim.keymap.set({ "n", "v", "o" }, "<A-s>", "{", { desc = "Go up paragraph" })
-vim.keymap.set({ "n", "v", "o" }, "<A-x>", "}", { desc = "Go down paragraph" })
 vim.keymap.set({ "n", "v", "o" }, "<A-f>", "{", { desc = "Go up paragraph" })
 vim.keymap.set({ "n", "v", "o" }, "<A-v>", "}", { desc = "Go down paragraph" })
 
