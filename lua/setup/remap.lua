@@ -186,7 +186,7 @@ vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 -- if vim.fn.mode() == 'd' then
 -- end, { desc = "Entire buffer" })
 
--- -- entire line
+-- -- entire line related to....
 -- -- -- example: yaab, daab, vaab
 -- vim.keymap.set("o", "aab", ":normal! vabV<CR>", { desc = "Line related to `(`" })
 vim.keymap.set("o", "aab", ":normal! vabV<CR>", { desc = "Line related to `(`" })
@@ -203,6 +203,12 @@ vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to
 
 -- vim.keymap.set("o", "lv", ":normal! va\"V<CR>", { desc = "Line related to `\"`" })
 -- vim.keymap.set("o", "lV", ":normal! va\'V<CR>", { desc = "Line related to `\'`" })
+
+
+-- -- delete inside line
+vim.keymap.set("v", "il", ":<C-u>norm! ^vg_<CR>", { desc = "entire line" })
+vim.keymap.set("o", "il", ":norm vil<CR>", { desc = "entire line" })
+
 
 -- self closing tag
 -- vim.keymap.set("o", "et", ":<c-u>:normal! ?<<CR>v/\\/><CR>", { desc = "Select self closing tag" })
