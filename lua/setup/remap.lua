@@ -43,7 +43,7 @@ vim.keymap.set({ "n", "v", "o" }, "<A-v>", "}", { desc = "Go down paragraph" })
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "Go to matching pair - %" })
 vim.keymap.set({ "n", "v" }, "<leader>c", "\"", { desc = "double quote" })
-vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
+vim.keymap.set("n", "<leader>x", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 
 -- -- indenting
 -- vim.keymap.set("i", "<tab>", "<esc>:echo 'HELLOOOOOO????'<CR>", { desc = "add indent" }) -- funker ikke på mac
