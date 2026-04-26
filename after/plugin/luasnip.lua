@@ -6,6 +6,12 @@ local i = ls.insert_node
 -- noremap
 
 ls.add_snippets("lua", {
+  s("mnoremap", {
+    t('vim.keymap.set({ "n", "v" }, "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
+  })
+})
+
+ls.add_snippets("lua", {
   s("nnoremap", {
     t('vim.keymap.set("n", "'), i(1), t('", "'), i(2), t('", { desc = "'), i(3), t('" })')
   })
