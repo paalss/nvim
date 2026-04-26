@@ -41,7 +41,7 @@ vim.keymap.set({ "n", "v", "o" }, "<A-x>", "}", { desc = "Go down paragraph" })
 vim.keymap.set({ "n", "v", "o" }, "<A-f>", "{", { desc = "Go up paragraph" })
 vim.keymap.set({ "n", "v", "o" }, "<A-v>", "}", { desc = "Go down paragraph" })
 
-vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
+vim.keymap.set("n", "<leader>g", "%", { desc = "Go to matching pair - %" })
 vim.keymap.set({ "n", "v" }, "<leader>c", "\"", { desc = "double quote" })
 vim.keymap.set("n", "<leader>x", "@", { desc = "@" })
 
@@ -117,6 +117,7 @@ function open_prepush()
 end
 
 vim.keymap.set("n", "<leader><leader>po", open_prepush, { desc = "Open pre-push a new split" })
+
 
 --------------------------------------------------------
 -- LINE MANAGEMENT
