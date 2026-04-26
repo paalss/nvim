@@ -9,6 +9,10 @@ let g:surround_{char2nr("C")} = "'\r'"
 "                                ```
 "                                word
 "                                ```
+
+let b:surround_{char2nr("u")} = "{{ \r }}"
+let b:surround_{char2nr("j")} = "{% \r %}"
+
 autocmd FileType markdown let b:surround_{char2nr("v")} = "`\r`"
 autocmd FileType markdown let b:surround_{char2nr("V")} = "```\n\r \n```"
 
