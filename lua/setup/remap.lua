@@ -33,13 +33,16 @@ vim.keymap.set({ "n", "v", "o" }, "gh", "0", { desc = "Go to beginning of line" 
 vim.keymap.set({ "n", "v", "o" }, "gl", "$", { desc = "Go to end of line" })
 vim.keymap.set({ "n", "v", "o" }, "gy", "^^", { desc = "Go beginning of text" })
 
+-- yanked region start/end
+vim.keymap.set({ "n", "v", "o" }, "ß", "'[", { desc = "<A-s>: Go to yanked region start" })
+vim.keymap.set({ "n", "v", "o" }, "≈", "']", { desc = "<A-x>: Go to yanked region end" })
+
 vim.keymap.set("n", "<leader><leader>sorth", ":'<,'>!sort -h ", { desc = "Sort lines human readable way" })
 
+-- paragraphs
 vim.keymap.set({ "n", "v", "o" }, "gk", "{", { desc = "Go up paragraph" })
 vim.keymap.set({ "n", "v", "o" }, "gj", "}", { desc = "Go down paragraph" })
-vim.keymap.set({ "n", "v", "o" }, "ß", "{", { desc = "<A-s>: Go up paragraph" })
-vim.keymap.set({ "n", "v", "o" }, "≈", "}", { desc = "<A-x>: Go down paragraph" })
-vim.keymap.set({ "n", "v", "o" }, "ƒ", "{", { desc = "<A-f>: Go up paragraph (not working??)" })
+vim.keymap.set({ "n", "v", "o" }, "ƒ", "{", { desc = "<A-f>: Go up paragraph (not working??) funker i WSL" })
 vim.keymap.set({ "n", "v", "o" }, "‹", "}", { desc = "<A-v>: Go down paragraph" })
 
 vim.keymap.set("n", "<leader>g", "%", { desc = "%" })
@@ -118,6 +121,7 @@ end
 
 vim.keymap.set("n", "<leader><leader>po", open_prepush, { desc = "Open pre-push a new split" })
 
+
 --------------------------------------------------------
 -- LINE MANAGEMENT
 --------------------------------------------------------
@@ -189,7 +193,7 @@ vim.keymap.set("v", ",", ":normal! ggVG<CR>", { desc = "select entire buffer" })
 -- if vim.fn.mode() == 'd' then
 -- end, { desc = "Entire buffer" })
 
--- -- entire line
+-- -- entire line related to....
 -- -- -- example: yaab, daab, vaab
 -- vim.keymap.set("o", "aab", ":normal! vabV<CR>", { desc = "Line related to `(`" })
 vim.keymap.set("o", "aab", ":normal! vabV<CR>", { desc = "Line related to `(`" })
@@ -206,6 +210,12 @@ vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to
 
 -- vim.keymap.set("o", "lv", ":normal! va\"V<CR>", { desc = "Line related to `\"`" })
 -- vim.keymap.set("o", "lV", ":normal! va\'V<CR>", { desc = "Line related to `\'`" })
+
+
+-- -- delete inside line
+vim.keymap.set("v", "il", ":<C-u>norm! ^vg_<CR>", { desc = "entire line" })
+vim.keymap.set("o", "il", ":norm vil<CR>", { desc = "entire line" })
+
 
 -- self closing tag
 -- vim.keymap.set("o", "et", ":<c-u>:normal! ?<<CR>v/\\/><CR>", { desc = "Select self closing tag" })
@@ -505,6 +515,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
+
+vim.keymap.set("n", "<leader><leader>ji", "$%", { desc = "For testing '%' in keymaps: go to end and them matching bracket. Funker på WSL" })
 vim.keymap.set("n", "<leader><leader>te", ":terminal", { desc = "open terminal" })
 -- vim.keymap.set("n", "<leader><leader>trm", ":terminal<CR>:startinsert<CR>", { desc = "Open terminal" })
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")--  FUNKER IKKEEEE! (SE 28:39 I VIDEOEN)
