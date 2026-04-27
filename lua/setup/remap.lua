@@ -168,6 +168,10 @@ vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
 vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
 vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
 
+vim.keymap.set("o", "if", "/return<CR>", { desc = "Inside function (python)" }) -- ikke testet
+vim.keymap.set("o", "af", "/return<CR>$%", { desc = "Around function (python)" }) -- funker delvis. Man kan ikke bruke % i mappings? Rart. Skal funke på WSL... . Og SPC g fungerer på mac.
+
+
 -- -- a -> <>
 
 -- "operator pending ish"
