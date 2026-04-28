@@ -100,6 +100,7 @@ vim.keymap.set("n", "<leader><leader>lsp", ":vsplit ~/.config/nvim/after/plugin/
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.zshrc<CR>", { desc = "Open .zshrc a new split" })
 vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = "Open .tmux.conf a new split" })
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
+vim.keymap.set("n", "<leader><leader>gi", ":vsplit ~/.gitconfig<CR>", { desc = "Open gitconfig" })
 
 function file_exists(name)
   local f = io.open(name, "r")
