@@ -42,6 +42,7 @@ ls.add_snippets("lua", {
 })
 
 
+-- for useful-snippets
 ls.add_snippets("markdown", {
   s("---", {
     t("---"),

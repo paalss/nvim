@@ -101,6 +101,7 @@ vim.keymap.set("n", "<leader><leader>lsp", ":vsplit ~/.config/nvim/after/plugin/
 vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.bashrc<CR>", { desc = "Open .bashrc a new split" })
 vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = "Open .tmux.conf a new split" })
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
+vim.keymap.set("n", "<leader><leader>gi", ":vsplit ~/.gitconfig<CR>", { desc = "Open gitconfig" })
 
 function file_exists(name)
   local f = io.open(name, "r")
@@ -172,6 +173,10 @@ vim.keymap.set("o", "ir", "i[", { desc = "Inside [" })
 vim.keymap.set("o", "ar", "a[", { desc = "Around [" })
 vim.keymap.set("v", "ir", "i[", { desc = "Inside [" })
 vim.keymap.set("v", "ar", "a[", { desc = "Around [" })
+
+vim.keymap.set("o", "if", "/return<CR>", { desc = "Inside function (python)" }) -- ikke testet
+vim.keymap.set("o", "af", "/return<CR>$%", { desc = "Around function (python)" }) -- funker delvis. Man kan ikke bruke % i mappings? Rart. Skal funke på WSL... . Og SPC g fungerer på mac.
+
 
 -- -- a -> <>
 
@@ -506,6 +511,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 -- OTHER
 --------------------------------------------------------
 
+vim.keymap.set("n", "<leader><leader>bran", ":!echo $(git branch --show-current) | pbcopy<CR>", { desc = "Copy branch name to clipboard" })
 -- vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
 --   { desc = "Yank path to current file", noremap = true, silent = true })
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
