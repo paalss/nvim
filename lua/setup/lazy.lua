@@ -180,6 +180,7 @@ local plugins = {
   ----------------------------
   --** Other **--
   ----------------------------
+  { 'nvim-treesitter/nvim-treesitter-context' },
   { 'skywind3000/vim-quickui' },
   { 'RRethy/vim-illuminate', enabled = false },
   { 'TamaMcGlinn/quickfixdd' },
