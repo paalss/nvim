@@ -24,3 +24,4 @@ vim.keymap.set("n", "<leader>pø", ":RG! <C-r><C-w><CR>", { desc = "Search text 
 vim.keymap.set("n", "<leader>sk", ":Maps!<CR>", { desc = "Normal mode keymaps" })
 vim.keymap.set("n", "<leader>sh", ":Helptags!<CR>", { desc = "Help tags" })
 vim.keymap.set("n", "<leader>sc", ":Colors<CR>", { desc = "Color schemes" })
+-- vim.keymap.set("n", "<leader>pi", ":FZF git_branches<CR>", { desc = "branches" })
