@@ -89,6 +89,7 @@ vim.keymap.set("n", "<leader><leader>vim", ":vsplit ~/.vimrc<CR>", { desc = "Ope
 vim.keymap.set("n", "<leader><leader>idea", ":vsplit ~/.ideavimrc<CR>", { desc = "Open .ideavimrc in a new split" })
 vim.keymap.set("n", "<leader><leader>rem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>", { desc = "Open Neovim remap.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>set", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>", { desc = "Open Neovim set.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>laz", ":vsplit ~/.config/nvim/lua/setup/lazy.lua<CR>/", { desc = "Open Neovim lazy.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>/", { desc = "Open Neovim plugins in a new split" })
 ------------ after plugins -----------
 vim.keymap.set("n", "<leader><leader>fzf", ":vsplit ~/.config/nvim/after/plugin/fzfvim.lua<CR>", { desc = "Open fzf.lua in a new split" })
