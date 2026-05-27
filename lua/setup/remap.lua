@@ -63,7 +63,6 @@ vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
 -- -- macros
-vim.keymap.set("n", "<leader>m", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
 

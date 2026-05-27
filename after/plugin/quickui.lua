@@ -33,7 +33,7 @@ call quickui#menu#install('C&ompare', [
 			"\ ["A branch ...(type)\tSPC df", "lua open_diffview()", "Compare with branch..."],
 			\ ["Ma&ster\tSPC SPC mas", "DiffviewOpen origin/master", "Compare with master"],
 			\ ["Ma&in\tSPC SPC mai", "DiffviewOpen origin/main", "Compare with main"],
-			\ ["&Develop\tSPC SPC dev", "DiffviewOpen origin/develop", "Compare with develop"],
+			\ ["&Develop\tSPC SPC dev (SPC m)", "DiffviewOpen origin/develop", "Compare with develop"],
 			"\ ["D&evelop\tSPC SPC SPC dev", "DiffviewOpen origin/HEAD...HEAD --imply-local", "Compare with origin"],
       \ [ "--", "" ],
       \ [ "History", "" ],
@@ -55,4 +55,4 @@ let g:quickui_show_tip = 1
 ]]
 
 
-vim.keymap.set("n", "<leader><leader>am", ":call quickui#menu#open()<CR>", { desc = "Open main menu" })
+vim.keymap.set("n", "<leader><leader>m", ":call quickui#menu#open()<CR>", { desc = "Open main menu" })
