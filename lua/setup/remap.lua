@@ -211,6 +211,19 @@ vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to
 
 -- vim.keymap.set("o", "lv", ":normal! va\"V<CR>", { desc = "Line related to `\"`" })
 -- vim.keymap.set("o", "lV", ":normal! va\'V<CR>", { desc = "Line related to `\'`" })
+-- entire line inside *
+-- -- example: yiit, viit
+vim.keymap.set("o", "iib", ":normal! vibVkojV<CR>", { desc = "Line inside `(`" })
+vim.keymap.set("v", "iib", ":normal! vibV<CR>", { desc = "Select line inside `(`" })
+
+vim.keymap.set("o", "iiB", ":normal! VaBkojV<CR>", { desc = "Line inside `{`" })
+vim.keymap.set("v", "iiB", ":normal! VaBkojV<CR>", { desc = "Select line inside `{`" })
+
+vim.keymap.set("o", "iir", ":normal! Va[kojV<CR>", { desc = "Line inside `[`" })
+vim.keymap.set("v", "iir", ":normal! Va[kojV<CR>", { desc = "Select line inside `[`" })
+
+vim.keymap.set("o", "iit", ":normal! VatkojV<CR>", { desc = "Line inside to `<tag></tag>`" })
+vim.keymap.set("v", "iit", ":normal! VatkojV<CR>", { desc = "Select line inside `<tag></tag>`" })
 
 
 -- -- delete inside line
