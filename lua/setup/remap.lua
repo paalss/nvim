@@ -203,14 +203,15 @@ vim.keymap.set("v", "aab", ":normal! vabV<CR>", { desc = "Select line related to
 vim.keymap.set("o", "aaB", ":normal! vaBV<CR>", { desc = "Line related to `{`" })
 vim.keymap.set("v", "aaB", ":normal! vaBV<CR>", { desc = "Select line related to `{`" })
 
-vim.keymap.set("o", "aac", ":normal! va[V<CR>", { desc = "Line related to `[`" })
-vim.keymap.set("v", "aac", ":normal! va[V<CR>", { desc = "Select line related to `[`" })
+vim.keymap.set("o", "aar", ":normal! va[V<CR>", { desc = "Line related to `[`" })
+vim.keymap.set("v", "aar", ":normal! va[V<CR>", { desc = "Select line related to `[`" })
 
 vim.keymap.set("o", "aat", ":normal! vatV<CR>", { desc = "Line related to `<tag></tag>`" })
 vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to `<tag></tag>`" })
 
 -- vim.keymap.set("o", "lv", ":normal! va\"V<CR>", { desc = "Line related to `\"`" })
 -- vim.keymap.set("o", "lV", ":normal! va\'V<CR>", { desc = "Line related to `\'`" })
+
 -- entire line inside *
 -- -- example: yiit, viit
 vim.keymap.set("o", "iib", ":normal! vibVkojV<CR>", { desc = "Line inside `(`" })
