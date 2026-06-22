@@ -214,7 +214,7 @@ vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to
 
 -- entire line inside *
 -- -- example: yiit, viit
-vim.keymap.set("o", "iib", ":normal! vibVkojV<CR>", { desc = "Line inside `(`" })
+vim.keymap.set("o", "iib", ":normal! VabkojV<CR>", { desc = "Line inside `(`" })
 vim.keymap.set("v", "iib", ":normal! vibV<CR>", { desc = "Select line inside `(`" })
 
 vim.keymap.set("o", "iiB", ":normal! VaBkojV<CR>", { desc = "Line inside `{`" })
