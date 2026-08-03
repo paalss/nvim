@@ -336,7 +336,7 @@ vim.cmd [[iabbrev timezpne timezone]]
 -- SUMMARIZE
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
+vim.keymap.set("n", "1<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
 vim.keymap.set("n", "9<leader>x", "jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
 
 -- TODO: make it work for only one specific buffer type
