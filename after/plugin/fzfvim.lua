@@ -1,9 +1,10 @@
 -- To learn more about preview window options, see `--preview-window` section of `man fzf`.
 vim.g.fzf_vim = {}
 vim.g.fzf_vim.preview_window = {'right,85%'}
- vim.cmd[[
+vim.cmd[[
   let g:fzf_vim = {}
   let g:fzf_vim.preview_window = ['up,50%', 'ctrl-i']
+  "let $FZF_DEFAULT_OPTS="--preview-window 'right:57%' --preview 'bat --style=numbers --line-range :300 {} --bind ctrl-y:preview-up,ctrl-e:preview-down',
 ]]
 
 
