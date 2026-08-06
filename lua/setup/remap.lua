@@ -70,7 +70,6 @@ vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
 vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
-vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 
 local function create_new_file()
   local filename = vim.fn.input("Enter filename: ")
@@ -521,12 +520,22 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 
 
 --------------------------------------------------------
--- OTHER
+-- Filename --
 --------------------------------------------------------
 
 vim.keymap.set("n", "<leader><leader>bran", ":!echo $(git branch --show-current) | pbcopy<CR>", { desc = "Copy branch name to clipboard" })
--- vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
---   { desc = "Yank path to current file", noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
+vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]], { desc = "Yank path to current file", noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>ft", ":echo expand('%:t')<CR>", { desc = "Print filename of current file" })
+vim.keymap.set("n", "<leader>yft", [[<Cmd>let @+ = expand('%:t')<CR>]], { desc = "yank filename of current file" })
+
+
+--------------------------------------------------------
+-- OTHER --
+--------------------------------------------------------
+
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
