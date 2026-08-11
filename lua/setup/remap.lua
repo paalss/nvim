@@ -337,10 +337,11 @@ vim.cmd [[iabbrev timezpne timezone]]
 
 vim.keymap.set("n", "1<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
 
--- attempt
---
+-- attempt ikke prøvd enda
+
 -- vim.keymap.set("n", "2<leader>x", function()
---   vim.cmd("jV")
+--   vim.cmd("j")
+--   vim.cmd("V")
 --   vim.cmd("/====")
 --   vim.cmd("d")
 -- end, { desc = "remove unimportant details" })
