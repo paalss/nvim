@@ -336,7 +336,16 @@ vim.cmd [[iabbrev timezpne timezone]]
 --------------------------------------------------------
 
 vim.keymap.set("n", "1<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
-vim.keymap.set("n", "9<leader>x", "jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
+
+-- attempt
+--
+-- vim.keymap.set("n", "2<leader>x", function()
+--   vim.cmd("jV")
+--   vim.cmd("/====")
+--   vim.cmd("d")
+-- end, { desc = "remove unimportant details" })
+
+vim.keymap.set("n", "9<leader>x", "ggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
 
 -- TODO: make it work for only one specific buffer type
 -- TODO: test disse keymaps. Fungerer de i praksis?
