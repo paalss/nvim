@@ -21,6 +21,9 @@ autocmd FileType markdown let b:surround_{char2nr("g")} = "**\r**"
 autocmd FileType markdown let b:surround_{char2nr("s")} = "~~\r~~"
 ]]
 
+-- "change surroundings * to b"
+-- vim.keymap.set("n", "csgb", "F*hxs<b><esc>f*xs</b><esc>", { desc = "** -> <b>" })
+
 
 
 -- Fork: tomtomjhj/vim-surround
