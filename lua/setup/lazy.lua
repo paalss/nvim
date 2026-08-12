@@ -152,9 +152,11 @@ local plugins = {
   -- ** Back on track **--
   ----------------------------
   {
+    -- er det mulig å skru denne av med vilje, slik at man kommer til netrw file-viewer og man kan kjøre
+    -- DiffviewOpen develop?
     "rmagatti/auto-session",
     lazy = false,
-    enabled = true,
+    enabled = false,
 
     ---enables autocomplete for opts
     ---@module "auto-session"
@@ -188,6 +190,7 @@ local plugins = {
     -- See `:help indent_blankline.txt`
     main = "ibl",
     pin = true,
+    enabled = false,
     opts = {
       indent = { char = '┊' }
     },
