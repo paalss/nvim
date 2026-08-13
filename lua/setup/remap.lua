@@ -101,12 +101,16 @@ vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = 
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
 vim.keymap.set("n", "<leader><leader>gi", ":vsplit ~/.gitconfig<CR>", { desc = "Open gitconfig" })
 
+-- vim.keymap.set("n", "<leader>", "\"_dP")
+
 function file_exists(name)
   local f = io.open(name, "r")
   if f ~= nil then
     io.close(f)
     return true
-  else return false end
+  else
+    return false
+  end
 end
 
 function open_prepush()
