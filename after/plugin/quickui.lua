@@ -55,4 +55,4 @@ let g:quickui_show_tip = 1
 ]]
 
 
-vim.keymap.set("n", "<leader><leader>m", ":call quickui#menu#open()<CR>", { desc = "Open main menu" })
+vim.keymap.set("n", "<leader><leader>me", ":call quickui#menu#open()<CR>", { desc = "Open main menu" })

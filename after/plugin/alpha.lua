@@ -36,7 +36,7 @@ local block1 = {
   val = {
     [[––––––––––––––––––– Help ––––––––––––––––––––––––]],
     [[SPC sk           Search keymaps]],
-    [[SPC SPC m        Open main menu]],
+    [[SPC SPC me       Open main menu]],
     [[SPC sh           Search Help]],
     [[]],
     [[]],
@@ -45,7 +45,6 @@ local block1 = {
     [[SPC p0           Search text live]],
     [[SPC pp           Search text]],
     [[SPC rr           Open file tree (Neotree)]],
-    [[SPC hh           Open marked files (Harpoon)]],
     [[SPC adj          Search adjacent files]],
     [[gf               Go to file]],
     [[]],
