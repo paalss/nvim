@@ -350,7 +350,13 @@ vim.keymap.set("n", "1<leader>x", "jV/====<CR>d", { desc = "remove unimportant d
 --   vim.cmd("d")
 -- end, { desc = "remove unimportant details" })
 
-vim.keymap.set("n", "9<leader>x", "ggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
+vim.keymap.set("n", "99<leader>x",
+  "ggyG:e summary.txt<CR>ggVGpggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
+  { desc = "update summary.txt and remove unimportant details" })
+
+vim.keymap.set("n", "9<leader>x",
+  "ggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
+  { desc = "remove unimportant details" })
 
 -- TODO: make it work for only one specific buffer type
 -- TODO: test disse keymaps. Fungerer de i praksis?
