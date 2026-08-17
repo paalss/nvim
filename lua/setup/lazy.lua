@@ -11,6 +11,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
+  { 'nvim-mini/mini.ai', version = false },
 
   ----------------------------
   --** LSP/autocompletion **--
