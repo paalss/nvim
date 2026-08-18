@@ -152,17 +152,22 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 -- OPERATOR PENDING (onoremap)
 --------------------------------------------------------
 
--- c -> ' (needed for yic, cic, dic and similar. Surround is handled by tpope/vim-surround config)
-vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
-vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
-vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
-vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
+vim.keymap.set("o", "ic", "iq", { remap = true, desc = "Inside \"" })
+vim.keymap.set("o", "ac", "aq", { remap = true, desc = "Around \"" })
+vim.keymap.set("v", "ic", "iq", { remap = true, desc = "Inside \"" })
+vim.keymap.set("v", "ac", "aq", { remap = true, desc = "Around \"" })
 
+-- c -> ' (needed for yic, cic, dic and similar. Surround is handled by tpope/vim-surround config)
+-- vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
+-- vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
+-- vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
+-- vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
+--
 -- C -> '
-vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
-vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
-vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
-vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
+-- vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
+-- vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
+-- vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
+-- vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
 
 -- v -> `
 vim.keymap.set("o", "iv", "i`", { desc = "Inside `" })
