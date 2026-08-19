@@ -355,18 +355,17 @@ vim.keymap.set("n", "1<leader>x", "jV/====<CR>d", { desc = "remove unimportant d
 --   vim.cmd("d")
 -- end, { desc = "remove unimportant details" })
 
--- vim.keymap.set("n", "8<leader>x",
---   "ggVG\"pggyG:e summary.txt<CR>ggVGpggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
---   { desc = "paste over full.txt contents and update summary.txt and remove unimportant details" })
---
+vim.keymap.set("n", "8<leader>x",
+  "ggVGp",
+  { desc = "for full.txt: paste content over entire buffer" })
 
-vim.keymap.set("n", "99<leader>x",
+vim.keymap.set("n", "88<leader>x",
   "ggyG:e summary.txt<CR>ggVGpggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
-  { desc = "update summary.txt and remove unimportant details" })
+  { desc = "for full.txt: Create summary.txt content based on open buffer" })
 
 vim.keymap.set("n", "9<leader>x",
   "ggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
-  { desc = "remove unimportant details" })
+  { desc = "for summary.txt: remove unimportant details" })
 
 -- TODO: make it work for only one specific buffer type
 -- TODO: test disse keymaps. Fungerer de i praksis?
