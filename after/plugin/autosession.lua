@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader><leader>as", ":AutoSession save \" ", { desc = "Saves a session based on the `cwd` in `root_dir`" })
+vim.keymap.set("n", "<leader><leader>as", ":AutoSession save", { desc = "Saves a session based on the `cwd` in `root_dir`" })
 vim.keymap.set("n", "<leader><leader>ad", ":AutoSession deletePicker", { desc = "Opens a vim.ui.select picker to choose a session to delete" })
 vim.keymap.set("n", "<leader><leader>ar", ":AutoSession restore", { desc = "restores a session based on the `cwd` from `root_dir`" })
 
