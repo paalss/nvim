@@ -350,19 +350,34 @@ vim.keymap.set("n", "1<leader>x", "jV/====<CR>d", { desc = "remove unimportant d
 --   vim.cmd("d")
 -- end, { desc = "remove unimportant details" })
 
+
 vim.keymap.set("n", "7<leader>x",
-  -- "ggVGp8<leader>x",
-  "ggVGp",
+  -- "ggVGp:write<CR>8<leader>x",
+  "ggVGp:write<CR>",
   { remap = true, desc = "for full.txt: paste content over entire buffer" })
 
 vim.keymap.set("n", "8<leader>x",
-  "ggyG:e summary.txt<CR>ggVGp",
   -- "ggyG:e summary.txt<CR>ggVGp9<leader>x",
+  "ggyG:e summary.txt<CR>ggVGp",
   { remap = true, desc = "for full.txt: Copy content of open buffer to summary.txt" })
 
 vim.keymap.set("n", "9<leader>x",
+  "ggO<esc>0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x",
+  { remap = true, desc = "for summary.txt: turn the full-format to summary-format" })
+
+vim.keymap.set("n", "0<leader>x",
+  "jV/====<CR>d",
+  { desc = "for summary.txt: remove one test detail" })
+
+
+
+vim.keymap.set("n", "9r<leader>x",
   "ggO<esc>jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
   { desc = "for summary.txt: turn the full-format to summary-format" })
+
+
+
+
 
 -- vim.keymap.set("n", "9<leader>x",
 --   "ggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
