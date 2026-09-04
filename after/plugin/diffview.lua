@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader><leader>dd", ":DiffviewOpen<CR>", { desc = "Open gi
 
 -- -- commits
 vim.keymap.set("v", "<leader>dh", ":DiffviewFileHistory<CR>", { desc = "Show commit history for current selection" })
-vim.keymap.set("n", "<leader>dh", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
+vim.keymap.set("n", "<leader>df", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
 
 vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges",
   { desc = "Big PR review: Review individual commits " })
