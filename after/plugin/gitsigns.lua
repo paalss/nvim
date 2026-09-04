@@ -1,4 +1,9 @@
 require('gitsigns').setup {
+
+  -- mislykket forsøk på å enable git blame i yadm dotfiles
+  _on_attach_pre = function(bufnr, callback)
+      require("gitsigns-yadm").yadm_signs(callback, { bufnr = bufnr })
+  end,
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 

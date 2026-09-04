@@ -212,6 +212,7 @@ local plugins = {
   -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
   { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
+  { 'purarue/gitsigns-yadm.nvim', pin = true},
   {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
