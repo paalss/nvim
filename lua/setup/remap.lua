@@ -352,13 +352,13 @@ vim.keymap.set("n", "1<leader>x", "jV/====<CR>d", { desc = "remove unimportant d
 
 
 vim.keymap.set("n", "7<leader>x",
-  -- "ggVGp:write<CR>8<leader>x",
-  "ggVGp:write<CR>",
+  "ggVGp:write<CR>8<leader>x",
+  -- "ggVGp:write<CR>",
   { remap = true, desc = "for full.txt: paste content over entire buffer" })
 
 vim.keymap.set("n", "8<leader>x",
-  -- "ggyG:e summary.txt<CR>ggVGp9<leader>x",
-  "ggyG:e summary.txt<CR>ggVGp",
+  "ggyG:e summary.txt<CR>ggVGp9<leader>x",
+  -- "ggyG:e summary.txt<CR>ggVGp",
   { remap = true, desc = "for full.txt: Copy content of open buffer to summary.txt" })
 
 vim.keymap.set("n", "9<leader>x",
