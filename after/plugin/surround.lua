@@ -10,15 +10,15 @@ let g:surround_{char2nr("C")} = "'\r'"
 "                                word
 "                                ```
 
-let b:surround_{char2nr("u")} = "{{ \r }}"
-let b:surround_{char2nr("j")} = "{% \r %}"
+let g:surround_{char2nr("u")} = "{{ \r }}"
+let g:surround_{char2nr("j")} = "{% \r %}"
 
-autocmd FileType markdown let b:surround_{char2nr("v")} = "`\r`"
-autocmd FileType markdown let b:surround_{char2nr("V")} = "```\n\r \n```"
+autocmd FileType markdown let g:surround_{char2nr("v")} = "`\r`"
+autocmd FileType markdown let g:surround_{char2nr("V")} = "```\n\r \n```"
 
-autocmd FileType markdown let b:surround_{char2nr("i")} = "_\r_"
-autocmd FileType markdown let b:surround_{char2nr("g")} = "**\r**"
-autocmd FileType markdown let b:surround_{char2nr("s")} = "~~\r~~"
+autocmd FileType markdown let g:surround_{char2nr("i")} = "_\r_"
+autocmd FileType markdown let g:surround_{char2nr("g")} = "**\r**"
+autocmd FileType markdown let g:surround_{char2nr("s")} = "~~\r~~"
 ]]
 
 -- "change surroundings * to b"
