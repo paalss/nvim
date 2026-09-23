@@ -5,6 +5,7 @@ diffview.setup {
   keymaps = {
     view = {
       { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
       { "n", "<S-s>", "V:diffput<CR>", { desc = "Stage line" } },
       { "n", "<S-u>", "V:diffget<CR>", { desc = "Unstage line" } },
       { "v", "<S-s>", ":diffput<CR>", { desc = "Stage selection" } },
@@ -18,6 +19,7 @@ diffview.setup {
     },
     file_panel = {
       { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "ZZ", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       { "n", "q", "<C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" } },
       { "n", "cc", ":Git commit<CR>", { desc = "Commit" } },
       { "n", "ca", ":Git commit --amend<CR>", { desc = "Commit amend" } },
@@ -25,6 +27,7 @@ diffview.setup {
     },
     file_history_panel = {
       { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
       -- find commit hash regardless of cursor positioning setup:
 
       -- $file<CR>f|;w ____ breakdown
