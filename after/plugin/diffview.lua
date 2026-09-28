@@ -4,7 +4,9 @@ diffview.setup {
   watch_index = true,
   keymaps = {
     view = {
-      { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } }, -- hva med :wqa! ZZ bør jo lagre endringene
+      -- Save and close all windows
+      -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
       { "n", "<S-s>", "V:diffput<CR>", { desc = "Stage line" } },
       { "n", "<S-u>", "V:diffget<CR>", { desc = "Unstage line" } },
@@ -18,7 +20,8 @@ diffview.setup {
       { "n", "∂", "[c", { desc = "A-d: Go to prev hunk" } },
     },
     file_panel = {
-      { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
+      -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       { "n", "q", "<C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" } },
       { "n", "cc", ":Git commit<CR>", { desc = "Commit" } },
@@ -26,7 +29,8 @@ diffview.setup {
       { "n", "ce", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
     },
     file_history_panel = {
-      { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
+      -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
       -- find commit hash regardless of cursor positioning setup:
 
@@ -58,8 +62,8 @@ vim.keymap.set("n", "<leader><leader>dd", ":DiffviewOpen<CR>", { desc = "Open gi
 vim.keymap.set({"n", "v"}, "<leader>dh", ":DiffviewFileHistory<CR>", { desc = "Show commit history / git log for current selection" })
 vim.keymap.set("n", "<leader>df", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
 
-vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges",
-  { desc = "Big PR review: Review individual commits " })
+-- vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges",
+--   { desc = "Big PR review: Review individual commits " })
 
 
 -- COMPARE WORKING INDEX WITH...
