@@ -55,7 +55,7 @@ vim.keymap.set("n", "<leader><leader>dd", ":DiffviewOpen<CR>", { desc = "Open gi
 -- vim.keymap.set("n", "<leader>dq", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- -- commits
-vim.keymap.set("v", "<leader>dh", ":DiffviewFileHistory<CR>", { desc = "Show commit history for current selection" })
+vim.keymap.set({"n", "v"}, "<leader>dh", ":DiffviewFileHistory<CR>", { desc = "Show commit history / git log for current selection" })
 vim.keymap.set("n", "<leader>df", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
 
 vim.keymap.set("n", "<leader><leader>his", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges",
