@@ -29,6 +29,7 @@ require('gitsigns').setup {
     --   desc = "<A-d>: go to prev"
     -- })
 
+    -- hverken F7 eller <A-c> fungerer ikke alltid
     map('n', '<F7>', function()
       go_to_next_hunk()
     end, { desc = "go to next diff hunk", expr = true })
