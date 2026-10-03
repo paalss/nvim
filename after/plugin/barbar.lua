@@ -1,3 +1,7 @@
+-- require'bufferline'.setup {
+--   hide = {inactive = true},
+-- }
+
 -- pros/cons
 --
 -- cons:

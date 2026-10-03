@@ -23,6 +23,7 @@ vim.g.clipboard = {
 vim.g.mapleader = " "
 
 local plugins = {
+  { 'nvim-mini/mini.ai', version = false },
 
   ----------------------------
   --** LSP/autocompletion **--
@@ -200,6 +201,7 @@ local plugins = {
     -- See `:help indent_blankline.txt`
     main = "ibl",
     pin = true,
+    enabled = false,
     opts = {
       indent = { char = '┊' }
     },
@@ -217,6 +219,7 @@ local plugins = {
   -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
   { 'nvim-tree/nvim-web-devicons', pin = true }, -- OPTIONAL: for file icons
   { 'lewis6991/gitsigns.nvim',     pin = true }, -- OPTIONAL: for git status
+  { 'purarue/gitsigns-yadm.nvim', pin = true},
   {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',

@@ -5,7 +5,6 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-2>", "@", { desc = "At
 vim.keymap.set({ "i", "v", "x", "o", "t", "!" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n" }, "<A-3>", "~", { desc = "Tilde" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-4>", "$", { desc = "Dollar sign" })
--- vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "¤", "$", { desc = "$" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-5>", "%", { desc = "Percent" })
 vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "<A-|>", "`", { desc = "Bactick" })
 
@@ -64,15 +63,14 @@ vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 
 -- -- macros
-vim.keymap.set("n", "<leader>m", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "Available shortcut" })
 vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
+vim.keymap.set("n", "<leader><leader>-", ":20vsplit edit-macro.txt<CR>\"wp", { desc = "Show editable 'w'-macro" })
 
 -- -- other
 vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
-vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
 
 local function create_new_file()
   local filename = vim.fn.input("Enter filename: ")
@@ -92,6 +90,7 @@ vim.keymap.set("n", "<leader><leader>vim", ":vsplit ~/.vimrc<CR>", { desc = "Ope
 
 vim.keymap.set("n", "<leader><leader>rem", ":vsplit ~/.config/nvim/lua/setup/remap.lua<CR>", { desc = "Open Neovim remap.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>set", ":vsplit ~/.config/nvim/lua/setup/set.lua<CR>", { desc = "Open Neovim set.lua in a new split" })
+vim.keymap.set("n", "<leader><leader>laz", ":vsplit ~/.config/nvim/lua/setup/lazy.lua<CR>/", { desc = "Open Neovim lazy.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>aft", ":vsplit ~/.config/nvim/after/plugin/<CR>/", { desc = "Open Neovim plugins in a new split" })
 ------------ after plugins -----------
 vim.keymap.set("n", "<leader><leader>fzf", ":vsplit ~/.config/nvim/after/plugin/fzfvim.lua<CR>", { desc = "Open fzf.lua in a new split" })
@@ -104,12 +103,16 @@ vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = 
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
 vim.keymap.set("n", "<leader><leader>gi", ":vsplit ~/.gitconfig<CR>", { desc = "Open gitconfig" })
 
+-- vim.keymap.set("n", "<leader>", "\"_dP")
+
 function file_exists(name)
   local f = io.open(name, "r")
   if f ~= nil then
     io.close(f)
     return true
-  else return false end
+  else
+    return false
+  end
 end
 
 function open_prepush()
@@ -152,16 +155,16 @@ vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "add new line above" })
 --------------------------------------------------------
 
 -- c -> ' (needed for yic, cic, dic and similar. Surround is handled by tpope/vim-surround config)
-vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
-vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
-vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
-vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
-
--- C -> '
-vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
-vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
-vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
-vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
+-- vim.keymap.set("o", "ic", "i\"", { desc = "Inside \"" })
+-- vim.keymap.set("o", "ac", "a\"", { desc = "Around \"" })
+-- vim.keymap.set("v", "ic", "i\"", { desc = "Inside \"" })
+-- vim.keymap.set("v", "ac", "a\"", { desc = "Around \"" })
+--
+-- -- C -> '
+-- vim.keymap.set("o", "iC", "i\'", { desc = "Inside \'" })
+-- vim.keymap.set("o", "aC", "a\'", { desc = "Around \'" })
+-- vim.keymap.set("v", "iC", "i\'", { desc = "Inside \'" })
+-- vim.keymap.set("v", "aC", "a\'", { desc = "Around \'" })
 
 -- v -> `
 vim.keymap.set("o", "iv", "i`", { desc = "Inside `" })
@@ -205,14 +208,28 @@ vim.keymap.set("v", "aab", ":normal! vabV<CR>", { desc = "Select line related to
 vim.keymap.set("o", "aaB", ":normal! vaBV<CR>", { desc = "Line related to `{`" })
 vim.keymap.set("v", "aaB", ":normal! vaBV<CR>", { desc = "Select line related to `{`" })
 
-vim.keymap.set("o", "aac", ":normal! va[V<CR>", { desc = "Line related to `[`" })
-vim.keymap.set("v", "aac", ":normal! va[V<CR>", { desc = "Select line related to `[`" })
+vim.keymap.set("o", "aar", ":normal! va[V<CR>", { desc = "Line related to `[`" })
+vim.keymap.set("v", "aar", ":normal! va[V<CR>", { desc = "Select line related to `[`" })
 
 vim.keymap.set("o", "aat", ":normal! vatV<CR>", { desc = "Line related to `<tag></tag>`" })
 vim.keymap.set("v", "aat", ":normal! vatV<CR>", { desc = "Select line related to `<tag></tag>`" })
 
 -- vim.keymap.set("o", "lv", ":normal! va\"V<CR>", { desc = "Line related to `\"`" })
 -- vim.keymap.set("o", "lV", ":normal! va\'V<CR>", { desc = "Line related to `\'`" })
+
+-- entire line inside *
+-- -- example: yiit, viit
+vim.keymap.set("o", "iib", ":normal! VabkojV<CR>", { desc = "Line inside `(`" })
+vim.keymap.set("v", "iib", ":normal! vibV<CR>", { desc = "Select line inside `(`" })
+
+vim.keymap.set("o", "iiB", ":normal! VaBkojV<CR>", { desc = "Line inside `{`" })
+vim.keymap.set("v", "iiB", ":normal! VaBkojV<CR>", { desc = "Select line inside `{`" })
+
+vim.keymap.set("o", "iir", ":normal! Va[kojV<CR>", { desc = "Line inside `[`" })
+vim.keymap.set("v", "iir", ":normal! Va[kojV<CR>", { desc = "Select line inside `[`" })
+
+vim.keymap.set("o", "iit", ":normal! VatkojV<CR>", { desc = "Line inside to `<tag></tag>`" })
+vim.keymap.set("v", "iit", ":normal! VatkojV<CR>", { desc = "Select line inside `<tag></tag>`" })
 
 
 -- -- delete inside line
@@ -324,8 +341,49 @@ vim.cmd [[iabbrev timezpne timezone]]
 -- SUMMARIZE
 --------------------------------------------------------
 
-vim.keymap.set("n", "<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
-vim.keymap.set("n", "9<leader>x", "jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d", { desc = "remove unimportant details" })
+vim.keymap.set("n", "1<leader>x", "jV/====<CR>d", { desc = "remove unimportant details" })
+
+-- attempt ikke prøvd enda
+
+-- vim.keymap.set("n", "2<leader>x", function()
+--   vim.cmd("j")
+--   vim.cmd("V")
+--   vim.cmd("/====")
+--   vim.cmd("d")
+-- end, { desc = "remove unimportant details" })
+
+
+vim.keymap.set("n", "7<leader>x",
+  "ggVGp:write<CR>8<leader>x",
+  -- "ggVGp:write<CR>",
+  { remap = true, desc = "for full.txt: paste content over entire buffer" })
+
+vim.keymap.set("n", "8<leader>x",
+  "ggyG:e summary.txt<CR>ggVGp9<leader>x",
+  -- "ggyG:e summary.txt<CR>ggVGp",
+  { remap = true, desc = "for full.txt: Copy content of open buffer to summary.txt" })
+
+vim.keymap.set("n", "9<leader>x",
+  "ggO<esc>0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x0<leader>x",
+  { remap = true, desc = "for summary.txt: turn the full-format to summary-format" })
+
+vim.keymap.set("n", "0<leader>x",
+  "jV/====<CR>d",
+  { desc = "for summary.txt: remove one test detail" })
+
+
+
+vim.keymap.set("n", "9r<leader>x",
+  "ggO<esc>jV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
+  { desc = "for summary.txt: turn the full-format to summary-format" })
+
+
+
+
+
+-- vim.keymap.set("n", "9<leader>x",
+--   "ggjV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>djV/====<CR>d",
+--   { desc = "for summary.txt: remove unimportant details" })
 
 -- TODO: make it work for only one specific buffer type
 -- TODO: test disse keymaps. Fungerer de i praksis?
@@ -513,8 +571,18 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 --------------------------------------------------------
 
 vim.keymap.set("n", "<leader><leader>bran", ":!echo $(git branch --show-current) | pbcopy<CR>", { desc = "Copy branch name to clipboard" })
--- vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]],
---   { desc = "Yank path to current file", noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
+vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]], { desc = "Yank path to current file", noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>ft", ":echo expand('%:t')<CR>", { desc = "Print filename of current file" })
+vim.keymap.set("n", "<leader>yft", [[<Cmd>let @+ = expand('%:t')<CR>]], { desc = "yank filename of current file" })
+
+
+--------------------------------------------------------
+-- OTHER --
+--------------------------------------------------------
+
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })

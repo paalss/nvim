@@ -4,7 +4,10 @@ diffview.setup {
   watch_index = true,
   keymaps = {
     view = {
-      { "n", "<A-q>",  ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      { "n", "<A-q>", ":xall!<CR>", { desc = "Close Diffview" } }, -- hva med :wqa! ZZ bør jo lagre endringene
+      -- Save and close all windows
+      -- { "n", "<A-q>",  ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      -- { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
       { "n", "<S-s>",  "V:diffput<CR>",      { desc = "Stage line" } },
       { "n", "<S-u>",  "V:diffget<CR>",      { desc = "Unstage line" } },
       { "v", "<S-s>",  ":diffput<CR>",       { desc = "Stage selection" } },
@@ -13,8 +16,8 @@ diffview.setup {
       { "n", "do",     "do",                 { desc = "Unstage hunk" } }, -- add desc to existing map
       { "n", "<F7>",   "]c",                 { desc = "Go to next hunk" } },
       { "n", "<S-F7>", "[c",                 { desc = "Go to prev hunk" } },
-      { "n", "<A-c>",  "]c",                 { desc = "Go to next hunk" } },
-      { "n", "<A-d>",  "[c",                 { desc = "Go to prev hunk" } },
+      -- { "n", "<A-c>",  "]c",                 { desc = "Go to next hunk" } },
+      -- { "n", "<A-d>",  "[c",                 { desc = "Go to prev hunk" } },
     },
     file_panel = {
       { "n", "<A-q>", ":DiffviewClose<CR>",                { desc = "Close Diffview" } },
