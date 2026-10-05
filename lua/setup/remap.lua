@@ -21,6 +21,7 @@ vim.keymap.set({ "i", "s" }, "<esc>", "<esc>:echo 'You can also type \"jk\" quic
 vim.keymap.set("v", "<leader>jk", "<esc>", { desc = "Escape" })
 
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
+vim.keymap.set("n", "•", ":xall<CR>", { desc = "<A-q>: Quit all" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Write/save" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Write all files" })
 vim.keymap.set("n", "<leader>so", ":so<CR>", { desc = "Source file" })
