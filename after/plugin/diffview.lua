@@ -14,10 +14,10 @@ diffview.setup {
       { "v", "<S-u>", ":diffget<CR>", { desc = "Unstage selection" } },
       { "n", "dp", "dp", { desc = "Stage hunk" } },   -- add desc to existing map
       { "n", "do", "do", { desc = "Unstage hunk" } }, -- add desc to existing map
-      { "n", "<F7>", "]c", { desc = "Go to next hunk" } },
-      { "n", "<S-F7>", "[c", { desc = "Go to prev hunk" } },
-      { "n", "ç", "]c", { desc = "A-c: Go to next hunk" } },
-      { "n", "∂", "[c", { desc = "A-d: Go to prev hunk" } },
+      -- { "n", "<F7>", "]c", { desc = "Go to next hunk" } },
+      -- { "n", "<S-F7>", "[c", { desc = "Go to prev hunk" } },
+      -- { "n", "ç", "]c", { desc = "A-c: Go to next hunk" } },
+      -- { "n", "∂", "[c", { desc = "A-d: Go to prev hunk" } },
     },
     file_panel = {
       { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
@@ -52,13 +52,12 @@ diffview.setup {
 vim.keymap.set({"n", "v"}, "<leader>dl", ":DiffviewFileHistory<CR>", { desc = "Show commit history / git log (if visual-mode: for current selection)" })
 vim.api.nvim_create_user_command("Dl", "DiffviewFileHistory", { desc = "Show commit history / git log" })
 
--- GIT LOG CURRENT FILE (dlg - [d]iffview [l]og [f]ile)
-vim.keymap.set("n", "<leader>dlf", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
-vim.api.nvim_create_user_command("Dlf", "DiffviewFileHistory %", { desc = "Show commit history / git log for current file" })
+-- GIT LOG CURRENT FILE (dlg - diffview [l]og [f]ile)
+vim.keymap.set("n", "<leader>df", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
+vim.api.nvim_create_user_command("Df", "DiffviewFileHistory %", { desc = "Show commit history / git log for current file" })
 
 -- Git status and close
-vim.keymap.set("n", "<leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
-vim.keymap.set("n", "<leader><leader>dd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
+vim.keymap.set("n", "<leader>ds", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
 -- vim.keymap.set("n", "<leader>dq", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- -- commits
@@ -108,5 +107,6 @@ select_branch_to_compare_with = function()
   end
 end
 
-vim.keymap.set("n", "<leader>df", select_branch_to_compare_with, { desc = "Compare with specified branch (Diffview)" })
+-- [d]iffview s[p]ecific branch
+vim.keymap.set("n", "<leader>dp", select_branch_to_compare_with, { desc = "Compare with specified branch (Diffview)" })
 
