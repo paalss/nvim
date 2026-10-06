@@ -65,7 +65,21 @@ vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
 -- -- macros
 vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })
 vim.keymap.set("n", "<leader>-", "\"w", { desc = "Use 'w'-register" })
-vim.keymap.set("n", "<leader><leader>-", ":20vsplit edit-macro.txt<CR>\"wp", { desc = "Show editable 'w'-macro" })
+vim.keymap.set("n", "<leader><leader>-", ":20vsplit edit-w-macro.txt<CR>\"wp", { desc = "Show editable 'w'-macro" })
+
+-- save text contents into w-macro when closed
+vim.api.nvim_create_autocmd("BufWinLeave", {
+   pattern = "edit-w-macro.txt",
+   callback = function(args)
+      local lines = vim.api.nvim_buf_get_lines(args.buf, 0, -1, false)
+      vim.fn.setreg("w", table.concat(lines, "\n"))
+
+      local path = vim.api.nvim_buf_get_name(args.buf)
+      if vim.fn.filereadable(path) == 1 then
+         vim.fn.delete(path)
+      end
+   end,
+})
 
 -- -- other
 vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
