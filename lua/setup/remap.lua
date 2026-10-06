@@ -41,8 +41,6 @@ vim.keymap.set({ "n", "v", "o" }, "≈", "']", { desc = "<A-x>: Go to yanked reg
 vim.keymap.set("n", "<leader><leader>sorth", ":'<,'>!sort -h ", { desc = "Sort lines human readable way" })
 
 -- paragraphs
-vim.keymap.set({ "n", "v", "o" }, "gk", "{", { desc = "Go up paragraph" })
-vim.keymap.set({ "n", "v", "o" }, "gj", "}", { desc = "Go down paragraph" })
 vim.keymap.set({ "n", "v", "o" }, "ƒ", "{", { desc = "<A-f>: Go up paragraph (not working??) funker i WSL" })
 vim.keymap.set({ "n", "v", "o" }, "¸", "{", { desc = "<A-g>: Go up paragraph (Use skhd to turn <A-f> into <A-g> så blir alt så fint, så" })
 vim.keymap.set({ "n", "v", "o" }, "‹", "}", { desc = "<A-v>: Go down paragraph" })
