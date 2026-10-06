@@ -42,8 +42,8 @@ require('gitsigns').setup {
 
     map('n', 'ç', function()
       -- noen ganger funker ikke
+      if vim.wo.diff then return ']c' end
       go_to_next_hunk()
-      -- if vim.wo.diff then return ']c' end
       -- vim.schedule(function() gs.next_hunk() end)
     end, { desc = "<A-c>: go to next diff hunk", expr = true })
 

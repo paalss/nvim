@@ -14,6 +14,7 @@ diffview.setup {
       { "v", "<S-u>", ":diffget<CR>", { desc = "Unstage selection" } },
       { "n", "dp", "dp", { desc = "Stage hunk" } },   -- add desc to existing map
       { "n", "do", "do", { desc = "Unstage hunk" } }, -- add desc to existing map
+      -- ikke nødvendig siden gitsigns har `if vim.wo.diff return [c`
       -- { "n", "<F7>", "]c", { desc = "Go to next hunk" } },
       -- { "n", "<S-F7>", "[c", { desc = "Go to prev hunk" } },
       -- { "n", "ç", "]c", { desc = "A-c: Go to next hunk" } },
