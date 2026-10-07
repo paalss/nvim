@@ -16,6 +16,8 @@ vim.cmd[[
 -- local telescope = require("telescope")
 
 -- "!" = fullscreen
+--
+vim.keymap.set("n", "<C-p>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "<leader>sf", ":FZF!<CR>", { desc = "Search files" })
 vim.keymap.set("n", "<leader>st", ":RG!<CR>", { desc = "Search text" })
 vim.keymap.set("n", "<leader>sø", ":RG! <C-r><C-w><CR>", { desc = "Search text under cursor" })
