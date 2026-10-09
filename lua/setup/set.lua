@@ -38,7 +38,7 @@ vim.opt.smartcase = true  -- Ignore lowercase for the whole pattern
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
