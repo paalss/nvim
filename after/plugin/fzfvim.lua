@@ -16,11 +16,12 @@ vim.cmd[[
 -- local telescope = require("telescope")
 
 -- "!" = fullscreen
---
+-- backwards
 vim.keymap.set("n", "<C-p>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "<leader>sf", ":FZF!<CR>", { desc = "Search files" })
 vim.keymap.set("n", "<leader>st", ":RG!<CR>", { desc = "Search text" })
 vim.keymap.set("n", "<leader>sø", ":RG! <C-r><C-w><CR>", { desc = "Search text under cursor" })
+vim.keymap.set("v", "<leader>sø", [[y:RG! <C-r>"<CR>]], { desc = "Search visual selection" })
 -- vim.keymap.set("n", "<leader>pa", ":Ag <C-R><C-W><CR>", { desc = "dsuifahfid" }) -- from https://github.com/junegunn/fzf.vim/issues/50
 -- vim.keymap.set("n", "<leader>st", ":grep -R ", { desc = "Search files" })
 -- vim.keymap.set("n", "<C-p>", ":find **/", { desc = "Find files" })
