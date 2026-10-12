@@ -26,9 +26,14 @@ diffview.setup {
       -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       { "n", "q", "<C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" } },
-      { "n", "cc", ":Git commit<CR>", { desc = "Commit" } },
-      { "n", "ca", ":Git commit --amend<CR>", { desc = "Commit amend" } },
-      { "n", "ce", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
+
+      -- skip having to navigate to right panel
+      { "n", "ç", "<C-w>l]c", { desc = "A-c: Go to view pane's next hunk" } },
+
+      --ra rely used
+      -- { "n", "cc", ":Git commit<CR>", { desc = "Commit" } },
+      -- { "n", "ca", ":Git commit --amend<CR>", { desc = "Commit amend" } },
+      -- { "n", "ce", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
     },
     file_history_panel = {
       { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
