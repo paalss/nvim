@@ -600,11 +600,17 @@ vim.keymap.set("n", "<leader>pt", function()
 end, { desc = "Print path relative to repo root" })
 
 vim.keymap.set("n", "<leader>ypt", function()
-  vim.fn.setreg("+", get_repo_relative_path())
+  local path = get_repo_relative_path()
+  vim.fn.setreg("+", path)
+  print("yanked " .. path)
 end, { desc = "Yank path relative to repo root", noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>ft", ":echo expand('%:t')<CR>", { desc = "Print filename of current file" })
-vim.keymap.set("n", "<leader>yft", [[<Cmd>let @+ = expand('%:t')<CR>]], { desc = "yank filename of current file" })
+vim.keymap.set("n", "<leader>yft", function()
+  local filename = vim.fn.expand("%:t")
+  vim.fn.setreg("+", filename)
+  print("yanked " .. filename)
+end, { desc = "yank filename of current file" })
 
 
 --------------------------------------------------------
