@@ -585,8 +585,23 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 
 vim.keymap.set("n", "<leader><leader>bran", ":!echo $(git branch --show-current) | pbcopy<CR>", { desc = "Copy branch name to clipboard" })
 
-vim.keymap.set("n", "<leader>pt", ":echo expand('%:p')<CR>", { desc = "Print path to current file" })
-vim.keymap.set("n", '<leader>ypt', [[<Cmd>let @+ = expand('%:p')<CR>]], { desc = "Yank path to current file", noremap = true, silent = true })
+local function get_repo_relative_path()
+  local abs_path = vim.fn.expand("%:p")
+  local git_entry = vim.fs.find(".git", { path = vim.fn.expand("%:p:h"), upward = true })[1]
+  if not git_entry then
+    return abs_path
+  end
+  local repo_root = vim.fs.dirname(git_entry)
+  return abs_path:sub(#repo_root + 2) -- +2 strips root + path separator
+end
+
+vim.keymap.set("n", "<leader>pt", function()
+  print(get_repo_relative_path())
+end, { desc = "Print path relative to repo root" })
+
+vim.keymap.set("n", "<leader>ypt", function()
+  vim.fn.setreg("+", get_repo_relative_path())
+end, { desc = "Yank path relative to repo root", noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>ft", ":echo expand('%:t')<CR>", { desc = "Print filename of current file" })
 vim.keymap.set("n", "<leader>yft", [[<Cmd>let @+ = expand('%:t')<CR>]], { desc = "yank filename of current file" })
