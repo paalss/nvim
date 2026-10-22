@@ -8,10 +8,14 @@ diffview.setup {
       -- Save and close all windows
       -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
+
       { "n", "<S-s>", "V:diffput<CR>", { desc = "Stage line" } },
       { "n", "<S-u>", "V:diffget<CR>", { desc = "Unstage line" } },
-      { "v", "<S-s>", ":diffput<CR>", { desc = "Stage selection" } },
-      { "v", "<S-u>", ":diffget<CR>", { desc = "Unstage selection" } },
+
+      -- deactivated: <S-s> (S) is useful for nvim surround
+      -- { "v", "<S-s>", ":diffput<CR>", { desc = "Stage selection" } },
+      -- { "v", "<S-u>", ":diffget<CR>", { desc = "Unstage selection" } },
+
       { "n", "dp", "dp", { desc = "Stage hunk" } },   -- add desc to existing map
       { "n", "do", "do", { desc = "Unstage hunk" } }, -- add desc to existing map
       -- dette er nødvendig for at "go to next/prev" skal fungere i venstre diffview-window
