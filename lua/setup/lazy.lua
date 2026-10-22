@@ -166,6 +166,7 @@ local plugins = {
 
       -- for zshrc: alias m='nvim . "+DiffviewOpen develop"'
       auto_save = false,
+      -- auto_restore = true, -- Enables/disables auto restoring session on start
       suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" }
       -- log_level = 'debug',
     }
