@@ -59,16 +59,16 @@ diffview.setup {
   }
 }
 
--- GIT LOG all or selected area (dl - [d]iffview [l]og)
-vim.keymap.set({"n", "v"}, "<leader>dl", ":DiffviewFileHistory<CR>", { desc = "Show commit history / git log (if visual-mode: for current selection)" })
-vim.api.nvim_create_user_command("Dl", "DiffviewFileHistory", { desc = "Show commit history / git log" })
+-- GIT LOG all or selected area - [l]og [d]iffview
+vim.keymap.set({"n", "v"}, "<leader>ld", ":DiffviewFileHistory<CR>", { desc = "Show commit history / git log (if visual-mode: for current selection)" })
+vim.api.nvim_create_user_command("Ld", "DiffviewFileHistory", { desc = "Show commit history / git log" })
 
--- GIT LOG CURRENT FILE (dlg - diffview [l]og [f]ile)
-vim.keymap.set("n", "<leader>df", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
-vim.api.nvim_create_user_command("Df", "DiffviewFileHistory %", { desc = "Show commit history / git log for current file" })
+-- GIT LOG CURRENT FILE - [l]og [f]ile [d]iffview
+vim.keymap.set("n", "<leader>lfd", ":DiffviewFileHistory %<CR>", { desc = "Show commit history for current file" })
+vim.api.nvim_create_user_command("Lfd", "DiffviewFileHistory %", { desc = "Show commit history / git log for current file" })
 
--- Git status and close
-vim.keymap.set("n", "<leader>ds", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
+-- Git status and close - [s]tatus [d]iffview
+vim.keymap.set("n", "<leader>sd", ":DiffviewOpen<CR>", { desc = "Open git status (compare current index)" })
 -- vim.keymap.set("n", "<leader>dq", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }) -- TODO: disable if it's unnecessary
 
 -- -- commits
