@@ -85,9 +85,12 @@ vim.keymap.set("n", "<leader>sd", ":DiffviewOpen<CR>", { desc = "Open git status
 vim.keymap.set("n", "<leader><leader>mas", ":DiffviewOpen master<CR>", { desc = "Compare with master (Diffview)" })
 vim.keymap.set("n", "<leader><leader>mai", ":DiffviewOpen main<CR>", { desc = "Compare with main (Diffview)" })
 vim.keymap.set("n", "<leader><leader>dev", ":DiffviewOpen develop<CR>", { desc = "Compare with develop (Diffview). NOTE: STAGE ANY UNCOMMITTED CHANGES YOU WANT TO SEE IN COMPARISON" })
-vim.keymap.set("n", "<leader>mm", ":DiffviewOpen develop<CR>", { desc = "Compare with develop (Diffview). NOTE: STAGE ANY UNCOMMITTED CHANGES YOU WANT TO SEE IN COMPARISON" })
 vim.keymap.set("n", "<leader><leader>mac", ":DiffviewOpen origin/develop<CR>",
   { desc = "Compare with develop (Diffview)" })
+
+-- [d]evelop [d]iffview: compare working tree with develop
+vim.keymap.set("n", "<leader>dd", ":DiffviewOpen develop<CR>",
+  { desc = "Compare with develop (Diffview). NOTE: STAGE ANY UNCOMMITTED CHANGES YOU WANT TO SEE IN COMPARISON" })
 
 -- -- word under cursor
 vim.keymap.set("n", "<leader>dcc", ":DiffviewOpen <C-r><C-w><CR>",
@@ -139,8 +142,59 @@ vim.keymap.set("n", "<leader>sst", function()
   })
 end, { desc = "Live grep in git status files (fzf-lua)" })
 
--- Develop [s]earch [f]iles: files changed vs develop, incl. uncommitted/untracked
-vim.keymap.set("n", "<leader>msf", function()
+-- shared [h]elper: pick a commit from git log, then run `callback(hash)`
+local function pick_commit(callback)
+  require("fzf-lua").fzf_exec("git log --oneline -n 200", {
+    prompt = "commit> ",
+    actions = {
+      ["default"] = function(selected)
+        local hash = selected[1]:match("^%S+")
+        callback(hash)
+      end,
+    },
+  })
+end
+
+-- git-s[h]ow [d]iffview: show the diff introduced by one picked commit
+vim.keymap.set("n", "<leader>hd", function()
+  pick_commit(function(hash)
+    vim.cmd.DiffviewOpen({ args = { hash .. "^!" } })
+  end)
+end, { desc = "Open diffview for a picked commit (git show) (fzf-lua)" })
+
+-- git-s[h]ow [s]earch [t]ext: live grep restricted to files touched by one picked commit
+vim.keymap.set("n", "<leader>hst", function()
+  pick_commit(function(hash)
+    local files = vim.fn.systemlist("git show --name-only --pretty=format: " .. hash)
+    if #files == 0 then
+      vim.notify("No files in commit " .. hash, vim.log.levels.INFO)
+      return
+    end
+    require("fzf-lua").live_grep({
+      search_paths = files,
+      prompt = "show-text> ",
+      winopts = { fullscreen = true },
+    })
+  end)
+end, { desc = "Live grep in files touched by a picked commit (git show) (fzf-lua)" })
+
+-- git-s[h]ow [s]earch [f]iles: files touched by one picked commit
+vim.keymap.set("n", "<leader>hsf", function()
+  pick_commit(function(hash)
+    require("fzf-lua").fzf_exec(
+      "git show --name-only --pretty=format: " .. hash,
+      {
+        prompt = "show-files> ",
+        actions = {
+          ["default"] = function(selected) vim.cmd("edit " .. selected[1]) end,
+        },
+      }
+    )
+  end)
+end, { desc = "Search files touched by a picked commit (git show) (fzf-lua)" })
+
+-- [d]evelop [s]earch [f]iles: files changed vs develop, incl. uncommitted/untracked
+vim.keymap.set("n", "<leader>dsf", function()
   require("fzf-lua").fzf_exec(
     "{ git diff --name-only develop; git status --porcelain | awk '/^\\?\\?/{print $2}'; } | sort -u",
     {
@@ -152,8 +206,8 @@ vim.keymap.set("n", "<leader>msf", function()
   )
 end, { desc = "Search files changed vs develop, incl. uncommitted (fzf-lua)" })
 
--- Develop [s]earch [t]ext: live grep restricted to files changed vs develop
-vim.keymap.set("n", "<leader>mst", function()
+-- [d]evelop [s]earch [t]ext: live grep restricted to files changed vs develop
+vim.keymap.set("n", "<leader>dst", function()
   local files = vim.fn.systemlist(
     "{ git diff --name-only develop; git status --porcelain | awk '/^\\?\\?/{print $2}'; } | sort -u")
   if #files == 0 then
