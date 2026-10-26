@@ -4,7 +4,7 @@ diffview.setup {
   watch_index = true,
   keymaps = {
     view = {
-      { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } }, -- hva med :wqa! ZZ bør jo lagre endringene
+      { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
       -- Save and close all windows
       -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
