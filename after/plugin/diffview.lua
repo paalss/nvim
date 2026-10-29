@@ -125,8 +125,11 @@ end
 vim.keymap.set("n", "<leader>dp", select_branch_to_compare_with, { desc = "Compare with specified branch (Diffview)" })
 
 -- [s]earch [s]tatus [f]iles: files shown in `git status` (fzf-lua)
-vim.keymap.set("n", "<leader>ssf", function() require("fzf-lua").git_status() end,
-  { desc = "Search files in git status (fzf-lua)" })
+-- icons disabled: this config's pinned nvim-web-devicons predates the
+-- get_icons_by_filename/get_icons_by_extension API fzf-lua now requires
+vim.keymap.set("n", "<leader>ssf", function()
+  require("fzf-lua").git_status({ file_icons = false, git_icons = false, color_icons = false })
+end, { desc = "Search files in git status (fzf-lua)" })
 
 -- [s]earch [s]tatus [t]ext: live grep restricted to files shown in `git status`
 vim.keymap.set("n", "<leader>sst", function()
@@ -139,6 +142,9 @@ vim.keymap.set("n", "<leader>sst", function()
     search_paths = files,
     prompt = "status-text> ",
     winopts = { fullscreen = true },
+    file_icons = false,
+    git_icons = false,
+    color_icons = false,
   })
 end, { desc = "Live grep in git status files (fzf-lua)" })
 
@@ -174,6 +180,9 @@ vim.keymap.set("n", "<leader>hst", function()
       search_paths = files,
       prompt = "show-text> ",
       winopts = { fullscreen = true },
+      file_icons = false,
+      git_icons = false,
+      color_icons = false,
     })
   end)
 end, { desc = "Live grep in files touched by a picked commit (git show) (fzf-lua)" })
@@ -218,6 +227,9 @@ vim.keymap.set("n", "<leader>dst", function()
     search_paths = files,
     prompt = "diff-text> ",
     winopts = { fullscreen = true },
+    file_icons = false,
+    git_icons = false,
+    color_icons = false,
   })
 end, { desc = "Live grep in files changed vs develop, incl. uncommitted (fzf-lua)" })
 
