@@ -115,7 +115,7 @@ vim.keymap.set("n", "<leader><leader>diff", ":vsplit ~/.config/nvim/after/plugin
 vim.keymap.set("n", "<leader><leader>surr", ":vsplit ~/.config/nvim/after/plugin/surround.lua<CR>", { desc = "Open surround.lua in a new split" })
 vim.keymap.set("n", "<leader><leader>lsp", ":vsplit ~/.config/nvim/after/plugin/<CR>/lsp<CR>", { desc = "Open one of the lsp-files in new split" })
 -- =========== OTHER ==============
-vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/.zshrc<CR>", { desc = "Open .zshrc a new split" })
+vim.keymap.set("n", "<leader><leader>bas", ":vsplit ~/scripts/.zshrc<CR>", { desc = "Open .zshrc a new split" })
 vim.keymap.set("n", "<leader><leader>tmu", ":vsplit ~/.tmux.conf<CR>", { desc = "Open .tmux.conf a new split" })
 vim.keymap.set("n", "<leader><leader>use", ":vsplit ~/code/useful-snippets/posts/untitled.md<CR>", { desc = "Create a new useful snippet in a new split" })
 vim.keymap.set("n", "<leader><leader>gi", ":vsplit ~/.gitconfig<CR>", { desc = "Open gitconfig" })
@@ -625,7 +625,8 @@ end, { desc = "yank filename of current file" })
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
 
-
+vim.keymap.set("n", "n", "nzz", { desc = "center align next" })
+vim.keymap.set("n", "N", "Nzz", { desc = "center align prev" })
 vim.keymap.set("n", "<leader><leader>ji", "$%", { desc = "For testing '%' in keymaps: go to end and them matching bracket. Funker på WSL" })
 vim.keymap.set("n", "<leader><leader>te", ":terminal", { desc = "open terminal" })
 -- vim.keymap.set("n", "<leader><leader>trm", ":terminal<CR>:startinsert<CR>", { desc = "Open terminal" })
