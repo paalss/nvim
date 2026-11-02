@@ -13,6 +13,10 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "∞", "%", { desc = "<A-5
 -- BASIC ACTIONS
 --------------------------------------------------------
 
+
+-- -- gir error???
+-- vim.keymap.set("n", "hl", ":", { esc = "Command" })
+
 -- escape
 vim.keymap.set({ "i", "s" }, "jk", "<esc>", { desc = "Escape" })
 vim.keymap.set({ "i", "s" }, "JK", "<esc>:echo 'CAPS LOCK!'<CR>", { desc = "Escape" })
@@ -38,6 +42,7 @@ vim.keymap.set({ "n", "v", "o" }, "gy", "^^", { desc = "Go beginning of text" })
 vim.keymap.set({ "n", "v", "o" }, "ß", "'[", { desc = "<A-s>: Go to yanked region start" })
 vim.keymap.set({ "n", "v", "o" }, "≈", "']", { desc = "<A-x>: Go to yanked region end" })
 
+vim.keymap.set("n", "<leader>ra", ":set wrap!<CR>", { desc = "Toggle wrap" })
 vim.keymap.set("n", "<leader><leader>sorth", ":'<,'>!sort -h ", { desc = "Sort lines human readable way" })
 
 -- paragraphs
@@ -82,7 +87,6 @@ vim.api.nvim_create_autocmd("BufWinLeave", {
 })
 
 -- -- other
-vim.keymap.set("n", "<C-s>", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Remove search highlights" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Remove lines below, keep cursor in place" })
 
