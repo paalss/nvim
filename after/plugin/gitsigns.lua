@@ -56,16 +56,17 @@ require('gitsigns').setup {
     -- Actions
 
     -- -- stage, unstage, reset
-    map('n', '<leader>hs', gs.stage_hunk, { desc = "Stage hunk" })
-    map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "Unstage hunk" })
-    map('n', '<leader>hr', gs.reset_hunk, { desc = "Reset hunk" })
+    -- map('n', '<leader>hs', gs.stage_hunk, { desc = "Stage hunk" })
+    -- map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "Unstage hunk" })
+    -- map('n', '<leader>hr', gs.reset_hunk, { desc = "Reset hunk" })
 
-    map('n', '<leader>ls', "V:Gitsigns stage_hunk", { desc = "Stage line" })
-    map('n', '<leader>lu', "V:Gitsigns undo_stage_hunk", { desc = "Unstage line" })
-    map('n', '<leader>lr', "V:Gitsigns reset_hunk", { desc = "Reset line" })
+    -- burde kanskje brukt "il" som inside line
+    -- map('n', '<leader>ls', "V:Gitsigns stage_hunk", { desc = "Stage line" })
+    -- map('n', '<leader>lu', "V:Gitsigns undo_stage_hunk", { desc = "Unstage line" })
+    -- map('n', '<leader>lr', "V:Gitsigns reset_hunk", { desc = "Reset line" })
 
     -- map('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Stage hunk" })
-    map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Reset hunk" })
+    -- map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "Reset hunk" })
 
     -- map('n', '<leader>bS', gs.stage_buffer, { desc = "Stage buffer" }) -- Commented out: More or less same as Fugitive's :Gwrite
     -- map('n', '<leader>bR', gs.reset_buffer, { desc = "Reset buffer" })
