@@ -13,8 +13,10 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "∞", "%", { desc = "<A-5
 -- BASIC ACTIONS
 --------------------------------------------------------
 
+vim.keymap.set("n", "<leader><leader>mr", ":!glab mr view $(git branch --show-current) --web<CR>", { desc = "Open MR" })
 
 -- -- gir error???
+-- vim.keymap.set("n", "<leader>m", ":", { esc = "Command" })
 -- vim.keymap.set("n", "hl", ":", { esc = "Command" })
 
 -- escape
@@ -66,6 +68,7 @@ vim.keymap.set("n", "<tab>", ">>", { desc = "add indent" })
 vim.keymap.set("n", "<S-tab>", "<<", { desc = "remove indent" })
 vim.keymap.set("v", "<tab>", ">gv", { desc = "add indent" })
 vim.keymap.set("v", "<S-tab>", "<gv", { desc = "remove indent" })
+
 
 -- -- macros
 vim.keymap.set("n", "-", "@w", { desc = "Replay 'w'-macro" })

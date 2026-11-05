@@ -42,6 +42,12 @@ require('gitsigns').setup {
 
     map('n', 'ç', function()
       -- noen ganger funker ikke
+      -- fungerer ikke hvis man:
+      -- 1. Åpner Diffview
+      -- 2. Går til en fil - gf
+      -- 3. vim.wo.diff er fortsatt true? Virker sånn.
+      -- ]c gjør heller ingenting i denne modusen, kun gs.next_hunk (:Gitsigns next_hunk) fungerer
+      -- hmmmmm
       if vim.wo.diff then return ']c' end
       go_to_next_hunk()
       -- vim.schedule(function() gs.next_hunk() end)

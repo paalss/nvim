@@ -32,7 +32,7 @@ diffview.setup {
       { "n", "q", "<C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" } },
 
       -- skip having to navigate to right panel
-      { "n", "ç", "<C-w>l]c", { desc = "A-c: Go to view pane's next hunk" } },
+      { "n", "ç", "<C-w>l<C-w>l]c", { desc = "A-c: Go to view pane's next hunk" } },
 
       --ra rely used
       -- { "n", "cc", ":Git commit<CR>", { desc = "Commit" } },
