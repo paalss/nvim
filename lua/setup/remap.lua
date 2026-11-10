@@ -15,6 +15,54 @@ vim.keymap.set({ "n", "i", "v", "x", "o", "t", "!" }, "∞", "%", { desc = "<A-5
 
 vim.keymap.set("n", "<leader><leader>mr", ":!glab mr view $(git branch --show-current) --web<CR>", { desc = "Open MR" })
 
+local function open_mr_for_blame_sha()
+  local dir = vim.fn.expand("%:p:h")
+  local file = vim.fn.expand("%:p")
+  local lnum = vim.api.nvim_win_get_cursor(0)[1]
+
+  local blame = vim.system(
+    { "git", "blame", "-L", lnum .. "," .. lnum, "--porcelain", "--", file },
+    { cwd = dir }
+  ):wait()
+  if blame.code ~= 0 then
+    vim.notify("git blame failed: " .. (blame.stderr or ""), vim.log.levels.ERROR)
+    return
+  end
+
+  local sha = blame.stdout:match("^(%x+)")
+  if not sha or sha:match("^0+$") then
+    vim.notify("No commit for this line (uncommitted changes)", vim.log.levels.WARN)
+    return
+  end
+
+  local mrs_result = vim.system(
+    { "glab", "api", "projects/:id/repository/commits/" .. sha .. "/merge_requests" },
+    { cwd = dir }
+  ):wait()
+  if mrs_result.code ~= 0 then
+    vim.notify("glab api failed: " .. (mrs_result.stderr or ""), vim.log.levels.ERROR)
+    return
+  end
+
+  local ok, mrs = pcall(vim.json.decode, mrs_result.stdout)
+  if not ok or not mrs or #mrs == 0 then
+    vim.notify("No MR found for commit " .. sha, vim.log.levels.WARN)
+    return
+  end
+
+  local view_result = vim.system(
+    { "glab", "mr", "view", tostring(mrs[1].iid), "--web" },
+    { cwd = dir }
+  ):wait()
+  if view_result.code ~= 0 then
+    vim.notify("glab mr view failed: " .. (view_result.stderr or ""), vim.log.levels.ERROR)
+    return
+  end
+  vim.notify("Opened MR !" .. tostring(mrs[1].iid) .. " for commit " .. sha:sub(1, 9), vim.log.levels.INFO)
+end
+
+vim.keymap.set("n", "<leader><leader>mb", open_mr_for_blame_sha, { desc = "Open MR for blame SHA under cursor" })
+
 -- -- gir error???
 -- vim.keymap.set("n", "<leader>m", ":", { esc = "Command" })
 -- vim.keymap.set("n", "hl", ":", { esc = "Command" })
