@@ -4,7 +4,9 @@ diffview.setup {
   watch_index = true,
   keymaps = {
     view = {
-      { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
+      -- ikke nædvendig da remap allerede har nnoremap xall keymap
+      -- { "n", "ZA", ":xall!<CR>", { desc = "Close Diffview" } },
+      --
       -- Save and close all windows
       -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
@@ -26,7 +28,7 @@ diffview.setup {
       { "n", "∂", "[c", { desc = "A-d: Go to prev hunk" } },
     },
     file_panel = {
-      { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
+      -- { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
       -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       { "n", "q", "<C-w>l:DiffviewClose<CR>", { desc = "Close Diffview" } },
@@ -40,8 +42,9 @@ diffview.setup {
       -- { "n", "ce", ":Git commit --amend --no-edit<CR>", { desc = "Commit amend no-edit" } },
     },
     file_history_panel = {
-      { "n", "•", ":xall!<CR>", { desc = "Close Diffview" } },
-      -- { "n", "•", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
+      -- { "n", "ZA", ":xall!<CR>", { desc = "Close Diffview" } },
+      --
+      -- { "n", "ZA", ":DiffviewClose<CR>", { desc = "Close Diffview" } },
       -- { "n", "ZZ", ":DiffviewFocusFiles<CR><C-w>l:DiffviewClose<CR>", { desc = "Quit/close Diffview" }},
       -- find commit hash regardless of cursor positioning setup:
 
@@ -59,7 +62,7 @@ diffview.setup {
   }
 }
 
--- GIT LOG all or selected area - [l]og [d]iffview
+-- GIT LOG ALL or SELECTED AREA - [l]og [d]iffview
 vim.keymap.set({"n", "v"}, "<leader>ld", ":DiffviewFileHistory<CR>", { desc = "Show commit history / git log (if visual-mode: for current selection)" })
 vim.api.nvim_create_user_command("Ld", "DiffviewFileHistory", { desc = "Show commit history / git log" })
 
