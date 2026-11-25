@@ -678,7 +678,7 @@ end, { desc = "yank filename of current file" })
 
 -- vim.keymap.set("i", "<C-c>", "<Esc>")                    -- enable same behavior as Esc for escaping vertical edit mode
 vim.keymap.set("n", "Q", ":echo 'denne shortcutten er ledig!'<CR>", { desc = "available shortcut" })
-vim.keymap.set("n", "X", "<nop>", { desc = "Deactivated" })
+vim.keymap.set("n", "X", ":echo 'DEACTIVATED'<CR>", { desc = "Deactivated" })
 
 vim.keymap.set("n", "n", "nzz", { desc = "center align next" })
 vim.keymap.set("n", "N", "Nzz", { desc = "center align prev" })
