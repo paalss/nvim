@@ -633,6 +633,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   callback = function()
     vim.schedule(function()
       vim.opt_local.colorcolumn = "73" -- indicating where text needs to wrap
+      -- add keymap that only works for COMMIT_EDITMSG files. ZQ should not only do :q!, it should also save te existing text. Exactly the same as the space-dca
     end)
   end,
 })
