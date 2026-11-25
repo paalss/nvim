@@ -15,49 +15,34 @@ require('gitsigns').setup {
 
     -- Navigation
 
-    local function go_to_next_hunk()
-      if vim.wo.diff then return ']c' end
-      vim.schedule(function() gs.next_hunk() end)
-      return '<Ignore>'
+    -- In a diff window, [c/]c normally jump between change hunks. But after
+    -- opening DiffviewOpen and using "gf" to jump to a file, vim.wo.diff can
+    -- still be true even though [c/]c no longer do anything there - only
+    -- gs.next_hunk/gs.prev_hunk (:Gitsigns next_hunk/prev_hunk) work.
+    -- Rather than trust vim.wo.diff, actually try the diff motion and check
+    -- whether the cursor moved; if it didn't, fall back to gitsigns.
+    local function diff_jump(motion, hunk_fn)
+      return function()
+        if vim.wo.diff then
+          local before = vim.api.nvim_win_get_cursor(0)
+          pcall(vim.cmd, 'normal! ' .. motion)
+          local after = vim.api.nvim_win_get_cursor(0)
+          if before[1] == after[1] and before[2] == after[2] then
+            hunk_fn()
+          end
+          return
+        end
+        hunk_fn()
+      end
     end
 
-    -- error:
-    -- map('n', 'µ', gs.nav_hunk("next"), {
-    --   desc = "<A-y>: go to next"
-    -- })
-    -- map('n', '∂', gs.nav_hunk("prev"), {
-    --   desc = "<A-d>: go to prev"
-    -- })
+    local go_to_next_hunk = diff_jump(']c', gs.next_hunk)
+    local go_to_prev_hunk = diff_jump('[c', gs.prev_hunk)
 
-    -- hverken F7 eller <A-c> fungerer ikke alltid
-    map('n', '<F7>', function()
-      go_to_next_hunk()
-    end, { desc = "go to next diff hunk", expr = true })
-
-    map('n', '<S-F7>', function()
-      if vim.wo.diff then return '[c' end
-      vim.schedule(function() gs.prev_hunk() end)
-      return '<Ignore>'
-    end, { desc = "go to prev diff hunk", expr = true })
-
-    map('n', 'ç', function()
-      -- noen ganger funker ikke
-      -- fungerer ikke hvis man:
-      -- 1. Åpner Diffview
-      -- 2. Går til en fil - gf
-      -- 3. vim.wo.diff er fortsatt true? Virker sånn.
-      -- ]c gjør heller ingenting i denne modusen, kun gs.next_hunk (:Gitsigns next_hunk) fungerer
-      -- hmmmmm
-      if vim.wo.diff then return ']c' end
-      go_to_next_hunk()
-      -- vim.schedule(function() gs.next_hunk() end)
-    end, { desc = "<A-c>: go to next diff hunk", expr = true })
-
-    map('n', '∂', function()
-      if vim.wo.diff then return '[c' end
-      vim.schedule(function() gs.prev_hunk() end)
-      return '<Ignore>'
-    end, { desc = "<A-d>: go to prev diff hunk", expr = true })
+    map('n', '<F7>', go_to_next_hunk, { desc = "go to next diff hunk" })
+    map('n', '<S-F7>', go_to_prev_hunk, { desc = "go to prev diff hunk" })
+    map('n', 'ç', go_to_next_hunk, { desc = "<A-c>: go to next diff hunk" })
+    map('n', '∂', go_to_prev_hunk, { desc = "<A-d>: go to prev diff hunk" })
 
     -- Actions
 
